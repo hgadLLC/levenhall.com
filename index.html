@@ -991,6 +991,14 @@
             transform: translateY(0);
         }
 
+        /* Fallback: Show content if JavaScript doesn't add .active class after page load */
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
         /* Responsive */
         @media (max-width: 1400px) {
             .pathways-grid {
@@ -1021,9 +1029,34 @@
             }
         }
 
+        @media (max-width: 992px) {
+            .nav-wordmark {
+                height: 28px;
+            }
+            
+            .nav-cta {
+                padding: 0.5rem 1.2rem;
+                font-size: 0.75rem;
+            }
+        }
+
         @media (max-width: 768px) {
+            .nav-container {
+                padding: 0.8rem 4%;
+            }
+            
             .nav-links {
                 display: none;
+            }
+            
+            .nav-wordmark {
+                height: 24px;
+            }
+            
+            .nav-cta {
+                padding: 0.5rem 1rem;
+                font-size: 0.7rem;
+                letter-spacing: 0.3px;
             }
 
             .hero-content h1 {
@@ -1052,6 +1085,29 @@
 
             .alliance-features {
                 grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 0.6rem 3%;
+            }
+            
+            .nav-wordmark {
+                height: 20px;
+            }
+            
+            .nav-cta {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.65rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -1114,7 +1170,7 @@
         </div>
     </div>
 
-    <section class="alliance">
+    <section id="alliance" class="alliance">
         <div class="alliance-container">
             <div class="alliance-content">
                 <h2>The Five Eyes Alliance Partnership</h2>
@@ -1431,7 +1487,8 @@
         </div>
     </footer>
 
-    <script>
+    <script type="module">
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1442,6 +1499,7 @@
             });
         });
 
+        // Navigation shadow on scroll
         let lastScroll = 0;
         const nav = document.querySelector('nav');
 
@@ -1457,6 +1515,7 @@
             lastScroll = currentScroll;
         });
 
+        // Reveal on scroll animation
         const revealElements = document.querySelectorAll('.reveal');
         
         const revealOnScroll = () => {
@@ -1471,8 +1530,14 @@
             });
         };
 
+        // Run immediately when DOM is ready
         revealOnScroll();
         
+        // Also run after a short delay to catch any edge cases
+        setTimeout(revealOnScroll, 100);
+        setTimeout(revealOnScroll, 500);
+        
+        // Run on scroll with throttling
         let scrollTimeout;
         window.addEventListener('scroll', () => {
             if (scrollTimeout) {
@@ -1482,6 +1547,15 @@
                 revealOnScroll();
             });
         });
-    <script type="module">
+        
+        // Fallback: if elements still not revealed after 2 seconds, force reveal
+        setTimeout(() => {
+            revealElements.forEach(element => {
+                if (!element.classList.contains('active')) {
+                    element.classList.add('active');
+                }
+            });
+        }, 2000);
+    </script>
 </body>
 </html>
