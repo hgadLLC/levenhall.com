@@ -74,6 +74,7 @@
         .nav-wordmark {
             height: 35px;
             width: auto;
+            max-width: 100%;
             filter: brightness(0) saturate(100%) invert(73%) sepia(23%) saturate(800%) hue-rotate(8deg) brightness(92%) contrast(82%);
         }
 
@@ -1034,33 +1035,50 @@
         }
 
         @media (max-width: 992px) {
+            .nav-logo-container {
+                flex-shrink: 0;
+                max-width: 65%;
+            }
+            
             .nav-wordmark {
                 height: 28px;
+                max-width: 100%;
             }
             
             .nav-cta {
                 padding: 0.5rem 1.2rem;
                 font-size: 0.75rem;
+                flex-shrink: 0;
             }
         }
 
         @media (max-width: 768px) {
             .nav-container {
                 padding: 0.8rem 4%;
+                align-items: center;
             }
             
             .nav-links {
                 display: none;
             }
             
+            .nav-logo-container {
+                flex-shrink: 0;
+                max-width: 60%;
+            }
+            
             .nav-wordmark {
                 height: 24px;
+                max-width: 100%;
+                object-fit: contain;
             }
             
             .nav-cta {
                 padding: 0.5rem 1rem;
                 font-size: 0.7rem;
                 letter-spacing: 0.3px;
+                flex-shrink: 0;
+                white-space: nowrap;
             }
 
             .hero-content h1 {
@@ -1095,15 +1113,25 @@
         @media (max-width: 480px) {
             .nav-container {
                 padding: 0.6rem 3%;
+                align-items: center;
+            }
+            
+            .nav-logo-container {
+                flex-shrink: 0;
+                max-width: 55%;
             }
             
             .nav-wordmark {
-                height: 20px;
+                height: 18px;
+                max-width: 100%;
+                object-fit: contain;
             }
             
             .nav-cta {
                 padding: 0.4rem 0.8rem;
-                font-size: 0.65rem;
+                font-size: 0.6rem;
+                flex-shrink: 0;
+                white-space: nowrap;
             }
             
             .hero-content h1 {
