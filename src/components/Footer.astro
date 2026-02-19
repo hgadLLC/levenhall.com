@@ -1,0 +1,131 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer>
+    <div class="footer-accent"></div>
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="/images/levenhall-wordmark.png" alt="Levenhall" class="footer-logo">
+                <p class="footer-description">Strategic defense market access for international firms. Connecting allied innovation to US procurement through proven partnerships and government relationships.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <a href="/about">About</a>
+                <a href="/services">Services</a>
+                <a href="/team">Team</a>
+                <a href="/partners">Partners</a>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <a href="/services#advisory">Market Entry</a>
+                <a href="/services#rapid-procurement">Rapid Procurement</a>
+                <a href="/services#executive-placement">Executive Placement</a>
+                <a href="/services#tax-services">Tax Advisory</a>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <a href="/contact">Contact</a>
+                <a href="https://calendly.com/hgad-levenhall/30min" target="_blank" rel="noopener noreferrer">Schedule Consultation</a>
+                <a href="https://www.linkedin.com/in/adamjpleslie/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; {year} Levenhall LLC. All rights reserved. Serving allied democracies.</p>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background: var(--deep-navy);
+        color: rgba(255, 255, 255, 0.6);
+        padding: 0;
+        position: relative;
+    }
+
+    .footer-accent {
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        opacity: 0.3;
+    }
+
+    .footer-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3.5rem 2rem 0;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+
+    .footer-logo {
+        height: 18px;
+        width: auto;
+        filter: brightness(0) invert(1);
+        opacity: 0.7;
+        margin-bottom: 1.2rem;
+    }
+
+    .footer-description {
+        font-size: 0.88rem;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.4);
+        max-width: 320px;
+    }
+
+    .footer-section h4 {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 600;
+        font-size: 0.7rem;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 1.2rem;
+    }
+
+    .footer-section a {
+        display: block;
+        font-size: 0.88rem;
+        color: rgba(255, 255, 255, 0.5);
+        text-decoration: none;
+        margin-bottom: 0.6rem;
+        transition: color 0.25s ease;
+    }
+
+    .footer-section a:hover {
+        color: #fff;
+    }
+
+    .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        padding: 1.8rem 0;
+        text-align: center;
+    }
+
+    .footer-bottom p {
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.25);
+    }
+
+    @media (max-width: 768px) {
+        .footer-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        .footer-brand {
+            grid-column: 1 / -1;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .footer-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

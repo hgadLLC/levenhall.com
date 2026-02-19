@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import CTASection from '../components/CTASection.astro';
+import TeamCard from '../components/TeamCard.astro';
+import BioModal from '../components/BioModal.astro';
+import { team } from '../data/team';
+---
+
+<BaseLayout title="Team | Levenhall" description="Former intelligence, military, and government professionals who understand the US defense procurement system from inside.">
+
+    <PageHeader
+        label="Our Leadership"
+        title="The Team"
+    />
+
+    <!-- ── TEAM GRID ── -->
+    <section class="section team-section">
+        <div class="container">
+            <div class="team-intro reveal">
+                <div class="team-intro-rule"></div>
+                <p>Levenhall's leadership brings direct experience from the <strong>intelligence community</strong>, <strong>military service</strong>, <strong>government contracting</strong>, and <strong>allied defense markets</strong>.</p>
+            </div>
+            <div class="team-grid">
+                {team.map(member => (
+                    <TeamCard
+                        name={member.name}
+                        title={member.title}
+                        photo={member.photo}
+                        linkedin={member.linkedin}
+                        summary={member.summary}
+                        isModalTrigger={member.isModalTrigger}
+                        showSummary={true}
+                    />
+                ))}
+            </div>
+            <p class="selective-note reveal">Engagements are selective and subject to conflict and compliance review.</p>
+        </div>
+    </section>
+
+    <CTASection
+        heading="Work With Us"
+        description="If your firm builds technology that serves US defense or national security requirements and you are based in an allied democracy, we should talk."
+        primaryLabel="Schedule Consultation"
+        primaryHref="https://calendly.com/hgad-levenhall/30min"
+    />
+
+    <BioModal />
+
+</BaseLayout>
+
+<style>
+    /* ── TEAM GRID ── */
+    .team-section {
+        background: var(--cream);
+        padding: 5rem 0 6rem;
+    }
+
+    .team-intro {
+        max-width: 900px;
+        margin: 0 auto 3rem;
+        padding-left: 1.5rem;
+        border-left: 3px solid var(--gold);
+    }
+
+    .team-intro-rule {
+        display: none;
+    }
+
+    .team-intro p {
+        font-size: 1.15rem;
+        line-height: 1.75;
+        color: var(--text-medium);
+    }
+
+    .team-intro strong {
+        color: var(--deep-navy);
+        font-weight: 600;
+    }
+
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .selective-note {
+        text-align: center;
+        font-size: 0.88rem;
+        font-style: italic;
+        color: var(--text-medium);
+        opacity: 0.5;
+        margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) {
+        .team-grid { grid-template-columns: 1fr; max-width: 450px; }
+    }
+</style>

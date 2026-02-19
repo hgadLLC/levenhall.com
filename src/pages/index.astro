@@ -1,0 +1,488 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+import TeamCard from '../components/TeamCard.astro';
+import BioModal from '../components/BioModal.astro';
+import { team } from '../data/team';
+import { services } from '../data/services';
+import { nations } from '../data/nations';
+---
+
+<BaseLayout title="Levenhall | Strategic Defense Market Access">
+
+    <!-- ── HERO ── -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-inner">
+            <div class="hero-text">
+                <span class="hero-badge">Allied Defense Market Access</span>
+                <h1>Strategic Access to<br/><span class="gold-text">US Government</span> Contracting</h1>
+                <div class="hero-rule"></div>
+                <p class="hero-subtitle">The US defense market is the largest and most complex procurement environment in the world. For international firms from trusted allied democracies, gaining meaningful access requires more than capability. It requires architecture. That is what we build.</p>
+                <div class="btn-group">
+                    <a href="https://calendly.com/hgad-levenhall/30min" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Schedule Consultation</a>
+                    <a href="/services" class="btn btn-outline-white">Explore Pathways</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <img src="/images/five-eyes-star.png" alt="Allied Nations" class="hero-star">
+            </div>
+        </div>
+    </section>
+
+    <!-- ── ABOUT PREVIEW ── -->
+    <section class="section about-section">
+        <div class="about-bg"></div>
+        <div class="container about-inner">
+            <!-- ── FLOATING STATS ── -->
+            <div class="stats-float">
+                <div class="stat-card">
+                    <span class="stat-value">$1.5T+</span>
+                    <span class="stat-label">Defense Budget</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">60-120</span>
+                    <span class="stat-label">Days to Award</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">$18B+</span>
+                    <span class="stat-label">OTA Obligations</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">100%</span>
+                    <span class="stat-label">Success Rate</span>
+                </div>
+            </div>
+            <div class="about-preview-grid">
+                <div class="about-preview-text reveal">
+                    <span class="about-label">Who We Serve</span>
+                    <h2>Allied Innovation.<br/>Rapid Procurement.</h2>
+                    <div class="about-rule"></div>
+                    <p>Levenhall serves defense and security firms from allied democracies seeking access to the US market. We connect international capability with the agencies and programs that need it most, through procurement pathways designed for speed.</p>
+                    <p>CSOs, OTAs, and follow-on production agreements have created an alternative procurement ecosystem. We architect your entry through these mechanisms, reducing timelines from years to months.</p>
+                    <a href="/partners" class="btn btn-secondary" style="margin-top: 1.5rem;">Our Partners</a>
+                </div>
+                <div class="nations-grid reveal">
+                    {nations.map(nation => (
+                        <div class="nation-card">
+                            <span class="nation-flag">{nation.flag}</span>
+                            <div class="nation-text">
+                                <span class="nation-name">{nation.name}</span>
+                                <span class="nation-tag">{nation.tagline}</span>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── SERVICES PREVIEW (LIGHT) ── -->
+    <section class="section services-preview">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Our Services</span>
+                <h2>Market Entry Pathways</h2>
+                <p>Four pathways, each structured around how defense procurement actually works.</p>
+            </div>
+            <div class="services-grid">
+                {services.map((service, i) => (
+                    <a href={`/services#${service.id}`} class="service-card reveal">
+                        <div class="service-top">
+                            <span class="service-num">0{i + 1}</span>
+                            <span class="service-label">{service.label}</span>
+                        </div>
+                        <h3>{service.title}</h3>
+                        <p>{service.summary}</p>
+                        <span class="service-arrow">&rarr;</span>
+                    </a>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- ── TEAM PREVIEW (DARK) ── -->
+    <section class="section team-section">
+        <div class="team-bg"></div>
+        <div class="container team-inner">
+            <div class="section-header reveal">
+                <span class="team-label">Our Leadership</span>
+                <h2>Meet the Team</h2>
+                <p>Former intelligence, military, and government professionals who understand the system from inside.</p>
+            </div>
+            <div class="team-grid">
+                {team.map(member => (
+                    <TeamCard
+                        name={member.name}
+                        title={member.title}
+                        photo={member.photo}
+                        linkedin={member.linkedin}
+                        isModalTrigger={member.isModalTrigger}
+                    />
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <CTASection />
+    <BioModal />
+
+</BaseLayout>
+
+<style>
+    /* ── HERO ── */
+    .hero {
+        background: linear-gradient(135deg, #080e1c 0%, var(--deep-navy) 40%, #162d4f 100%);
+        min-height: 90vh;
+        display: flex;
+        align-items: center;
+        padding: 7rem 2rem 8rem;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .hero-bg {
+        position: absolute;
+        inset: 0;
+        background-image:
+            radial-gradient(ellipse at 20% 50%, rgba(201, 169, 97, 0.06) 0%, transparent 60%),
+            radial-gradient(ellipse at 80% 20%, rgba(30, 58, 95, 0.2) 0%, transparent 50%);
+        pointer-events: none;
+    }
+
+    .hero-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        align-items: center;
+        gap: 3rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-badge {
+        display: inline-block;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 600;
+        font-size: 0.68rem;
+        letter-spacing: 3.5px;
+        text-transform: uppercase;
+        color: var(--gold);
+        background: rgba(201, 169, 97, 0.08);
+        border: 1px solid rgba(201, 169, 97, 0.15);
+        padding: 0.5rem 1.4rem;
+        margin-bottom: 1.8rem;
+    }
+
+    .hero h1 {
+        color: #fff;
+        font-size: clamp(2.6rem, 5vw, 4rem);
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-rule {
+        width: 60px;
+        height: 2px;
+        background: var(--gold);
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-subtitle {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 1.05rem;
+        line-height: 1.85;
+        margin-bottom: 2.5rem;
+        max-width: 520px;
+    }
+
+    .hero-visual {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-star {
+        max-width: 420px;
+        width: 100%;
+        opacity: 1;
+        filter: drop-shadow(0 0 80px rgba(201, 169, 97, 0.15));
+        animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-14px); }
+    }
+
+    /* ── FLOATING STATS ── */
+    .stats-float {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.2rem;
+        margin-top: -8rem;
+        margin-bottom: 4rem;
+        position: relative;
+        z-index: 2;
+    }
+
+    .stat-card {
+        background: #fff;
+        text-align: center;
+        padding: 1.8rem 1.2rem;
+        border-top: 3px solid var(--gold);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.14);
+    }
+
+    .stat-value {
+        display: block;
+        font-family: 'Crimson Text', serif;
+        font-size: 2.4rem;
+        font-weight: 700;
+        color: var(--deep-navy);
+        line-height: 1;
+        margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+        display: block;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--text-medium);
+    }
+
+    /* ── ABOUT PREVIEW (WARM STONE SECTION) ── */
+    .about-section {
+        background: var(--stone);
+        padding: 6rem 0;
+        overflow: visible;
+    }
+
+    .about-bg {
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(ellipse at 70% 50%, rgba(201, 169, 97, 0.08) 0%, transparent 60%);
+        pointer-events: none;
+    }
+
+    .about-inner {
+        position: relative;
+        z-index: 1;
+    }
+
+    .about-preview-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    .about-label {
+        display: inline-block;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 600;
+        font-size: 0.72rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--burgundy);
+        background: var(--burgundy-surface);
+        padding: 0.5rem 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .about-preview-text h2 {
+        color: var(--deep-navy);
+        margin-bottom: 1rem;
+    }
+
+    .about-rule {
+        width: 50px;
+        height: 2px;
+        background: var(--gold);
+        margin-bottom: 1.5rem;
+    }
+
+    .about-preview-text p {
+        color: var(--text-medium);
+        margin-bottom: 0.8rem;
+    }
+
+    .nations-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.6rem;
+    }
+
+    .nation-card {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 1.2rem;
+        background: var(--warm-white);
+        border: 1px solid var(--border-warm);
+        border-left: 3px solid rgba(201, 169, 97, 0.4);
+        transition: all 0.3s ease;
+    }
+
+    .nation-card:hover {
+        background: #fff;
+        border-left-color: var(--gold);
+        box-shadow: var(--shadow-warm-md);
+        transform: translateX(4px);
+    }
+
+    .nation-flag { font-size: 1.6rem; flex-shrink: 0; }
+    .nation-name { display: block; font-weight: 600; font-size: 0.88rem; color: var(--deep-navy); }
+    .nation-tag { display: block; font-size: 0.7rem; color: var(--text-medium); }
+
+    /* ── SERVICES PREVIEW (LIGHT) ── */
+    .services-preview {
+        background: var(--cream);
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .service-card {
+        background: #fff;
+        padding: 2.2rem 2rem;
+        text-decoration: none;
+        border: 1px solid rgba(30, 58, 95, 0.06);
+        position: relative;
+        transition: all 0.4s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .service-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--gold), var(--burgundy));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
+    }
+
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-card:hover {
+        box-shadow: 0 20px 50px rgba(30, 58, 95, 0.12);
+        transform: translateY(-4px);
+    }
+
+    .service-top {
+        display: flex;
+        align-items: baseline;
+        gap: 1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .service-num {
+        font-family: 'Crimson Text', serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--gold);
+        opacity: 0.25;
+        line-height: 1;
+    }
+
+    .service-label {
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: var(--burgundy);
+    }
+
+    .service-card h3 { font-size: 1.25rem; margin-bottom: 0.6rem; color: var(--navy); }
+    .service-card p { font-size: 0.92rem; line-height: 1.65; color: var(--text-medium); flex: 1; }
+
+    .service-arrow {
+        display: inline-block;
+        font-size: 1.2rem;
+        color: var(--gold);
+        margin-top: 1.2rem;
+        opacity: 0;
+        transform: translateX(-10px);
+        transition: all 0.3s ease;
+    }
+
+    .service-card:hover .service-arrow {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    /* ── TEAM PREVIEW ── */
+    .team-section {
+        background: var(--stone);
+        padding: 6rem 0;
+    }
+
+    .team-bg {
+        display: none;
+    }
+
+    .team-inner {
+        position: relative;
+        z-index: 1;
+    }
+
+    .team-label {
+        display: inline-block;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 600;
+        font-size: 0.72rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--burgundy);
+        background: var(--burgundy-surface);
+        padding: 0.5rem 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1200px) {
+        .services-grid { grid-template-columns: repeat(2, 1fr); }
+        .team-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 992px) {
+        .hero-inner { grid-template-columns: 1fr; text-align: center; }
+        .hero-subtitle { margin: 0 auto 2.5rem; }
+        .hero-rule { margin: 0 auto 1.5rem; }
+        .hero-visual { display: none; }
+        .stats-float { grid-template-columns: repeat(2, 1fr); }
+        .about-preview-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+        .hero { min-height: auto; padding: 7rem 2rem 3rem; }
+        .stats-float { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; margin-top: -5rem; }
+        .stat-card { padding: 1.4rem 1rem; }
+        .stat-value { font-size: 2rem; }
+        .nations-grid { grid-template-columns: 1fr; }
+        .services-grid { grid-template-columns: 1fr; }
+        .team-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+    }
+</style>

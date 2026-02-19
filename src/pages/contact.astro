@@ -1,0 +1,287 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { team } from '../data/team';
+---
+
+<BaseLayout title="Contact | Levenhall" description="Schedule a confidential consultation to explore US defense market entry with Levenhall.">
+
+    <PageHeader
+        label="Get in Touch"
+        title="Contact"
+    />
+
+    <section class="section contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- LEFT: Primary CTA -->
+                <div class="contact-primary reveal">
+                    <h2>Schedule a Consultation</h2>
+                    <div class="contact-gold-rule"></div>
+                    <p>Initial consultations are confidential and without obligation. We will discuss your technology, your market objectives, and whether Levenhall is the right partner for your entry into the US defense market.</p>
+                    <a href="https://calendly.com/hgad-levenhall/30min" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="margin-top: 1rem;">Book a Time</a>
+                </div>
+
+                <!-- RIGHT: Direct Contact -->
+                <div class="contact-direct reveal">
+                    <h3>Direct Contact</h3>
+                    <div class="contact-list">
+                        {team.map(member => (
+                            <div class="contact-person">
+                                <span class="contact-name">{member.name}</span>
+                                <span class="contact-role">{member.title}</span>
+                                <div class="contact-links">
+                                    <a href={`mailto:${member.email}`} class="contact-email">{member.email}</a>
+                                    {member.phone && <a href={`tel:${member.phone.replace(/[\s()-]/g, '')}`} class="contact-phone">{member.phone}</a>}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div class="contact-location">
+                        <h4>Location</h4>
+                        <p>Washington, DC Metropolitan Area</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── WHAT TO EXPECT (DARK) ── -->
+    <section class="section expect-section">
+        <div class="expect-bg"></div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="expect-content reveal">
+                <span class="expect-label">What to Expect</span>
+                <h2>The Initial Conversation</h2>
+                <div class="expect-grid">
+                    <div class="expect-item">
+                        <div class="expect-num">01</div>
+                        <h4>Confidential</h4>
+                        <p>Every conversation with Levenhall is held in strict confidence. We discuss sensitive technology, competitive positioning, and strategic plans, and treat that information accordingly.</p>
+                    </div>
+                    <div class="expect-item">
+                        <div class="expect-num">02</div>
+                        <h4>Direct</h4>
+                        <p>We will tell you honestly whether the US market is right for your firm at this stage, which pathways are realistic, and what timeline to expect. No inflated projections or vague promises.</p>
+                    </div>
+                    <div class="expect-item">
+                        <div class="expect-num">03</div>
+                        <h4>Selective</h4>
+                        <p>Not every inquiry results in an engagement. We take on a limited number of clients in each technology domain to ensure our relationships and institutional knowledge serve each one without dilution.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</BaseLayout>
+
+<style>
+    .contact-section {
+        background: var(--stone);
+    }
+
+    .contact-gold-rule {
+        width: 50px;
+        height: 2px;
+        background: var(--gold);
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 4rem;
+        align-items: start;
+    }
+
+    .contact-primary h2 {
+        font-size: clamp(1.6rem, 3vw, 2.2rem);
+        margin-bottom: 1rem;
+    }
+
+    .contact-primary p {
+        font-size: 1.02rem;
+        line-height: 1.75;
+        margin-bottom: 0.8rem;
+    }
+
+    .contact-direct {
+        background: #fff;
+        padding: 2rem;
+        border: 1px solid var(--border-warm);
+        border-top: 3px solid var(--navy);
+    }
+
+    .contact-direct h3 {
+        font-size: 1.1rem;
+        color: var(--navy);
+        margin-bottom: 1.2rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .contact-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-person {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+        padding-left: 1rem;
+        border-left: 2px solid var(--gold);
+    }
+
+    .contact-name {
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: var(--navy);
+    }
+
+    .contact-role {
+        font-size: 0.78rem;
+        color: var(--text-medium);
+        margin-bottom: 0.2rem;
+    }
+
+    .contact-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.1rem;
+    }
+
+    .contact-email,
+    .contact-phone {
+        font-size: 0.85rem;
+        color: var(--burgundy);
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    .contact-email:hover,
+    .contact-phone:hover {
+        color: var(--navy);
+    }
+
+    .contact-location {
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border-subtle);
+    }
+
+    .contact-location h4 {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 600;
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--navy);
+        margin-bottom: 0.4rem;
+    }
+
+    .contact-location p {
+        font-size: 0.9rem;
+        color: var(--text-medium);
+    }
+
+    /* ── EXPECT (DARK) ── */
+    .expect-section {
+        background: linear-gradient(180deg, var(--deep-navy) 0%, #162d4a 100%);
+        overflow: hidden;
+    }
+
+    .expect-bg {
+        position: absolute;
+        inset: 0;
+        background-image:
+            radial-gradient(ellipse at 50% 80%, rgba(201, 169, 97, 0.05) 0%, transparent 50%);
+        pointer-events: none;
+    }
+
+    .expect-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        opacity: 0.4;
+    }
+
+    .expect-label {
+        display: inline-block;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 600;
+        font-size: 0.72rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+        background: rgba(201, 169, 97, 0.08);
+        padding: 0.5rem 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .expect-content { max-width: 900px; }
+    .expect-content h2 {
+        color: #fff;
+        margin-bottom: 2rem;
+    }
+
+    .expect-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+
+    .expect-item {
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-left: 3px solid rgba(201, 169, 97, 0.3);
+        transition: all 0.3s ease;
+    }
+
+    .expect-item:hover {
+        background: rgba(255, 255, 255, 0.07);
+        border-left-color: var(--gold);
+        transform: translateX(4px);
+    }
+
+    .expect-num {
+        font-family: 'Crimson Text', serif;
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--gold);
+        opacity: 0.5;
+        margin-bottom: 0.5rem;
+    }
+
+    .expect-item h4 {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 600;
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #fff;
+        margin-bottom: 0.8rem;
+    }
+
+    .expect-item p {
+        font-size: 0.9rem;
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    @media (max-width: 992px) {
+        .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    }
+
+    @media (max-width: 768px) {
+        .expect-grid { grid-template-columns: 1fr; }
+    }
+</style>

@@ -1,0 +1,303 @@
+/* ── RESET ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ── TOKENS ── */
+:root {
+    --deep-navy: #0f1f3a;
+    --navy: #1e3a5f;
+    --burgundy: #8b1538;
+    --burgundy-deep: #6b0f2a;
+    --burgundy-mid: #7a1230;
+    --burgundy-surface: rgba(139, 21, 56, 0.06);
+    --gold: #c9a961;
+    --gold-light: rgba(201, 169, 97, 0.12);
+    --silver: #c8ccd6;
+    --cream: #fafaf8;
+    --warm-white: #f5f3ef;
+    --stone: #f0ebe3;
+    --text-dark: #1a1a1a;
+    --text-medium: #4a5568;
+    --border-subtle: rgba(30, 58, 95, 0.08);
+    --border-warm: rgba(100, 70, 40, 0.1);
+    --shadow-sm: 0 2px 8px rgba(30, 58, 95, 0.06);
+    --shadow-md: 0 8px 30px rgba(30, 58, 95, 0.1);
+    --shadow-lg: 0 16px 50px rgba(30, 58, 95, 0.14);
+    --shadow-warm-md: 0 8px 30px rgba(80, 50, 20, 0.08);
+}
+
+/* ── BASE ── */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: var(--text-dark);
+    background: var(--cream);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+
+/* ── TYPOGRAPHY ── */
+h1, h2, h3, h4 {
+    font-family: 'Crimson Text', serif;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--deep-navy);
+}
+
+h1 { font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: -0.5px; }
+h2 { font-size: clamp(1.7rem, 3vw, 2.6rem); letter-spacing: -0.3px; }
+h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
+h4 { font-size: 1rem; font-family: 'Source Sans Pro', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-size: 0.75rem; }
+
+p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-medium);
+}
+
+/* ── UTILITIES ── */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section {
+    padding: 5rem 0;
+    position: relative;
+}
+
+.section-label {
+    display: inline-block;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--burgundy);
+    background: rgba(139, 21, 56, 0.06);
+    padding: 0.5rem 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+
+.section-header p {
+    margin-top: 1rem;
+}
+
+.gold-text { color: var(--gold); }
+
+/* ── DECORATIVE ELEMENTS ── */
+
+/* Gold accent line - use as ::before or ::after */
+.gold-rule::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: var(--gold);
+    margin-bottom: 1.5rem;
+}
+
+.gold-rule-center::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: var(--gold);
+    margin: 0 auto 1.5rem;
+}
+
+/* Subtle diagonal pattern for dark sections */
+.pattern-overlay {
+    position: relative;
+}
+
+.pattern-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 20px,
+        rgba(255,255,255,0.5) 20px,
+        rgba(255,255,255,0.5) 21px
+    );
+    pointer-events: none;
+}
+
+/* Subtle dot grid for light sections */
+.dot-pattern {
+    position: relative;
+}
+
+.dot-pattern::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.35;
+    background-image: radial-gradient(circle, rgba(30, 58, 95, 0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
+    pointer-events: none;
+}
+
+/* Warm section background with subtle texture */
+.section-warm {
+    background: linear-gradient(180deg, var(--warm-white) 0%, var(--cream) 100%);
+}
+
+/* White section with subtle warmth */
+.section-white {
+    background: #fff;
+}
+
+/* Navy section */
+.section-navy {
+    background: var(--navy);
+}
+
+.section-navy h2,
+.section-navy h3 {
+    color: #fff;
+}
+
+.section-navy p {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+/* Burgundy section */
+.section-burgundy {
+    background: linear-gradient(180deg, var(--burgundy-deep) 0%, var(--burgundy-mid) 100%);
+}
+
+.section-burgundy h2,
+.section-burgundy h3 {
+    color: #fff;
+}
+
+.section-burgundy p {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+/* Stone section */
+.section-stone {
+    background: var(--stone);
+}
+
+/* ── BUTTONS ── */
+.btn {
+    display: inline-block;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.9rem 2.2rem;
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: var(--burgundy);
+    color: #fff;
+    border-color: var(--burgundy);
+}
+.btn-primary:hover {
+    background: #a01d45;
+    border-color: #a01d45;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--navy);
+    border-color: var(--navy);
+}
+.btn-secondary:hover {
+    background: var(--navy);
+    color: #fff;
+}
+
+.btn-white {
+    background: #fff;
+    color: var(--deep-navy);
+    border-color: #fff;
+}
+.btn-white:hover {
+    background: transparent;
+    color: #fff;
+    border-color: #fff;
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: var(--deep-navy);
+    border-color: var(--gold);
+}
+.btn-gold:hover {
+    background: #dbbe74;
+    border-color: #dbbe74;
+}
+
+.btn-outline-white {
+    background: transparent;
+    color: #fff;
+    border-color: rgba(255,255,255,0.4);
+}
+.btn-outline-white:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: #fff;
+}
+
+.btn-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* ── REVEAL ANIMATION ── */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+    .section { padding: 3.5rem 0; }
+    .section-header { margin-bottom: 2rem; }
+    .btn-group { flex-direction: column; align-items: stretch; text-align: center; }
+}
+
+@media (max-width: 480px) {
+    .container { padding: 0 1.2rem; }
+    .section { padding: 2.5rem 0; }
+}

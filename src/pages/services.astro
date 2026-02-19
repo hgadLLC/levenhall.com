@@ -1,0 +1,508 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import CTASection from '../components/CTASection.astro';
+import { services } from '../data/services';
+---
+
+<BaseLayout title="Services | Levenhall" description="Four market entry pathways structured around how US defense procurement actually works.">
+
+    <PageHeader
+        label="Our Services"
+        title="Market Entry Pathways"
+    />
+
+    <!-- ── INTRO + NAV CARDS ── -->
+    <section class="section intro-section">
+        <div class="container">
+            <div class="intro-content reveal">
+                <span class="intro-label">Our Services</span>
+                <p class="intro-lead">International firms entering the US defense market face a consistent set of structural challenges: regulatory complexity, entity formation requirements, procurement vehicle selection, and the need for credible US-based relationships.</p>
+                <div class="intro-rule"></div>
+                <p class="intro-sub">Levenhall's services address each of these systematically. Every engagement is tailored. We do not sell packaged solutions. Your technology, your target agencies, your competitive position, and your organizational readiness determine the pathway we recommend.</p>
+            </div>
+            <div class="service-nav-cards">
+                {services.map((service, i) => (
+                    <a href={`#${service.id}`} class="service-nav-card reveal">
+                        <span class="nav-card-num">0{i + 1}</span>
+                        <span class="nav-card-label">{service.label}</span>
+                        <span class="nav-card-title">{service.title}</span>
+                    </a>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- ── SERVICE SECTIONS (MAGAZINE EDITORIAL) ── -->
+    {services.map((service, i) => (
+        <section id={service.id} class={`section svc-section ${i % 2 === 0 ? 'svc-stone' : 'svc-cream'}`}>
+            <div class="container">
+                <div class={`svc-grid reveal ${i % 2 === 1 ? 'svc-grid-flipped' : ''}`}>
+                    <div class="svc-text">
+                        <div class="svc-header">
+                            <span class="svc-number">0{i + 1}</span>
+                            <div class="svc-header-text">
+                                <span class="svc-label">{service.label}</span>
+                                <h2>{service.title}</h2>
+                            </div>
+                        </div>
+                        <div class="svc-rule"></div>
+                        <div class="svc-body">
+                            {service.description.map(para => (
+                                <p>{para}</p>
+                            ))}
+                            {service.externalLink && (
+                                <a href={service.externalLink} class="btn btn-secondary" target="_blank" rel="noopener noreferrer" style="margin-top: 1.5rem;">Learn More</a>
+                            )}
+                        </div>
+                    </div>
+                    <div class="svc-sidebar">
+                        <div class="svc-stat-card">
+                            <span class="svc-stat-value">{service.highlight.value}</span>
+                            <span class="svc-stat-label">{service.highlight.label}</span>
+                        </div>
+                        <div class="svc-deliverables">
+                            <h4>Key Deliverables</h4>
+                            <ul>
+                                {service.deliverables.map(item => (
+                                    <li>{item}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    ))}
+
+    <!-- ── ENGAGEMENT PROCESS (DARK) ── -->
+    <section class="section process-section">
+        <div class="process-bg"></div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="section-header reveal">
+                <span class="process-label">How We Work</span>
+                <h2>Engagement Process</h2>
+                <p>From initial assessment to contract award, Levenhall remains engaged at every stage.</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-step reveal">
+                    <div class="step-marker">
+                        <span class="step-number">01</span>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Initial Assessment</h3>
+                        <p>Confidential discussion of your technology, market objectives, and organizational readiness. No obligation. We will tell you honestly whether Levenhall is the right partner for your entry.</p>
+                    </div>
+                </div>
+                <div class="process-step reveal">
+                    <div class="step-marker">
+                        <span class="step-number">02</span>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Strategy Development</h3>
+                        <p>Detailed market mapping, procurement vehicle analysis, regulatory pathway identification, and partnership architecture. This becomes your operational plan.</p>
+                    </div>
+                </div>
+                <div class="process-step reveal">
+                    <div class="step-marker">
+                        <span class="step-number">03</span>
+                    </div>
+                    <div class="step-content">
+                        <h3>Execution</h3>
+                        <p>Entity formation, consortium membership, executive placement, procurement vehicle selection, and active positioning with target agencies. Levenhall remains engaged through contract award.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <CTASection />
+
+</BaseLayout>
+
+<style>
+    /* ── INTRO ── */
+    .intro-section {
+        background: var(--stone);
+    }
+
+    .intro-content {
+        max-width: 720px;
+        margin: 0 auto 3rem;
+        text-align: center;
+    }
+
+    .intro-label {
+        display: inline-block;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 600;
+        font-size: 0.72rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--burgundy);
+        background: var(--burgundy-surface);
+        padding: 0.5rem 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .intro-lead {
+        font-size: 1.15rem;
+        line-height: 1.75;
+        color: var(--text-dark);
+        font-weight: 400;
+        margin-bottom: 1.2rem;
+    }
+
+    .intro-rule {
+        width: 50px;
+        height: 2px;
+        background: var(--gold);
+        margin: 0 auto 1.2rem;
+    }
+
+    .intro-sub {
+        font-size: 1.02rem;
+        line-height: 1.75;
+        color: var(--text-medium);
+    }
+
+    /* ── SERVICE NAV CARDS ── */
+    .service-nav-cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.2rem;
+    }
+
+    .service-nav-card {
+        background: #fff;
+        padding: 1.5rem 1.3rem;
+        text-decoration: none;
+        border: 1px solid var(--border-warm);
+        border-top: 3px solid var(--gold);
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .service-nav-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-card-num {
+        font-family: 'Crimson Text', serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--gold);
+        opacity: 0.3;
+        line-height: 1;
+    }
+
+    .nav-card-label {
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: var(--burgundy);
+    }
+
+    .nav-card-title {
+        font-family: 'Crimson Text', serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--deep-navy);
+        line-height: 1.25;
+    }
+
+    /* ── SERVICE SECTIONS ── */
+    .svc-stone {
+        background: var(--stone);
+    }
+
+    .svc-cream {
+        background: var(--cream);
+    }
+
+    .svc-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.45fr;
+        gap: 3.5rem;
+        align-items: start;
+    }
+
+    .svc-grid-flipped {
+        grid-template-columns: 0.45fr 1.1fr;
+    }
+
+    .svc-grid-flipped .svc-text {
+        order: 2;
+    }
+
+    .svc-grid-flipped .svc-sidebar {
+        order: 1;
+    }
+
+    .svc-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.5rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .svc-number {
+        font-family: 'Crimson Text', serif;
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: var(--gold);
+        line-height: 1;
+        opacity: 0.3;
+        flex-shrink: 0;
+    }
+
+    .svc-header-text {
+        padding-top: 0.3rem;
+    }
+
+    .svc-label {
+        display: inline-block;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 600;
+        font-size: 0.68rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--burgundy);
+        margin-bottom: 0.4rem;
+    }
+
+    .svc-section h2 {
+        font-size: clamp(1.6rem, 3vw, 2.2rem);
+        color: var(--deep-navy);
+    }
+
+    .svc-rule {
+        width: 50px;
+        height: 2px;
+        background: var(--gold);
+        margin-bottom: 1.5rem;
+    }
+
+    .svc-body p {
+        font-size: 1.02rem;
+        line-height: 1.75;
+        margin-bottom: 1rem;
+        color: var(--text-medium);
+    }
+
+    /* ── SIDEBAR ── */
+    .svc-sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        position: sticky;
+        top: 100px;
+    }
+
+    .svc-stat-card {
+        background: #fff;
+        text-align: center;
+        padding: 2rem 1.5rem;
+        border: 1px solid var(--border-warm);
+        border-top: 3px solid var(--gold);
+        box-shadow: var(--shadow-warm-md);
+        transition: all 0.3s ease;
+    }
+
+    .svc-stat-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 40px rgba(80, 50, 20, 0.12);
+    }
+
+    .svc-stat-value {
+        display: block;
+        font-family: 'Crimson Text', serif;
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--deep-navy);
+        line-height: 1;
+        margin-bottom: 0.5rem;
+    }
+
+    .svc-stat-label {
+        display: block;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--text-medium);
+        line-height: 1.4;
+    }
+
+    .svc-deliverables {
+        background: #fff;
+        padding: 1.8rem 1.5rem;
+        border: 1px solid var(--border-warm);
+        border-left: 3px solid var(--gold);
+    }
+
+    .svc-deliverables h4 {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 600;
+        font-size: 0.72rem;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: var(--deep-navy);
+        margin-bottom: 1rem;
+    }
+
+    .svc-deliverables ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .svc-deliverables li {
+        font-size: 0.92rem;
+        line-height: 1.55;
+        color: var(--text-medium);
+        padding: 0.55rem 0;
+        border-bottom: 1px solid var(--border-warm);
+        padding-left: 1rem;
+        position: relative;
+    }
+
+    .svc-deliverables li:last-child {
+        border-bottom: none;
+    }
+
+    .svc-deliverables li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 4px;
+        background: var(--gold);
+        border-radius: 50%;
+    }
+
+    /* ── PROCESS (DARK) ── */
+    .process-section {
+        background: linear-gradient(135deg, #0a1628 0%, var(--navy) 50%, #162d4f 100%);
+        overflow: hidden;
+    }
+
+    .process-bg {
+        position: absolute;
+        inset: 0;
+        background-image:
+            radial-gradient(ellipse at 50% 80%, rgba(201, 169, 97, 0.05) 0%, transparent 50%);
+        pointer-events: none;
+    }
+
+    .process-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        opacity: 0.4;
+    }
+
+    .process-label {
+        display: inline-block;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 600;
+        font-size: 0.72rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+        background: rgba(201, 169, 97, 0.08);
+        padding: 0.5rem 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .process-section .section-header h2 { color: #fff; }
+    .process-section .section-header p { color: rgba(255, 255, 255, 0.5); }
+
+    .process-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .process-step {
+        padding: 2rem;
+        position: relative;
+    }
+
+    .step-marker {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.2rem;
+    }
+
+    .step-number {
+        font-family: 'Crimson Text', serif;
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: var(--gold);
+        line-height: 1;
+        flex-shrink: 0;
+    }
+
+    .step-line {
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(90deg, var(--gold), transparent);
+        margin-left: 1rem;
+        opacity: 0.3;
+    }
+
+    .step-content h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+        color: #fff;
+    }
+
+    .step-content p {
+        font-size: 0.9rem;
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 992px) {
+        .service-nav-cards { grid-template-columns: repeat(2, 1fr); }
+        .svc-grid,
+        .svc-grid-flipped { grid-template-columns: 1fr; }
+        .svc-grid-flipped .svc-text { order: 1; }
+        .svc-grid-flipped .svc-sidebar { order: 2; }
+        .svc-sidebar {
+            position: static;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .service-nav-cards { gap: 0.8rem; }
+        .svc-header { flex-direction: column; gap: 0.5rem; }
+        .svc-number { font-size: 2.5rem; }
+        .svc-sidebar { grid-template-columns: 1fr; }
+        .svc-stat-value { font-size: 2.4rem; }
+        .process-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+        .service-nav-cards { grid-template-columns: 1fr; }
+    }
+</style>

@@ -1,0 +1,451 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import CTASection from '../components/CTASection.astro';
+import { nations } from '../data/nations';
+---
+
+<BaseLayout title="Partners | Levenhall" description="Levenhall serves firms from allied democracies seeking rapid access to US defense contracts through CSO, OTA, and production pathways.">
+
+    <PageHeader
+        label="Our Network"
+        title="Who We Serve"
+    />
+
+    <!-- ── ALLIANCE OVERVIEW (LIGHT) ── -->
+    <section class="section alliance-section">
+        <div class="container">
+            <div class="alliance-grid reveal">
+                <div class="alliance-text">
+                    <h2>The Allied Framework</h2>
+                    <div class="gold-rule"></div>
+                    <p>The United States maintains deep defense partnerships with a network of allied democracies, built on shared intelligence frameworks, interoperable security clearances, mutual defense procurement agreements, and aligned strategic priorities. For defense firms based in these nations, this framework creates a structural advantage that no amount of marketing or business development can replicate.</p>
+                    <p>Allied-nation firms can integrate into US programs in ways that other international companies cannot. AUKUS, NATO interoperability agreements, and bilateral defense trade treaties create procurement pathways specifically designed for trusted partners. Levenhall's entire model is built on this foundation.</p>
+                    <p>We serve firms from the United Kingdom, Australia, Canada, New Zealand, NATO allies, and select partner democracies whose technologies address critical US defense requirements, particularly in domains where allied capability leads American development.</p>
+                </div>
+                <div class="alliance-sidebar">
+                    <div class="alliance-highlight">
+                        <span class="highlight-label">Allied Nations</span>
+                        <div class="highlight-flags">
+                            <span>🇬🇧</span><span>🇦🇺</span><span>🇨🇦</span><span>🇳🇿</span><span>🌍</span>
+                        </div>
+                        <p>Trusted democracies with shared security frameworks and aligned strategic interests.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── NATIONS (DARK) ── -->
+    <section class="section nations-section">
+        <div class="nations-bg"></div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="section-header reveal">
+                <span class="nations-label">Partner Nations</span>
+                <h2>Where Our Clients Come From</h2>
+            </div>
+            <div class="nations-detail-grid">
+                {nations.map(nation => (
+                    <div class="nation-detail reveal">
+                        <div class="nation-flag-col">
+                            <span class="nation-flag-lg">{nation.flag}</span>
+                        </div>
+                        <div class="nation-info">
+                            <h3>{nation.name}</h3>
+                            <span class="nation-tagline">{nation.tagline}</span>
+                            <p>{nation.description}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- ── ALLIANCE FEATURES (LIGHT) ── -->
+    <section class="section features-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Why This Matters</span>
+                <h2>The Allied Advantage</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card reveal">
+                    <div class="feature-num">01</div>
+                    <h3>Shared Security Frameworks</h3>
+                    <p>Allied classification frameworks and interoperable clearances enable firms from partner nations to participate in programs that require security access, a prerequisite for the highest-value US defense contracts.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-num">02</div>
+                    <h3>Proven Network</h3>
+                    <p>Levenhall's relationships span OTA consortia, government contracting officers, agency program managers, and defense industry executives. These are not introductions. They are institutional relationships built over years.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-num">03</div>
+                    <h3>Strategic Edge</h3>
+                    <p>We provide market intelligence that goes beyond publicly available solicitations, understanding which programs are forming, which agencies are seeking allied capability, and where the procurement calendar creates opportunity windows.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-num">04</div>
+                    <h3>Regulatory Navigation</h3>
+                    <p>ITAR, EAR, FAR, DFARS: the US regulatory environment is designed to be navigated, not avoided. We structure every engagement to ensure compliance without sacrificing speed or competitive position.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── RAPID PROCUREMENT (DARK) ── -->
+    <section class="section rapid-section">
+        <div class="rapid-bg"></div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="rapid-grid reveal">
+                <div class="rapid-text">
+                    <span class="rapid-label">Rapid Procurement</span>
+                    <h2>CSO, OTA & Production Pathways</h2>
+                    <div class="rapid-gold-rule"></div>
+                    <p>The Department of Defense has built an alternative procurement ecosystem designed for speed. Commercial Solutions Openings (CSOs) and Other Transaction Authority (OTAs) bypass traditional FAR-based processes, reducing timelines from years to months and lowering the compliance burden that deters international entrants.</p>
+                    <p>OTAs are exempt from the FAR entirely, enabling negotiable terms, protected intellectual property, and direct prototype-to-production pipelines. For allied firms, these mechanisms remove the barriers that traditionally required years of US infrastructure to overcome. Your status as a non-traditional defense contractor is not a limitation — under OTA rules, it is a qualifying advantage.</p>
+                    <p>Levenhall identifies which consortia to join, which agencies are active in CSO and OTA solicitations, structures teaming arrangements with US-based partners, and positions your technology for prototype awards that lead directly to production contracts.</p>
+                    <a href="/services#rapid-procurement" class="btn btn-outline-white" style="margin-top: 1.5rem;">Explore Rapid Procurement</a>
+                </div>
+                <div class="rapid-stat">
+                    <span class="rapid-stat-value">60&ndash;120</span>
+                    <span class="rapid-stat-unit">Days</span>
+                    <span class="rapid-stat-text">Solicitation to award</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <CTASection />
+
+</BaseLayout>
+
+<style>
+    .gold-rule {
+        width: 50px;
+        height: 2px;
+        background: var(--gold);
+        margin-bottom: 1.5rem;
+    }
+
+    /* ── ALLIANCE ── */
+    .alliance-grid {
+        display: grid;
+        grid-template-columns: 1fr 0.4fr;
+        gap: 3.5rem;
+        align-items: start;
+    }
+
+    .alliance-text h2 { margin-bottom: 1rem; }
+
+    .alliance-text p {
+        font-size: 1.02rem;
+        line-height: 1.75;
+        margin-bottom: 1rem;
+    }
+
+    .alliance-section {
+        background: var(--stone);
+    }
+
+    .alliance-highlight {
+        padding: 2rem;
+        background: var(--navy);
+        text-align: center;
+        position: relative;
+    }
+
+    .alliance-highlight::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(--gold);
+    }
+
+    .highlight-label {
+        display: block;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 600;
+        font-size: 0.68rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 1.2rem;
+    }
+
+    .highlight-flags {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .alliance-highlight p {
+        font-size: 0.88rem;
+        color: rgba(255, 255, 255, 0.5);
+        line-height: 1.6;
+    }
+
+    /* ── NATIONS (DARK) ── */
+    .nations-section {
+        background: linear-gradient(180deg, var(--deep-navy) 0%, #162d4a 100%);
+        overflow: hidden;
+    }
+
+    .nations-bg {
+        position: absolute;
+        inset: 0;
+        background-image:
+            radial-gradient(ellipse at 30% 30%, rgba(201, 169, 97, 0.05) 0%, transparent 50%),
+            radial-gradient(ellipse at 70% 70%, rgba(30, 58, 95, 0.15) 0%, transparent 50%);
+        pointer-events: none;
+    }
+
+    .nations-label {
+        display: inline-block;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 600;
+        font-size: 0.72rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+        background: rgba(201, 169, 97, 0.08);
+        padding: 0.5rem 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .nations-section .section-header h2 { color: #fff; }
+    .nations-section .section-header p { color: rgba(255, 255, 255, 0.5); }
+
+    .nations-detail-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+    }
+
+    .nation-detail {
+        display: flex;
+        gap: 1.2rem;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-left: 3px solid rgba(201, 169, 97, 0.3);
+        transition: all 0.3s ease;
+    }
+
+    .nation-detail:hover {
+        background: rgba(255, 255, 255, 0.07);
+        border-left-color: var(--gold);
+        transform: translateX(4px);
+    }
+
+    .nation-flag-col {
+        display: flex;
+        align-items: flex-start;
+        padding-top: 0.2rem;
+    }
+
+    .nation-flag-lg {
+        font-size: 2.2rem;
+        flex-shrink: 0;
+        line-height: 1;
+    }
+
+    .nation-info h3 {
+        font-size: 1.1rem;
+        color: #fff;
+        margin-bottom: 0.15rem;
+    }
+
+    .nation-tagline {
+        display: block;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 0.6rem;
+    }
+
+    .nation-info p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* ── FEATURES (LIGHT) ── */
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .features-section {
+        background: var(--cream);
+    }
+
+    .feature-card {
+        padding: 2rem;
+        background: #fff;
+        border: 1px solid var(--border-subtle);
+        border-top: 3px solid var(--navy);
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .feature-card:hover {
+        box-shadow: var(--shadow-md);
+        transform: translateY(-3px);
+        border-top-color: var(--gold);
+    }
+
+    .feature-num {
+        font-family: 'Crimson Text', serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--gold);
+        opacity: 0.35;
+        margin-bottom: 0.8rem;
+    }
+
+    .feature-card h3 {
+        font-size: 1.15rem;
+        color: var(--navy);
+        margin-bottom: 0.8rem;
+    }
+
+    .feature-card p {
+        font-size: 0.9rem;
+        line-height: 1.65;
+        color: var(--text-medium);
+    }
+
+    /* ── RAPID PROCUREMENT (DARK) ── */
+    .rapid-section {
+        background: linear-gradient(135deg, #0a1628 0%, var(--navy) 50%, #162d4f 100%);
+        overflow: hidden;
+    }
+
+    .rapid-bg {
+        position: absolute;
+        inset: 0;
+        background-image:
+            radial-gradient(ellipse at 80% 50%, rgba(201, 169, 97, 0.06) 0%, transparent 50%);
+        pointer-events: none;
+    }
+
+    .rapid-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        opacity: 0.4;
+    }
+
+    .rapid-label {
+        display: inline-block;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 600;
+        font-size: 0.72rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+        background: rgba(201, 169, 97, 0.08);
+        padding: 0.5rem 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .rapid-grid {
+        display: grid;
+        grid-template-columns: 1fr 0.35fr;
+        gap: 3.5rem;
+        align-items: center;
+    }
+
+    .rapid-text h2 {
+        color: #fff;
+        margin-bottom: 1rem;
+    }
+
+    .rapid-gold-rule {
+        width: 50px;
+        height: 2px;
+        background: var(--gold);
+        opacity: 0.5;
+        margin-bottom: 1.5rem;
+    }
+
+    .rapid-text p {
+        font-size: 1.02rem;
+        line-height: 1.75;
+        margin-bottom: 1rem;
+        color: rgba(255, 255, 255, 0.55);
+    }
+
+    .rapid-stat {
+        text-align: center;
+        padding: 2.5rem 2rem;
+        border: 1px solid rgba(201, 169, 97, 0.2);
+        background: rgba(201, 169, 97, 0.04);
+        position: relative;
+    }
+
+    .rapid-stat::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(--gold);
+    }
+
+    .rapid-stat-value {
+        display: block;
+        font-family: 'Crimson Text', serif;
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: var(--gold);
+        line-height: 1;
+        margin-bottom: 0.2rem;
+    }
+
+    .rapid-stat-unit {
+        display: block;
+        font-family: 'Crimson Text', serif;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--gold);
+        opacity: 0.7;
+        margin-bottom: 0.6rem;
+    }
+
+    .rapid-stat-text {
+        display: block;
+        font-size: 0.82rem;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.45);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 992px) {
+        .alliance-grid { grid-template-columns: 1fr; }
+        .alliance-highlight { max-width: 300px; }
+        .rapid-grid { grid-template-columns: 1fr; }
+        .rapid-stat { max-width: 250px; }
+    }
+
+    @media (max-width: 768px) {
+        .nations-detail-grid { grid-template-columns: 1fr; }
+        .features-grid { grid-template-columns: 1fr; }
+    }
+</style>

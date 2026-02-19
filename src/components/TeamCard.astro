@@ -1,0 +1,179 @@
+---
+interface Props {
+    name: string;
+    title: string;
+    photo: string;
+    linkedin: string;
+    summary?: string;
+    isModalTrigger?: boolean;
+    showSummary?: boolean;
+}
+
+const { name, title, photo, linkedin, summary, isModalTrigger = false, showSummary = false } = Astro.props;
+const Tag = isModalTrigger ? 'div' : 'a';
+---
+
+<Tag
+    class="team-card reveal"
+    {...(isModalTrigger ? { id: 'adam-card', onclick: 'openAdamBio()' } : { href: linkedin, target: '_blank', rel: 'noopener noreferrer' })}
+>
+    <div class="team-photo-wrapper">
+        <img src={photo} alt={name} class="team-photo" loading="lazy">
+        <div class="team-overlay">
+            {isModalTrigger ? (
+                <span class="overlay-label">View Bio</span>
+            ) : (
+                <span class="overlay-icon">in</span>
+            )}
+        </div>
+    </div>
+    <div class="team-info">
+        <h3>{name}</h3>
+        <p class="team-title-text">{title}</p>
+        {showSummary && summary && <p class="team-summary">{summary}</p>}
+    </div>
+    <div class="team-card-accent"></div>
+</Tag>
+
+<style>
+    .team-card {
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        background: #fff;
+        padding: 2rem 1.5rem 0;
+        border: 1px solid var(--border-subtle);
+        position: relative;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        overflow: hidden;
+    }
+
+    .team-card-accent {
+        height: 3px;
+        background: var(--navy);
+        margin-top: 1.5rem;
+        transition: background 0.4s ease;
+    }
+
+    .team-card:hover .team-card-accent {
+        background: var(--gold);
+    }
+
+    .team-card:hover {
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-6px);
+    }
+
+    .team-photo-wrapper {
+        position: relative;
+        margin: 0 auto 1.4rem;
+        overflow: hidden;
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        border: 3px solid var(--navy);
+        transition: all 0.4s ease;
+    }
+
+    .team-card:hover .team-photo-wrapper {
+        border-color: var(--gold);
+    }
+
+    .team-photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: all 0.4s ease;
+    }
+
+    .team-card:hover .team-photo {
+        transform: scale(1.08);
+    }
+
+    .team-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(15, 31, 58, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        border-radius: 50%;
+    }
+
+    .team-card:hover .team-overlay {
+        opacity: 1;
+    }
+
+    .overlay-icon {
+        width: 50px;
+        height: 50px;
+        background: #fff;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        color: #0077b5;
+        font-size: 1.8rem;
+        font-family: 'Crimson Text', serif;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+
+    .overlay-label {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: #fff;
+        padding: 0.5rem 1.2rem;
+        border: 1.5px solid rgba(255,255,255,0.6);
+    }
+
+    .team-info {
+        padding-bottom: 0.5rem;
+    }
+
+    .team-info h3 {
+        font-size: 1.3rem;
+        color: var(--navy);
+        margin-bottom: 0.4rem;
+        font-weight: 700;
+        letter-spacing: -0.3px;
+        transition: color 0.3s ease;
+    }
+
+    .team-card:hover .team-info h3 {
+        color: var(--burgundy);
+    }
+
+    .team-title-text {
+        font-size: 0.85rem;
+        color: var(--text-medium);
+        font-weight: 400;
+        letter-spacing: 0.3px;
+        line-height: 1.5;
+    }
+
+    .team-summary {
+        font-size: 0.88rem;
+        color: var(--text-medium);
+        line-height: 1.65;
+        margin-top: 1rem;
+        text-align: left;
+    }
+
+    @media (max-width: 768px) {
+        .team-photo-wrapper {
+            width: 130px;
+            height: 130px;
+        }
+    }
+</style>
