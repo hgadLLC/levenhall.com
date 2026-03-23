@@ -37,7 +37,8 @@ export const team: TeamMember[] = [
         linkedin: 'https://www.linkedin.com/in/hassangad/',
         email: 'hgad@levenhall.com',
         phone: '',
-        summary: 'Specializes in organizational restructuring and operational design for firms navigating US market entry. Ensures client operations are structured for sustained performance within the federal contracting environment.',
+        summary: 'Business transformation strategist operating at the intersection of artificial intelligence, defense contracting, and emerging market entry. Leads Levenhall\'s AI adoption strategy, federal business development, and market intelligence initiatives.',
+        isModalTrigger: true,
     },
     {
         name: 'Jackie Gibson',

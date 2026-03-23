@@ -1,0 +1,74 @@
+---
+---
+
+<div class="bio-modal-overlay" id="hassanBioModal" onclick="closeHassanBio(event)">
+    <div class="bio-modal" onclick="event.stopPropagation()">
+        <button class="bio-modal-close" onclick="closeHassanBio()" aria-label="Close">&times;</button>
+
+        <div class="bio-modal-header">
+            <img src="/images/team/hassan-gad.jpg" alt="Hassan Gad" class="bio-modal-photo">
+            <div class="bio-modal-header-text">
+                <h2>Hassan Gad</h2>
+                <div class="bio-modal-role">Director of Business Transformation</div>
+                <div class="bio-modal-tagline">AI Infrastructure &middot; Government Contracting &middot; Venture Capital</div>
+            </div>
+        </div>
+
+        <div class="bio-modal-body">
+            <div class="bio-section-label">Background</div>
+            <p class="bio-text">
+                Hassan Gad is a business transformation strategist operating at the intersection of artificial intelligence, defense contracting, and emerging market entry. Based in Washington, DC, he leads Levenhall's AI adoption strategy, federal business development, and market intelligence initiatives, helping non-traditional and international entrants navigate the US government market with precision.
+            </p>
+            <p class="bio-text">
+                His work spans the design and deployment of private AI infrastructure for government and enterprise clients, competitive intelligence for federal procurement, and cross-border venture strategy across the US and MENA region. As founder and CEO of VenBase LLC and a Microsoft Certified Azure AI Engineer, Hassan brings both the operator's instinct and the technical fluency required to translate complex government opportunities into executable strategies.
+            </p>
+
+            <div class="bio-section-label">Advisory Domains</div>
+            <div class="bio-domains-grid">
+                <div class="bio-domain-item"><span>AI Strategy &amp; Enterprise Transformation</span></div>
+                <div class="bio-domain-item"><span>Federal Market Entry &amp; BD</span></div>
+                <div class="bio-domain-item"><span>Private AI Infrastructure &amp; Deployment</span></div>
+                <div class="bio-domain-item"><span>Competitive Intelligence &amp; Market Analysis</span></div>
+                <div class="bio-domain-item"><span>US-MENA Cross-Border Strategy</span></div>
+                <div class="bio-domain-item"><span>Venture Capital &amp; Emerging Tech</span></div>
+            </div>
+        </div>
+
+        <div class="bio-contact-bar">
+            <div class="bio-contact-links">
+                <a href="mailto:hgad@levenhall.com" class="bio-contact-link">
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    hgad@levenhall.com
+                </a>
+                <a href="https://www.linkedin.com/in/hassangad/" target="_blank" rel="noopener noreferrer" class="bio-contact-link">
+                    <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                    LinkedIn
+                </a>
+            </div>
+            <a href="mailto:hgad@levenhall.com?subject=Advisory%20Engagement%20Inquiry" class="btn btn-gold">Contact Hassan</a>
+        </div>
+
+        <div class="bio-selective-note">
+            Engagements are selective and subject to conflict and compliance review.
+        </div>
+    </div>
+</div>
+
+<script is:inline>
+    function openHassanBio() {
+        document.getElementById('hassanBioModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeHassanBio(e) {
+        if (e && e.target !== e.currentTarget) return;
+        document.getElementById('hassanBioModal').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeHassanBio();
+        }
+    });
+</script>
