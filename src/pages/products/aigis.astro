@@ -1,0 +1,356 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="AIGIS | Levenhall" description="AIGIS by Levenhall delivers AI-powered intelligence and threat assessment for defense and national security decision-makers.">
+
+    <!-- ── HERO ── -->
+    <section class="aigis-hero">
+        <div class="hero-bg"></div>
+        <div class="hero-grid-overlay"></div>
+        <div class="hero-inner">
+            <div class="aigis-badge">Levenhall Products</div>
+            <div class="aigis-wordmark">AIGIS</div>
+            <p class="aigis-sub">AI-Powered Intelligence &amp; Threat Assessment</p>
+            <div class="hero-rule"></div>
+            <p class="hero-description">AIGIS delivers machine-speed intelligence analysis for defense and national security decision-makers. Purpose-built to process, synthesize, and surface actionable intelligence across classified and open-source data streams.</p>
+        </div>
+    </section>
+
+    <!-- ── CAPABILITIES ── -->
+    <section class="section capabilities-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Capabilities</span>
+                <h2>Intelligence at Machine Speed</h2>
+                <p>AIGIS augments human analysts with AI that understands the language of defense, geopolitics, and emerging threats.</p>
+            </div>
+            <div class="caps-grid">
+                <div class="cap-card reveal">
+                    <div class="cap-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07"/></svg>
+                    </div>
+                    <h3>Threat Intelligence</h3>
+                    <p>Continuous monitoring and synthesis of global threat indicators across cyber, kinetic, and grey zone domains. Automated correlation of multi-source intelligence.</p>
+                </div>
+                <div class="cap-card reveal">
+                    <div class="cap-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>
+                    </div>
+                    <h3>Geopolitical Analysis</h3>
+                    <p>Real-time geopolitical risk scoring and scenario modeling. Tracks state and non-state actor behavior patterns across the Indo-Pacific, Middle East, and Euro-Atlantic.</p>
+                </div>
+                <div class="cap-card reveal">
+                    <div class="cap-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3>Decision Support</h3>
+                    <p>AI-generated briefings, net assessments, and strategic recommendations calibrated for executive and operational decision-making in high-consequence environments.</p>
+                </div>
+                <div class="cap-card reveal">
+                    <div class="cap-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Secure by Design</h3>
+                    <p>Built for deployment in classified and sensitive environments. Zero-trust architecture with air-gapped deployment options for IC and DoD customers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── COMING SOON CTA ── -->
+    <section class="coming-soon-section">
+        <div class="cs-bg"></div>
+        <div class="cs-inner">
+            <div class="cs-accent"></div>
+            <div class="cs-badge">Coming Soon</div>
+            <h2>AIGIS is in active development.</h2>
+            <p>We are building AIGIS in partnership with defense and intelligence community stakeholders. If your organization operates in national security and is interested in early access or partnership, we'd like to hear from you.</p>
+            <a href="/contact" class="btn btn-gold">Get in Touch</a>
+        </div>
+    </section>
+
+</BaseLayout>
+
+<style>
+    /* ── HERO ── */
+    .aigis-hero {
+        background: linear-gradient(160deg, #04070e 0%, #080e1c 25%, #0f1f3a 60%, #0c1628 100%);
+        padding: 10rem 2rem 6rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-bg {
+        position: absolute;
+        inset: 0;
+        background-image:
+            radial-gradient(ellipse at 50% 50%, rgba(56, 217, 201, 0.04) 0%, transparent 50%),
+            radial-gradient(ellipse at 20% 80%, rgba(30, 58, 95, 0.15) 0%, transparent 50%),
+            radial-gradient(ellipse at 80% 20%, rgba(139, 21, 56, 0.06) 0%, transparent 50%);
+        pointer-events: none;
+    }
+
+    .hero-grid-overlay {
+        position: absolute;
+        inset: 0;
+        background-image:
+            linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+        background-size: 60px 60px;
+        pointer-events: none;
+        mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+        -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+    }
+
+    .aigis-hero::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, transparent 0%, rgba(56, 217, 201, 0.5) 50%, transparent 100%);
+        opacity: 0.5;
+    }
+
+    .hero-inner {
+        max-width: 720px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .aigis-badge {
+        display: inline-block;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 600;
+        font-size: 0.68rem;
+        letter-spacing: 3.5px;
+        text-transform: uppercase;
+        color: var(--gold);
+        background: rgba(201, 169, 97, 0.08);
+        border: 1px solid rgba(201, 169, 97, 0.15);
+        padding: 0.5rem 1.4rem;
+        margin-bottom: 2rem;
+    }
+
+    .aigis-wordmark {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: clamp(4rem, 10vw, 7rem);
+        font-weight: 700;
+        letter-spacing: 16px;
+        color: #fff;
+        line-height: 1;
+        margin-bottom: 0.8rem;
+        text-indent: 16px;
+        background: linear-gradient(180deg, #fff 40%, rgba(56, 217, 201, 0.4) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .aigis-sub {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 0.82rem;
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: rgba(56, 217, 201, 0.7);
+        margin-bottom: 2rem;
+    }
+
+    .hero-rule {
+        width: 60px;
+        height: 2px;
+        background: linear-gradient(90deg, var(--gold), rgba(56, 217, 201, 0.5));
+        margin: 0 auto 2rem;
+    }
+
+    .hero-description {
+        font-size: 1.12rem;
+        color: rgba(255, 255, 255, 0.5);
+        line-height: 1.85;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* ── CAPABILITIES ── */
+    .capabilities-section {
+        background: var(--cream);
+        padding: 6rem 0;
+    }
+
+    .section-header {
+        text-align: center;
+        max-width: 650px;
+        margin: 0 auto 3.5rem;
+    }
+
+    .section-label {
+        display: inline-block;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 600;
+        font-size: 0.68rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--burgundy);
+        background: var(--burgundy-surface);
+        padding: 0.5rem 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .section-header h2 {
+        color: var(--deep-navy);
+        margin-bottom: 1rem;
+    }
+
+    .section-header p {
+        color: var(--text-medium);
+        font-size: 1.05rem;
+        line-height: 1.75;
+    }
+
+    .caps-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        max-width: 950px;
+        margin: 0 auto;
+    }
+
+    .cap-card {
+        background: #fff;
+        padding: 2.2rem 2rem;
+        border: 1px solid rgba(30, 58, 95, 0.06);
+        position: relative;
+        transition: all 0.4s ease;
+    }
+
+    .cap-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--deep-navy), rgba(56, 217, 201, 0.4));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
+    }
+
+    .cap-card:hover::before {
+        transform: scaleX(1);
+    }
+
+    .cap-card:hover {
+        box-shadow: 0 20px 50px rgba(30, 58, 95, 0.1);
+        transform: translateY(-4px);
+    }
+
+    .cap-icon-wrap {
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.2rem;
+        color: var(--navy);
+        opacity: 0.5;
+    }
+
+    .cap-icon-wrap svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .cap-card h3 {
+        font-size: 1.15rem;
+        color: var(--deep-navy);
+        margin-bottom: 0.7rem;
+    }
+
+    .cap-card p {
+        font-size: 0.92rem;
+        color: var(--text-medium);
+        line-height: 1.7;
+    }
+
+    /* ── COMING SOON ── */
+    .coming-soon-section {
+        background: linear-gradient(135deg, #060b16 0%, var(--deep-navy) 50%, #162d4f 100%);
+        padding: 5rem 2rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .cs-bg {
+        position: absolute;
+        inset: 0;
+        background-image:
+            radial-gradient(ellipse at 50% 50%, rgba(56, 217, 201, 0.04) 0%, transparent 50%),
+            radial-gradient(ellipse at 80% 20%, rgba(201, 169, 97, 0.04) 0%, transparent 40%);
+        pointer-events: none;
+    }
+
+    .coming-soon-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        opacity: 0.3;
+    }
+
+    .cs-inner {
+        max-width: 620px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .cs-accent {
+        width: 40px;
+        height: 2px;
+        background: var(--gold);
+        margin: 0 auto 2rem;
+    }
+
+    .cs-badge {
+        display: inline-block;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 600;
+        font-size: 0.72rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: rgba(56, 217, 201, 0.8);
+        background: rgba(56, 217, 201, 0.08);
+        border: 1px solid rgba(56, 217, 201, 0.15);
+        padding: 0.5rem 1.4rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .coming-soon-section h2 {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        color: #fff;
+        margin-bottom: 1.2rem;
+    }
+
+    .coming-soon-section p {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 1.05rem;
+        line-height: 1.75;
+        margin-bottom: 2.2rem;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+        .aigis-hero { padding: 8rem 2rem 4rem; }
+        .caps-grid { grid-template-columns: 1fr; max-width: 500px; }
+    }
+</style>

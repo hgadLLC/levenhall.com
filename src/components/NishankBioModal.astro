@@ -1,0 +1,78 @@
+---
+---
+
+<div class="bio-modal-overlay" id="nishankBioModal" onclick="closeNishankBio(event)">
+    <div class="bio-modal" onclick="event.stopPropagation()">
+        <button class="bio-modal-close" onclick="closeNishankBio()">&times;</button>
+
+        <div class="bio-modal-header">
+            <img src="/images/team/nishank-motwani.jpg" alt="Nishank Motwani" class="bio-modal-photo">
+            <div class="bio-modal-header-text">
+                <h2>Dr Nishank Motwani</h2>
+                <div class="bio-modal-role">Vice President of Technology, Industry, and Strategy</div>
+                <div class="bio-modal-tagline">Global Security &middot; Emerging Technology &middot; Geopolitical Risk</div>
+            </div>
+        </div>
+
+        <div class="bio-modal-body">
+            <div class="bio-section-label">Background</div>
+            <p class="bio-text">
+                Dr Nishank Motwani is a strategic advisor operating at the intersection of global security, emerging technology, and geopolitical risk. His career spans the &ldquo;Quad&rdquo; nations and includes significant experience in Afghanistan and the Middle East, providing executive leadership with the analytical rigor required to navigate polycrisis environments.
+            </p>
+            <p class="bio-text">
+                Nishank specializes in translating complex geostrategic shifts into actionable intelligence, bridging the gap between national security policy, commercial markets, and contested spaces. Whether advising on AUKUS-related defense integration, countering adversarial grey zone activities, or analyzing the socio-political impact of disruptive technologies, he delivers high-stakes insights that protect interests and identify growth opportunities across the Indo-Pacific, the Middle East, and the U.S.
+            </p>
+
+            <div class="bio-section-label">Advisory Domains</div>
+            <div class="bio-domains-grid">
+                <div class="bio-domain-item"><span>Geostrategy &amp; National Security</span></div>
+                <div class="bio-domain-item"><span>Applied Defense Frameworks (AUKUS/Quad/NATO)</span></div>
+                <div class="bio-domain-item"><span>Critical Tech Policy &amp; Strategic Foresight</span></div>
+                <div class="bio-domain-item"><span>Net Assessments &amp; Competitive Intelligence</span></div>
+                <div class="bio-domain-item"><span>Global Defense Market Access &amp; Positioning</span></div>
+                <div class="bio-domain-item"><span>Grey Zone Analytics &amp; Hybrid Threat Strategy</span></div>
+            </div>
+        </div>
+
+        <div class="bio-contact-bar">
+            <div class="bio-contact-links">
+                <a href="mailto:nmotwani@levenhall.com" class="bio-contact-link">
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    nmotwani@levenhall.com
+                </a>
+                <a href="tel:+12022400425" class="bio-contact-link">
+                    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    +1 (202) 240-0425
+                </a>
+                <a href="https://www.linkedin.com/in/nishankmotwani/" target="_blank" rel="noopener noreferrer" class="bio-contact-link">
+                    <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                    LinkedIn
+                </a>
+            </div>
+            <a href="mailto:nmotwani@levenhall.com?subject=Advisory%20Engagement%20Inquiry" class="btn btn-gold">Contact Nishank</a>
+        </div>
+
+        <div class="bio-selective-note">
+            Engagements are selective and subject to conflict and compliance review.
+        </div>
+    </div>
+</div>
+
+<script is:inline>
+    function openNishankBio() {
+        document.getElementById('nishankBioModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeNishankBio(e) {
+        if (e && e.target !== e.currentTarget) return;
+        document.getElementById('nishankBioModal').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeNishankBio();
+        }
+    });
+</script>

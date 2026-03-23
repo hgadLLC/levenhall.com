@@ -26,8 +26,9 @@ export const team: TeamMember[] = [
         photo: '/images/team/nishank-motwani.jpg',
         linkedin: 'https://www.linkedin.com/in/nishankmotwani/',
         email: 'nmotwani@levenhall.com',
-        phone: '',
-        summary: 'Brings deep expertise in defense technology assessment, industrial strategy, and cross-border technology transfer. Bridges the gap between allied innovation and US procurement requirements.',
+        phone: '+1 (202) 240-0425',
+        summary: 'Strategic advisor operating at the intersection of global security, emerging technology, and geopolitical risk. Career spans the Quad nations with significant experience in Afghanistan and the Middle East.',
+        isModalTrigger: true,
     },
     {
         name: 'Hassan Gad',

@@ -11,11 +11,14 @@ interface Props {
 
 const { name, title, photo, linkedin, summary, isModalTrigger = false, showSummary = false } = Astro.props;
 const Tag = isModalTrigger ? 'div' : 'a';
+
+// Generate a modal ID from the name (e.g. "Adam J.P. Leslie" → "adam", "Nishank Motwani, PhD" → "nishank")
+const modalId = name.split(/[\s.]/)[0].toLowerCase();
 ---
 
 <Tag
     class="team-card reveal"
-    {...(isModalTrigger ? { id: 'adam-card', onclick: 'openAdamBio()' } : { href: linkedin, target: '_blank', rel: 'noopener noreferrer' })}
+    {...(isModalTrigger ? { id: `${modalId}-card`, onclick: `open${modalId.charAt(0).toUpperCase() + modalId.slice(1)}Bio()` } : { href: linkedin, target: '_blank', rel: 'noopener noreferrer' })}
 >
     <div class="team-photo-wrapper">
         <img src={photo} alt={name} class="team-photo" loading="lazy">
