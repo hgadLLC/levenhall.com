@@ -26,7 +26,7 @@ export const team: TeamMember[] = [
         photo: '/images/team/nishank-motwani.jpg',
         linkedin: 'https://www.linkedin.com/in/nishankmotwani/',
         email: 'nmotwani@levenhall.com',
-        phone: '+1 (202) 240-0425',
+        phone: '',
         summary: 'Strategic advisor operating at the intersection of global security, emerging technology, and geopolitical risk. Career spans the Quad nations with significant experience in Afghanistan and the Middle East.',
         isModalTrigger: true,
     },
@@ -39,14 +39,5 @@ export const team: TeamMember[] = [
         phone: '',
         summary: 'Business transformation strategist operating at the intersection of artificial intelligence, defense contracting, and emerging market entry. Leads Levenhall\'s AI adoption strategy, federal business development, and market intelligence initiatives.',
         isModalTrigger: true,
-    },
-    {
-        name: 'Jackie Gibson',
-        title: 'Director of Partnerships and Procurement Facilitation',
-        photo: '/images/team/jackie-gibson.jpg',
-        linkedin: 'https://www.linkedin.com/in/jacqueline-gibson-304a49229/',
-        email: 'jgibson@levenhall.com',
-        phone: '',
-        summary: 'Manages consortium relationships and partnership structures central to Levenhall\'s procurement facilitation model. Deep understanding of OTA consortia, teaming arrangements, and their application to allied market entry.',
     },
 ];
