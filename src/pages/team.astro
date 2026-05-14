@@ -84,9 +84,9 @@ import { team } from '../data/team';
 
     .team-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
-        max-width: 900px;
+        max-width: 1200px;
         margin: 0 auto;
     }
 
@@ -97,6 +97,10 @@ import { team } from '../data/team';
         color: var(--text-medium);
         opacity: 0.5;
         margin-top: 3rem;
+    }
+
+    @media (max-width: 1024px) {
+        .team-grid { grid-template-columns: repeat(2, 1fr); max-width: 900px; }
     }
 
     @media (max-width: 768px) {
