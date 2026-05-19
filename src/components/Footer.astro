@@ -39,6 +39,11 @@ const year = new Date().getFullYear();
         </div>
         <div class="footer-bottom">
             <p>&copy; {year} Levenhall LLC. All rights reserved. Serving allied democracies.</p>
+            <p class="footer-credentials">
+                <span><span class="cred-label">UEI</span> Z4N8GQNVG826</span>
+                <span class="cred-sep">·</span>
+                <span><span class="cred-label">CAGE</span> 20CN1</span>
+            </p>
         </div>
     </div>
 </footer>
@@ -117,6 +122,26 @@ const year = new Date().getFullYear();
     .footer-bottom p {
         font-size: 0.78rem;
         color: rgba(255, 255, 255, 0.25);
+        margin: 0;
+    }
+
+    .footer-credentials {
+        margin-top: 0.5rem !important;
+        font-family: 'Source Sans Pro', sans-serif;
+        letter-spacing: 0.5px;
+        color: rgba(255, 255, 255, 0.4) !important;
+    }
+
+    .footer-credentials .cred-label {
+        color: var(--gold);
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        margin-right: 0.3rem;
+    }
+
+    .footer-credentials .cred-sep {
+        margin: 0 0.6rem;
+        opacity: 0.5;
     }
 
     @media (max-width: 768px) {
