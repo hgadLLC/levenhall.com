@@ -10,20 +10,20 @@ import { services } from '../data/services';
 import { nations } from '../data/nations';
 ---
 
-<BaseLayout title="Levenhall | Strategic Defense Market Access">
+<BaseLayout title="Levenhall | Market Intelligence Consulting" description="Levenhall is a market intelligence consulting firm serving defense, government, and dual-use markets. Intelligence, market entry, ventures, and proprietary products.">
 
     <!-- ── HERO ── -->
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="hero-inner">
             <div class="hero-text">
-                <span class="hero-badge">Allied Defense Market Access</span>
-                <h1>Strategic Access to<br/><span class="gold-text">US Government</span> Contracting</h1>
+                <span class="hero-badge">Market Intelligence Consulting</span>
+                <h1>Intelligence for the<br/><span class="gold-text">Markets That</span> Matter Most</h1>
                 <div class="hero-rule"></div>
-                <p class="hero-subtitle">The US defense market is the largest and most complex procurement environment in the world. For international firms from trusted allied democracies, gaining meaningful access requires more than capability. It requires architecture. That is what we build.</p>
+                <p class="hero-subtitle">Levenhall is a market intelligence consulting firm. We help allied companies, investors, and government partners navigate the markets where information asymmetry decides outcomes &mdash; defense procurement, regulated dual-use technology, and the geopolitical environment shaping both. US federal market entry is one avenue of that work. Our products, ventures, and advisory practice are the others.</p>
                 <div class="btn-group">
                     <a href="https://calendly.com/hgad-levenhall/30min" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Schedule Consultation</a>
-                    <a href="/services" class="btn btn-outline-white">Explore Pathways</a>
+                    <a href="/services" class="btn btn-outline-white">Explore Our Practice</a>
                 </div>
             </div>
             <div class="hero-visual">
@@ -58,10 +58,10 @@ import { nations } from '../data/nations';
             <div class="about-preview-grid">
                 <div class="about-preview-text reveal">
                     <span class="about-label">Who We Serve</span>
-                    <h2>Allied Innovation.<br/>Rapid Procurement.</h2>
+                    <h2>Intelligence-Led.<br/>Allied-Aligned.</h2>
                     <div class="about-rule"></div>
-                    <p>Levenhall serves defense and security firms from allied democracies seeking access to the US market. We connect international capability with the agencies and programs that need it most, through procurement pathways designed for speed.</p>
-                    <p>CSOs, OTAs, and follow-on production agreements have created an alternative procurement ecosystem. We architect your entry through these mechanisms, reducing timelines from years to months.</p>
+                    <p>Levenhall serves allied defense, government technology, and dual-use firms, along with the investors and program offices that work alongside them. Our intelligence practice is the foundation; our market entry, ventures, and product work all run on top of it.</p>
+                    <p>For firms targeting the US federal market, CSOs, OTAs, and follow-on production agreements have created a faster procurement ecosystem. We architect that entry, reducing timelines from years to months &mdash; intelligence first, execution second.</p>
                     <a href="/partners" class="btn btn-secondary" style="margin-top: 1.5rem;">Our Partners</a>
                 </div>
                 <div class="nations-grid reveal">
@@ -83,9 +83,9 @@ import { nations } from '../data/nations';
     <section class="section services-preview">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-label">Our Services</span>
-                <h2>Market Entry Pathways</h2>
-                <p>Four pathways, each structured around how defense procurement actually works.</p>
+                <span class="section-label">Our Practice</span>
+                <h2>What We Do</h2>
+                <p>Market intelligence is the core. Everything else &mdash; federal market entry, executive placement, rapid procurement, tax structuring &mdash; runs on top of it.</p>
             </div>
             <div class="services-grid">
                 {services.map((service, i) => (
@@ -100,6 +100,26 @@ import { nations } from '../data/nations';
                     </a>
                 ))}
             </div>
+            <div class="other-avenues reveal">
+                <div class="avenue-card">
+                    <span class="avenue-tag">Platform</span>
+                    <h4>BRIDGER</h4>
+                    <p>The allied defense dealmaking platform. Curated introductions between vetted international firms and US buyers, primes, and program offices.</p>
+                    <a href="/products/bridger" class="avenue-link">Explore Bridger &rarr;</a>
+                </div>
+                <div class="avenue-card">
+                    <span class="avenue-tag">Product</span>
+                    <h4>AIGIS</h4>
+                    <p>AI-powered intelligence and threat assessment built for defense and national security decision-makers. Currently in active development.</p>
+                    <a href="/products/aigis" class="avenue-link">Explore AIGIS &rarr;</a>
+                </div>
+                <div class="avenue-card">
+                    <span class="avenue-tag">Ventures</span>
+                    <h4>Levenhall Ventures</h4>
+                    <p>Our investment arm. Services-for-equity partnerships with five allied defense and government technology companies per year.</p>
+                    <a href="/ventures" class="avenue-link">Explore Ventures &rarr;</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -110,7 +130,7 @@ import { nations } from '../data/nations';
             <div class="section-header reveal">
                 <span class="team-label">Our Leadership</span>
                 <h2>Meet the Team</h2>
-                <p>Former intelligence, military, and government professionals who understand the system from inside.</p>
+                <p>Former intelligence, military, diplomatic, and government professionals who understand the markets we cover from inside.</p>
             </div>
             <div class="team-grid">
                 {team.map(member => (
@@ -356,8 +376,75 @@ import { nations } from '../data/nations';
 
     .services-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;
+    }
+
+    /* ── OTHER AVENUES (BRIDGER / AIGIS / VENTURES) ── */
+    .other-avenues {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-top: 2.5rem;
+        padding-top: 2.5rem;
+        border-top: 1px solid rgba(30, 58, 95, 0.08);
+    }
+
+    .avenue-card {
+        background: var(--warm-white, #fff);
+        padding: 1.8rem 1.6rem;
+        border: 1px solid rgba(30, 58, 95, 0.06);
+        border-left: 3px solid rgba(201, 169, 97, 0.4);
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        transition: all 0.3s ease;
+    }
+
+    .avenue-card:hover {
+        border-left-color: var(--gold);
+        box-shadow: 0 12px 35px rgba(30, 58, 95, 0.08);
+        transform: translateY(-3px);
+    }
+
+    .avenue-tag {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: var(--burgundy);
+    }
+
+    .avenue-card h4 {
+        font-family: 'Crimson Text', serif;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--deep-navy);
+        letter-spacing: 0.5px;
+    }
+
+    .avenue-card p {
+        font-size: 0.9rem;
+        line-height: 1.65;
+        color: var(--text-medium);
+        flex: 1;
+    }
+
+    .avenue-link {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--gold);
+        text-decoration: none;
+        margin-top: 0.5rem;
+        transition: color 0.2s ease;
+    }
+
+    .avenue-link:hover {
+        color: var(--burgundy);
     }
 
     .service-card {
@@ -470,6 +557,7 @@ import { nations } from '../data/nations';
     /* ── RESPONSIVE ── */
     @media (max-width: 1200px) {
         .services-grid { grid-template-columns: repeat(2, 1fr); }
+        .other-avenues { grid-template-columns: repeat(3, 1fr); }
     }
 
     @media (max-width: 1024px) {
@@ -492,6 +580,7 @@ import { nations } from '../data/nations';
         .stat-value { font-size: 2rem; }
         .nations-grid { grid-template-columns: 1fr; }
         .services-grid { grid-template-columns: 1fr; }
+        .other-avenues { grid-template-columns: 1fr; }
         .team-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
     }
 </style>

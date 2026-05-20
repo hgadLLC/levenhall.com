@@ -14,6 +14,28 @@ export interface Service {
 
 export const services: Service[] = [
     {
+        id: 'market-intelligence',
+        label: 'Intelligence',
+        title: 'Market Intelligence',
+        summary: 'Decision-grade intelligence on defense, government, geopolitical, and dual-use markets. The foundation of every other engagement we run.',
+        description: [
+            'Levenhall is a market intelligence consulting firm. Before we advise on entry, place an executive, or open a procurement pathway, we build a clear, current, source-grounded picture of the market the client is acting in. Intelligence is not a deliverable we sell once. It is the operating system behind everything else we do.',
+            'Our intelligence practice covers the markets where information asymmetry decides outcomes: US defense procurement, allied government programs, regulated dual-use technology, and the geopolitical environment shaping all three. We track agencies, programs, primes, consortia, competitors, regulatory shifts, and the people who move money and authority through the system.',
+            'Engagements range from one-time landscape assessments and competitive benchmarks to continuous monitoring retainers that feed boards, investors, and operating teams with intelligence calibrated to their decision cadence. Every output is sourced, structured, and built to support a decision, not to fill a slide deck.',
+        ],
+        deliverables: [
+            'Market landscape & sector assessments',
+            'Program, agency & competitor tracking',
+            'Geopolitical & regulatory monitoring',
+            'Capability benchmarks & gap analysis',
+            'Continuous intelligence retainers',
+        ],
+        highlight: {
+            value: 'Always-on',
+            label: 'Intelligence cadence',
+        },
+    },
+    {
         id: 'advisory',
         label: 'Strategy',
         title: 'Market Entry Advisory',
@@ -21,7 +43,7 @@ export const services: Service[] = [
         description: [
             'Entering the US defense market is not a matter of registering an entity and responding to solicitations. The procurement landscape is deliberately layered, shaped by regulation, classification requirements, industrial base policy, and political dynamics that shift with each administration.',
             'Levenhall conducts a structured assessment of your technology, your competitive position, and the specific agencies and programs most likely to acquire what you build. We identify the procurement vehicles available to you, the regulatory barriers you will face (ITAR, EAR, FAR, DFARS) and the realistic timeline from market entry to first contract.',
-            'The result is not a report. It is an operational plan with named targets, identified pathways, and a clear sequence of actions.',
+            'The result is not a report. It is an operational plan with named targets, identified pathways, and a clear sequence of actions, all grounded in our underlying market intelligence work.',
         ],
         deliverables: [
             'Procurement landscape assessment',
@@ -61,10 +83,10 @@ export const services: Service[] = [
         id: 'executive-placement',
         label: 'Leadership',
         title: 'Executive Placement',
-        summary: 'Access our vetted network of US defense executives ready to lead your American operations.',
+        summary: 'Access our vetted network of US defense and national security executives ready to lead your American operations.',
         description: [
-            'International firms entering the US defense market face a structural problem: the people who understand your technology are not the people who understand US procurement. And the people who understand procurement need clearances, agency relationships, and operational credibility that cannot be acquired quickly.',
-            'Levenhall maintains a curated network of former senior government officials, military officers, and defense industry executives who have led programs, held clearances, and built businesses within the US defense ecosystem. These are not advisors. They are operators, ready to serve as your US-based leadership.',
+            'International firms entering the US market face a structural problem: the people who understand your technology are not the people who understand US procurement. And the people who understand procurement need clearances, agency relationships, and operational credibility that cannot be acquired quickly.',
+            'Levenhall maintains a curated network of former senior government officials, military officers, intelligence professionals, and defense industry executives who have led programs, held clearances, and built businesses within the US national security ecosystem. These are not advisors. They are operators, ready to serve as your US-based leadership.',
             'We match executives to your specific requirements: technology domain, target agencies, clearance level, and organizational culture. Every placement is structured to align incentives and protect both parties.',
         ],
         deliverables: [
@@ -76,17 +98,17 @@ export const services: Service[] = [
         ],
         highlight: {
             value: '200+',
-            label: 'Vetted defense executives',
+            label: 'Vetted defense & IC executives',
         },
     },
     {
         id: 'tax-services',
         label: 'Tax Advisory',
         title: 'International Tax Services',
-        summary: 'Strategic tax planning through our partnership with CST Tax, specialists in cross-border defense transactions.',
+        summary: 'Strategic tax planning through our partnership with CST Tax, specialists in cross-border defense and dual-use transactions.',
         description: [
-            'Cross-border defense transactions create tax obligations that are simultaneously complex and consequential. Entity structure, transfer pricing, treaty benefits, and withholding requirements all interact, and errors in any one area can create liabilities that dwarf the underlying contract value.',
-            'Through our partnership with CST Tax, Levenhall provides clients with specialized tax advisory for US market entry. This includes entity formation and structuring, transfer pricing documentation, treaty benefit analysis, and ongoing compliance for firms operating across multiple jurisdictions.',
+            'Cross-border transactions create tax obligations that are simultaneously complex and consequential. Entity structure, transfer pricing, treaty benefits, and withholding requirements all interact, and errors in any one area can create liabilities that dwarf the underlying contract or investment value.',
+            'Through our partnership with CST Tax, Levenhall provides clients with specialized tax advisory for US market entry, cross-border defense work, and equity-linked structures. This includes entity formation and structuring, transfer pricing documentation, treaty benefit analysis, and ongoing compliance for firms operating across multiple jurisdictions.',
         ],
         externalLink: 'https://csttax.com/',
         deliverables: [

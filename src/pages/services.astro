@@ -5,21 +5,21 @@ import CTASection from '../components/CTASection.astro';
 import { services } from '../data/services';
 ---
 
-<BaseLayout title="Services | Levenhall" description="Four market entry pathways structured around how US defense procurement actually works.">
+<BaseLayout title="Services | Levenhall" description="Levenhall's services — market intelligence at the core, with US federal market entry, rapid procurement, executive placement, and cross-border tax built on top.">
 
     <PageHeader
-        label="Our Services"
-        title="Market Entry Pathways"
+        label="Our Practice"
+        title="What We Do"
     />
 
     <!-- ── INTRO + NAV CARDS ── -->
     <section class="section intro-section">
         <div class="container">
             <div class="intro-content reveal">
-                <span class="intro-label">Our Services</span>
-                <p class="intro-lead">International firms entering the US defense market face a consistent set of structural challenges: regulatory complexity, entity formation requirements, procurement vehicle selection, and the need for credible US-based relationships.</p>
+                <span class="intro-label">Our Practice</span>
+                <p class="intro-lead">Levenhall is a market intelligence consulting firm. Our services start with intelligence on the markets that matter most &mdash; defense, government, geopolitical, and dual-use &mdash; and extend into the structure required to act on what that intelligence reveals.</p>
                 <div class="intro-rule"></div>
-                <p class="intro-sub">Levenhall's services address each of these systematically. Every engagement is tailored. We do not sell packaged solutions. Your technology, your target agencies, your competitive position, and your organizational readiness determine the pathway we recommend.</p>
+                <p class="intro-sub">US federal market entry is one of our most active practice areas, but it is one avenue, not the whole firm. Every engagement is tailored. We do not sell packaged solutions. Your market, your decision cadence, and your operating posture determine the pathway we recommend.</p>
             </div>
             <div class="service-nav-cards">
                 {services.map((service, i) => (
@@ -82,7 +82,7 @@ import { services } from '../data/services';
             <div class="section-header reveal">
                 <span class="process-label">How We Work</span>
                 <h2>Engagement Process</h2>
-                <p>From initial assessment to contract award, Levenhall remains engaged at every stage.</p>
+                <p>From initial assessment through execution, Levenhall stays engaged. Intelligence informs strategy. Strategy drives structure. Structure produces outcomes.</p>
             </div>
             <div class="process-grid">
                 <div class="process-step reveal">
@@ -91,8 +91,8 @@ import { services } from '../data/services';
                         <div class="step-line"></div>
                     </div>
                     <div class="step-content">
-                        <h3>Initial Assessment</h3>
-                        <p>Confidential discussion of your technology, market objectives, and organizational readiness. No obligation. We will tell you honestly whether Levenhall is the right partner for your entry.</p>
+                        <h3>Intelligence &amp; Assessment</h3>
+                        <p>Confidential discussion of your market, your decision cadence, and your organizational readiness. We assess the intelligence we already hold against the questions you actually need answered, and tell you honestly whether Levenhall is the right partner.</p>
                     </div>
                 </div>
                 <div class="process-step reveal">
@@ -102,7 +102,7 @@ import { services } from '../data/services';
                     </div>
                     <div class="step-content">
                         <h3>Strategy Development</h3>
-                        <p>Detailed market mapping, procurement vehicle analysis, regulatory pathway identification, and partnership architecture. This becomes your operational plan.</p>
+                        <p>Detailed market mapping, competitor and program tracking, procurement vehicle analysis, regulatory pathway identification, and partnership architecture. The intelligence becomes an operational plan.</p>
                     </div>
                 </div>
                 <div class="process-step reveal">
@@ -111,7 +111,7 @@ import { services } from '../data/services';
                     </div>
                     <div class="step-content">
                         <h3>Execution</h3>
-                        <p>Entity formation, consortium membership, executive placement, procurement vehicle selection, and active positioning with target agencies. Levenhall remains engaged through contract award.</p>
+                        <p>Entity formation, consortium membership, executive placement, procurement vehicle selection, and active positioning with target agencies and partners. Levenhall stays engaged through award, close, or whichever outcome the engagement is built around.</p>
                     </div>
                 </div>
             </div>
@@ -171,8 +171,8 @@ import { services } from '../data/services';
     /* ── SERVICE NAV CARDS ── */
     .service-nav-cards {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1.2rem;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1rem;
     }
 
     .service-nav-card {
@@ -479,6 +479,10 @@ import { services } from '../data/services';
     }
 
     /* ── RESPONSIVE ── */
+    @media (max-width: 1100px) {
+        .service-nav-cards { grid-template-columns: repeat(3, 1fr); }
+    }
+
     @media (max-width: 992px) {
         .service-nav-cards { grid-template-columns: repeat(2, 1fr); }
         .svc-grid,

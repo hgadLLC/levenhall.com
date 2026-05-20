@@ -3,16 +3,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTASection from '../../components/CTASection.astro';
 ---
 
-<BaseLayout title="Bridger | Levenhall" description="Bridger by Levenhall connects allied defense innovators with the U.S. national security ecosystem through curated introductions and structured deal flow.">
+<BaseLayout title="Bridger | Levenhall" description="Bridger is Levenhall's allied defense dealmaking platform — built on the firm's market intelligence to connect vetted international firms with US buyers, primes, and program offices.">
 
     <!-- ── HERO ── -->
     <section class="bridger-hero">
         <div class="hero-bg"></div>
         <div class="hero-inner">
+            <p class="bridger-product-tag">A Levenhall Product</p>
             <img src="/images/products/bridger-logo-cropped.jpg" alt="Bridger by Levenhall" class="bridger-logo">
             <p class="hero-tagline">The allied defense dealmaking platform</p>
             <div class="hero-rule"></div>
-            <p class="hero-description">Bridger connects vetted international defense firms from allied nations with U.S. government buyers, defense primes, and strategic partners. One platform. Curated introductions. Structured deal flow.</p>
+            <p class="hero-description">Bridger operationalizes Levenhall's market intelligence. It connects vetted international defense and dual-use firms from allied nations with US government buyers, defense primes, and strategic partners. One platform. Curated introductions. Structured deal flow.</p>
             <div class="hero-cta">
                 <a href="https://bridger.levenhall.com/join" class="btn btn-gold" target="_blank" rel="noopener noreferrer">Join Bridger</a>
                 <a href="#how-it-works" class="btn btn-outline-white">How It Works</a>
@@ -65,8 +66,8 @@ import CTASection from '../../components/CTASection.astro';
                     <span class="feature-label">Built for Allied Defense Firms</span>
                     <h2>Why Bridger?</h2>
                     <div class="feature-rule"></div>
-                    <p>The U.S. defense market awards over $400B annually, yet allied firms capture a fraction of their potential. The barrier isn't capability &mdash; it's access.</p>
-                    <p>Bridger removes that barrier. Designed for Five Eyes and NATO-allied firms, it delivers curated, high-signal introductions backed by Levenhall's Washington, DC network. No generic matchmaking. No outdated databases.</p>
+                    <p>The US defense market awards over $400B annually, yet allied firms capture a fraction of their potential. The barrier isn't capability &mdash; it's information and access.</p>
+                    <p>Bridger removes both. Designed for Five Eyes and NATO-allied firms, it delivers curated, high-signal introductions backed by Levenhall's Washington, DC network and powered by the firm's market intelligence. No generic matchmaking. No outdated databases.</p>
                 </div>
                 <div class="feature-cards reveal">
                     <div class="f-card">
@@ -92,8 +93,8 @@ import CTASection from '../../components/CTASection.astro';
 
     <!-- ── CTA ── -->
     <CTASection
-        heading="Ready to Access the U.S. Defense Market?"
-        description="Join Bridger and connect with buyers, primes, and program offices actively seeking allied technology."
+        heading="Ready to Access the US Defense Market?"
+        description="Join Bridger and connect with buyers, primes, and program offices actively seeking allied technology — backed by Levenhall's market intelligence."
         primaryLabel="Join Bridger"
         primaryHref="https://bridger.levenhall.com/join"
         secondaryLabel="Contact Us"
@@ -136,6 +137,20 @@ import CTASection from '../../components/CTASection.astro';
         margin: 0 auto;
         position: relative;
         z-index: 1;
+    }
+
+    .bridger-product-tag {
+        display: inline-block;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 600;
+        font-size: 0.68rem;
+        letter-spacing: 3.5px;
+        text-transform: uppercase;
+        color: var(--gold);
+        background: rgba(201, 169, 97, 0.08);
+        border: 1px solid rgba(201, 169, 97, 0.15);
+        padding: 0.5rem 1.4rem;
+        margin-bottom: 1.8rem;
     }
 
     /* ── Bridger logo ── */

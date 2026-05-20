@@ -10,7 +10,7 @@ export const nations: Nation[] = [
         flag: '🇺🇸',
         name: 'United States',
         tagline: '$1.5T+ Defense Budget',
-        description: 'The destination market. Levenhall architects access to the world\'s largest and most complex defense procurement environment.',
+        description: 'The destination market. Levenhall\'s intelligence and federal market entry practices are anchored here — the world\'s largest and most complex defense procurement environment.',
     },
     {
         flag: '🇬🇧',
@@ -40,6 +40,6 @@ export const nations: Nation[] = [
         flag: '🌍',
         name: 'Trusted Partners',
         tagline: 'Trusted Democracies',
-        description: 'Select firms from NATO allies and trusted democracies with capabilities aligned to US defense priorities.',
+        description: 'Select firms from NATO allies and trusted democracies with capabilities aligned to US defense, national security, and dual-use priorities.',
     },
 ];
