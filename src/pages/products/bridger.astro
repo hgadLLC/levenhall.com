@@ -3,16 +3,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTASection from '../../components/CTASection.astro';
 ---
 
-<BaseLayout title="Bridger | Levenhall" description="Bridger is Levenhall's pre-RFP intelligence platform for US federal contracting — built first for allied technology firms.">
+<BaseLayout title="Bridger | Levenhall" description="Bridger is Levenhall's pre-RFP intelligence platform for US federal contracting.">
 
     <!-- ── HERO ── -->
     <section class="b-hero">
-        <div class="b-hero-bg"></div>
-        <div class="b-hero-inner">
-            <p class="b-tag">A Levenhall Product</p>
-            <img src="/images/products/bridger-logo.png" alt="Bridger" class="b-logo">
-            <p class="b-tagline">Market Entry Intelligence for US Federal Contracting</p>
-            <div class="b-cta">
+        <div class="b-hero-glow"></div>
+        <div class="b-hero-stage">
+            <p class="b-hero-tag">A Levenhall Product</p>
+            <img src="/images/products/bridger-logo.png" alt="Bridger" class="b-hero-logo">
+            <p class="b-hero-tagline">Market entry intelligence for US federal contracting.</p>
+            <div class="b-hero-cta">
                 <a href="https://bridger.levenhall.com" class="btn btn-gold" target="_blank" rel="noopener noreferrer">Open Bridger</a>
                 <a href="https://bridger.levenhall.com/brief" class="btn btn-outline-white" target="_blank" rel="noopener noreferrer">Daily Brief</a>
             </div>
@@ -20,100 +20,98 @@ import CTASection from '../../components/CTASection.astro';
     </section>
 
     <!-- ── OPENING ── -->
-    <section class="b-section b-opening">
-        <div class="b-narrow reveal">
-            <p class="b-lede">The US federal government will spend roughly $750 billion this year. By the time any of it shows up on SAM.gov, it has already been decided.</p>
-            <p>Appropriations bills, committee markups, agency forecasts, GAO bid protests, OFAC entity-list updates, allied defense reorganizations &mdash; the signal that decides who wins moves six to twelve months ahead of the RFP. Incumbent contractors pay fifty thousand dollars a year for that signal. Everyone else competes blind.</p>
-            <p>For allied technology firms it is worse still. They arrive cold into a regulatory landscape they don't speak &mdash; ITAR, FOCI, CFIUS, DSGL, DISP &mdash; and the partners who could shorten the path are invisible without a local network.</p>
+    <section class="b-opening">
+        <div class="b-prose reveal">
+            <p class="b-lede">The US government will spend roughly $750 billion this year. By the time any of it shows up on SAM.gov, it has already been decided.</p>
+            <p>Appropriations bills, committee markups, agency forecasts, GAO bid protests, OFAC entity-list updates &mdash; the signal that decides who wins moves six to twelve months ahead of the RFP. Incumbents pay fifty thousand dollars a year for that signal. Everyone else competes blind.</p>
+            <p>For allied technology firms it is worse. They arrive cold into a regulatory landscape they don't speak, and the partners who could shorten the path are invisible without a local network.</p>
             <p class="b-lede-close">Bridger is the platform we built so they don't have to.</p>
         </div>
     </section>
 
-    <!-- ── WHAT IT IS — DOCUMENT STYLE ── -->
-    <section class="b-doc">
-        <div class="b-doc-bg"></div>
-        <div class="b-doc-inner">
-            <div class="b-doc-header reveal">
-                <span class="b-doc-eyebrow">§ Structure</span>
+    <!-- ── STRUCTURE ── -->
+    <section class="b-structure">
+        <div class="b-structure-frame">
+            <header class="b-structure-head reveal">
+                <span class="b-eyebrow b-eyebrow-light">§ Structure</span>
                 <h2>A three-part system, in the order it works.</h2>
-            </div>
+            </header>
 
-            <article class="b-doc-item reveal">
-                <span class="b-doc-num">01</span>
-                <div class="b-doc-body">
-                    <h3>Intelligence &mdash; the spine.</h3>
-                    <p>Roughly twenty-three hundred procurement-relevant signals flow into the index every week. SAM.gov, FPDS, GAO, OFAC, Congress.gov, agency forecasts, CISA and NIST, allied defense ministries, ACLED, the Federal Register, executive orders, congressional hearings.</p>
-                    <p>A clustering layer running on Claude Haiku synthesizes them into assessments &mdash; about a thousand in the index at any time, each confidence-rated, source-cited, country-tagged. A Country Instability Index scores the markets that matter. Every new opportunity is matched against a contractor's profile across five separate signals, and the system will not generate a rationale unless at least two of those signals actually fired.</p>
-                    <p>The daily brief is free, public, and lands at six in the morning Eastern.</p>
+            <article class="b-block reveal">
+                <span class="b-block-num">I</span>
+                <div>
+                    <h3>Intelligence</h3>
+                    <p>About twenty-three hundred procurement signals flow into the index every week &mdash; SAM.gov, FPDS, GAO, OFAC, Congress.gov, agency forecasts, allied defense ministries, the Federal Register.</p>
+                    <p>A clustering layer synthesizes them into roughly a thousand confidence-rated assessments. A Country Instability Index scores the markets that matter. Every opportunity is matched against a contractor's profile across five separate signals, and the system will not generate a rationale unless at least two of them actually fired.</p>
                 </div>
             </article>
 
-            <article class="b-doc-item reveal">
-                <span class="b-doc-num">02</span>
-                <div class="b-doc-body">
-                    <h3>Marketplace &mdash; the network.</h3>
-                    <p>Three search surfaces on one fit-scoring engine. <strong>Provider Search</strong> for the people you need to win &mdash; C3PAOs, proposal writers, US incorporation specialists, 8(a) JV partners, contract manufacturers. <strong>Lobbyist Search</strong> for the people who shape what gets written. <strong>Tech Scout</strong> for the fourteen hundred allied technology firms already vetted across sixty-plus countries.</p>
-                    <p>Same scoring algorithm; per-surface filters. Warm introductions at the point of intent, not a separate CRM you have to remember to open.</p>
+            <article class="b-block reveal">
+                <span class="b-block-num">II</span>
+                <div>
+                    <h3>Marketplace</h3>
+                    <p>Three search surfaces on one fit-scoring engine. <strong>Providers</strong> &mdash; C3PAOs, proposal writers, incorporation specialists, JV partners, manufacturers. <strong>Lobbyists</strong> by specialty. <strong>Tech Scout</strong> for the fourteen hundred allied technology firms vetted across sixty-plus countries.</p>
+                    <p>Warm introductions at the point of intent. Not a directory you have to remember to open.</p>
                 </div>
             </article>
 
-            <article class="b-doc-item reveal">
-                <span class="b-doc-num">03</span>
-                <div class="b-doc-body">
-                    <h3>Capture &mdash; the workflow.</h3>
-                    <p>A pipeline kanban that knows what stage you're in: <em>Identified, Qualified, Capture, Proposal, Submitted.</em> An AI-generated capture brief built from the opportunity, your company record, and the match intelligence. A capability statement and past performance that auto-populate from one canonical record &mdash; so nothing drifts.</p>
-                    <p>It is the gap between <em>I'm watching this</em> and <em>I'm submitting on this</em>, closed.</p>
+            <article class="b-block reveal">
+                <span class="b-block-num">III</span>
+                <div>
+                    <h3>Capture</h3>
+                    <p>A pipeline that knows what stage you're in. An AI-generated capture brief built from the opportunity, the profile, and the match intelligence. A capability statement and past performance auto-filled from one canonical record, so nothing drifts.</p>
+                    <p>The distance between <em>I'm watching this</em> and <em>I'm submitting on this</em>, closed.</p>
                 </div>
             </article>
         </div>
     </section>
 
-    <!-- ── ALLIED MOAT — INLINE ── -->
-    <section class="b-section b-moat">
-        <div class="b-narrow reveal">
+    <!-- ── ALLIED MOAT ── -->
+    <section class="b-moat">
+        <div class="b-prose reveal">
             <span class="b-eyebrow">§ The allied moat</span>
             <h2>The compliance regimes other tools won't touch.</h2>
-            <p>Bridger indexes the regulatory regimes that govern who can sell what, side by side. <span class="b-moat-tag">🇺🇸 ITAR</span> with AUKUS Final Rule (§ 126.7) eligibility tracking. <span class="b-moat-tag">🇺🇸 FOCI</span> mitigation under NISPOM and DCSA, and <span class="b-moat-tag">🇺🇸 CFIUS</span> review under 50 U.S.C. § 4565. <span class="b-moat-tag">🇺🇸 ECCN</span> classification and BIS licensing. <span class="b-moat-tag">🇦🇺 DSGL</span> and <span class="b-moat-tag">🇦🇺 DISP</span> on the Australian side. <span class="b-moat-tag">🇬🇧 List X</span> and Security Cleared status on the UK side.</p>
-            <p class="b-moat-close">No general procurement tool tracks these together. That's the layer that makes allied entry tractable, and it's the structural reason &mdash; not the marketing reason &mdash; that the platform was built for allied firms first.</p>
+            <p>Bridger indexes the regulatory regimes that govern who can sell what, side by side: <span class="b-tag-inline">🇺🇸 ITAR</span> with AUKUS Final Rule (§ 126.7) eligibility, <span class="b-tag-inline">🇺🇸 FOCI</span> and <span class="b-tag-inline">🇺🇸 CFIUS</span>, <span class="b-tag-inline">🇺🇸 ECCN</span> and BIS licensing, <span class="b-tag-inline">🇦🇺 DSGL</span> and <span class="b-tag-inline">🇦🇺 DISP</span> on the Australian side, <span class="b-tag-inline">🇬🇧 List X</span> on the UK side.</p>
+            <p class="b-moat-foot">No general procurement tool tracks these together. That's the layer that makes allied entry tractable.</p>
         </div>
     </section>
 
     <!-- ── DIFFERENTIATION ── -->
-    <section class="b-section b-diff">
-        <div class="container">
-            <div class="b-header reveal">
-                <span class="b-eyebrow b-eyebrow-center">§ The short version</span>
+    <section class="b-diff">
+        <div class="b-diff-frame">
+            <header class="b-diff-head reveal">
+                <span class="b-eyebrow">§ The short version</span>
                 <h2>What you get that you can't get elsewhere.</h2>
-            </div>
-            <div class="b-diff-table reveal">
-                <div class="b-diff-row b-diff-head">
+            </header>
+            <div class="b-diff-rows reveal">
+                <div class="b-diff-row b-diff-headrow">
                     <span></span>
-                    <span class="b-diff-mark">Bridger</span>
-                    <span class="b-diff-other">Most procurement tools</span>
+                    <span>Bridger</span>
+                    <span>Most procurement tools</span>
                 </div>
                 <div class="b-diff-row">
                     <span class="b-diff-cap">Signal timing</span>
-                    <span class="b-diff-mark">Pre-RFP signal, forecasts, appropriations</span>
+                    <span>Pre-RFP signal, forecasts, appropriations</span>
                     <span class="b-diff-other">RFP listings after SAM.gov publishes</span>
                 </div>
                 <div class="b-diff-row">
                     <span class="b-diff-cap">Matching</span>
-                    <span class="b-diff-mark">5-signal scoring with cited rationales</span>
+                    <span>5-signal scoring with cited rationales</span>
                     <span class="b-diff-other">Keyword search</span>
                 </div>
                 <div class="b-diff-row">
                     <span class="b-diff-cap">Cross-border</span>
-                    <span class="b-diff-mark">ITAR / FOCI / CFIUS / DSGL / DISP, together</span>
+                    <span>ITAR / FOCI / CFIUS / DSGL / DISP indexed together</span>
                     <span class="b-diff-other">US-only</span>
                 </div>
                 <div class="b-diff-row">
                     <span class="b-diff-cap">Marketplace</span>
-                    <span class="b-diff-mark">Warm intros inside the intelligence</span>
+                    <span>Warm intros inside the intelligence</span>
                     <span class="b-diff-other">Standalone directory or separate CRM</span>
                 </div>
                 <div class="b-diff-row">
                     <span class="b-diff-cap">Audience</span>
-                    <span class="b-diff-mark">Allied technology firms entering the US</span>
+                    <span>Allied technology firms entering the US</span>
                     <span class="b-diff-other">US-only contractors</span>
                 </div>
             </div>
@@ -122,7 +120,7 @@ import CTASection from '../../components/CTASection.astro';
 
     <CTASection
         heading="Open Bridger."
-        description="Production at bridger.levenhall.com. Free daily brief at 6 AM Eastern. Scout tier is free."
+        description="Production at bridger.levenhall.com. Free daily brief at 6 AM Eastern."
         primaryLabel="Open Bridger"
         primaryHref="https://bridger.levenhall.com"
         secondaryLabel="Daily Brief"
@@ -132,19 +130,29 @@ import CTASection from '../../components/CTASection.astro';
 </BaseLayout>
 
 <style>
-    /* ── HERO ── */
+    /* ───────────── HERO ───────────── */
     .b-hero {
-        background: linear-gradient(160deg, #060c18 0%, #0c1628 40%, #0a1224 100%);
-        padding: 9rem 2rem 5rem;
-        text-align: center;
+        background:
+            radial-gradient(ellipse 80% 60% at 50% 50%, rgba(201, 169, 97, 0.08), transparent 70%),
+            #060c18;
+        padding: var(--s-20) var(--s-3) var(--s-12);
         position: relative;
         overflow: hidden;
+        min-height: 88vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    .b-hero-bg {
+    .b-hero-glow {
         position: absolute;
-        inset: 0;
-        background-image: radial-gradient(ellipse at 50% 80%, rgba(201, 169, 97, 0.06) 0%, transparent 55%);
+        top: 50%;
+        left: 50%;
+        width: 720px;
+        height: 720px;
+        transform: translate(-50%, -50%);
+        background: radial-gradient(circle, rgba(201, 169, 97, 0.18) 0%, transparent 60%);
+        filter: blur(40px);
         pointer-events: none;
     }
 
@@ -156,54 +164,60 @@ import CTASection from '../../components/CTASection.astro';
         right: 0;
         height: 1px;
         background: linear-gradient(90deg, transparent, var(--gold), transparent);
-        opacity: 0.5;
+        opacity: 0.4;
     }
 
-    .b-hero-inner {
-        max-width: 620px;
-        margin: 0 auto;
+    .b-hero-stage {
+        text-align: center;
         position: relative;
         z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .b-tag {
-        display: inline-block;
+    .b-hero-tag {
         font-family: 'Source Sans Pro', sans-serif;
         font-weight: 600;
         font-size: 0.66rem;
         letter-spacing: 3.5px;
         text-transform: uppercase;
         color: var(--gold);
-        margin-bottom: 1.8rem;
+        margin-bottom: var(--s-6);
     }
 
-    .b-logo {
-        max-width: 360px;
+    .b-hero-logo {
+        max-width: 440px;
         width: 100%;
         height: auto;
-        display: block;
-        margin: 0 auto 1.6rem;
+        margin-bottom: var(--s-6);
+        filter: drop-shadow(0 0 40px rgba(201, 169, 97, 0.25));
     }
 
-    .b-tagline {
+    .b-hero-tagline {
         font-family: 'Fraunces', serif;
         font-style: italic;
-        font-size: 1.1rem;
-        color: rgba(255, 255, 255, 0.6);
-        margin-bottom: 2rem;
-        letter-spacing: 0.3px;
+        font-weight: 400;
+        font-size: 1.35rem;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.5;
+        letter-spacing: -0.2px;
+        max-width: 520px;
+        margin: 0 0 var(--s-8);
     }
 
-    .b-cta {
+    .b-hero-cta {
         display: flex;
-        gap: 1rem;
-        justify-content: center;
+        gap: var(--s-2);
         flex-wrap: wrap;
+        justify-content: center;
     }
 
-    /* ── SHARED ── */
-    .b-section {
-        padding: 6rem 0;
+    /* ───────────── SHARED RHYTHM ───────────── */
+    .b-prose {
+        max-width: var(--col-prose);
+        margin: 0 auto;
+        padding: 0 var(--s-3);
     }
 
     .b-eyebrow {
@@ -214,190 +228,158 @@ import CTASection from '../../components/CTASection.astro';
         letter-spacing: 2.5px;
         text-transform: uppercase;
         color: var(--gold);
-        margin-bottom: 1.5rem;
+        margin-bottom: var(--s-4);
     }
 
-    .b-eyebrow-center {
-        text-align: center;
+    .b-eyebrow-light {
+        color: var(--gold);
     }
 
-    .b-narrow {
-        max-width: 660px;
-        margin: 0 auto;
-        padding: 0 1.5rem;
-    }
-
-    .b-narrow h2 {
+    /* All h2 across the page */
+    .b-opening h2,
+    .b-structure h2,
+    .b-moat h2,
+    .b-diff h2,
+    .b-lede,
+    .b-lede-close {
         font-family: 'Fraunces', serif;
-        font-size: clamp(1.7rem, 3vw, 2.2rem);
-        line-height: 1.25;
-        color: var(--deep-navy);
-        margin-bottom: 1.5rem;
-        font-weight: 700;
+        letter-spacing: -0.6px;
     }
 
-    /* ── OPENING ── */
+    /* ───────────── OPENING ───────────── */
     .b-opening {
         background: var(--cream);
-        padding: 6.5rem 0;
+        padding: var(--s-16) 0;
     }
 
     .b-lede {
-        font-family: 'Fraunces', serif;
-        font-size: 1.6rem;
-        line-height: 1.45;
+        font-weight: 500;
+        font-size: 1.75rem;
+        line-height: 1.4;
         color: var(--deep-navy);
-        margin-bottom: 1.6rem;
-        font-weight: 600;
-    }
-
-    .b-lede-close {
-        font-family: 'Fraunces', serif;
-        font-size: 1.3rem;
-        font-style: italic;
-        color: var(--burgundy);
-        margin-top: 2rem;
-        border-top: 1px solid var(--border-warm);
-        padding-top: 1.6rem;
+        margin: 0 0 var(--s-6);
+        letter-spacing: -0.4px;
     }
 
     .b-opening p {
         font-size: 1.05rem;
-        line-height: 1.8;
+        line-height: 1.85;
         color: var(--text-medium);
-        margin-bottom: 1.2rem;
+        margin: 0 0 var(--s-4);
     }
 
-    /* ── DOCUMENT-STYLE STRUCTURE SECTION ── */
-    .b-doc {
-        background: linear-gradient(180deg, #0a1628 0%, var(--deep-navy) 100%);
-        padding: 6rem 0;
+    .b-lede-close {
+        font-style: italic;
+        font-weight: 500;
+        font-size: 1.25rem;
+        line-height: 1.5;
+        color: var(--burgundy);
+        border-top: 1px solid var(--border-warm);
+        padding-top: var(--s-5);
+        margin-top: var(--s-5);
+    }
+
+    /* ───────────── STRUCTURE (DARK) ───────────── */
+    .b-structure {
+        background: #0a1628;
+        padding: var(--s-16) 0;
         position: relative;
-        overflow: hidden;
     }
 
-    .b-doc-bg {
-        position: absolute;
-        inset: 0;
-        background-image: radial-gradient(ellipse at 70% 30%, rgba(201, 169, 97, 0.05) 0%, transparent 50%);
-        pointer-events: none;
-    }
-
-    .b-doc::before {
+    .b-structure::before {
         content: '';
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
+        top: 0; left: 0; right: 0;
         height: 1px;
         background: rgba(201, 169, 97, 0.25);
     }
 
-    .b-doc-inner {
+    .b-structure-frame {
         max-width: 820px;
         margin: 0 auto;
-        padding: 0 1.5rem;
-        position: relative;
-        z-index: 1;
+        padding: 0 var(--s-3);
     }
 
-    .b-doc-header {
-        margin-bottom: 3.5rem;
-        padding-bottom: 2rem;
+    .b-structure-head {
+        margin-bottom: var(--s-10);
+        padding-bottom: var(--s-6);
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .b-doc-eyebrow {
-        display: block;
-        font-family: 'Source Sans Pro', sans-serif;
+    .b-structure-head h2 {
         font-weight: 600;
-        font-size: 0.72rem;
-        letter-spacing: 2.5px;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: 1rem;
-    }
-
-    .b-doc-header h2 {
-        font-family: 'Fraunces', serif;
-        font-size: clamp(1.8rem, 3vw, 2.3rem);
-        font-weight: 700;
-        line-height: 1.25;
+        font-size: clamp(2rem, 3.4vw, 2.6rem);
+        line-height: 1.18;
         color: #fff;
+        margin: 0;
     }
 
-    .b-doc-item {
+    .b-block {
         display: grid;
-        grid-template-columns: 80px 1fr;
-        gap: 2rem;
-        padding: 2.2rem 0;
+        grid-template-columns: 64px 1fr;
+        gap: var(--s-6);
+        padding: var(--s-8) 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
-    .b-doc-item:last-of-type {
-        border-bottom: none;
-    }
+    .b-block:last-of-type { border-bottom: none; }
 
-    .b-doc-num {
+    .b-block-num {
         font-family: 'Fraunces', serif;
-        font-size: 3rem;
-        font-weight: 700;
+        font-size: 2.4rem;
+        font-weight: 500;
+        font-style: italic;
         color: var(--gold);
         line-height: 1;
-        letter-spacing: 1px;
-        text-align: right;
+        letter-spacing: -1px;
         padding-top: 0.4rem;
     }
 
-    .b-doc-body h3 {
+    .b-block h3 {
         font-family: 'Fraunces', serif;
-        font-size: 1.5rem;
-        font-weight: 700;
+        font-weight: 600;
+        font-size: 1.65rem;
         color: #fff;
-        margin: 0 0 0.9rem;
-        line-height: 1.3;
+        margin: 0 0 var(--s-3);
+        line-height: 1.25;
+        letter-spacing: -0.4px;
     }
 
-    .b-doc-body p {
-        font-size: 1rem;
+    .b-block p {
+        font-size: 1.02rem;
         line-height: 1.85;
         color: rgba(255, 255, 255, 0.65);
-        margin-bottom: 0.9rem;
+        margin: 0 0 var(--s-3);
     }
 
-    .b-doc-body p:last-child {
-        margin-bottom: 0;
-    }
+    .b-block p:last-child { margin-bottom: 0; }
 
-    .b-doc-body strong {
-        color: #fff;
-        font-weight: 600;
-    }
+    .b-block strong { color: #fff; font-weight: 600; }
+    .b-block em { font-style: italic; color: rgba(255, 255, 255, 0.85); }
 
-    .b-doc-body em {
-        font-style: italic;
-        color: rgba(255, 255, 255, 0.85);
-    }
-
-    /* ── MOAT ── */
+    /* ───────────── MOAT ───────────── */
     .b-moat {
         background: var(--stone);
-        padding: 6rem 0;
+        padding: var(--s-16) 0;
     }
 
     .b-moat h2 {
+        font-weight: 600;
+        font-size: clamp(1.9rem, 3.2vw, 2.4rem);
+        line-height: 1.2;
         color: var(--deep-navy);
+        margin-bottom: var(--s-5);
     }
 
     .b-moat p {
-        font-size: 1.05rem;
-        line-height: 1.95;
+        font-size: 1.08rem;
+        line-height: 2;
         color: var(--text-medium);
-        margin-bottom: 1.2rem;
+        margin-bottom: var(--s-4);
     }
 
-    .b-moat-tag {
-        display: inline;
+    .b-tag-inline {
+        display: inline-block;
         font-family: 'Source Sans Pro', sans-serif;
         font-weight: 600;
         color: var(--deep-navy);
@@ -409,68 +391,71 @@ import CTASection from '../../components/CTASection.astro';
         font-size: 0.92rem;
     }
 
-    .b-moat-close {
+    .b-moat-foot {
         font-family: 'Fraunces', serif;
         font-style: italic;
-        font-size: 1.1rem;
+        font-weight: 500;
+        font-size: 1.15rem;
         color: var(--burgundy);
         border-top: 1px solid var(--border-warm);
-        padding-top: 1.4rem;
-        margin-top: 0.6rem;
+        padding-top: var(--s-5);
+        margin-top: var(--s-5);
     }
 
-    /* ── DIFFERENTIATION ── */
+    /* ───────────── DIFFERENTIATION ───────────── */
     .b-diff {
         background: var(--cream);
+        padding: var(--s-16) 0;
     }
 
-    .b-header {
-        max-width: 660px;
-        margin: 0 auto 3rem;
-        text-align: center;
-        padding: 0 1.5rem;
-    }
-
-    .b-header h2 {
-        font-family: 'Fraunces', serif;
-        font-size: clamp(1.7rem, 3vw, 2.2rem);
-        line-height: 1.25;
-        color: var(--deep-navy);
-        font-weight: 700;
-    }
-
-    .b-diff-table {
-        max-width: 940px;
+    .b-diff-frame {
+        max-width: 980px;
         margin: 0 auto;
+        padding: 0 var(--s-3);
+    }
+
+    .b-diff-head {
+        text-align: center;
+        max-width: var(--col-prose);
+        margin: 0 auto var(--s-10);
+    }
+
+    .b-diff-head h2 {
+        font-weight: 600;
+        font-size: clamp(1.9rem, 3.2vw, 2.4rem);
+        line-height: 1.2;
+        color: var(--deep-navy);
+    }
+
+    .b-diff-rows {
+        display: flex;
+        flex-direction: column;
     }
 
     .b-diff-row {
         display: grid;
         grid-template-columns: 0.7fr 1.4fr 1fr;
-        gap: 1.5rem;
-        padding: 1.3rem 0;
-        border-bottom: 1px solid rgba(30, 58, 95, 0.12);
+        gap: var(--s-5);
+        padding: var(--s-4) 0;
+        border-bottom: 1px solid rgba(30, 58, 95, 0.1);
         align-items: center;
         font-size: 1rem;
-        line-height: 1.55;
+        line-height: 1.6;
     }
 
-    .b-diff-row:last-child {
-        border-bottom: none;
-    }
+    .b-diff-row:last-child { border-bottom: none; }
 
-    .b-diff-head {
+    .b-diff-headrow {
         border-bottom: 2px solid var(--deep-navy);
         font-family: 'Source Sans Pro', sans-serif;
         font-size: 0.7rem;
         font-weight: 700;
         letter-spacing: 2px;
         text-transform: uppercase;
-        padding-bottom: 0.9rem;
+        color: var(--text-medium);
     }
 
-    .b-diff-head .b-diff-mark { color: var(--burgundy); }
-    .b-diff-head .b-diff-other { color: var(--text-medium); }
+    .b-diff-headrow span:nth-child(2) { color: var(--burgundy); }
 
     .b-diff-cap {
         font-family: 'Source Sans Pro', sans-serif;
@@ -481,28 +466,22 @@ import CTASection from '../../components/CTASection.astro';
         color: var(--deep-navy);
     }
 
-    .b-diff-mark {
-        color: var(--deep-navy);
-        font-weight: 500;
-    }
-
     .b-diff-other {
         color: var(--text-medium);
         font-style: italic;
     }
 
-    /* ── RESPONSIVE ── */
+    /* ───────────── RESPONSIVE ───────────── */
     @media (max-width: 768px) {
-        .b-hero { padding: 7rem 2rem 4rem; }
-        .b-logo { max-width: 280px; }
-        .b-section { padding: 4.5rem 0; }
-        .b-opening { padding: 4.5rem 0; }
-        .b-doc { padding: 4.5rem 0; }
-        .b-doc-item { grid-template-columns: 1fr; gap: 0.8rem; padding: 2rem 0; }
-        .b-doc-num { text-align: left; font-size: 2.2rem; padding-top: 0; }
-        .b-lede { font-size: 1.3rem; }
-        .b-diff-row { grid-template-columns: 1fr; gap: 0.3rem; padding: 1.2rem 0; }
-        .b-diff-head { display: none; }
+        .b-hero { padding: var(--s-16) var(--s-3) var(--s-10); min-height: auto; }
+        .b-hero-logo { max-width: 300px; }
+        .b-hero-tagline { font-size: 1.15rem; }
+        .b-opening, .b-structure, .b-moat, .b-diff { padding: var(--s-12) 0; }
+        .b-lede { font-size: 1.4rem; }
+        .b-block { grid-template-columns: 1fr; gap: var(--s-3); padding: var(--s-6) 0; }
+        .b-block-num { font-size: 2rem; padding-top: 0; }
+        .b-diff-row { grid-template-columns: 1fr; gap: var(--s-1); padding: var(--s-3) 0; }
+        .b-diff-headrow { display: none; }
         .b-diff-cap { color: var(--burgundy); }
     }
 </style>
