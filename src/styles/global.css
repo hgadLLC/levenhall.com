@@ -24,24 +24,24 @@
     --shadow-lg: 0 16px 50px rgba(30, 58, 95, 0.14);
     --shadow-warm-md: 0 8px 30px rgba(80, 50, 20, 0.08);
 
-    /* ── SPACING SCALE (8px base) ── */
-    --s-1: 0.5rem;    /* 8 */
-    --s-2: 1rem;      /* 16 */
-    --s-3: 1.5rem;    /* 24 */
-    --s-4: 2rem;      /* 32 */
-    --s-5: 2.5rem;    /* 40 */
-    --s-6: 3rem;      /* 48 */
-    --s-8: 4rem;      /* 64 */
-    --s-10: 5rem;     /* 80 */
-    --s-12: 6rem;     /* 96 */
-    --s-14: 7rem;     /* 112 */
-    --s-16: 8rem;     /* 128 */
-    --s-20: 10rem;    /* 160 */
+    /* ── SPACING SCALE (compact) ── */
+    --s-1: 0.4rem;
+    --s-2: 0.75rem;
+    --s-3: 1rem;
+    --s-4: 1.3rem;
+    --s-5: 1.6rem;
+    --s-6: 2rem;
+    --s-8: 2.5rem;
+    --s-10: 3rem;
+    --s-12: 3.75rem;
+    --s-14: 4.5rem;
+    --s-16: 5rem;
+    --s-20: 6rem;
 
     /* ── LAYOUT ── */
     --section-pad: var(--s-14);
-    --hero-pad-top: var(--s-20);
-    --hero-pad-bottom: var(--s-12);
+    --hero-pad-top: var(--s-16);
+    --hero-pad-bottom: var(--s-10);
     --col-prose: 620px;
     --col-wide: 1080px;
 }
