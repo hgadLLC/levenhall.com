@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="AIGIS | Levenhall" description="AIGIS is Levenhall's modular, containerized AI evaluation and governance platform — designed to run from unclassified through TS/SCI air-gapped on identical container images.">
+<BaseLayout title="AIGIS | Levenhall" description="AIGIS is Levenhall's AI evaluation and governance platform for the private sector — the substrate for AI insurability, regulatory compliance, and continuous risk assessment.">
 
     <!-- ── HERO ── -->
     <section class="a-hero">
@@ -11,52 +11,88 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="a-hero-inner">
             <p class="a-tag">A Levenhall Product</p>
             <h1 class="a-wordmark">AIGIS</h1>
-            <p class="a-tagline">AI evaluation &amp; governance, from unclassified to TS/SCI &mdash; on the same container.</p>
+            <p class="a-tagline">AI evaluation &amp; governance for the enterprise &mdash; the substrate for AI insurability.</p>
             <div class="a-cta">
                 <a href="/contact" class="btn btn-gold">Request Early Access</a>
-                <a href="#deploy" class="btn btn-outline-white">See the Deployment Story</a>
+                <a href="#how" class="btn btn-outline-white">How It Works</a>
             </div>
         </div>
     </section>
 
-    <!-- ── THE SHIELD ── -->
-    <section class="a-section a-shield">
+    <!-- ── THE INSURANCE PROBLEM ── -->
+    <section class="a-section a-problem">
         <div class="a-narrow reveal">
-            <p class="a-lede"><span class="a-drop">A</span>IGIS takes its name from the mythological <em>aegis</em> &mdash; the shield Athena carried. The function follows the name.</p>
-            <p>For every AI system you intend to deploy, there is exactly one question that matters: <em>is this model safe and mission-ready for this user, on this network, doing this mission, at this classification level?</em></p>
-            <p>AIGIS is the operational evaluator's answer to that question. Not a research bench. Not a one-off pilot. A continuous infrastructure that asks the question every time, and tells you when the answer changes.</p>
+            <p class="a-lede"><span class="a-drop">A</span>I is now deployed inside every regulated industry. Underwriters, risk committees, and compliance officers have no standardized way to determine whether a deployment is insurable, defensible, or compliant &mdash; and the deployments don't stop while they figure it out.</p>
+            <p>AIGIS exists to answer one question, continuously: <em>is this model safe and mission-ready for this user, on this network, doing this job, under this regulatory regime?</em></p>
+            <p>It is the operational evaluator's infrastructure. Not a research bench. Not a one-time audit. A continuous assessment substrate that AI insurance, regulatory compliance, and enterprise risk all run on top of.</p>
+            <p class="a-problem-close">Insurance is the headline use case. Governance, regulatory reporting, and enterprise risk management ride the same rails.</p>
         </div>
     </section>
 
-    <!-- ── THE GAP ── -->
-    <section class="a-section a-gap">
-        <div class="a-gap-bg"></div>
-        <div class="a-gap-inner">
-            <div class="a-gap-header reveal">
-                <span class="a-eyebrow a-eyebrow-dark">§ Why we built it</span>
-                <h2>The gap between the research bench and the program shelf.</h2>
-            </div>
+    <!-- ── INSURANCE TRACK ── -->
+    <section class="a-section a-insurance">
+        <div class="a-insurance-bg"></div>
+        <div class="a-narrow reveal" style="position: relative; z-index: 1;">
+            <span class="a-eyebrow a-eyebrow-light">§ The insurance track</span>
+            <h2>An insurable AI deployment is one that can be continuously evaluated.</h2>
+            <p>Insurers cannot price what they cannot measure. AIGIS produces the continuous evaluation record that turns an AI deployment into a measurable risk: every run captured with a full environment snapshot, every prompt-injection or jailbreak probe logged against MITRE ATLAS, every degradation event reproducible, every model and prompt versioned.</p>
+            <p>For underwriters: a continuous signal to price against. For brokers: a defensible record at renewal. For the enterprise: the compliance evidence the insurer needs without a fire drill every quarter.</p>
 
-            <div class="a-gap-prose reveal">
-                <p>If you evaluate AI in a defense or intelligence context today, you choose between two unsatisfying options.</p>
-                <p>The first is <strong>research-grade</strong> &mdash; HELM, Inspect, lm-evaluation-harness. These are excellent tools, designed by and for ML researchers. They were never designed to deploy on classified networks, never expected to express operational context, and don't pretend otherwise.</p>
-                <p>The second is <strong>program-proprietary</strong> &mdash; a benchmark suite built inside a single program for that program's mission, alive for as long as that program is alive. When the program ends, the institutional knowledge ends with it.</p>
-                <p>AIGIS is the third option. <strong>Vendor-agnostic, cross-classification, continuous</strong> &mdash; designed from the start to deploy across DoD, IC, and commercial environments without changing platforms, and to outlive any one program.</p>
+            <div class="a-insurance-pills reveal">
+                <span class="a-pill"><strong>$60M+</strong> &nbsp;in tracked AI insurance coverage on the platform</span>
+                <span class="a-pill"><strong>6</strong> &nbsp;regulatory frameworks mapped to evaluation outputs</span>
             </div>
         </div>
     </section>
 
-    <!-- ── THE DEPLOYMENT STORY (THE STAR) ── -->
+    <!-- ── THREE TRACKS ── -->
+    <section class="a-section a-tracks" id="how">
+        <div class="a-narrow reveal">
+            <span class="a-eyebrow">§ What's inside</span>
+            <h2>Three tracks on one harness.</h2>
+        </div>
+
+        <div class="a-tracks-grid reveal">
+            <article class="a-track">
+                <span class="a-track-num">I.</span>
+                <div>
+                    <h3>Evaluation</h3>
+                    <p>One uniform protocol behind adapters for OpenAI, HuggingFace, Bedrock, gRPC, and local Ollama. Pluggable scorers covering exact match, similarity, classification, and routed human evaluation &mdash; with Krippendorff's alpha and Fleiss' kappa for inter-rater reliability. Every run captures a full environment snapshot so a result is reproducible months later.</p>
+                    <p>Domains: general, safety, adversarial, agentic, multimodal, and customer-specific benchmarks built on Levenhall's eight-phase methodology.</p>
+                </div>
+            </article>
+
+            <article class="a-track">
+                <span class="a-track-num">II.</span>
+                <div>
+                    <h3>Adversarial &amp; Operational Stress</h3>
+                    <p>An automated red-teaming pipeline aligned to MITRE ATLAS &mdash; prompt injection, jailbreak generation, data-poisoning probes, model-extraction resistance &mdash; with results mapped to ATLAS technique IDs that an insurer or auditor recognizes.</p>
+                    <p>An operational-stress simulator injects latency, jitter, throttling, and intermittent connectivity, then measures degradation curves rather than binary pass/fail. Agentic evaluation captures full execution traces and scores against OWASP Agentic AI Top 10 and the MAESTRO framework.</p>
+                </div>
+            </article>
+
+            <article class="a-track">
+                <span class="a-track-num">III.</span>
+                <div>
+                    <h3>Governance, Risk &amp; Insurance</h3>
+                    <p>Live coverage against the frameworks insurers and regulators actually use: <strong>NIST AI RMF</strong>, <strong>ISO 42001</strong>, the <strong>EU AI Act</strong>, <strong>MITRE ATLAS</strong>, <strong>OWASP Agentic AI Top 10</strong>, and the <strong>DoD AI Ethical Principles</strong>. Risk scoring against active incidents. Insurance coverage monitoring across the portfolio. An activity feed that surfaces new evaluations, adversarial detections, and bias audits in real time.</p>
+                    <p>The output is a defensible governance trail, refreshed continuously, not a snapshot taken once a year.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- ── DEPLOYMENT FLEXIBILITY ── -->
     <section class="a-section a-deploy" id="deploy">
         <div class="a-narrow reveal">
-            <span class="a-eyebrow">§ The killer feature</span>
-            <h2>Same container. Every network.</h2>
-            <p class="a-deploy-lede">The image that runs in an unclassified Kubernetes cluster is the same image that runs air-gapped on JWICS. The only thing that changes is Helm.</p>
+            <span class="a-eyebrow">§ Deployment</span>
+            <h2>Same container. Every environment.</h2>
+            <p class="a-deploy-lede">Vendor-agnostic. Identical container images for managed cloud, segregated networks, and air-gapped environments &mdash; the only thing that changes is a Helm config.</p>
         </div>
 
         <div class="a-deploy-tabs reveal">
             <div class="a-tab a-tab-active">
-                <span class="a-tab-label">unclass.yaml</span>
+                <span class="a-tab-label">cloud.yaml</span>
                 <pre class="a-code"><span class="a-c-key">llm</span>:
   <span class="a-c-key">provider</span>: <span class="a-c-val">openai</span>
   <span class="a-c-key">model</span>: <span class="a-c-val">gpt-4o</span>
@@ -66,9 +102,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <span class="a-c-key">egress</span>: <span class="a-c-val">full</span></pre>
             </div>
             <div class="a-tab">
-                <span class="a-tab-label">il5.yaml</span>
+                <span class="a-tab-label">segregated.yaml</span>
                 <pre class="a-code"><span class="a-c-key">llm</span>:
-  <span class="a-c-key">provider</span>: <span class="a-c-val">openai-fedramp</span>
+  <span class="a-c-key">provider</span>: <span class="a-c-val">azure-openai</span>
   <span class="a-c-key">model</span>: <span class="a-c-val">gpt-4o</span>
 <span class="a-c-key">vector</span>:
   <span class="a-c-key">backend</span>: <span class="a-c-val">pgvector</span>
@@ -76,7 +112,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <span class="a-c-key">egress</span>: <span class="a-c-val">restricted</span></pre>
             </div>
             <div class="a-tab">
-                <span class="a-tab-label">tssci.yaml</span>
+                <span class="a-tab-label">airgapped.yaml</span>
                 <pre class="a-code"><span class="a-c-key">llm</span>:
   <span class="a-c-key">provider</span>: <span class="a-c-val">ollama</span>
   <span class="a-c-key">model</span>: <span class="a-c-val">llama3-70b-q4</span>
@@ -88,38 +124,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         </div>
 
         <div class="a-deploy-footer reveal">
-            <p>Three deployments. One image. The model weights, benchmark suites, and knowledge base ship as container volumes for the air-gapped cases. K3s for the tactical edge. Everything underneath is open-source &mdash; no vendor lock-in at the layer that matters.</p>
+            <p>Open-source underneath. No vendor lock-in at the layer that matters. For institutions running sensitive deployments &mdash; financial services, healthcare, regulated dual-use technology, defense primes, intelligence community &mdash; the same image runs air-gapped against a local Ollama model.</p>
         </div>
     </section>
 
-    <!-- ── WHAT IT DOES — THREE TRACKS ── -->
-    <section class="a-section a-tracks">
+    <!-- ── WHO IT'S FOR ── -->
+    <section class="a-section a-audience">
         <div class="a-narrow reveal">
-            <span class="a-eyebrow">§ What it does</span>
-            <h2>Three tracks running off one harness.</h2>
-        </div>
-
-        <div class="a-tracks-grid reveal">
-            <article class="a-track">
-                <span class="a-track-num">I.</span>
-                <h3>Evaluation</h3>
-                <p>Adapters for OpenAI, HuggingFace, Bedrock, gRPC, and local Ollama behind one uniform protocol. Pluggable scorers covering exact match, similarity, classification, and routed human evaluation. Every run captures a full environment snapshot for reproducibility &mdash; Python version, AIGIS version, provider, timestamp.</p>
-                <p>Domain coverage: general, safety, adversarial, agentic, multimodal, DDIL, and mission-specific.</p>
-            </article>
-
-            <article class="a-track">
-                <span class="a-track-num">II.</span>
-                <h3>Adversarial &amp; Operational Stress</h3>
-                <p>An automated red-teaming pipeline aligned to MITRE ATLAS &mdash; prompt injection, jailbreak generation, data-poisoning probes, model-extraction resistance &mdash; with results mapped to ATLAS technique IDs.</p>
-                <p>A DDIL conditions simulator that injects latency, jitter, throttling, and intermittent connectivity, then measures degradation curves instead of binary pass/fail. Agentic evaluation captures the full execution trace and scores against OWASP Agentic AI Top 10 and the MAESTRO framework.</p>
-            </article>
-
-            <article class="a-track">
-                <span class="a-track-num">III.</span>
-                <h3>Governance &amp; Risk</h3>
-                <p>Live compliance coverage against NIST AI RMF, MITRE ATLAS, EU AI Act, ISO 42001, OWASP Agentic AI Top 10, and the DoD AI Ethical Principles. Risk scoring against active incidents. Insurance coverage monitoring. An activity feed that surfaces evaluation results, adversarial detections, and bias audits in real time.</p>
-                <p>Human evaluation rounds out the stack &mdash; Likert, pairwise, best-of-N, with Krippendorff's alpha and Fleiss' kappa computed for inter-rater reliability.</p>
-            </article>
+            <span class="a-eyebrow">§ Who it's for</span>
+            <h2>Built for the private sector first.</h2>
+            <p>AI insurance underwriters and brokers writing or pricing coverage for enterprise AI risk. Compliance and risk committees inside regulated enterprises &mdash; financial services, healthcare, energy, critical infrastructure, dual-use technology &mdash; that need a defensible governance trail. Enterprise AI leads who have to answer to insurers, auditors, and boards on the same model.</p>
+            <p class="a-audience-foot">Defense and intelligence community engagements run on the same platform, in air-gapped mode. The product is dual-use; the lead is the private sector.</p>
         </div>
     </section>
 
@@ -130,7 +145,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <div class="a-cta-rule"></div>
             <p class="a-cta-eyebrow">Levenhall Proprietary</p>
             <h2>AIGIS is active. Early access is selective.</h2>
-            <p>We work with DoD and IC organizations, regulated commercial customers, and insurance counterparties. The platform architecture, adapter SDK, governance-integrated scoring, DDIL profiling, and benchmark methodology are Levenhall proprietary.</p>
+            <p>We work with AI insurance counterparties, regulated enterprises, and institutional risk teams on early access. The platform architecture, adapter SDK, governance-integrated scoring, operational-stress profiling, and benchmark methodology are Levenhall proprietary.</p>
             <div class="btn-group" style="justify-content: center;">
                 <a href="/contact" class="btn btn-gold">Request Early Access</a>
                 <a href="/services#market-intelligence" class="btn btn-outline-white">Intelligence Practice</a>
@@ -183,7 +198,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     }
 
     .a-hero-inner {
-        max-width: 680px;
+        max-width: 720px;
         margin: 0 auto;
         position: relative;
         z-index: 1;
@@ -215,12 +230,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     }
 
     .a-tagline {
-        font-family: 'Crimson Text', serif;
+        font-family: 'Fraunces', serif;
         font-style: italic;
-        font-size: 1.15rem;
-        color: rgba(255, 255, 255, 0.6);
+        font-weight: 400;
+        font-size: 1.25rem;
+        color: rgba(255, 255, 255, 0.7);
         margin-bottom: 2rem;
-        line-height: 1.55;
+        line-height: 1.5;
+        letter-spacing: -0.2px;
     }
 
     .a-cta {
@@ -231,12 +248,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     }
 
     /* ── SHARED ── */
-    .a-section {
-        padding: 6rem 0;
-    }
+    .a-section { padding: 6rem 0; }
 
     .a-narrow {
-        max-width: 660px;
+        max-width: 680px;
         margin: 0 auto;
         padding: 0 1.5rem;
     }
@@ -252,69 +267,72 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         margin-bottom: 1.4rem;
     }
 
-    .a-eyebrow-dark { color: rgba(56, 217, 201, 0.85); }
+    .a-eyebrow-light { color: rgba(56, 217, 201, 0.85); }
 
-    .a-narrow h2 {
-        font-family: 'Crimson Text', serif;
-        font-size: clamp(1.8rem, 3vw, 2.3rem);
-        line-height: 1.25;
-        color: var(--deep-navy);
-        margin-bottom: 1.5rem;
-        font-weight: 700;
-    }
-
-    /* ── SHIELD ── */
-    .a-shield {
-        background: var(--cream);
-    }
+    /* ── PROBLEM ── */
+    .a-problem { background: var(--cream); }
 
     .a-lede {
-        font-family: 'Crimson Text', serif;
-        font-size: 1.55rem;
-        line-height: 1.5;
+        font-family: 'Fraunces', serif;
+        font-weight: 500;
+        font-size: 1.7rem;
+        line-height: 1.4;
         color: var(--deep-navy);
         margin-bottom: 1.5rem;
-        font-weight: 600;
+        letter-spacing: -0.4px;
     }
 
     .a-drop {
-        font-family: 'Crimson Text', serif;
+        font-family: 'Fraunces', serif;
         font-size: 3rem;
-        font-weight: 700;
+        font-weight: 600;
         color: var(--gold);
         line-height: 0.85;
         float: left;
         padding: 0.4rem 0.6rem 0 0;
     }
 
-    .a-shield p {
+    .a-problem p {
         font-size: 1.05rem;
         line-height: 1.85;
         color: var(--text-medium);
         margin-bottom: 1.2rem;
     }
 
-    .a-shield em {
+    .a-problem em {
         font-style: italic;
         color: var(--burgundy);
     }
 
-    /* ── GAP ── */
-    .a-gap {
+    .a-problem-close {
+        font-family: 'Fraunces', serif;
+        font-style: italic;
+        font-weight: 500;
+        font-size: 1.2rem !important;
+        color: var(--burgundy) !important;
+        border-top: 1px solid var(--border-warm);
+        padding-top: 1.4rem;
+        margin-top: 1rem;
+    }
+
+    /* ── INSURANCE TRACK ── */
+    .a-insurance {
         background: linear-gradient(180deg, #0a1628 0%, var(--deep-navy) 100%);
         padding: 6rem 0;
         position: relative;
         overflow: hidden;
     }
 
-    .a-gap-bg {
+    .a-insurance-bg {
         position: absolute;
         inset: 0;
-        background-image: radial-gradient(ellipse at 30% 70%, rgba(56, 217, 201, 0.04) 0%, transparent 50%);
+        background-image:
+            radial-gradient(ellipse at 30% 30%, rgba(56, 217, 201, 0.05) 0%, transparent 50%),
+            radial-gradient(ellipse at 70% 70%, rgba(201, 169, 97, 0.04) 0%, transparent 50%);
         pointer-events: none;
     }
 
-    .a-gap::before {
+    .a-insurance::before {
         content: '';
         position: absolute;
         top: 0;
@@ -324,51 +342,136 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         background: rgba(56, 217, 201, 0.3);
     }
 
-    .a-gap-inner {
-        max-width: 760px;
-        margin: 0 auto;
-        padding: 0 1.5rem;
-        position: relative;
-        z-index: 1;
-    }
-
-    .a-gap-header {
-        margin-bottom: 2.5rem;
-        padding-bottom: 1.8rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .a-gap-header h2 {
-        font-family: 'Crimson Text', serif;
-        font-size: clamp(1.8rem, 3vw, 2.3rem);
-        line-height: 1.25;
+    .a-insurance h2 {
+        font-family: 'Fraunces', serif;
+        font-weight: 600;
+        font-size: clamp(1.9rem, 3.2vw, 2.5rem);
+        line-height: 1.18;
         color: #fff;
-        margin: 0;
-        font-weight: 700;
+        margin-bottom: 1.4rem;
+        letter-spacing: -0.6px;
     }
 
-    .a-gap-prose p {
+    .a-insurance p {
         font-size: 1.05rem;
         line-height: 1.85;
         color: rgba(255, 255, 255, 0.65);
-        margin-bottom: 1.1rem;
+        margin-bottom: 1.2rem;
     }
 
-    .a-gap-prose strong {
+    .a-insurance-pills {
+        margin-top: 2rem;
+        display: flex;
+        gap: 0.7rem;
+        flex-wrap: wrap;
+    }
+
+    .a-pill {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 0.92rem;
+        color: rgba(255, 255, 255, 0.75);
+        background: rgba(56, 217, 201, 0.08);
+        border: 1px solid rgba(56, 217, 201, 0.2);
+        padding: 0.55rem 0.9rem;
+        line-height: 1.4;
+    }
+
+    .a-pill strong {
+        font-family: 'Fraunces', serif;
+        font-weight: 600;
+        font-size: 1.1rem;
         color: rgba(56, 217, 201, 0.95);
+        letter-spacing: -0.3px;
+    }
+
+    /* ── TRACKS ── */
+    .a-tracks { background: var(--cream); }
+
+    .a-tracks .a-narrow {
+        margin-bottom: 0.8rem;
+    }
+
+    .a-tracks h2 {
+        font-family: 'Fraunces', serif;
+        font-weight: 600;
+        font-size: clamp(1.8rem, 3vw, 2.4rem);
+        line-height: 1.15;
+        color: var(--deep-navy);
+        letter-spacing: -0.6px;
+    }
+
+    .a-tracks-grid {
+        max-width: 900px;
+        margin: 2rem auto 0;
+        padding: 0 1.5rem;
+    }
+
+    .a-track {
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        gap: 2rem;
+        padding: 2.4rem 0;
+        border-bottom: 1px solid rgba(30, 58, 95, 0.12);
+    }
+
+    .a-track:last-child { border-bottom: none; }
+
+    .a-track-num {
+        font-family: 'Fraunces', serif;
+        font-weight: 600;
+        font-size: 2.4rem;
+        color: var(--gold);
+        line-height: 1;
+        text-align: right;
+        padding-top: 0.4rem;
+        letter-spacing: -0.5px;
+    }
+
+    .a-track h3 {
+        font-family: 'Fraunces', serif;
+        font-weight: 600;
+        font-size: 1.5rem;
+        color: var(--deep-navy);
+        margin: 0 0 0.9rem;
+        line-height: 1.2;
+        letter-spacing: -0.3px;
+    }
+
+    .a-track p {
+        font-size: 1rem;
+        line-height: 1.85;
+        color: var(--text-medium);
+        margin-bottom: 0.9rem;
+    }
+
+    .a-track p:last-child { margin-bottom: 0; }
+
+    .a-track strong {
+        color: var(--deep-navy);
         font-weight: 600;
     }
 
-    /* ── DEPLOYMENT (THE KILLER FEATURE) ── */
+    /* ── DEPLOYMENT ── */
     .a-deploy {
         background: var(--stone);
         padding: 6rem 0 6.5rem;
     }
 
+    .a-deploy h2 {
+        font-family: 'Fraunces', serif;
+        font-weight: 600;
+        font-size: clamp(1.8rem, 3vw, 2.4rem);
+        line-height: 1.15;
+        color: var(--deep-navy);
+        margin-bottom: 1.4rem;
+        letter-spacing: -0.6px;
+    }
+
     .a-deploy-lede {
-        font-family: 'Crimson Text', serif;
-        font-size: 1.3rem;
+        font-family: 'Fraunces', serif;
+        font-weight: 500;
         font-style: italic;
+        font-size: 1.2rem;
         color: var(--burgundy);
         line-height: 1.55;
         margin-bottom: 0;
@@ -421,13 +524,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         overflow-x: auto;
     }
 
-    .a-c-key {
-        color: rgba(56, 217, 201, 0.85);
-    }
-
-    .a-c-val {
-        color: var(--gold);
-    }
+    .a-c-key { color: rgba(56, 217, 201, 0.85); }
+    .a-c-val { color: var(--gold); }
 
     .a-deploy-footer {
         max-width: 720px;
@@ -438,61 +536,37 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
     .a-deploy-footer p {
         font-size: 1rem;
-        line-height: 1.8;
-        color: var(--text-medium);
-    }
-
-    /* ── TRACKS ── */
-    .a-tracks {
-        background: var(--cream);
-    }
-
-    .a-tracks-grid {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 0 1.5rem;
-    }
-
-    .a-track {
-        display: grid;
-        grid-template-columns: 80px 1fr;
-        gap: 2rem;
-        padding: 2.4rem 0;
-        border-bottom: 1px solid rgba(30, 58, 95, 0.12);
-    }
-
-    .a-track:last-child {
-        border-bottom: none;
-    }
-
-    .a-track-num {
-        font-family: 'Crimson Text', serif;
-        font-size: 2.4rem;
-        font-weight: 700;
-        color: var(--gold);
-        line-height: 1;
-        text-align: right;
-        padding-top: 0.4rem;
-    }
-
-    .a-track h3 {
-        font-family: 'Crimson Text', serif;
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: var(--deep-navy);
-        margin: 0 0 0.9rem;
-        line-height: 1.3;
-    }
-
-    .a-track p {
-        font-size: 1rem;
         line-height: 1.85;
         color: var(--text-medium);
-        margin-bottom: 0.9rem;
     }
 
-    .a-track p:last-child {
-        margin-bottom: 0;
+    /* ── AUDIENCE ── */
+    .a-audience { background: var(--cream); padding: 5rem 0; }
+
+    .a-audience h2 {
+        font-family: 'Fraunces', serif;
+        font-weight: 600;
+        font-size: clamp(1.7rem, 3vw, 2.3rem);
+        line-height: 1.2;
+        color: var(--deep-navy);
+        margin-bottom: 1.4rem;
+        letter-spacing: -0.5px;
+    }
+
+    .a-audience p {
+        font-size: 1.05rem;
+        line-height: 1.85;
+        color: var(--text-medium);
+        margin-bottom: 1rem;
+    }
+
+    .a-audience-foot {
+        font-style: italic;
+        color: var(--text-medium) !important;
+        font-size: 0.98rem !important;
+        border-top: 1px solid var(--border-warm);
+        padding-top: 1.2rem;
+        margin-top: 0.6rem;
     }
 
     /* ── CTA ── */
@@ -548,12 +622,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     }
 
     .a-cta-section h2 {
-        font-family: 'Crimson Text', serif;
-        font-size: clamp(1.8rem, 3vw, 2.4rem);
+        font-family: 'Fraunces', serif;
+        font-weight: 600;
+        font-size: clamp(1.9rem, 3.2vw, 2.6rem);
         color: #fff;
         margin-bottom: 1.2rem;
-        font-weight: 700;
-        line-height: 1.25;
+        line-height: 1.15;
+        letter-spacing: -0.6px;
     }
 
     .a-cta-section p {
@@ -568,12 +643,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         .a-hero { padding: 7rem 2rem 4rem; }
         .a-section { padding: 4.5rem 0; }
         .a-deploy { padding: 4.5rem 0; }
-        .a-gap { padding: 4.5rem 0; }
+        .a-insurance { padding: 4.5rem 0; }
         .a-deploy-tabs { grid-template-columns: 1fr; gap: 0.8rem; }
         .a-code { font-size: 0.78rem; }
-        .a-lede { font-size: 1.25rem; }
-        .a-drop { font-size: 2.4rem; }
+        .a-lede { font-size: 1.35rem; }
+        .a-drop { font-size: 2.6rem; }
         .a-track { grid-template-columns: 1fr; gap: 0.6rem; padding: 2rem 0; }
         .a-track-num { text-align: left; font-size: 2rem; padding-top: 0; }
+        .a-insurance-pills { flex-direction: column; align-items: flex-start; }
     }
 </style>
