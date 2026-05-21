@@ -12,8 +12,6 @@ import CTASection from '../../components/CTASection.astro';
             <p class="b-tag">A Levenhall Product</p>
             <img src="/images/products/bridger-logo-cropped.jpg" alt="Bridger" class="b-logo">
             <p class="b-tagline">Market Entry Intelligence for US Federal Contracting</p>
-            <div class="b-rule"></div>
-            <p class="b-desc">A pre-RFP intelligence platform with a marketplace and capture workflow built on top. Built first for allied technology firms entering the US federal market.</p>
             <div class="b-cta">
                 <a href="https://bridger.levenhall.com" class="btn btn-gold" target="_blank" rel="noopener noreferrer">Open Bridger</a>
                 <a href="https://bridger.levenhall.com/brief" class="btn btn-outline-white" target="_blank" rel="noopener noreferrer">Daily Brief</a>
@@ -21,140 +19,62 @@ import CTASection from '../../components/CTASection.astro';
         </div>
     </section>
 
-    <!-- ── STAT STRIP ── -->
-    <section class="b-stats-section">
-        <div class="container">
-            <div class="b-stats reveal">
-                <div class="b-stat">
-                    <span class="b-stat-val">$750B</span>
-                    <span class="b-stat-lbl">Annual US Federal Procurement</span>
-                </div>
-                <div class="b-stat">
-                    <span class="b-stat-val">6&ndash;12mo</span>
-                    <span class="b-stat-lbl">Lead Time Before the RFP</span>
-                </div>
-                <div class="b-stat">
-                    <span class="b-stat-val">2,300+</span>
-                    <span class="b-stat-lbl">Signals Indexed Each Week</span>
-                </div>
-                <div class="b-stat">
-                    <span class="b-stat-val">1,400+</span>
-                    <span class="b-stat-lbl">Allied Firms in the Network</span>
-                </div>
-            </div>
+    <!-- ── OPENING ── -->
+    <section class="b-section b-opening">
+        <div class="b-narrow reveal">
+            <p class="b-lede">The US federal government will spend roughly $750 billion this year. By the time any of it shows up on SAM.gov, it has already been decided.</p>
+            <p>Appropriations bills, committee markups, agency forecasts, GAO bid protests, OFAC entity-list updates, allied defense reorganizations &mdash; the signal that decides who wins moves six to twelve months ahead of the RFP. Incumbent contractors pay fifty thousand dollars a year for that signal. Everyone else competes blind.</p>
+            <p>For allied technology firms it is worse still. They arrive cold into a regulatory landscape they don't speak &mdash; ITAR, FOCI, CFIUS, DSGL, DISP &mdash; and the partners who could shorten the path are invisible without a local network.</p>
+            <p class="b-lede-close">Bridger is the platform we built so they don't have to.</p>
         </div>
     </section>
 
-    <!-- ── PROBLEM ── -->
-    <section class="b-section b-problem">
-        <div class="container">
-            <div class="b-narrow reveal">
-                <span class="b-label">The Problem</span>
-                <h2>Federal procurement runs on signal that doesn't live on SAM.gov.</h2>
-                <div class="b-gold-rule"></div>
-                <p>Appropriations bills, agency forecasts, committee markups, GAO protests, OFAC updates &mdash; these move months before the RFP and decide who wins. Incumbents pay $50K a year for that signal. Everyone else sees the RFP on SAM.gov and competes blind.</p>
-                <p>For allied firms it's worse. They arrive cold into a regulatory landscape they don't speak &mdash; ITAR, FOCI, CFIUS, DSGL, DISP &mdash; and the partners who could shorten the path are invisible without a local network.</p>
+    <!-- ── WHAT IT IS — DOCUMENT STYLE ── -->
+    <section class="b-doc">
+        <div class="b-doc-bg"></div>
+        <div class="b-doc-inner">
+            <div class="b-doc-header reveal">
+                <span class="b-doc-eyebrow">§ Structure</span>
+                <h2>A three-part system, in the order it works.</h2>
             </div>
+
+            <article class="b-doc-item reveal">
+                <span class="b-doc-num">01</span>
+                <div class="b-doc-body">
+                    <h3>Intelligence &mdash; the spine.</h3>
+                    <p>Roughly twenty-three hundred procurement-relevant signals flow into the index every week. SAM.gov, FPDS, GAO, OFAC, Congress.gov, agency forecasts, CISA and NIST, allied defense ministries, ACLED, the Federal Register, executive orders, congressional hearings.</p>
+                    <p>A clustering layer running on Claude Haiku synthesizes them into assessments &mdash; about a thousand in the index at any time, each confidence-rated, source-cited, country-tagged. A Country Instability Index scores the markets that matter. Every new opportunity is matched against a contractor's profile across five separate signals, and the system will not generate a rationale unless at least two of those signals actually fired.</p>
+                    <p>The daily brief is free, public, and lands at six in the morning Eastern.</p>
+                </div>
+            </article>
+
+            <article class="b-doc-item reveal">
+                <span class="b-doc-num">02</span>
+                <div class="b-doc-body">
+                    <h3>Marketplace &mdash; the network.</h3>
+                    <p>Three search surfaces on one fit-scoring engine. <strong>Provider Search</strong> for the people you need to win &mdash; C3PAOs, proposal writers, US incorporation specialists, 8(a) JV partners, contract manufacturers. <strong>Lobbyist Search</strong> for the people who shape what gets written. <strong>Tech Scout</strong> for the fourteen hundred allied technology firms already vetted across sixty-plus countries.</p>
+                    <p>Same scoring algorithm; per-surface filters. Warm introductions at the point of intent, not a separate CRM you have to remember to open.</p>
+                </div>
+            </article>
+
+            <article class="b-doc-item reveal">
+                <span class="b-doc-num">03</span>
+                <div class="b-doc-body">
+                    <h3>Capture &mdash; the workflow.</h3>
+                    <p>A pipeline kanban that knows what stage you're in: <em>Identified, Qualified, Capture, Proposal, Submitted.</em> An AI-generated capture brief built from the opportunity, your company record, and the match intelligence. A capability statement and past performance that auto-populate from one canonical record &mdash; so nothing drifts.</p>
+                    <p>It is the gap between <em>I'm watching this</em> and <em>I'm submitting on this</em>, closed.</p>
+                </div>
+            </article>
         </div>
     </section>
 
-    <!-- ── THE STACK (DARK) ── -->
-    <section class="b-section b-stack" id="stack">
-        <div class="b-dark-bg"></div>
-        <div class="container" style="position: relative; z-index: 1;">
-            <div class="b-header reveal">
-                <span class="b-dark-label">What Bridger Is</span>
-                <h2>Three Layers. One Data Spine.</h2>
-            </div>
-            <div class="b-stack-grid reveal">
-                <div class="b-stack-card">
-                    <span class="b-stack-num">01</span>
-                    <span class="b-stack-tag">The Spine</span>
-                    <h3>Intelligence</h3>
-                    <p>2,300+ procurement signals indexed each week from SAM.gov, FPDS, GAO, OFAC, Congress, agency forecasts, allied MoDs, and more.</p>
-                    <p>LLM-clustered assessments. A Country Instability Index. Five-signal opportunity matching with cited rationales. A free daily brief at 6 AM Eastern.</p>
-                </div>
-                <div class="b-stack-card">
-                    <span class="b-stack-num">02</span>
-                    <span class="b-stack-tag">The Network</span>
-                    <h3>Marketplace</h3>
-                    <p>A two-sided directory of the people who close federal deals &mdash; providers, lobbyists, and 1,400+ allied tech firms across 60+ countries.</p>
-                    <p>One fit-scoring engine across all three surfaces. Warm intros at the point of intent, not a separate CRM.</p>
-                </div>
-                <div class="b-stack-card">
-                    <span class="b-stack-num">03</span>
-                    <span class="b-stack-tag">The Workflow</span>
-                    <h3>Capture</h3>
-                    <p>Pipeline kanban, AI-generated capture briefs, capability statement, past performance, and teaming &mdash; all running off one canonical company record.</p>
-                    <p>From "I'm watching" to "I'm submitted" without leaving the platform.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ── COMPLIANCE MOAT ── -->
+    <!-- ── ALLIED MOAT — INLINE ── -->
     <section class="b-section b-moat">
-        <div class="container">
-            <div class="b-header reveal">
-                <span class="b-label">The Allied Moat</span>
-                <h2>Cross-Border Compliance, Indexed Together</h2>
-                <p class="b-header-sub">No other procurement tool tracks these regimes side by side. That's what makes allied entry tractable.</p>
-            </div>
-            <div class="b-moat-grid reveal">
-                <div class="b-moat-card">
-                    <span class="b-moat-flag">🇺🇸</span>
-                    <h4>ITAR &amp; AUKUS</h4>
-                    <p>22 CFR §§ 121&ndash;130 with AUKUS Final Rule (§ 126.7) eligibility tracking.</p>
-                </div>
-                <div class="b-moat-card">
-                    <span class="b-moat-flag">🇺🇸</span>
-                    <h4>FOCI &amp; CFIUS</h4>
-                    <p>NISPOM / DCSA mitigation flows plus 50 U.S.C. § 4565 review.</p>
-                </div>
-                <div class="b-moat-card">
-                    <span class="b-moat-flag">🇺🇸</span>
-                    <h4>ECCN &amp; BIS</h4>
-                    <p>Export classification and license tracking through the BIS regime.</p>
-                </div>
-                <div class="b-moat-card">
-                    <span class="b-moat-flag">🇦🇺</span>
-                    <h4>DSGL &amp; DISP</h4>
-                    <p>Australian Defence and Strategic Goods List, plus Defence Industry Security Program.</p>
-                </div>
-                <div class="b-moat-card">
-                    <span class="b-moat-flag">🇬🇧</span>
-                    <h4>UK List X</h4>
-                    <p>Security Cleared status and the UK industry security framework.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ── PORTALS (DARK) ── -->
-    <section class="b-section b-portals">
-        <div class="b-dark-bg"></div>
-        <div class="container" style="position: relative; z-index: 1;">
-            <div class="b-header reveal">
-                <span class="b-dark-label">Who Uses It</span>
-                <h2>Three Portals. One Platform.</h2>
-            </div>
-            <div class="b-portals-grid reveal">
-                <div class="b-portal-card">
-                    <span class="b-portal-num">01</span>
-                    <h3>Contractors</h3>
-                    <p>Allied-entry firms and US capture-side teams. Pipeline, capture briefs, cap statements, past performance, teaming.</p>
-                </div>
-                <div class="b-portal-card">
-                    <span class="b-portal-num">02</span>
-                    <h3>Providers</h3>
-                    <p>C3PAOs, proposal writers, incorporation specialists, manufacturers. Inbound leads, services, billing.</p>
-                </div>
-                <div class="b-portal-card">
-                    <span class="b-portal-num">03</span>
-                    <h3>Lobbyists</h3>
-                    <p>Government-relations firms by specialty. Engagements, intel, appropriations tracking, billing.</p>
-                </div>
-            </div>
+        <div class="b-narrow reveal">
+            <span class="b-eyebrow">§ The allied moat</span>
+            <h2>The compliance regimes other tools won't touch.</h2>
+            <p>Bridger indexes the regulatory regimes that govern who can sell what, side by side. <span class="b-moat-tag">🇺🇸 ITAR</span> with AUKUS Final Rule (§ 126.7) eligibility tracking. <span class="b-moat-tag">🇺🇸 FOCI</span> mitigation under NISPOM and DCSA, and <span class="b-moat-tag">🇺🇸 CFIUS</span> review under 50 U.S.C. § 4565. <span class="b-moat-tag">🇺🇸 ECCN</span> classification and BIS licensing. <span class="b-moat-tag">🇦🇺 DSGL</span> and <span class="b-moat-tag">🇦🇺 DISP</span> on the Australian side. <span class="b-moat-tag">🇬🇧 List X</span> and Security Cleared status on the UK side.</p>
+            <p class="b-moat-close">No general procurement tool tracks these together. That's the layer that makes allied entry tractable, and it's the structural reason &mdash; not the marketing reason &mdash; that the platform was built for allied firms first.</p>
         </div>
     </section>
 
@@ -162,14 +82,14 @@ import CTASection from '../../components/CTASection.astro';
     <section class="b-section b-diff">
         <div class="container">
             <div class="b-header reveal">
-                <span class="b-label">Why It's Different</span>
-                <h2>Bridger vs. Most Procurement Tools</h2>
+                <span class="b-eyebrow b-eyebrow-center">§ The short version</span>
+                <h2>What you get that you can't get elsewhere.</h2>
             </div>
             <div class="b-diff-table reveal">
                 <div class="b-diff-row b-diff-head">
-                    <span>Capability</span>
+                    <span></span>
                     <span class="b-diff-mark">Bridger</span>
-                    <span class="b-diff-other">Most tools</span>
+                    <span class="b-diff-other">Most procurement tools</span>
                 </div>
                 <div class="b-diff-row">
                     <span class="b-diff-cap">Signal timing</span>
@@ -183,7 +103,7 @@ import CTASection from '../../components/CTASection.astro';
                 </div>
                 <div class="b-diff-row">
                     <span class="b-diff-cap">Cross-border</span>
-                    <span class="b-diff-mark">ITAR / FOCI / CFIUS / DSGL / DISP together</span>
+                    <span class="b-diff-mark">ITAR / FOCI / CFIUS / DSGL / DISP, together</span>
                     <span class="b-diff-other">US-only</span>
                 </div>
                 <div class="b-diff-row">
@@ -192,7 +112,7 @@ import CTASection from '../../components/CTASection.astro';
                     <span class="b-diff-other">Standalone directory or separate CRM</span>
                 </div>
                 <div class="b-diff-row">
-                    <span class="b-diff-cap">Primary audience</span>
+                    <span class="b-diff-cap">Audience</span>
                     <span class="b-diff-mark">Allied technology firms entering the US</span>
                     <span class="b-diff-other">US-only contractors</span>
                 </div>
@@ -200,9 +120,8 @@ import CTASection from '../../components/CTASection.astro';
         </div>
     </section>
 
-    <!-- ── CTA ── -->
     <CTASection
-        heading="Open Bridger"
+        heading="Open Bridger."
         description="Production at bridger.levenhall.com. Free daily brief at 6 AM Eastern. Scout tier is free."
         primaryLabel="Open Bridger"
         primaryHref="https://bridger.levenhall.com"
@@ -216,7 +135,7 @@ import CTASection from '../../components/CTASection.astro';
     /* ── HERO ── */
     .b-hero {
         background: linear-gradient(160deg, #060c18 0%, #0c1628 40%, #0a1224 100%);
-        padding: 9rem 2rem 5.5rem;
+        padding: 9rem 2rem 5rem;
         text-align: center;
         position: relative;
         overflow: hidden;
@@ -225,8 +144,7 @@ import CTASection from '../../components/CTASection.astro';
     .b-hero-bg {
         position: absolute;
         inset: 0;
-        background-image:
-            radial-gradient(ellipse at 50% 80%, rgba(201, 169, 97, 0.06) 0%, transparent 55%);
+        background-image: radial-gradient(ellipse at 50% 80%, rgba(201, 169, 97, 0.06) 0%, transparent 55%);
         pointer-events: none;
     }
 
@@ -236,13 +154,13 @@ import CTASection from '../../components/CTASection.astro';
         bottom: 0;
         left: 0;
         right: 0;
-        height: 3px;
+        height: 1px;
         background: linear-gradient(90deg, transparent, var(--gold), transparent);
-        opacity: 0.45;
+        opacity: 0.5;
     }
 
     .b-hero-inner {
-        max-width: 680px;
+        max-width: 620px;
         margin: 0 auto;
         position: relative;
         z-index: 1;
@@ -252,47 +170,28 @@ import CTASection from '../../components/CTASection.astro';
         display: inline-block;
         font-family: 'Source Sans Pro', sans-serif;
         font-weight: 600;
-        font-size: 0.68rem;
+        font-size: 0.66rem;
         letter-spacing: 3.5px;
         text-transform: uppercase;
         color: var(--gold);
-        background: rgba(201, 169, 97, 0.08);
-        border: 1px solid rgba(201, 169, 97, 0.18);
-        padding: 0.5rem 1.4rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1.8rem;
     }
 
     .b-logo {
-        max-width: 380px;
+        max-width: 360px;
         width: 100%;
         height: auto;
         display: block;
-        margin: 0 auto 1.8rem;
-    }
-
-    .b-tagline {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.78rem;
-        font-weight: 600;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: 1.6rem;
-    }
-
-    .b-rule {
-        width: 50px;
-        height: 2px;
-        background: var(--gold);
         margin: 0 auto 1.6rem;
     }
 
-    .b-desc {
-        font-size: 1.08rem;
-        color: rgba(255, 255, 255, 0.65);
-        line-height: 1.8;
-        margin: 0 auto 2.2rem;
-        max-width: 560px;
+    .b-tagline {
+        font-family: 'Crimson Text', serif;
+        font-style: italic;
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.6);
+        margin-bottom: 2rem;
+        letter-spacing: 0.3px;
     }
 
     .b-cta {
@@ -302,327 +201,222 @@ import CTASection from '../../components/CTASection.astro';
         flex-wrap: wrap;
     }
 
-    /* ── STATS STRIP ── */
-    .b-stats-section {
-        background: var(--cream);
-        padding: 3.5rem 0;
-    }
-
-    .b-stats {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 0;
-        max-width: 1100px;
-        margin: 0 auto;
-        background: #fff;
-        border: 1px solid var(--border-warm);
-        border-top: 3px solid var(--gold);
-    }
-
-    .b-stat {
-        padding: 2rem 1.4rem;
-        text-align: center;
-        border-right: 1px solid var(--border-warm);
-    }
-
-    .b-stat:last-child {
-        border-right: none;
-    }
-
-    .b-stat-val {
-        display: block;
-        font-family: 'Crimson Text', serif;
-        font-size: 2.4rem;
-        font-weight: 700;
-        color: var(--deep-navy);
-        line-height: 1;
-        margin-bottom: 0.6rem;
-    }
-
-    .b-stat-lbl {
-        display: block;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.7rem;
-        font-weight: 600;
-        letter-spacing: 1.4px;
-        text-transform: uppercase;
-        color: var(--text-medium);
-        line-height: 1.45;
-    }
-
-    /* ── SHARED SECTION ── */
+    /* ── SHARED ── */
     .b-section {
-        padding: 5.5rem 0;
+        padding: 6rem 0;
     }
 
-    .b-label {
-        display: inline-block;
+    .b-eyebrow {
+        display: block;
         font-family: 'Source Sans Pro', sans-serif;
         font-weight: 600;
-        font-size: 0.68rem;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        color: var(--burgundy);
-        background: var(--burgundy-surface);
-        padding: 0.5rem 1.2rem;
-        margin-bottom: 1.2rem;
-    }
-
-    .b-dark-label {
-        display: inline-block;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 600;
-        font-size: 0.72rem;
-        letter-spacing: 3px;
+        font-size: 0.7rem;
+        letter-spacing: 2.5px;
         text-transform: uppercase;
         color: var(--gold);
-        background: rgba(201, 169, 97, 0.08);
-        border: 1px solid rgba(201, 169, 97, 0.15);
-        padding: 0.5rem 1.2rem;
-        margin-bottom: 1.2rem;
-    }
-
-    .b-gold-rule {
-        width: 50px;
-        height: 2px;
-        background: var(--gold);
         margin-bottom: 1.5rem;
     }
 
-    .b-header {
-        max-width: 720px;
-        margin: 0 auto 3rem;
+    .b-eyebrow-center {
         text-align: center;
-    }
-
-    .b-header h2 {
-        margin-bottom: 0.8rem;
-    }
-
-    .b-header-sub {
-        font-size: 1.02rem;
-        line-height: 1.75;
-        color: var(--text-medium);
     }
 
     .b-narrow {
-        max-width: 720px;
+        max-width: 660px;
         margin: 0 auto;
-        text-align: center;
+        padding: 0 1.5rem;
     }
 
     .b-narrow h2 {
-        color: var(--deep-navy);
-        margin-bottom: 1.2rem;
-        font-size: clamp(1.7rem, 3.2vw, 2.3rem);
+        font-family: 'Crimson Text', serif;
+        font-size: clamp(1.7rem, 3vw, 2.2rem);
         line-height: 1.25;
+        color: var(--deep-navy);
+        margin-bottom: 1.5rem;
+        font-weight: 700;
     }
 
-    .b-narrow .b-gold-rule {
-        margin-left: auto;
-        margin-right: auto;
+    /* ── OPENING ── */
+    .b-opening {
+        background: var(--cream);
+        padding: 6.5rem 0;
     }
 
-    .b-narrow p {
+    .b-lede {
+        font-family: 'Crimson Text', serif;
+        font-size: 1.6rem;
+        line-height: 1.45;
+        color: var(--deep-navy);
+        margin-bottom: 1.6rem;
+        font-weight: 600;
+    }
+
+    .b-lede-close {
+        font-family: 'Crimson Text', serif;
+        font-size: 1.3rem;
+        font-style: italic;
+        color: var(--burgundy);
+        margin-top: 2rem;
+        border-top: 1px solid var(--border-warm);
+        padding-top: 1.6rem;
+    }
+
+    .b-opening p {
         font-size: 1.05rem;
         line-height: 1.8;
         color: var(--text-medium);
-        margin-bottom: 1rem;
+        margin-bottom: 1.2rem;
     }
 
-    /* ── DARK SECTIONS ── */
-    .b-stack,
-    .b-portals {
-        background: linear-gradient(135deg, #0a1628 0%, var(--navy) 50%, #162d4f 100%);
+    /* ── DOCUMENT-STYLE STRUCTURE SECTION ── */
+    .b-doc {
+        background: linear-gradient(180deg, #0a1628 0%, var(--deep-navy) 100%);
+        padding: 6rem 0;
         position: relative;
         overflow: hidden;
     }
 
-    .b-dark-bg {
+    .b-doc-bg {
         position: absolute;
         inset: 0;
-        background-image: radial-gradient(ellipse at 50% 80%, rgba(201, 169, 97, 0.05) 0%, transparent 50%);
+        background-image: radial-gradient(ellipse at 70% 30%, rgba(201, 169, 97, 0.05) 0%, transparent 50%);
         pointer-events: none;
     }
 
-    .b-stack::before,
-    .b-portals::before {
+    .b-doc::before {
         content: '';
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
-        height: 3px;
-        background: linear-gradient(90deg, transparent, var(--gold), transparent);
-        opacity: 0.4;
+        height: 1px;
+        background: rgba(201, 169, 97, 0.25);
     }
 
-    .b-stack h2,
-    .b-portals h2 { color: #fff; }
-    .b-stack .b-header-sub,
-    .b-portals .b-header-sub { color: rgba(255, 255, 255, 0.55); }
-
-    /* ── THE STACK ── */
-    .b-stack-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-auto-rows: 1fr;
-        gap: 1.2rem;
-        max-width: 1100px;
+    .b-doc-inner {
+        max-width: 820px;
         margin: 0 auto;
+        padding: 0 1.5rem;
+        position: relative;
+        z-index: 1;
     }
 
-    .b-stack-card {
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        border-top: 3px solid var(--gold);
-        padding: 2rem 1.8rem;
-        display: flex;
-        flex-direction: column;
-        gap: 0.6rem;
-        transition: all 0.3s ease;
+    .b-doc-header {
+        margin-bottom: 3.5rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .b-stack-card:hover {
-        background: rgba(255, 255, 255, 0.07);
-        transform: translateY(-3px);
-        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
-    }
-
-    .b-stack-num {
-        font-family: 'Crimson Text', serif;
-        font-size: 1.3rem;
-        font-weight: 700;
-        color: var(--gold);
-        opacity: 0.5;
-        line-height: 1;
-    }
-
-    .b-stack-tag {
+    .b-doc-eyebrow {
+        display: block;
         font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.65rem;
-        font-weight: 700;
+        font-weight: 600;
+        font-size: 0.72rem;
         letter-spacing: 2.5px;
         text-transform: uppercase;
         color: var(--gold);
+        margin-bottom: 1rem;
     }
 
-    .b-stack-card h3 {
-        font-size: 1.5rem;
+    .b-doc-header h2 {
+        font-family: 'Crimson Text', serif;
+        font-size: clamp(1.8rem, 3vw, 2.3rem);
+        font-weight: 700;
+        line-height: 1.25;
         color: #fff;
-        margin: 0.2rem 0 0.6rem;
     }
 
-    .b-stack-card p {
-        font-size: 0.94rem;
-        line-height: 1.7;
-        color: rgba(255, 255, 255, 0.6);
-        margin: 0;
+    .b-doc-item {
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        gap: 2rem;
+        padding: 2.2rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
-    /* ── COMPLIANCE MOAT ── */
+    .b-doc-item:last-of-type {
+        border-bottom: none;
+    }
+
+    .b-doc-num {
+        font-family: 'Crimson Text', serif;
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--gold);
+        line-height: 1;
+        letter-spacing: 1px;
+        text-align: right;
+        padding-top: 0.4rem;
+    }
+
+    .b-doc-body h3 {
+        font-family: 'Crimson Text', serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #fff;
+        margin: 0 0 0.9rem;
+        line-height: 1.3;
+    }
+
+    .b-doc-body p {
+        font-size: 1rem;
+        line-height: 1.85;
+        color: rgba(255, 255, 255, 0.65);
+        margin-bottom: 0.9rem;
+    }
+
+    .b-doc-body p:last-child {
+        margin-bottom: 0;
+    }
+
+    .b-doc-body strong {
+        color: #fff;
+        font-weight: 600;
+    }
+
+    .b-doc-body em {
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.85);
+    }
+
+    /* ── MOAT ── */
     .b-moat {
         background: var(--stone);
+        padding: 6rem 0;
     }
 
     .b-moat h2 {
         color: var(--deep-navy);
     }
 
-    .b-moat-grid {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-auto-rows: 1fr;
-        gap: 1rem;
-        max-width: 1100px;
-        margin: 0 auto;
+    .b-moat p {
+        font-size: 1.05rem;
+        line-height: 1.95;
+        color: var(--text-medium);
+        margin-bottom: 1.2rem;
     }
 
-    .b-moat-card {
+    .b-moat-tag {
+        display: inline;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 600;
+        color: var(--deep-navy);
         background: #fff;
         border: 1px solid var(--border-warm);
-        border-top: 3px solid var(--gold);
-        padding: 1.6rem 1.4rem;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        text-align: left;
-        transition: all 0.3s ease;
-    }
-
-    .b-moat-card:hover {
-        transform: translateY(-3px);
-        box-shadow: var(--shadow-warm-md);
-    }
-
-    .b-moat-flag {
-        font-size: 1.8rem;
-        line-height: 1;
-        margin-bottom: 0.4rem;
-    }
-
-    .b-moat-card h4 {
-        font-family: 'Source Sans Pro', sans-serif;
+        padding: 0.15rem 0.55rem;
+        margin: 0 0.1rem;
+        white-space: nowrap;
         font-size: 0.92rem;
-        font-weight: 700;
-        color: var(--deep-navy);
-        margin: 0;
-        letter-spacing: 0.5px;
     }
 
-    .b-moat-card p {
-        font-size: 0.84rem;
-        line-height: 1.55;
-        color: var(--text-medium);
-        margin: 0;
-    }
-
-    /* ── PORTALS ── */
-    .b-portals-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-auto-rows: 1fr;
-        gap: 1.2rem;
-        max-width: 1000px;
-        margin: 0 auto;
-    }
-
-    .b-portal-card {
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        border-left: 3px solid var(--gold);
-        padding: 1.8rem;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        transition: all 0.3s ease;
-    }
-
-    .b-portal-card:hover {
-        background: rgba(255, 255, 255, 0.07);
-        transform: translateY(-3px);
-    }
-
-    .b-portal-num {
+    .b-moat-close {
         font-family: 'Crimson Text', serif;
-        font-size: 1.3rem;
-        font-weight: 700;
-        color: var(--gold);
-        opacity: 0.5;
-        line-height: 1;
-    }
-
-    .b-portal-card h3 {
-        font-size: 1.3rem;
-        color: #fff;
-        margin: 0.2rem 0 0.4rem;
-    }
-
-    .b-portal-card p {
-        font-size: 0.94rem;
-        line-height: 1.7;
-        color: rgba(255, 255, 255, 0.6);
-        margin: 0;
+        font-style: italic;
+        font-size: 1.1rem;
+        color: var(--burgundy);
+        border-top: 1px solid var(--border-warm);
+        padding-top: 1.4rem;
+        margin-top: 0.6rem;
     }
 
     /* ── DIFFERENTIATION ── */
@@ -630,26 +424,34 @@ import CTASection from '../../components/CTASection.astro';
         background: var(--cream);
     }
 
-    .b-diff h2 {
+    .b-header {
+        max-width: 660px;
+        margin: 0 auto 3rem;
+        text-align: center;
+        padding: 0 1.5rem;
+    }
+
+    .b-header h2 {
+        font-family: 'Crimson Text', serif;
+        font-size: clamp(1.7rem, 3vw, 2.2rem);
+        line-height: 1.25;
         color: var(--deep-navy);
+        font-weight: 700;
     }
 
     .b-diff-table {
-        max-width: 1000px;
+        max-width: 940px;
         margin: 0 auto;
-        background: #fff;
-        border: 1px solid var(--border-warm);
-        border-top: 3px solid var(--gold);
     }
 
     .b-diff-row {
         display: grid;
-        grid-template-columns: 0.8fr 1.4fr 1fr;
+        grid-template-columns: 0.7fr 1.4fr 1fr;
         gap: 1.5rem;
-        padding: 1.1rem 1.5rem;
-        border-bottom: 1px solid var(--border-warm);
+        padding: 1.3rem 0;
+        border-bottom: 1px solid rgba(30, 58, 95, 0.12);
         align-items: center;
-        font-size: 0.95rem;
+        font-size: 1rem;
         line-height: 1.55;
     }
 
@@ -658,53 +460,49 @@ import CTASection from '../../components/CTASection.astro';
     }
 
     .b-diff-head {
-        background: var(--stone);
+        border-bottom: 2px solid var(--deep-navy);
         font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.65rem;
+        font-size: 0.7rem;
         font-weight: 700;
         letter-spacing: 2px;
         text-transform: uppercase;
+        padding-bottom: 0.9rem;
     }
 
-    .b-diff-head span:first-child { color: var(--text-medium); }
     .b-diff-head .b-diff-mark { color: var(--burgundy); }
     .b-diff-head .b-diff-other { color: var(--text-medium); }
 
     .b-diff-cap {
-        font-weight: 600;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
         color: var(--deep-navy);
     }
 
     .b-diff-mark {
         color: var(--deep-navy);
+        font-weight: 500;
     }
 
     .b-diff-other {
         color: var(--text-medium);
+        font-style: italic;
     }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 1100px) {
-        .b-moat-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-
-    @media (max-width: 992px) {
-        .b-stats { grid-template-columns: repeat(2, 1fr); }
-        .b-stat { border-right: none; border-bottom: 1px solid var(--border-warm); }
-        .b-stat:nth-child(2) { border-right: 1px solid var(--border-warm); }
-        .b-stat:nth-child(odd) { border-right: 1px solid var(--border-warm); }
-        .b-stack-grid { grid-template-columns: 1fr; }
-        .b-portals-grid { grid-template-columns: 1fr; max-width: 480px; }
-    }
-
     @media (max-width: 768px) {
         .b-hero { padding: 7rem 2rem 4rem; }
         .b-logo { max-width: 280px; }
-        .b-stats { grid-template-columns: 1fr; }
-        .b-stat { border-right: none !important; }
-        .b-moat-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
-        .b-diff-row { grid-template-columns: 1fr; gap: 0.4rem; padding: 1rem 1.2rem; }
+        .b-section { padding: 4.5rem 0; }
+        .b-opening { padding: 4.5rem 0; }
+        .b-doc { padding: 4.5rem 0; }
+        .b-doc-item { grid-template-columns: 1fr; gap: 0.8rem; padding: 2rem 0; }
+        .b-doc-num { text-align: left; font-size: 2.2rem; padding-top: 0; }
+        .b-lede { font-size: 1.3rem; }
+        .b-diff-row { grid-template-columns: 1fr; gap: 0.3rem; padding: 1.2rem 0; }
         .b-diff-head { display: none; }
-        .b-diff-cap { font-size: 0.72rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--burgundy); }
+        .b-diff-cap { color: var(--burgundy); }
     }
 </style>

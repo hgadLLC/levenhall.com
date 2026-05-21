@@ -2,215 +2,124 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="AIGIS | Levenhall" description="AIGIS is Levenhall's modular, containerized AI evaluation and governance platform — designed to run from unclassified through TS/SCI air-gapped on the same container images.">
+<BaseLayout title="AIGIS | Levenhall" description="AIGIS is Levenhall's modular, containerized AI evaluation and governance platform — designed to run from unclassified through TS/SCI air-gapped on identical container images.">
 
     <!-- ── HERO ── -->
     <section class="a-hero">
         <div class="a-hero-bg"></div>
         <div class="a-hero-grid"></div>
         <div class="a-hero-inner">
-            <div class="a-tag">A Levenhall Product</div>
-            <div class="a-wordmark">AIGIS</div>
-            <p class="a-sub">AI Evaluation &amp; Governance &middot; UNCLASS to TS/SCI</p>
-            <div class="a-rule"></div>
-            <p class="a-desc">A modular, containerized platform for continuous AI model assessment. Vendor-agnostic. Identical container images at every classification level.</p>
+            <p class="a-tag">A Levenhall Product</p>
+            <h1 class="a-wordmark">AIGIS</h1>
+            <p class="a-tagline">AI evaluation &amp; governance, from unclassified to TS/SCI &mdash; on the same container.</p>
             <div class="a-cta">
                 <a href="/contact" class="btn btn-gold">Request Early Access</a>
-                <a href="#capabilities" class="btn btn-outline-white">See Capabilities</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ── QUICK FACTS STRIP ── -->
-    <section class="a-facts-section">
-        <div class="container">
-            <div class="a-facts reveal">
-                <div class="a-fact">
-                    <span class="a-fact-val">4</span>
-                    <span class="a-fact-lbl">Classification Tiers Supported</span>
-                </div>
-                <div class="a-fact">
-                    <span class="a-fact-val">6</span>
-                    <span class="a-fact-lbl">Compliance Frameworks Tracked</span>
-                </div>
-                <div class="a-fact">
-                    <span class="a-fact-val">9</span>
-                    <span class="a-fact-lbl">Evaluation Capabilities</span>
-                </div>
-                <div class="a-fact">
-                    <span class="a-fact-val">∞</span>
-                    <span class="a-fact-lbl">Vendor Lock-In</span>
-                </div>
+                <a href="#deploy" class="btn btn-outline-white">See the Deployment Story</a>
             </div>
         </div>
     </section>
 
     <!-- ── THE SHIELD ── -->
     <section class="a-section a-shield">
-        <div class="container">
-            <div class="a-narrow reveal">
-                <span class="a-label">The Shield</span>
-                <h2>One question, asked continuously: is this model safe and mission-ready?</h2>
-                <div class="a-gold-rule"></div>
-                <p>AIGIS takes its name from the mythological <em>aegis</em>. The function follows the name: determine whether an AI model is safe and mission-ready for <em>this</em> user, <em>this</em> network, <em>this</em> mission &mdash; not in the abstract.</p>
-                <p>Built for the operational evaluator, not the research scientist. AI assessment as continuous infrastructure, not a one-time benchmark.</p>
-            </div>
+        <div class="a-narrow reveal">
+            <p class="a-lede"><span class="a-drop">A</span>IGIS takes its name from the mythological <em>aegis</em> &mdash; the shield Athena carried. The function follows the name.</p>
+            <p>For every AI system you intend to deploy, there is exactly one question that matters: <em>is this model safe and mission-ready for this user, on this network, doing this mission, at this classification level?</em></p>
+            <p>AIGIS is the operational evaluator's answer to that question. Not a research bench. Not a one-off pilot. A continuous infrastructure that asks the question every time, and tells you when the answer changes.</p>
         </div>
     </section>
 
-    <!-- ── THE GAP (DARK) ── -->
+    <!-- ── THE GAP ── -->
     <section class="a-section a-gap">
-        <div class="a-dark-bg"></div>
-        <div class="container" style="position: relative; z-index: 1;">
-            <div class="a-header reveal">
-                <span class="a-dark-label">Why AIGIS Exists</span>
-                <h2>The Gap Between Research Tools and Program Tools</h2>
-                <p class="a-header-sub">Existing tools fall into two categories. Neither is sufficient for the operational evaluator.</p>
+        <div class="a-gap-bg"></div>
+        <div class="a-gap-inner">
+            <div class="a-gap-header reveal">
+                <span class="a-eyebrow a-eyebrow-dark">§ Why we built it</span>
+                <h2>The gap between the research bench and the program shelf.</h2>
             </div>
-            <div class="a-gap-grid reveal">
-                <div class="a-gap-card">
-                    <span class="a-gap-tag">Category 1</span>
-                    <h3>Research-Grade</h3>
-                    <p class="a-gap-examples">HELM &middot; Inspect &middot; lm-evaluation-harness</p>
-                    <p>Built for ML researchers. Not deployable to classified networks. No operational context.</p>
-                </div>
-                <div class="a-gap-card">
-                    <span class="a-gap-tag">Category 2</span>
-                    <h3>Program-Proprietary</h3>
-                    <p class="a-gap-examples">One program, one mission</p>
-                    <p>Reflects a single program's profile. Dies when the program does. Not reusable.</p>
-                </div>
-                <div class="a-gap-card a-gap-card-on">
-                    <span class="a-gap-tag a-gap-tag-on">AIGIS</span>
-                    <h3>Operational Infrastructure</h3>
-                    <p class="a-gap-examples">Vendor-agnostic &middot; Cross-classification &middot; Continuous</p>
-                    <p>One platform across DoD, IC, and commercial deployments &mdash; air-gapped TS/SCI to managed cloud.</p>
-                </div>
+
+            <div class="a-gap-prose reveal">
+                <p>If you evaluate AI in a defense or intelligence context today, you choose between two unsatisfying options.</p>
+                <p>The first is <strong>research-grade</strong> &mdash; HELM, Inspect, lm-evaluation-harness. These are excellent tools, designed by and for ML researchers. They were never designed to deploy on classified networks, never expected to express operational context, and don't pretend otherwise.</p>
+                <p>The second is <strong>program-proprietary</strong> &mdash; a benchmark suite built inside a single program for that program's mission, alive for as long as that program is alive. When the program ends, the institutional knowledge ends with it.</p>
+                <p>AIGIS is the third option. <strong>Vendor-agnostic, cross-classification, continuous</strong> &mdash; designed from the start to deploy across DoD, IC, and commercial environments without changing platforms, and to outlive any one program.</p>
             </div>
         </div>
     </section>
 
-    <!-- ── DUAL-USE ── -->
-    <section class="a-section a-dual">
-        <div class="container">
-            <div class="a-header reveal">
-                <span class="a-label">Dual-Use</span>
-                <h2>Two Markets. One Platform.</h2>
-                <p class="a-header-sub">Government users benefit from continuous commercial R&amp;D. Commercial users benefit from defense-grade rigor.</p>
+    <!-- ── THE DEPLOYMENT STORY (THE STAR) ── -->
+    <section class="a-section a-deploy" id="deploy">
+        <div class="a-narrow reveal">
+            <span class="a-eyebrow">§ The killer feature</span>
+            <h2>Same container. Every network.</h2>
+            <p class="a-deploy-lede">The image that runs in an unclassified Kubernetes cluster is the same image that runs air-gapped on JWICS. The only thing that changes is Helm.</p>
+        </div>
+
+        <div class="a-deploy-tabs reveal">
+            <div class="a-tab a-tab-active">
+                <span class="a-tab-label">unclass.yaml</span>
+                <pre class="a-code"><span class="a-c-key">llm</span>:
+  <span class="a-c-key">provider</span>: <span class="a-c-val">openai</span>
+  <span class="a-c-key">model</span>: <span class="a-c-val">gpt-4o</span>
+<span class="a-c-key">vector</span>:
+  <span class="a-c-key">backend</span>: <span class="a-c-val">managed-cloud</span>
+<span class="a-c-key">network</span>:
+  <span class="a-c-key">egress</span>: <span class="a-c-val">full</span></pre>
             </div>
-            <div class="a-dual-grid reveal">
-                <div class="a-dual-card">
-                    <span class="a-dual-tag">Defense</span>
-                    <h3>DoD &amp; IC</h3>
-                    <p>Model evaluation across classification levels. DDIL degradation profiling. Adversarial red-teaming aligned to MITRE ATLAS. Mission-specific benchmarks.</p>
-                </div>
-                <div class="a-dual-card">
-                    <span class="a-dual-tag a-dual-tag-c">Commercial</span>
-                    <h3>Enterprise Governance</h3>
-                    <p>Continuous compliance for the EU AI Act, NIST AI RMF, and ISO 42001. Risk assessment for regulated industries and insurance counterparties.</p>
-                </div>
+            <div class="a-tab">
+                <span class="a-tab-label">il5.yaml</span>
+                <pre class="a-code"><span class="a-c-key">llm</span>:
+  <span class="a-c-key">provider</span>: <span class="a-c-val">openai-fedramp</span>
+  <span class="a-c-key">model</span>: <span class="a-c-val">gpt-4o</span>
+<span class="a-c-key">vector</span>:
+  <span class="a-c-key">backend</span>: <span class="a-c-val">pgvector</span>
+<span class="a-c-key">network</span>:
+  <span class="a-c-key">egress</span>: <span class="a-c-val">restricted</span></pre>
             </div>
+            <div class="a-tab">
+                <span class="a-tab-label">tssci.yaml</span>
+                <pre class="a-code"><span class="a-c-key">llm</span>:
+  <span class="a-c-key">provider</span>: <span class="a-c-val">ollama</span>
+  <span class="a-c-key">model</span>: <span class="a-c-val">llama3-70b-q4</span>
+<span class="a-c-key">vector</span>:
+  <span class="a-c-key">backend</span>: <span class="a-c-val">pgvector</span>
+<span class="a-c-key">network</span>:
+  <span class="a-c-key">egress</span>: <span class="a-c-val">none</span></pre>
+            </div>
+        </div>
+
+        <div class="a-deploy-footer reveal">
+            <p>Three deployments. One image. The model weights, benchmark suites, and knowledge base ship as container volumes for the air-gapped cases. K3s for the tactical edge. Everything underneath is open-source &mdash; no vendor lock-in at the layer that matters.</p>
         </div>
     </section>
 
-    <!-- ── CAPABILITIES (DARK) ── -->
-    <section class="a-section a-caps" id="capabilities">
-        <div class="a-dark-bg"></div>
-        <div class="container" style="position: relative; z-index: 1;">
-            <div class="a-header reveal">
-                <span class="a-dark-label">Capabilities</span>
-                <h2>Nine Evaluation Surfaces. One Harness.</h2>
-            </div>
-            <div class="a-caps-grid reveal">
-                <div class="a-cap">
-                    <span class="a-cap-num">01</span>
-                    <h4>Model Interface Layer</h4>
-                    <p>Adapters for OpenAI, HuggingFace, Ollama, Bedrock, and gRPC. New adapters via a documented SDK.</p>
-                </div>
-                <div class="a-cap">
-                    <span class="a-cap-num">02</span>
-                    <h4>Execution Engine</h4>
-                    <p>Distributed task orchestration with full environment snapshots, parallel runs, and reproducibility.</p>
-                </div>
-                <div class="a-cap">
-                    <span class="a-cap-num">03</span>
-                    <h4>Scoring Engine</h4>
-                    <p>Pluggable scorers &mdash; exact match, contains, similarity, classification, human routing.</p>
-                </div>
-                <div class="a-cap">
-                    <span class="a-cap-num">04</span>
-                    <h4>DDIL Simulator</h4>
-                    <p>Injects latency, jitter, throttling, and intermittent connectivity. Evaluates degradation curves.</p>
-                </div>
-                <div class="a-cap">
-                    <span class="a-cap-num">05</span>
-                    <h4>Agentic Evaluation</h4>
-                    <p>Full execution-trace capture aligned with OWASP Agentic AI Top 10 and the MAESTRO framework.</p>
-                </div>
-                <div class="a-cap">
-                    <span class="a-cap-num">06</span>
-                    <h4>Adversarial Red-Teaming</h4>
-                    <p>Prompt injection, jailbreak generation, data-poisoning probes. Mapped to MITRE ATLAS technique IDs.</p>
-                </div>
-                <div class="a-cap">
-                    <span class="a-cap-num">07</span>
-                    <h4>Human Evaluation</h4>
-                    <p>Likert, pairwise, best-of-N. Inter-rater reliability via Krippendorff's alpha and Fleiss' kappa.</p>
-                </div>
-                <div class="a-cap">
-                    <span class="a-cap-num">08</span>
-                    <h4>Multimodal</h4>
-                    <p>Text, image, audio, and video pipelines with modality-specific metrics.</p>
-                </div>
-                <div class="a-cap">
-                    <span class="a-cap-num">09</span>
-                    <h4>Governance &amp; Risk</h4>
-                    <p>Live framework coverage, risk scoring, incident tracking, and insurance monitoring.</p>
-                </div>
-            </div>
+    <!-- ── WHAT IT DOES — THREE TRACKS ── -->
+    <section class="a-section a-tracks">
+        <div class="a-narrow reveal">
+            <span class="a-eyebrow">§ What it does</span>
+            <h2>Three tracks running off one harness.</h2>
         </div>
-    </section>
 
-    <!-- ── CLASSIFICATION DEPLOYMENT ── -->
-    <section class="a-section a-class">
-        <div class="container">
-            <div class="a-header reveal">
-                <span class="a-label">Classification Deployment</span>
-                <h2>Same container. Every network.</h2>
-                <p class="a-header-sub">Identical images at every level. Only Helm values change. Air-gapped deployments bundle weights and benchmarks as container volumes.</p>
-            </div>
-            <div class="a-class-table reveal">
-                <div class="a-class-row a-class-head">
-                    <span>Environment</span>
-                    <span>LLM Provider</span>
-                    <span>Vector DB</span>
-                    <span>External APIs</span>
-                </div>
-                <div class="a-class-row">
-                    <span class="a-class-env">Unclassified</span>
-                    <span>OpenAI API</span>
-                    <span>Managed cloud</span>
-                    <span>Full</span>
-                </div>
-                <div class="a-class-row">
-                    <span class="a-class-env">IL5 Cloud</span>
-                    <span>OpenAI (FedRAMP) / Ollama</span>
-                    <span>pgvector</span>
-                    <span>Restricted</span>
-                </div>
-                <div class="a-class-row">
-                    <span class="a-class-env">IL6 / SECRET</span>
-                    <span>Ollama (local)</span>
-                    <span>pgvector</span>
-                    <span>None</span>
-                </div>
-                <div class="a-class-row">
-                    <span class="a-class-env">TS/SCI &middot; JWICS</span>
-                    <span>Ollama (quantized, local)</span>
-                    <span>pgvector</span>
-                    <span>None</span>
-                </div>
-            </div>
+        <div class="a-tracks-grid reveal">
+            <article class="a-track">
+                <span class="a-track-num">I.</span>
+                <h3>Evaluation</h3>
+                <p>Adapters for OpenAI, HuggingFace, Bedrock, gRPC, and local Ollama behind one uniform protocol. Pluggable scorers covering exact match, similarity, classification, and routed human evaluation. Every run captures a full environment snapshot for reproducibility &mdash; Python version, AIGIS version, provider, timestamp.</p>
+                <p>Domain coverage: general, safety, adversarial, agentic, multimodal, DDIL, and mission-specific.</p>
+            </article>
+
+            <article class="a-track">
+                <span class="a-track-num">II.</span>
+                <h3>Adversarial &amp; Operational Stress</h3>
+                <p>An automated red-teaming pipeline aligned to MITRE ATLAS &mdash; prompt injection, jailbreak generation, data-poisoning probes, model-extraction resistance &mdash; with results mapped to ATLAS technique IDs.</p>
+                <p>A DDIL conditions simulator that injects latency, jitter, throttling, and intermittent connectivity, then measures degradation curves instead of binary pass/fail. Agentic evaluation captures the full execution trace and scores against OWASP Agentic AI Top 10 and the MAESTRO framework.</p>
+            </article>
+
+            <article class="a-track">
+                <span class="a-track-num">III.</span>
+                <h3>Governance &amp; Risk</h3>
+                <p>Live compliance coverage against NIST AI RMF, MITRE ATLAS, EU AI Act, ISO 42001, OWASP Agentic AI Top 10, and the DoD AI Ethical Principles. Risk scoring against active incidents. Insurance coverage monitoring. An activity feed that surfaces evaluation results, adversarial detections, and bias audits in real time.</p>
+                <p>Human evaluation rounds out the stack &mdash; Likert, pairwise, best-of-N, with Krippendorff's alpha and Fleiss' kappa computed for inter-rater reliability.</p>
+            </article>
         </div>
     </section>
 
@@ -218,10 +127,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <section class="a-cta-section">
         <div class="a-cta-bg"></div>
         <div class="a-cta-inner">
-            <div class="a-cta-accent"></div>
-            <div class="a-cta-badge">Levenhall Proprietary</div>
+            <div class="a-cta-rule"></div>
+            <p class="a-cta-eyebrow">Levenhall Proprietary</p>
             <h2>AIGIS is active. Early access is selective.</h2>
-            <p>We work with DoD, IC, regulated commercial customers, and insurance counterparties on early access deployments.</p>
+            <p>We work with DoD and IC organizations, regulated commercial customers, and insurance counterparties. The platform architecture, adapter SDK, governance-integrated scoring, DDIL profiling, and benchmark methodology are Levenhall proprietary.</p>
             <div class="btn-group" style="justify-content: center;">
                 <a href="/contact" class="btn btn-gold">Request Early Access</a>
                 <a href="/services#market-intelligence" class="btn btn-outline-white">Intelligence Practice</a>
@@ -234,8 +143,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <style>
     /* ── HERO ── */
     .a-hero {
-        background: linear-gradient(160deg, #04070e 0%, #080e1c 25%, #0f1f3a 60%, #0c1628 100%);
-        padding: 9rem 2rem 5.5rem;
+        background: linear-gradient(160deg, #04070e 0%, #080e1c 30%, #0f1f3a 70%, #0c1628 100%);
+        padding: 9rem 2rem 5rem;
         text-align: center;
         position: relative;
         overflow: hidden;
@@ -245,7 +154,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         position: absolute;
         inset: 0;
         background-image:
-            radial-gradient(ellipse at 50% 50%, rgba(56, 217, 201, 0.04) 0%, transparent 50%),
+            radial-gradient(ellipse at 50% 50%, rgba(56, 217, 201, 0.05) 0%, transparent 50%),
             radial-gradient(ellipse at 80% 20%, rgba(201, 169, 97, 0.06) 0%, transparent 50%);
         pointer-events: none;
     }
@@ -254,12 +163,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         position: absolute;
         inset: 0;
         background-image:
-            linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+            linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px);
         background-size: 60px 60px;
         pointer-events: none;
-        mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
-        -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+        mask-image: radial-gradient(ellipse at center, black 25%, transparent 75%);
+        -webkit-mask-image: radial-gradient(ellipse at center, black 25%, transparent 75%);
     }
 
     .a-hero::after {
@@ -268,9 +177,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         bottom: 0;
         left: 0;
         right: 0;
-        height: 3px;
+        height: 1px;
         background: linear-gradient(90deg, transparent, rgba(56, 217, 201, 0.5), transparent);
-        opacity: 0.5;
+        opacity: 0.55;
     }
 
     .a-hero-inner {
@@ -281,57 +190,37 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     }
 
     .a-tag {
-        display: inline-block;
         font-family: 'Source Sans Pro', sans-serif;
         font-weight: 600;
-        font-size: 0.68rem;
+        font-size: 0.66rem;
         letter-spacing: 3.5px;
         text-transform: uppercase;
         color: var(--gold);
-        background: rgba(201, 169, 97, 0.08);
-        border: 1px solid rgba(201, 169, 97, 0.18);
-        padding: 0.5rem 1.4rem;
         margin-bottom: 2rem;
     }
 
     .a-wordmark {
         font-family: 'Source Sans Pro', sans-serif;
-        font-size: clamp(3.5rem, 9vw, 6rem);
+        font-size: clamp(4rem, 10vw, 6.5rem);
         font-weight: 700;
-        letter-spacing: 14px;
+        letter-spacing: 16px;
         color: #fff;
         line-height: 1;
-        margin-bottom: 0.8rem;
-        text-indent: 14px;
+        margin: 0 0 1.4rem;
+        text-indent: 16px;
         background: linear-gradient(180deg, #fff 40%, rgba(56, 217, 201, 0.5) 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
     }
 
-    .a-sub {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.78rem;
-        font-weight: 600;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        color: rgba(56, 217, 201, 0.8);
-        margin-bottom: 1.6rem;
-    }
-
-    .a-rule {
-        width: 50px;
-        height: 2px;
-        background: linear-gradient(90deg, var(--gold), rgba(56, 217, 201, 0.5));
-        margin: 0 auto 1.6rem;
-    }
-
-    .a-desc {
-        font-size: 1.08rem;
-        color: rgba(255, 255, 255, 0.65);
-        line-height: 1.8;
-        max-width: 560px;
-        margin: 0 auto 2.2rem;
+    .a-tagline {
+        font-family: 'Crimson Text', serif;
+        font-style: italic;
+        font-size: 1.15rem;
+        color: rgba(255, 255, 255, 0.6);
+        margin-bottom: 2rem;
+        line-height: 1.55;
     }
 
     .a-cta {
@@ -341,372 +230,269 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         flex-wrap: wrap;
     }
 
-    /* ── FACTS STRIP ── */
-    .a-facts-section {
-        background: var(--cream);
-        padding: 3.5rem 0;
-    }
-
-    .a-facts {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 0;
-        max-width: 1100px;
-        margin: 0 auto;
-        background: #fff;
-        border: 1px solid var(--border-warm);
-        border-top: 3px solid var(--gold);
-    }
-
-    .a-fact {
-        padding: 2rem 1.4rem;
-        text-align: center;
-        border-right: 1px solid var(--border-warm);
-    }
-
-    .a-fact:last-child {
-        border-right: none;
-    }
-
-    .a-fact-val {
-        display: block;
-        font-family: 'Crimson Text', serif;
-        font-size: 2.6rem;
-        font-weight: 700;
-        color: var(--deep-navy);
-        line-height: 1;
-        margin-bottom: 0.6rem;
-    }
-
-    .a-fact-lbl {
-        display: block;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.7rem;
-        font-weight: 600;
-        letter-spacing: 1.4px;
-        text-transform: uppercase;
-        color: var(--text-medium);
-        line-height: 1.45;
-    }
-
     /* ── SHARED ── */
     .a-section {
-        padding: 5.5rem 0;
+        padding: 6rem 0;
     }
-
-    .a-label {
-        display: inline-block;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 600;
-        font-size: 0.68rem;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        color: var(--burgundy);
-        background: var(--burgundy-surface);
-        padding: 0.5rem 1.2rem;
-        margin-bottom: 1.2rem;
-    }
-
-    .a-dark-label {
-        display: inline-block;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 600;
-        font-size: 0.72rem;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        color: rgba(56, 217, 201, 0.85);
-        background: rgba(56, 217, 201, 0.08);
-        border: 1px solid rgba(56, 217, 201, 0.2);
-        padding: 0.5rem 1.2rem;
-        margin-bottom: 1.2rem;
-    }
-
-    .a-gold-rule {
-        width: 50px;
-        height: 2px;
-        background: var(--gold);
-        margin-bottom: 1.5rem;
-    }
-
-    .a-header {
-        max-width: 720px;
-        margin: 0 auto 3rem;
-        text-align: center;
-    }
-
-    .a-header h2 { margin-bottom: 0.8rem; }
-    .a-header-sub { font-size: 1.02rem; line-height: 1.75; color: var(--text-medium); }
 
     .a-narrow {
-        max-width: 720px;
+        max-width: 660px;
         margin: 0 auto;
-        text-align: center;
+        padding: 0 1.5rem;
     }
+
+    .a-eyebrow {
+        display: block;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 600;
+        font-size: 0.7rem;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 1.4rem;
+    }
+
+    .a-eyebrow-dark { color: rgba(56, 217, 201, 0.85); }
 
     .a-narrow h2 {
-        color: var(--deep-navy);
-        margin-bottom: 1.2rem;
-        font-size: clamp(1.7rem, 3.2vw, 2.3rem);
+        font-family: 'Crimson Text', serif;
+        font-size: clamp(1.8rem, 3vw, 2.3rem);
         line-height: 1.25;
+        color: var(--deep-navy);
+        margin-bottom: 1.5rem;
+        font-weight: 700;
     }
 
-    .a-narrow .a-gold-rule { margin-left: auto; margin-right: auto; }
+    /* ── SHIELD ── */
+    .a-shield {
+        background: var(--cream);
+    }
 
-    .a-narrow p {
+    .a-lede {
+        font-family: 'Crimson Text', serif;
+        font-size: 1.55rem;
+        line-height: 1.5;
+        color: var(--deep-navy);
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+    }
+
+    .a-drop {
+        font-family: 'Crimson Text', serif;
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--gold);
+        line-height: 0.85;
+        float: left;
+        padding: 0.4rem 0.6rem 0 0;
+    }
+
+    .a-shield p {
         font-size: 1.05rem;
-        line-height: 1.8;
+        line-height: 1.85;
         color: var(--text-medium);
-        margin-bottom: 1rem;
+        margin-bottom: 1.2rem;
     }
 
-    .a-narrow em {
+    .a-shield em {
         font-style: italic;
         color: var(--burgundy);
     }
 
-    .a-shield { background: var(--stone); }
-
-    /* ── DARK ── */
-    .a-gap,
-    .a-caps {
-        background: linear-gradient(135deg, #0a1628 0%, var(--navy) 50%, #162d4f 100%);
+    /* ── GAP ── */
+    .a-gap {
+        background: linear-gradient(180deg, #0a1628 0%, var(--deep-navy) 100%);
+        padding: 6rem 0;
         position: relative;
         overflow: hidden;
     }
 
-    .a-dark-bg {
+    .a-gap-bg {
         position: absolute;
         inset: 0;
-        background-image: radial-gradient(ellipse at 50% 80%, rgba(56, 217, 201, 0.04) 0%, transparent 50%);
+        background-image: radial-gradient(ellipse at 30% 70%, rgba(56, 217, 201, 0.04) 0%, transparent 50%);
         pointer-events: none;
     }
 
-    .a-gap::before,
-    .a-caps::before {
+    .a-gap::before {
         content: '';
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
-        height: 3px;
-        background: linear-gradient(90deg, transparent, rgba(56, 217, 201, 0.5), transparent);
-        opacity: 0.5;
+        height: 1px;
+        background: rgba(56, 217, 201, 0.3);
     }
 
-    .a-gap h2,
-    .a-caps h2 { color: #fff; }
-    .a-gap .a-header-sub,
-    .a-caps .a-header-sub { color: rgba(255, 255, 255, 0.55); }
-
-    /* ── GAP CARDS ── */
-    .a-gap-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-auto-rows: 1fr;
-        gap: 1.2rem;
-        max-width: 1100px;
+    .a-gap-inner {
+        max-width: 760px;
         margin: 0 auto;
+        padding: 0 1.5rem;
+        position: relative;
+        z-index: 1;
     }
 
-    .a-gap-card {
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        padding: 1.8rem 1.6rem;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        transition: all 0.3s ease;
+    .a-gap-header {
+        margin-bottom: 2.5rem;
+        padding-bottom: 1.8rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .a-gap-card:hover { transform: translateY(-3px); }
-
-    .a-gap-tag {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.62rem;
-        font-weight: 700;
-        letter-spacing: 2.5px;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.4);
-    }
-
-    .a-gap-card h3 {
-        font-size: 1.2rem;
-        color: #fff;
-        margin: 0.2rem 0;
-    }
-
-    .a-gap-examples {
+    .a-gap-header h2 {
         font-family: 'Crimson Text', serif;
-        font-style: italic;
-        font-size: 0.95rem !important;
-        color: rgba(56, 217, 201, 0.7) !important;
-        margin: 0 0 0.4rem !important;
-    }
-
-    .a-gap-card p {
-        font-size: 0.92rem;
-        line-height: 1.7;
-        color: rgba(255, 255, 255, 0.55);
+        font-size: clamp(1.8rem, 3vw, 2.3rem);
+        line-height: 1.25;
+        color: #fff;
         margin: 0;
-    }
-
-    .a-gap-card-on {
-        background: rgba(56, 217, 201, 0.05);
-        border-color: rgba(56, 217, 201, 0.25);
-        border-top: 3px solid rgba(56, 217, 201, 0.7);
-    }
-
-    .a-gap-tag-on { color: rgba(56, 217, 201, 0.85) !important; }
-
-    /* ── DUAL ── */
-    .a-dual { background: var(--cream); }
-    .a-dual h2 { color: var(--deep-navy); }
-
-    .a-dual-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-auto-rows: 1fr;
-        gap: 1.2rem;
-        max-width: 1000px;
-        margin: 0 auto;
-    }
-
-    .a-dual-card {
-        background: #fff;
-        border: 1px solid var(--border-warm);
-        border-left: 3px solid var(--gold);
-        padding: 2rem 1.8rem;
-        display: flex;
-        flex-direction: column;
-        gap: 0.6rem;
-        transition: all 0.3s ease;
-    }
-
-    .a-dual-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-warm-md); }
-
-    .a-dual-tag {
-        display: inline-block;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.62rem;
         font-weight: 700;
-        letter-spacing: 2.5px;
-        text-transform: uppercase;
-        color: var(--burgundy);
-        background: var(--burgundy-surface);
-        padding: 0.3rem 0.7rem;
-        align-self: flex-start;
     }
 
-    .a-dual-tag-c {
+    .a-gap-prose p {
+        font-size: 1.05rem;
+        line-height: 1.85;
+        color: rgba(255, 255, 255, 0.65);
+        margin-bottom: 1.1rem;
+    }
+
+    .a-gap-prose strong {
         color: rgba(56, 217, 201, 0.95);
-        background: rgba(56, 217, 201, 0.1);
+        font-weight: 600;
     }
 
-    .a-dual-card h3 {
-        font-size: 1.4rem;
-        color: var(--deep-navy);
-        margin: 0.3rem 0 0.4rem;
+    /* ── DEPLOYMENT (THE KILLER FEATURE) ── */
+    .a-deploy {
+        background: var(--stone);
+        padding: 6rem 0 6.5rem;
     }
 
-    .a-dual-card p {
-        font-size: 0.95rem;
-        line-height: 1.7;
-        color: var(--text-medium);
-        margin: 0;
+    .a-deploy-lede {
+        font-family: 'Crimson Text', serif;
+        font-size: 1.3rem;
+        font-style: italic;
+        color: var(--burgundy);
+        line-height: 1.55;
+        margin-bottom: 0;
     }
 
-    /* ── CAPABILITIES (3x3) ── */
-    .a-caps-grid {
+    .a-deploy-tabs {
+        max-width: 960px;
+        margin: 3rem auto 2.5rem;
+        padding: 0 1.5rem;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-auto-rows: 1fr;
         gap: 1rem;
-        max-width: 1100px;
-        margin: 0 auto;
     }
 
-    .a-cap {
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        border-top: 2px solid rgba(56, 217, 201, 0.5);
-        padding: 1.5rem 1.4rem;
-        display: flex;
-        flex-direction: column;
-        gap: 0.4rem;
+    .a-tab {
+        background: #0a1628;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        overflow: hidden;
         transition: all 0.3s ease;
     }
 
-    .a-cap:hover {
-        background: rgba(255, 255, 255, 0.07);
-        border-top-color: rgba(56, 217, 201, 0.9);
-        transform: translateY(-3px);
+    .a-tab-active {
+        border-color: rgba(56, 217, 201, 0.4);
+        box-shadow: 0 0 0 1px rgba(56, 217, 201, 0.15);
     }
 
-    .a-cap-num {
-        font-family: 'Crimson Text', serif;
-        font-size: 1.2rem;
-        font-weight: 700;
-        color: var(--gold);
-        opacity: 0.5;
-        line-height: 1;
+    .a-tab:hover {
+        border-color: rgba(56, 217, 201, 0.3);
     }
 
-    .a-cap h4 {
-        font-size: 1rem;
-        color: #fff;
-        margin: 0.2rem 0;
+    .a-tab-label {
+        display: block;
+        background: rgba(255, 255, 255, 0.04);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        padding: 0.7rem 1rem;
+        font-family: 'SF Mono', 'Menlo', 'Consolas', monospace;
+        font-size: 0.78rem;
+        color: rgba(56, 217, 201, 0.85);
+        letter-spacing: 0.5px;
     }
 
-    .a-cap p {
-        font-size: 0.88rem;
-        line-height: 1.6;
-        color: rgba(255, 255, 255, 0.55);
+    .a-code {
         margin: 0;
+        padding: 1.2rem 1.2rem;
+        font-family: 'SF Mono', 'Menlo', 'Consolas', monospace;
+        font-size: 0.82rem;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.75);
+        white-space: pre;
+        overflow-x: auto;
     }
 
-    /* ── CLASSIFICATION TABLE ── */
-    .a-class { background: var(--stone); }
-    .a-class h2 { color: var(--deep-navy); }
+    .a-c-key {
+        color: rgba(56, 217, 201, 0.85);
+    }
 
-    .a-class-table {
-        max-width: 1000px;
+    .a-c-val {
+        color: var(--gold);
+    }
+
+    .a-deploy-footer {
+        max-width: 720px;
         margin: 0 auto;
-        background: #fff;
-        border: 1px solid var(--border-warm);
-        border-top: 3px solid var(--gold);
+        padding: 0 1.5rem;
+        text-align: center;
     }
 
-    .a-class-row {
-        display: grid;
-        grid-template-columns: 1fr 1.4fr 1fr 0.8fr;
-        gap: 1.4rem;
-        padding: 1.1rem 1.5rem;
-        border-bottom: 1px solid var(--border-warm);
-        font-size: 0.95rem;
+    .a-deploy-footer p {
+        font-size: 1rem;
+        line-height: 1.8;
         color: var(--text-medium);
-        align-items: center;
-        line-height: 1.5;
     }
 
-    .a-class-row:last-child {
+    /* ── TRACKS ── */
+    .a-tracks {
+        background: var(--cream);
+    }
+
+    .a-tracks-grid {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    .a-track {
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        gap: 2rem;
+        padding: 2.4rem 0;
+        border-bottom: 1px solid rgba(30, 58, 95, 0.12);
+    }
+
+    .a-track:last-child {
         border-bottom: none;
     }
 
-    .a-class-head {
-        background: var(--cream);
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.65rem;
+    .a-track-num {
+        font-family: 'Crimson Text', serif;
+        font-size: 2.4rem;
         font-weight: 700;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: var(--burgundy);
+        color: var(--gold);
+        line-height: 1;
+        text-align: right;
+        padding-top: 0.4rem;
     }
 
-    .a-class-env {
+    .a-track h3 {
         font-family: 'Crimson Text', serif;
-        font-size: 1.02rem;
+        font-size: 1.5rem;
         font-weight: 700;
         color: var(--deep-navy);
+        margin: 0 0 0.9rem;
+        line-height: 1.3;
+    }
+
+    .a-track p {
+        font-size: 1rem;
+        line-height: 1.85;
+        color: var(--text-medium);
+        margin-bottom: 0.9rem;
+    }
+
+    .a-track p:last-child {
+        margin-bottom: 0;
     }
 
     /* ── CTA ── */
@@ -723,7 +509,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         inset: 0;
         background-image:
             radial-gradient(ellipse at 50% 50%, rgba(56, 217, 201, 0.06) 0%, transparent 50%),
-            radial-gradient(ellipse at 80% 20%, rgba(201, 169, 97, 0.05) 0%, transparent 40%);
+            radial-gradient(ellipse at 80% 20%, rgba(201, 169, 97, 0.04) 0%, transparent 40%);
         pointer-events: none;
     }
 
@@ -733,9 +519,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         top: 0;
         left: 0;
         right: 0;
-        height: 3px;
+        height: 1px;
         background: linear-gradient(90deg, transparent, rgba(56, 217, 201, 0.5), transparent);
-        opacity: 0.5;
     }
 
     .a-cta-inner {
@@ -745,61 +530,50 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         z-index: 1;
     }
 
-    .a-cta-accent {
-        width: 40px;
-        height: 2px;
+    .a-cta-rule {
+        width: 30px;
+        height: 1px;
         background: var(--gold);
-        margin: 0 auto 1.8rem;
+        margin: 0 auto 1.5rem;
     }
 
-    .a-cta-badge {
-        display: inline-block;
+    .a-cta-eyebrow {
         font-family: 'Source Sans Pro', sans-serif;
         font-weight: 600;
-        font-size: 0.72rem;
+        font-size: 0.7rem;
         letter-spacing: 3px;
         text-transform: uppercase;
         color: rgba(56, 217, 201, 0.85);
-        background: rgba(56, 217, 201, 0.08);
-        border: 1px solid rgba(56, 217, 201, 0.2);
-        padding: 0.5rem 1.4rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.4rem;
     }
 
     .a-cta-section h2 {
-        font-size: clamp(1.7rem, 3vw, 2.3rem);
+        font-family: 'Crimson Text', serif;
+        font-size: clamp(1.8rem, 3vw, 2.4rem);
         color: #fff;
         margin-bottom: 1.2rem;
+        font-weight: 700;
+        line-height: 1.25;
     }
 
     .a-cta-section p {
         color: rgba(255, 255, 255, 0.6);
         font-size: 1.02rem;
-        line-height: 1.75;
+        line-height: 1.8;
         margin-bottom: 2rem;
     }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 1100px) {
-        .a-caps-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 992px) {
-        .a-facts { grid-template-columns: repeat(2, 1fr); }
-        .a-fact { border-right: none; }
-        .a-fact:nth-child(odd) { border-right: 1px solid var(--border-warm); }
-        .a-fact:nth-child(-n+2) { border-bottom: 1px solid var(--border-warm); }
-        .a-gap-grid { grid-template-columns: 1fr; max-width: 540px; }
-        .a-dual-grid { grid-template-columns: 1fr; max-width: 540px; }
-    }
-
     @media (max-width: 768px) {
         .a-hero { padding: 7rem 2rem 4rem; }
-        .a-facts { grid-template-columns: 1fr; }
-        .a-fact { border-right: none !important; }
-        .a-caps-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
-        .a-class-row { grid-template-columns: 1fr; gap: 0.4rem; padding: 1rem 1.2rem; }
-        .a-class-head { display: none; }
-        .a-class-env { font-size: 1.08rem; }
+        .a-section { padding: 4.5rem 0; }
+        .a-deploy { padding: 4.5rem 0; }
+        .a-gap { padding: 4.5rem 0; }
+        .a-deploy-tabs { grid-template-columns: 1fr; gap: 0.8rem; }
+        .a-code { font-size: 0.78rem; }
+        .a-lede { font-size: 1.25rem; }
+        .a-drop { font-size: 2.4rem; }
+        .a-track { grid-template-columns: 1fr; gap: 0.6rem; padding: 2rem 0; }
+        .a-track-num { text-align: left; font-size: 2rem; padding-top: 0; }
     }
 </style>
