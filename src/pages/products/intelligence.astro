@@ -35,11 +35,31 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
     <!-- ── OPENING ── -->
     <section class="i-opening">
-        <div class="i-prose reveal">
-            <p class="i-lede">The risk events that move share prices, disrupt supply chains, and reshape market access do not announce themselves in the news cycle. They surface in signal &mdash; weeks or months before the headlines.</p>
-            <p>Levenhall Intelligence is the operating picture we built for the corporate risk function. Enterprise risk officers, geopolitical risk leads, supply chain teams, security functions, and investment committees with international exposure all work the same way: one screen, every layer, on a globe that updates in real time.</p>
-            <p>Heavy machine learning runs in a Web Worker on your own device. Nothing leaves the browser. No round-trip to our servers.</p>
-            <p class="i-lede-close">Open it. The rest of this page explains what you'll see.</p>
+        <div class="i-opening-grid reveal">
+            <div class="i-opening-main">
+                <p class="i-lede">The risk events that move share prices, disrupt supply chains, and reshape market access do not announce themselves in the news cycle. They surface in signal &mdash; weeks or months before the headlines.</p>
+                <p>Levenhall Intelligence is the operating picture we built for the corporate risk function. Enterprise risk officers, geopolitical risk leads, supply chain teams, security functions, and investment committees with international exposure all work the same way: one screen, every layer, on a globe that updates in real time.</p>
+                <p>Heavy machine learning runs in a Web Worker on your own device. Nothing leaves the browser. No round-trip to our servers.</p>
+                <p class="i-lede-close">Open it. The rest of this page explains what you'll see.</p>
+            </div>
+            <aside class="i-marg">
+                <div class="i-marg-item">
+                    <span class="i-marg-val">119</span>
+                    <span class="i-marg-lbl">Intelligence feeds</span>
+                </div>
+                <div class="i-marg-item">
+                    <span class="i-marg-val">34</span>
+                    <span class="i-marg-lbl">Layers on the globe</span>
+                </div>
+                <div class="i-marg-item">
+                    <span class="i-marg-val">31</span>
+                    <span class="i-marg-lbl">Tier-1 markets</span>
+                </div>
+                <div class="i-marg-item">
+                    <span class="i-marg-val">4</span>
+                    <span class="i-marg-lbl">ML models running on-device</span>
+                </div>
+            </aside>
         </div>
     </section>
 
@@ -78,47 +98,55 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
     <!-- ── HOW IT WORKS ── -->
     <section class="i-how">
-        <div class="i-how-frame">
-            <header class="i-how-head reveal">
+        <div class="i-how-grid">
+            <aside class="i-rail reveal">
                 <span class="i-eyebrow">§ Around the index</span>
                 <h2>Five more layers, briefly.</h2>
-            </header>
-
-            <article class="i-mod reveal">
-                <span class="i-mod-num">02</span>
-                <div>
-                    <h3>Geo-Convergence</h3>
-                    <p>The globe split into 1&deg; grid cells. When conflict, protest, military, and news signals cluster in the same cell within twenty-four hours, the system flags an emerging hotspot &mdash; before mainstream reporting catches up.</p>
-                </div>
-            </article>
-            <article class="i-mod reveal">
-                <span class="i-mod-num">03</span>
-                <div>
-                    <h3>Strategic Risk Composite</h3>
-                    <p>One score per region. Geo-convergence at thirty percent, the CII at fifty, infrastructure cascade risk at twenty. The single number a board paper can carry.</p>
-                </div>
-            </article>
-            <article class="i-mod reveal">
-                <span class="i-mod-num">04</span>
-                <div>
-                    <h3>Signal Aggregation</h3>
-                    <p>A unified bus that ingests conflict, unrest, economy, cyber, military, and climate streams, prioritizes by urgency, and feeds the rest of the dashboard.</p>
-                </div>
-            </article>
-            <article class="i-mod reveal">
-                <span class="i-mod-num">05</span>
-                <div>
-                    <h3>On-Device ML</h3>
-                    <p>Four ONNX models in a Web Worker: MiniLM for embeddings, DistilBERT for sentiment, FLAN-T5 for summarization, BERT for named-entity recognition. Two-hundred-megabyte budget. Zero server roundtrips.</p>
-                </div>
-            </article>
-            <article class="i-mod reveal">
-                <span class="i-mod-num">06</span>
-                <div>
-                    <h3>Infrastructure Cascade</h3>
-                    <p>Models dependencies between undersea cables, power grids, pipelines, and data centers. One disruption tells you what falls next &mdash; useful when your operations run through any of them.</p>
-                </div>
-            </article>
+                <ol class="i-rail-toc">
+                    <li><span>02</span>Geo-Convergence</li>
+                    <li><span>03</span>Strategic Risk</li>
+                    <li><span>04</span>Signal Aggregation</li>
+                    <li><span>05</span>On-Device ML</li>
+                    <li><span>06</span>Cascade Analysis</li>
+                </ol>
+            </aside>
+            <div class="i-mods">
+                <article class="i-mod reveal">
+                    <span class="i-mod-num">02</span>
+                    <div>
+                        <h3>Geo-Convergence</h3>
+                        <p>The globe split into 1&deg; grid cells. When conflict, protest, military, and news signals cluster in the same cell within twenty-four hours, the system flags an emerging hotspot &mdash; before mainstream reporting catches up.</p>
+                    </div>
+                </article>
+                <article class="i-mod reveal">
+                    <span class="i-mod-num">03</span>
+                    <div>
+                        <h3>Strategic Risk Composite</h3>
+                        <p>One score per region. Geo-convergence at thirty percent, the CII at fifty, infrastructure cascade risk at twenty. The single number a board paper can carry.</p>
+                    </div>
+                </article>
+                <article class="i-mod reveal">
+                    <span class="i-mod-num">04</span>
+                    <div>
+                        <h3>Signal Aggregation</h3>
+                        <p>A unified bus that ingests conflict, unrest, economy, cyber, military, and climate streams, prioritizes by urgency, and feeds the rest of the dashboard.</p>
+                    </div>
+                </article>
+                <article class="i-mod reveal">
+                    <span class="i-mod-num">05</span>
+                    <div>
+                        <h3>On-Device ML</h3>
+                        <p>Four ONNX models in a Web Worker: MiniLM for embeddings, DistilBERT for sentiment, FLAN-T5 for summarization, BERT for named-entity recognition. Two-hundred-megabyte budget. Zero server roundtrips.</p>
+                    </div>
+                </article>
+                <article class="i-mod reveal">
+                    <span class="i-mod-num">06</span>
+                    <div>
+                        <h3>Infrastructure Cascade</h3>
+                        <p>Models dependencies between undersea cables, power grids, pipelines, and data centers. One disruption tells you what falls next &mdash; useful when your operations run through any of them.</p>
+                    </div>
+                </article>
+            </div>
         </div>
     </section>
 
@@ -373,6 +401,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         padding: var(--s-16) 0;
     }
 
+    .i-opening-grid {
+        max-width: 1040px;
+        margin: 0 auto;
+        padding: 0 var(--s-3);
+        display: grid;
+        grid-template-columns: 1.7fr 0.7fr;
+        gap: var(--s-12);
+        align-items: start;
+    }
+
+    .i-opening-main { max-width: 620px; }
+
     .i-lede {
         font-weight: 500;
         font-size: 1.75rem;
@@ -382,11 +422,47 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         letter-spacing: -0.4px;
     }
 
-    .i-opening p {
+    .i-opening-main p {
         font-size: 1.05rem;
         line-height: 1.85;
         color: var(--text-medium);
         margin: 0 0 var(--s-4);
+    }
+
+    /* ── MARGINAL CALLOUTS ── */
+    .i-marg {
+        display: flex;
+        flex-direction: column;
+        gap: var(--s-5);
+        padding-top: var(--s-2);
+        border-top: 1px solid var(--border-warm);
+    }
+
+    .i-marg-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        padding-left: var(--s-3);
+        border-left: 2px solid var(--gold);
+    }
+
+    .i-marg-val {
+        font-family: 'Fraunces', serif;
+        font-weight: 600;
+        font-size: 1.85rem;
+        color: var(--deep-navy);
+        line-height: 1;
+        letter-spacing: -0.5px;
+    }
+
+    .i-marg-lbl {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+        color: var(--text-medium);
+        line-height: 1.4;
     }
 
     .i-lede-close {
@@ -546,35 +622,67 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         padding: var(--s-16) 0;
     }
 
-    .i-how-frame {
-        max-width: 820px;
+    .i-how-grid {
+        max-width: 1080px;
         margin: 0 auto;
         padding: 0 var(--s-3);
+        display: grid;
+        grid-template-columns: 0.85fr 1.4fr;
+        gap: var(--s-10);
+        align-items: start;
     }
 
-    .i-how-head {
-        margin-bottom: var(--s-8);
-        padding-bottom: var(--s-5);
-        border-bottom: 1px solid rgba(30, 58, 95, 0.1);
+    .i-rail {
+        position: sticky;
+        top: 100px;
+        padding-right: var(--s-3);
     }
 
-    .i-how-head h2 {
+    .i-rail h2 {
         font-weight: 600;
-        font-size: clamp(1.9rem, 3.2vw, 2.5rem);
-        line-height: 1.18;
+        font-size: clamp(1.7rem, 2.6vw, 2.1rem);
+        line-height: 1.2;
         color: var(--deep-navy);
-        margin: 0;
+        margin: 0 0 var(--s-5);
+        letter-spacing: -0.4px;
+    }
+
+    .i-rail-toc {
+        list-style: none;
+        margin: var(--s-5) 0 0;
+        padding: 0;
+        border-top: 1px solid rgba(30, 58, 95, 0.12);
+    }
+
+    .i-rail-toc li {
+        display: grid;
+        grid-template-columns: 40px 1fr;
+        gap: var(--s-2);
+        padding: 0.55rem 0;
+        border-bottom: 1px solid rgba(30, 58, 95, 0.08);
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 0.85rem;
+        color: var(--text-medium);
+    }
+
+    .i-rail-toc li span {
+        font-family: 'Fraunces', serif;
+        font-style: italic;
+        font-size: 0.95rem;
+        color: var(--gold);
+        line-height: 1;
     }
 
     .i-mod {
         display: grid;
-        grid-template-columns: 64px 1fr;
-        gap: var(--s-6);
-        padding: var(--s-6) 0;
+        grid-template-columns: 48px 1fr;
+        gap: var(--s-4);
+        padding-bottom: var(--s-5);
+        margin-bottom: var(--s-5);
         border-bottom: 1px solid rgba(30, 58, 95, 0.08);
     }
 
-    .i-mod:last-of-type { border-bottom: none; }
+    .i-mod:last-of-type { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
 
     .i-mod-num {
         font-family: 'Fraunces', serif;
@@ -735,8 +843,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     }
 
     /* ───────────── RESPONSIVE ───────────── */
+    @media (max-width: 980px) {
+        .i-opening-grid { grid-template-columns: 1fr; gap: var(--s-8); }
+        .i-marg { border-top: none; padding-top: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s-4); }
+        .i-how-grid { grid-template-columns: 1fr; gap: var(--s-8); }
+        .i-rail { position: static; padding-right: 0; }
+    }
+
     @media (max-width: 768px) {
-        .i-hero { padding: var(--s-16) var(--s-3) var(--s-10); min-height: auto; }
+        .i-hero { padding: var(--s-16) var(--s-3) var(--s-10); }
         .i-hud { width: 28px; height: 28px; }
         .i-hud-tl, .i-hud-tr { top: 18px; }
         .i-hud-bl, .i-hud-br { bottom: 18px; }
@@ -746,7 +861,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         .i-formula { padding: var(--s-4) var(--s-3); }
         .i-formula-code { font-size: 0.82rem; }
         .i-lede { font-size: 1.4rem; }
-        .i-mod { grid-template-columns: 1fr; gap: var(--s-2); padding: var(--s-5) 0; }
+        .i-marg { grid-template-columns: 1fr; }
+        .i-mod { grid-template-columns: 1fr; gap: var(--s-2); padding-bottom: var(--s-4); margin-bottom: var(--s-4); }
         .i-mod-num { font-size: 1.7rem; padding-top: 0; }
         .i-cov-row { grid-template-columns: 1fr; gap: var(--s-2); }
     }

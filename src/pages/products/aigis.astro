@@ -21,11 +21,27 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
     <!-- ── OPENING ── -->
     <section class="a-opening">
-        <div class="a-prose reveal">
-            <p class="a-lede">AI is now deployed inside every regulated industry. Underwriters, risk committees, and compliance officers have no standardized way to determine whether a deployment is insurable, defensible, or compliant.</p>
-            <p>The deployments don't stop while they figure it out.</p>
-            <p>AIGIS exists to answer one question, continuously: <em>is this model safe and mission-ready for this user, on this network, under this regulatory regime?</em></p>
-            <p class="a-lede-close">Not a research bench. Not a one-time audit. A continuous assessment substrate that AI insurance, regulatory compliance, and enterprise risk all run on top of.</p>
+        <div class="a-opening-grid reveal">
+            <div class="a-opening-main">
+                <p class="a-lede">AI is now deployed inside every regulated industry. Underwriters, risk committees, and compliance officers have no standardized way to determine whether a deployment is insurable, defensible, or compliant.</p>
+                <p>The deployments don't stop while they figure it out.</p>
+                <p>AIGIS exists to answer one question, continuously: <em>is this model safe and mission-ready for this user, on this network, under this regulatory regime?</em></p>
+                <p class="a-lede-close">Not a research bench. Not a one-time audit. A continuous assessment substrate that AI insurance, regulatory compliance, and enterprise risk all run on top of.</p>
+            </div>
+            <aside class="a-marg">
+                <div class="a-marg-item">
+                    <span class="a-marg-val">$60<span class="a-marg-unit">M+</span></span>
+                    <span class="a-marg-lbl">AI insurance coverage tracked</span>
+                </div>
+                <div class="a-marg-item">
+                    <span class="a-marg-val">6</span>
+                    <span class="a-marg-lbl">Frameworks mapped to evaluation</span>
+                </div>
+                <div class="a-marg-item">
+                    <span class="a-marg-val">∞</span>
+                    <span class="a-marg-lbl">Continuous, not one-time</span>
+                </div>
+            </aside>
         </div>
     </section>
 
@@ -115,35 +131,41 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
     <!-- ── TRACKS ── -->
     <section class="a-tracks">
-        <div class="a-tracks-frame">
-            <header class="a-tracks-head reveal">
+        <div class="a-tracks-grid">
+            <aside class="a-rail reveal">
                 <span class="a-eyebrow a-eyebrow-cyan">§ What's inside</span>
                 <h2>Three tracks on one harness.</h2>
-            </header>
+                <ol class="a-rail-toc">
+                    <li><span>I</span>Evaluation</li>
+                    <li><span>II</span>Adversarial &amp; Operational Stress</li>
+                    <li><span>III</span>Governance, Risk &amp; Insurance</li>
+                </ol>
+            </aside>
+            <div class="a-tracks-body">
+                <article class="a-track reveal">
+                    <span class="a-track-num">I</span>
+                    <div>
+                        <h3>Evaluation</h3>
+                        <p>One uniform protocol behind adapters for OpenAI, HuggingFace, Bedrock, gRPC, and local Ollama. Pluggable scorers covering exact match, similarity, classification, and routed human evaluation &mdash; with Krippendorff's alpha and Fleiss' kappa for inter-rater reliability. Every run captures a full environment snapshot so a result is reproducible months later.</p>
+                    </div>
+                </article>
 
-            <article class="a-track reveal">
-                <span class="a-track-num">I</span>
-                <div>
-                    <h3>Evaluation</h3>
-                    <p>One uniform protocol behind adapters for OpenAI, HuggingFace, Bedrock, gRPC, and local Ollama. Pluggable scorers covering exact match, similarity, classification, and routed human evaluation &mdash; with Krippendorff's alpha and Fleiss' kappa for inter-rater reliability. Every run captures a full environment snapshot so a result is reproducible months later.</p>
-                </div>
-            </article>
+                <article class="a-track reveal">
+                    <span class="a-track-num">II</span>
+                    <div>
+                        <h3>Adversarial &amp; Operational Stress</h3>
+                        <p>An automated red-teaming pipeline aligned to MITRE ATLAS &mdash; prompt injection, jailbreak generation, data-poisoning probes, model-extraction resistance &mdash; with results mapped to ATLAS technique IDs an insurer or auditor recognizes. An operational-stress simulator measures degradation curves under latency, jitter, and throttling, not binary pass/fail.</p>
+                    </div>
+                </article>
 
-            <article class="a-track reveal">
-                <span class="a-track-num">II</span>
-                <div>
-                    <h3>Adversarial &amp; Operational Stress</h3>
-                    <p>An automated red-teaming pipeline aligned to MITRE ATLAS &mdash; prompt injection, jailbreak generation, data-poisoning probes, model-extraction resistance &mdash; with results mapped to ATLAS technique IDs an insurer or auditor recognizes. An operational-stress simulator measures degradation curves under latency, jitter, and throttling, not binary pass/fail.</p>
-                </div>
-            </article>
-
-            <article class="a-track reveal">
-                <span class="a-track-num">III</span>
-                <div>
-                    <h3>Governance, Risk &amp; Insurance</h3>
-                    <p>Live coverage against the frameworks insurers and regulators actually use. Risk scoring against active incidents. Insurance coverage monitoring across the portfolio. The output is a defensible governance trail, refreshed continuously, not a snapshot taken once a year.</p>
-                </div>
-            </article>
+                <article class="a-track reveal">
+                    <span class="a-track-num">III</span>
+                    <div>
+                        <h3>Governance, Risk &amp; Insurance</h3>
+                        <p>Live coverage against the frameworks insurers and regulators actually use. Risk scoring against active incidents. Insurance coverage monitoring across the portfolio. The output is a defensible governance trail, refreshed continuously, not a snapshot taken once a year.</p>
+                    </div>
+                </article>
+            </div>
         </div>
     </section>
 
@@ -304,6 +326,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         padding: var(--s-16) 0;
     }
 
+    .a-opening-grid {
+        max-width: 1040px;
+        margin: 0 auto;
+        padding: 0 var(--s-3);
+        display: grid;
+        grid-template-columns: 1.7fr 0.7fr;
+        gap: var(--s-12);
+        align-items: start;
+    }
+
+    .a-opening-main { max-width: 620px; }
+
     .a-lede {
         font-weight: 500;
         font-size: 1.75rem;
@@ -313,11 +347,54 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         letter-spacing: -0.4px;
     }
 
-    .a-opening p {
+    .a-opening-main p {
         font-size: 1.05rem;
         line-height: 1.85;
         color: var(--text-medium);
         margin: 0 0 var(--s-4);
+    }
+
+    /* ── MARGINAL CALLOUTS ── */
+    .a-marg {
+        display: flex;
+        flex-direction: column;
+        gap: var(--s-5);
+        padding-top: var(--s-2);
+        border-top: 1px solid var(--border-warm);
+    }
+
+    .a-marg-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        padding-left: var(--s-3);
+        border-left: 2px solid rgba(56, 217, 201, 0.5);
+    }
+
+    .a-marg-val {
+        font-family: 'Fraunces', serif;
+        font-weight: 600;
+        font-size: 1.85rem;
+        color: var(--deep-navy);
+        line-height: 1;
+        letter-spacing: -0.5px;
+    }
+
+    .a-marg-unit {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: rgba(56, 217, 201, 0.95);
+        margin-left: 0.1rem;
+    }
+
+    .a-marg-lbl {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+        color: var(--text-medium);
+        line-height: 1.4;
     }
 
     .a-opening em {
@@ -526,35 +603,67 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         padding: var(--s-16) 0;
     }
 
-    .a-tracks-frame {
-        max-width: 820px;
+    .a-tracks-grid {
+        max-width: 1080px;
         margin: 0 auto;
         padding: 0 var(--s-3);
+        display: grid;
+        grid-template-columns: 0.85fr 1.4fr;
+        gap: var(--s-10);
+        align-items: start;
     }
 
-    .a-tracks-head {
-        margin-bottom: var(--s-8);
-        padding-bottom: var(--s-5);
-        border-bottom: 1px solid rgba(30, 58, 95, 0.1);
+    .a-rail {
+        position: sticky;
+        top: 100px;
+        padding-right: var(--s-3);
     }
 
-    .a-tracks-head h2 {
+    .a-rail h2 {
         font-weight: 600;
-        font-size: clamp(2rem, 3.4vw, 2.5rem);
-        line-height: 1.18;
+        font-size: clamp(1.7rem, 2.6vw, 2.1rem);
+        line-height: 1.2;
         color: var(--deep-navy);
-        margin: 0;
+        margin: 0 0 var(--s-5);
+        letter-spacing: -0.4px;
+    }
+
+    .a-rail-toc {
+        list-style: none;
+        margin: var(--s-5) 0 0;
+        padding: 0;
+        border-top: 1px solid rgba(30, 58, 95, 0.12);
+    }
+
+    .a-rail-toc li {
+        display: grid;
+        grid-template-columns: 40px 1fr;
+        gap: var(--s-2);
+        padding: 0.65rem 0;
+        border-bottom: 1px solid rgba(30, 58, 95, 0.08);
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 0.88rem;
+        color: var(--text-medium);
+    }
+
+    .a-rail-toc li span {
+        font-family: 'Fraunces', serif;
+        font-style: italic;
+        font-size: 1rem;
+        color: var(--gold);
+        line-height: 1;
     }
 
     .a-track {
         display: grid;
-        grid-template-columns: 64px 1fr;
-        gap: var(--s-6);
-        padding: var(--s-8) 0;
+        grid-template-columns: 48px 1fr;
+        gap: var(--s-5);
+        padding-bottom: var(--s-6);
+        margin-bottom: var(--s-6);
         border-bottom: 1px solid rgba(30, 58, 95, 0.1);
     }
 
-    .a-track:last-of-type { border-bottom: none; }
+    .a-track:last-of-type { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
 
     .a-track-num {
         font-style: italic;
@@ -652,19 +761,24 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     }
 
     /* ───────────── RESPONSIVE ───────────── */
-    @media (max-width: 968px) {
+    @media (max-width: 980px) {
+        .a-opening-grid { grid-template-columns: 1fr; gap: var(--s-8); }
+        .a-marg { border-top: none; padding-top: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-4); }
         .a-insurance-grid { grid-template-columns: 1fr; gap: var(--s-6); }
+        .a-tracks-grid { grid-template-columns: 1fr; gap: var(--s-8); }
+        .a-rail { position: static; padding-right: 0; }
     }
 
     @media (max-width: 768px) {
-        .a-hero { padding: var(--s-16) var(--s-3) var(--s-10); min-height: auto; }
+        .a-hero { padding: var(--s-16) var(--s-3) var(--s-10); }
         .a-wordmark { letter-spacing: -1px; }
         .a-hero-tagline { font-size: 1.15rem; }
         .a-opening, .a-insurance, .a-deploy, .a-tracks { padding: var(--s-12) 0; }
         .a-lede { font-size: 1.4rem; }
+        .a-marg { grid-template-columns: 1fr; }
         .a-tabs { grid-template-columns: 1fr; }
         .a-code { font-size: 0.78rem; }
-        .a-track { grid-template-columns: 1fr; gap: var(--s-3); padding: var(--s-6) 0; }
+        .a-track { grid-template-columns: 1fr; gap: var(--s-2); padding-bottom: var(--s-5); margin-bottom: var(--s-5); }
         .a-track-num { font-size: 2rem; padding-top: 0; }
     }
 </style>
