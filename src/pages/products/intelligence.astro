@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Intelligence | Levenhall" description="Levenhall Intelligence is a real-time defense and geopolitical operating picture — 119 RSS feeds, satellite and conflict data, live media, on-device ML, and a proprietary Country Instability Index, fused into one WebGL global defense map.">
+<BaseLayout title="Intelligence | Levenhall" description="Levenhall Intelligence is a real-time defense and geopolitical operating picture — 119 feeds, on-device ML, and a proprietary Country Instability Index, fused into one WebGL globe.">
 
     <!-- ── HERO ── -->
     <section class="intel-hero">
@@ -10,7 +10,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="hero-grid-overlay"></div>
         <div class="hero-scanlines"></div>
 
-        <!-- HUD corner brackets -->
         <span class="hud-bracket hud-tl"></span>
         <span class="hud-bracket hud-tr"></span>
         <span class="hud-bracket hud-bl"></span>
@@ -20,28 +19,28 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <div class="intel-badge">A Levenhall Product</div>
             <p class="intel-eyebrow">Levenhall</p>
             <h1 class="intel-wordmark">INTELLIGENCE</h1>
-            <p class="intel-sub">Real-Time Defense &amp; Geopolitical Operating Picture</p>
+            <p class="intel-sub">A Live Operating Picture for Defense &amp; Geopolitics</p>
             <div class="hero-rule"></div>
-            <p class="hero-description">A unified operating picture for allied defense advisory, security analysis, and strategic decision-making. 119 RSS feeds, satellite data, conflict databases, economic indicators, and live media &mdash; fused through on-device machine learning, a proprietary Country Instability Index, and a multi-layered WebGL global defense map.</p>
+            <p class="hero-description">Every signal that matters &mdash; conflict, unrest, economy, infrastructure, climate &mdash; on one WebGL globe. Powered by on-device machine learning and Levenhall's proprietary instability index.</p>
             <div class="hero-cta">
                 <a href="https://intel.levenhall.com" class="btn btn-gold" target="_blank" rel="noopener noreferrer">Open Intelligence</a>
-                <a href="#modules" class="btn btn-outline-white">See the Modules</a>
+                <a href="#whats-inside" class="btn btn-outline-white">What's Inside</a>
             </div>
             <p class="hero-live">Live at <span class="hero-live-url">intel.levenhall.com</span></p>
         </div>
     </section>
 
-    <!-- ── AT A GLANCE (LIGHT) ── -->
+    <!-- ── AT A GLANCE ── -->
     <section class="section glance-section">
         <div class="container">
             <div class="glance-grid reveal">
                 <div class="glance-card">
                     <span class="glance-value">119</span>
-                    <span class="glance-label">RSS Intelligence Feeds</span>
+                    <span class="glance-label">Intelligence Feeds</span>
                 </div>
                 <div class="glance-card">
                     <span class="glance-value">34</span>
-                    <span class="glance-label">Global Map Layers</span>
+                    <span class="glance-label">Map Layers</span>
                 </div>
                 <div class="glance-card">
                     <span class="glance-value">27</span>
@@ -51,430 +50,144 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                     <span class="glance-value">31</span>
                     <span class="glance-label">Tier-1 Countries</span>
                 </div>
-                <div class="glance-card">
-                    <span class="glance-value">4</span>
-                    <span class="glance-label">ONNX Models On-Device</span>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- ── THE OPERATING PICTURE (LIGHT) ── -->
-    <section class="section picture-section">
+    <!-- ── THE PITCH ── -->
+    <section class="section pitch-section">
         <div class="container">
-            <div class="picture-grid reveal">
-                <div class="picture-text">
-                    <span class="section-label">The Operating Picture</span>
-                    <h2>One Screen. Every Signal. No Data Leaves the Browser.</h2>
-                    <div class="gold-rule"></div>
-                    <p>Levenhall Intelligence fuses signals from across the analyst's information stack &mdash; armed conflict events, civil unrest, military movements, economic indicators, cyber threats, climate anomalies, live media &mdash; into a single, real-time operating picture.</p>
-                    <p>Heavy ML inference runs entirely client-side. Four ONNX models &mdash; embeddings, sentiment, summarization, and named-entity recognition &mdash; execute in a Web Worker, in the analyst's own browser, without round-tripping sensitive context to a server.</p>
-                    <p>The result is a defense-grade dashboard that loads anywhere there is a browser, scales with the analyst rather than the back end, and demonstrates Levenhall's analytical capabilities in production.</p>
-                </div>
-                <div class="picture-visual">
-                    <div class="picture-card">
-                        <span class="picture-card-label">Built For</span>
-                        <ul>
-                            <li>Allied defense advisory teams</li>
-                            <li>Security analysts &amp; G2 staff</li>
-                            <li>Federal program offices</li>
-                            <li>Strategic decision-makers in regulated sectors</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="pitch-text reveal">
+                <span class="section-label">The Idea</span>
+                <h2>One screen. Every signal. <span class="muted">Nothing leaves your browser.</span></h2>
+                <div class="gold-rule"></div>
+                <p>The heavy machine learning &mdash; embeddings, sentiment, summarization, named-entity extraction &mdash; runs in the analyst's own browser. No round-trip. No leakage.</p>
+                <p>The result is a defense-grade dashboard that loads anywhere there's a tab, scales with the analyst rather than the back end, and shows Levenhall's analytical stack at work.</p>
             </div>
         </div>
     </section>
 
-    <!-- ── SIX MODULES (DARK) ── -->
-    <section class="section modules-section" id="modules">
-        <div class="modules-bg"></div>
+    <!-- ── WHAT'S INSIDE (DARK) ── -->
+    <section class="section inside-section" id="whats-inside">
+        <div class="inside-bg"></div>
         <div class="container" style="position: relative; z-index: 1;">
             <div class="section-header reveal">
-                <span class="dark-label">Intelligence Modules</span>
-                <h2>Six Layers of Analysis on One Data Spine</h2>
-                <p>Each module is a self-contained analytical engine. Signals flow between them through an internal routing layer the platform refers to as BRIDGER &mdash; the signal bridge that links Intelligence to the wider Levenhall product stack.</p>
+                <span class="dark-label">What's Inside</span>
+                <h2>Six Modules. One Data Spine.</h2>
             </div>
-            <div class="modules-grid">
-                <div class="module-card module-card-wide reveal">
-                    <div class="module-head">
-                        <span class="module-num">01</span>
-                        <span class="module-tag">Composite Score</span>
-                    </div>
-                    <h3>Country Instability Index (CII)</h3>
-                    <p>A proprietary 0&ndash;100 composite tracking instability across 31 Tier-1 countries &mdash; the nations most relevant to allied defense posture.</p>
-                    <div class="formula-box">
-                        <span class="formula-label">Blended Score</span>
-                        <code>(Baseline Risk &times; 0.4) + (Event Score &times; 0.6)
-+ Hotspot Boost + News Urgency Boost
-+ Focal Point Boost + Displacement Boost + Climate Stress</code>
-                    </div>
-                    <div class="event-mix">
-                        <span class="event-mix-label">Event Score Mix</span>
-                        <div class="event-mix-bars">
-                            <div class="event-mix-row"><span class="emr-name">Conflict</span><div class="emr-bar"><div class="emr-fill" style="width: 30%;"></div></div><span class="emr-pct">30%</span></div>
-                            <div class="event-mix-row"><span class="emr-name">Unrest</span><div class="emr-bar"><div class="emr-fill" style="width: 25%;"></div></div><span class="emr-pct">25%</span></div>
-                            <div class="event-mix-row"><span class="emr-name">Information</span><div class="emr-bar"><div class="emr-fill" style="width: 25%;"></div></div><span class="emr-pct">25%</span></div>
-                            <div class="event-mix-row"><span class="emr-name">Security</span><div class="emr-bar"><div class="emr-fill" style="width: 20%;"></div></div><span class="emr-pct">20%</span></div>
-                        </div>
-                    </div>
-                    <p class="module-foot">Modifiers include UCDP conflict floors (active wars score &ge;70), displacement thresholds (&ge;1M displaced adds +8), and per-country event multipliers (0.3&times;&ndash;3.0&times;). Output tiers: <strong>Low &middot; Normal &middot; Elevated &middot; High &middot; Critical</strong>.</p>
+            <div class="modules-grid reveal">
+                <div class="module-card">
+                    <span class="module-num">01</span>
+                    <h3>Country Instability Index</h3>
+                    <p>A proprietary 0&ndash;100 composite tracking instability across 31 Tier-1 countries. Conflict, unrest, information, and security &mdash; weighted, modified, and tiered <strong>Low &rarr; Critical</strong>.</p>
                 </div>
-
-                <div class="module-card reveal">
-                    <div class="module-head">
-                        <span class="module-num">02</span>
-                        <span class="module-tag">Convergence</span>
-                    </div>
-                    <h3>Geo-Convergence Detection</h3>
-                    <p>Divides the globe into 1-degree grid cells and monitors for multi-source signal convergence within a 24-hour rolling window.</p>
-                    <p>When conflict events, protest reports, military movements, and news signals cluster in the same cell, the system flags potential emerging hotspots <em>before</em> they hit mainstream reporting.</p>
+                <div class="module-card">
+                    <span class="module-num">02</span>
+                    <h3>Geo-Convergence</h3>
+                    <p>The globe split into 1&deg; cells. When conflict, protest, military, and news signals cluster in the same cell in 24 hours, the system flags an emerging hotspot &mdash; before mainstream reporting does.</p>
                 </div>
-
-                <div class="module-card reveal">
-                    <div class="module-head">
-                        <span class="module-num">03</span>
-                        <span class="module-tag">Strategic Risk</span>
-                    </div>
-                    <h3>Strategic Risk Composite</h3>
-                    <p>One strategic-risk score per region, blending three orthogonal inputs:</p>
-                    <ul class="module-list">
-                        <li>Geo-convergence signal &mdash; <strong>30%</strong></li>
-                        <li>Country Instability Index &mdash; <strong>50%</strong></li>
-                        <li>Infrastructure cascade risk &mdash; <strong>20%</strong></li>
-                    </ul>
+                <div class="module-card">
+                    <span class="module-num">03</span>
+                    <h3>Strategic Risk</h3>
+                    <p>One number per region, blending convergence (30%), country instability (50%), and infrastructure cascade risk (20%).</p>
                 </div>
-
-                <div class="module-card reveal">
-                    <div class="module-head">
-                        <span class="module-num">04</span>
-                        <span class="module-tag">Signal Bus</span>
-                    </div>
-                    <h3>Signal Aggregation &amp; BRIDGER Bridge</h3>
-                    <p>A unified signal stream that ingests CII, conflict, unrest, economic, cyber, military, and climate channels.</p>
-                    <p>The BRIDGER bridge then routes prioritized signals across modules &mdash; and onward into the broader Levenhall platform stack.</p>
+                <div class="module-card">
+                    <span class="module-num">04</span>
+                    <h3>Signal Bridge</h3>
+                    <p>A unified bus ingesting conflict, unrest, economy, cyber, military, and climate streams. Routes prioritized signals across modules and into the wider Levenhall stack.</p>
                 </div>
-
-                <div class="module-card module-card-wide reveal">
-                    <div class="module-head">
-                        <span class="module-num">05</span>
-                        <span class="module-tag">On-Device ML</span>
-                    </div>
-                    <h3>Browser-Side Inference Pipeline</h3>
-                    <p>Four ONNX models run entirely in-browser with no server dependency. Semantic clustering uses a 0.75 cosine similarity threshold across batches of 20 texts, inside a 200 MB memory budget. All inference runs in a Web Worker so the UI stays responsive.</p>
-                    <div class="ml-table">
-                        <div class="ml-row ml-head">
-                            <span>Model</span>
-                            <span>Purpose</span>
-                            <span>Size</span>
-                        </div>
-                        <div class="ml-row">
-                            <span class="ml-name">all-MiniLM-L6-v2</span>
-                            <span>Semantic embeddings for event clustering</span>
-                            <span class="ml-size">23 MB</span>
-                        </div>
-                        <div class="ml-row">
-                            <span class="ml-name">DistilBERT SST-2</span>
-                            <span>Sentiment classification</span>
-                            <span class="ml-size">65 MB</span>
-                        </div>
-                        <div class="ml-row">
-                            <span class="ml-name">FLAN-T5 Base</span>
-                            <span>Abstractive summarization</span>
-                            <span class="ml-size">250 MB</span>
-                        </div>
-                        <div class="ml-row">
-                            <span class="ml-name">BERT-base-NER</span>
-                            <span>Named entity recognition (people, orgs, locations)</span>
-                            <span class="ml-size">65 MB</span>
-                        </div>
-                    </div>
+                <div class="module-card">
+                    <span class="module-num">05</span>
+                    <h3>On-Device ML</h3>
+                    <p>Four ONNX models running in a Web Worker. Embeddings (MiniLM), sentiment (DistilBERT), summarization (FLAN-T5), and NER (BERT). 200 MB budget. Zero server roundtrips.</p>
                 </div>
-
-                <div class="module-card reveal">
-                    <div class="module-head">
-                        <span class="module-num">06</span>
-                        <span class="module-tag">Cascade</span>
-                    </div>
-                    <h3>Infrastructure Cascade Analysis</h3>
-                    <p>Models interdependencies between critical infrastructure systems &mdash; undersea cables, power grids, pipelines, data centers &mdash; to predict how a disruption in one system propagates across others.</p>
+                <div class="module-card">
+                    <span class="module-num">06</span>
+                    <h3>Cascade Analysis</h3>
+                    <p>Models the dependencies between undersea cables, power grids, pipelines, and data centers &mdash; so a disruption in one tells you what falls next.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ── GLOBAL DEFENSE MAP (LIGHT) ── -->
+    <!-- ── THE MAP ── -->
     <section class="section map-section">
         <div class="container">
-            <div class="section-header reveal">
-                <span class="section-label">Global Defense Map</span>
-                <h2>34 Intelligence Layers on One WebGL Globe</h2>
-                <p>The centerpiece of the platform. DeckGL 9.2 + MapLibre GL, defense-HUD aesthetic, gold corner brackets, scan-line overlay, vignette, glass-blur control panels. Eleven layers default-on; the rest toggle from a single panel.</p>
-            </div>
-            <div class="map-layers reveal">
-                <div class="map-group">
-                    <h4>Default On <span class="map-group-count">11</span></h4>
-                    <div class="map-chips">
-                        <span class="map-chip">Conflicts</span>
-                        <span class="map-chip">Military Bases</span>
-                        <span class="map-chip">Military Assets</span>
-                        <span class="map-chip">Sanctions</span>
-                        <span class="map-chip">Hotspots</span>
-                        <span class="map-chip">Nuclear Facilities</span>
-                        <span class="map-chip">Waterways</span>
-                        <span class="map-chip">Infrastructure Outages</span>
-                        <span class="map-chip">Natural Disasters</span>
-                        <span class="map-chip">Economic Indicators</span>
-                        <span class="map-chip">Weather</span>
-                    </div>
+            <div class="map-grid reveal">
+                <div class="map-text">
+                    <span class="section-label">The Map</span>
+                    <h2>A WebGL Globe with 34 Layers</h2>
+                    <div class="gold-rule"></div>
+                    <p>DeckGL + MapLibre. Defense-HUD aesthetic. Eleven layers on by default; the rest a click away.</p>
                 </div>
-                <div class="map-group">
-                    <h4>Toggle On <span class="map-group-count">23</span></h4>
-                    <div class="map-chips map-chips-muted">
-                        <span class="map-chip">Undersea Cables</span>
-                        <span class="map-chip">Pipelines</span>
-                        <span class="map-chip">AIS Maritime Tracking</span>
-                        <span class="map-chip">Nuclear Irradiators</span>
-                        <span class="map-chip">Cyber Threats</span>
-                        <span class="map-chip">Data Centers</span>
-                        <span class="map-chip">Protests</span>
-                        <span class="map-chip">Military Flights</span>
-                        <span class="map-chip">Spaceports</span>
-                        <span class="map-chip">Critical Minerals</span>
-                        <span class="map-chip">Satellite Fires</span>
-                        <span class="map-chip">Displacement Camps</span>
-                        <span class="map-chip">Climate Anomalies</span>
-                        <span class="map-chip">Startup Hubs</span>
-                        <span class="map-chip">Cloud Regions</span>
-                        <span class="map-chip">Accelerators</span>
-                        <span class="map-chip">Tech HQs</span>
-                        <span class="map-chip">Tech Events</span>
-                        <span class="map-chip">Stock Exchanges</span>
-                        <span class="map-chip">Financial Centers</span>
-                        <span class="map-chip">Central Banks</span>
-                        <span class="map-chip">Commodity Hubs</span>
-                        <span class="map-chip">Gulf Investments</span>
+                <div class="map-callout">
+                    <div class="map-callout-row">
+                        <span class="map-callout-num">11</span>
+                        <span class="map-callout-label">On by default</span>
+                        <p>Conflicts, military bases &amp; assets, sanctions, hotspots, nuclear facilities, waterways, infrastructure outages, natural disasters, economic indicators, weather.</p>
+                    </div>
+                    <div class="map-callout-row">
+                        <span class="map-callout-num">23</span>
+                        <span class="map-callout-label">A click away</span>
+                        <p>Undersea cables, pipelines, AIS, cyber threats, data centers, protests, military flights, spaceports, critical minerals, satellite fires, displacement camps, climate anomalies, financial centers, and more.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ── 27 PANELS (CREAM) ── -->
-    <section class="section panels-section">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-label">Intelligence Panels</span>
-                <h2>27 Specialized Modules in the Dashboard</h2>
-                <p>Each panel is a self-contained intelligence module. Together they form the analyst's working surface, organized by mission area.</p>
-            </div>
-            <div class="panels-grid reveal">
-                <div class="panel-group">
-                    <span class="panel-cat">Strategic</span>
-                    <ul><li>Strategic Posture</li><li>Strategic Risk</li><li>CII</li><li>Cascade Analysis</li></ul>
-                </div>
-                <div class="panel-group">
-                    <span class="panel-cat">Conflict &amp; Security</span>
-                    <ul><li>UCDP Events</li><li>Displacement</li><li>Climate Anomaly</li><li>Population Exposure</li></ul>
-                </div>
-                <div class="panel-group">
-                    <span class="panel-cat">News &amp; Analysis</span>
-                    <ul><li>Live News</li><li>News</li><li>GDELT Intel</li><li>Insights</li><li>Monitor</li></ul>
-                </div>
-                <div class="panel-group">
-                    <span class="panel-cat">Defense &amp; Procurement</span>
-                    <ul><li>GeoHubs (defense / intel)</li><li>Investments</li></ul>
-                </div>
-                <div class="panel-group">
-                    <span class="panel-cat">Markets &amp; Economy</span>
-                    <ul><li>Market</li><li>Economic</li></ul>
-                </div>
-                <div class="panel-group">
-                    <span class="panel-cat">Technology</span>
-                    <ul><li>Tech Events</li><li>Tech Hubs</li><li>Tech Readiness</li><li>Regulation</li></ul>
-                </div>
-                <div class="panel-group">
-                    <span class="panel-cat">Live Media</span>
-                    <ul><li>Live Webcams</li><li>Jerusalem · Tehran · Mecca</li><li>NYC · Taipei · Kyiv</li><li>Moscow · Seoul · Beijing</li></ul>
-                </div>
-                <div class="panel-group">
-                    <span class="panel-cat">System</span>
-                    <ul><li>Status</li><li>Service Status</li><li>Runtime Config</li><li>Satellite Fires</li></ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ── DATA SOURCES (DARK) ── -->
-    <section class="section sources-section">
-        <div class="sources-bg"></div>
-        <div class="container" style="position: relative; z-index: 1;">
-            <div class="section-header reveal">
-                <span class="dark-label">Data Sources</span>
-                <h2>119 RSS Feeds &middot; 12 Categories &middot; 8 External APIs</h2>
-                <p>Every source is rated against a four-tier credibility system. State-affiliated and known-bias outlets carry explicit propaganda-risk labels.</p>
-            </div>
-
-            <div class="sources-grid reveal">
-                <div class="source-table">
-                    <div class="source-row source-head">
-                        <span>Category</span>
-                        <span>Feeds</span>
-                        <span>Representative Sources</span>
-                    </div>
-                    <div class="source-row"><span class="src-cat">Defense</span><span class="src-count">10</span><span>Defense One, Breaking Defense, Janes, Military Times</span></div>
-                    <div class="source-row"><span class="src-cat">Think Tanks</span><span class="src-count">18</span><span>CSIS, RAND, Brookings, Carnegie, Chatham House</span></div>
-                    <div class="source-row"><span class="src-cat">Indo-Pacific</span><span class="src-count">9</span><span>ASPI, Lowy Institute, regional security feeds</span></div>
-                    <div class="source-row"><span class="src-cat">Alliances</span><span class="src-count">7</span><span>NATO, AUKUS-related, allied defense ministries</span></div>
-                    <div class="source-row"><span class="src-cat">Procurement</span><span class="src-count">7</span><span>FedBizOpps, SAM.gov, defense acquisition</span></div>
-                    <div class="source-row"><span class="src-cat">Government</span><span class="src-count">6</span><span>White House, State Dept, Pentagon, UK MOD</span></div>
-                    <div class="source-row"><span class="src-cat">Cybersecurity</span><span class="src-count">6</span><span>Krebs, CISA, CyberScoop</span></div>
-                    <div class="source-row"><span class="src-cat">Regulatory</span><span class="src-count">5</span><span>AI regulation, defense regulatory bodies</span></div>
-                    <div class="source-row"><span class="src-cat">Gov Contracting</span><span class="src-count">4</span><span>GovExec, Federal News Network</span></div>
-                    <div class="source-row"><span class="src-cat">Economic</span><span class="src-count">4</span><span>Bloomberg, FT, economic indicators</span></div>
-                    <div class="source-row"><span class="src-cat">Crisis</span><span class="src-count">4</span><span>ReliefWeb, UNHCR, humanitarian feeds</span></div>
-                    <div class="source-row"><span class="src-cat">Energy</span><span class="src-count">4</span><span>EIA, energy security sources</span></div>
-                </div>
-
-                <div class="sources-side">
-                    <div class="credibility-card">
-                        <span class="cc-label">Credibility Tiers</span>
-                        <div class="cc-tier"><span class="cc-tier-num">T1</span><div><strong>Authoritative</strong><p>Reuters, AP, AFP, Bloomberg, government agencies (White House, Pentagon, State, UN), IAEA, WHO, UNHCR</p></div></div>
-                        <div class="cc-tier"><span class="cc-tier-num">T2</span><div><strong>Major Outlets</strong><p>BBC, The Guardian, CNN, Al Jazeera, Financial Times, CNBC</p></div></div>
-                        <div class="cc-tier"><span class="cc-tier-num">T3</span><div><strong>Specialty</strong><p>Think tanks, defense outlets, Bellingcat, regional security media</p></div></div>
-                        <div class="cc-tier"><span class="cc-tier-num">T4</span><div><strong>Aggregators</strong><p>Hacker News, tech aggregators, ArXiv</p></div></div>
-                    </div>
-
-                    <div class="apis-card">
-                        <span class="cc-label">External Data APIs</span>
-                        <ul>
-                            <li><strong>UCDP / HAPI</strong> &mdash; Uppsala Conflict Data Program</li>
-                            <li><strong>GDELT</strong> &mdash; events, language, tone</li>
-                            <li><strong>EIA</strong> &mdash; U.S. Energy Information Administration</li>
-                            <li><strong>World Bank</strong> &mdash; tech readiness indicators</li>
-                            <li><strong>YouTube Live</strong> &mdash; auto-discovered city webcams</li>
-                            <li><strong>FIRMS / NASA</strong> &mdash; satellite fire detection</li>
-                            <li><strong>AIS Maritime</strong> &mdash; vessel tracking</li>
-                            <li><strong>ADS-B</strong> &mdash; military flight tracking</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ── TIER-1 COUNTRY COVERAGE (LIGHT) ── -->
+    <!-- ── COVERAGE (LIGHT) ── -->
     <section class="section coverage-section">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-label">Tier-1 Country Coverage</span>
-                <h2>31 Nations at the Core of Allied Defense Posture</h2>
-                <p>The countries most relevant to allied defense, the strategic competition, and the active conflict environment.</p>
+                <span class="section-label">Tier-1 Coverage</span>
+                <h2>31 Nations at the Core of Allied Posture</h2>
             </div>
             <div class="coverage-grid reveal">
-                <div class="coverage-group">
-                    <span class="cov-cat cov-cat-allied">NATO / Allied</span>
-                    <div class="cov-flags">
-                        <span class="cov-flag">🇺🇸 USA</span>
-                        <span class="cov-flag">🇬🇧 UK</span>
-                        <span class="cov-flag">🇫🇷 France</span>
-                        <span class="cov-flag">🇩🇪 Germany</span>
-                        <span class="cov-flag">🇵🇱 Poland</span>
-                        <span class="cov-flag">🇦🇺 Australia (Five Eyes)</span>
-                    </div>
+                <div class="coverage-card">
+                    <span class="cov-cat cov-cat-allied">NATO &amp; Allied</span>
+                    <span class="cov-count">6</span>
+                    <span class="cov-flags-row">🇺🇸 🇬🇧 🇫🇷 🇩🇪 🇵🇱 🇦🇺</span>
                 </div>
-                <div class="coverage-group">
-                    <span class="cov-cat cov-cat-adversary">Adversarial / Contested</span>
-                    <div class="cov-flags">
-                        <span class="cov-flag">🇷🇺 Russia</span>
-                        <span class="cov-flag">🇨🇳 China</span>
-                        <span class="cov-flag">🇮🇷 Iran</span>
-                        <span class="cov-flag">🇰🇵 North Korea</span>
-                    </div>
+                <div class="coverage-card">
+                    <span class="cov-cat cov-cat-adversary">Adversarial</span>
+                    <span class="cov-count">4</span>
+                    <span class="cov-flags-row">🇷🇺 🇨🇳 🇮🇷 🇰🇵</span>
                 </div>
-                <div class="coverage-group">
-                    <span class="cov-cat cov-cat-conflict">Active Conflict Zones</span>
-                    <div class="cov-flags">
-                        <span class="cov-flag">🇺🇦 Ukraine</span>
-                        <span class="cov-flag">🇸🇾 Syria</span>
-                        <span class="cov-flag">🇾🇪 Yemen</span>
-                        <span class="cov-flag">🇲🇲 Myanmar</span>
-                        <span class="cov-flag">🇸🇩 Sudan</span>
-                        <span class="cov-flag">🇪🇹 Ethiopia</span>
-                        <span class="cov-flag">🇨🇩 DRC</span>
-                        <span class="cov-flag">🇸🇴 Somalia</span>
-                        <span class="cov-flag">🇦🇫 Afghanistan</span>
-                        <span class="cov-flag">🇮🇶 Iraq</span>
-                        <span class="cov-flag">🇱🇾 Libya</span>
-                        <span class="cov-flag">🇳🇬 Nigeria</span>
-                        <span class="cov-flag">🇱🇧 Lebanon</span>
-                    </div>
+                <div class="coverage-card">
+                    <span class="cov-cat cov-cat-conflict">Active Conflict</span>
+                    <span class="cov-count">13</span>
+                    <span class="cov-flags-row">🇺🇦 🇸🇾 🇾🇪 🇲🇲 🇸🇩 🇪🇹 🇨🇩 🇸🇴 🇦🇫 🇮🇶 🇱🇾 🇳🇬 🇱🇧</span>
                 </div>
-                <div class="coverage-group">
-                    <span class="cov-cat cov-cat-regional">Strategic / Regional Powers</span>
-                    <div class="cov-flags">
-                        <span class="cov-flag">🇮🇳 India</span>
-                        <span class="cov-flag">🇵🇰 Pakistan</span>
-                        <span class="cov-flag">🇸🇦 Saudi Arabia</span>
-                        <span class="cov-flag">🇹🇷 Turkey</span>
-                        <span class="cov-flag">🇦🇪 UAE</span>
-                        <span class="cov-flag">🇧🇷 Brazil</span>
-                        <span class="cov-flag">🇻🇪 Venezuela</span>
-                        <span class="cov-flag">🇹🇼 Taiwan</span>
-                    </div>
+                <div class="coverage-card">
+                    <span class="cov-cat cov-cat-regional">Strategic Powers</span>
+                    <span class="cov-count">8</span>
+                    <span class="cov-flags-row">🇮🇳 🇵🇰 🇸🇦 🇹🇷 🇦🇪 🇧🇷 🇻🇪 🇹🇼</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ── PLATFORM ARCHITECTURE (DARK) ── -->
-    <section class="section arch-section">
-        <div class="arch-bg"></div>
-        <div class="container" style="position: relative; z-index: 1;">
-            <div class="section-header reveal">
-                <span class="dark-label">Platform Architecture</span>
-                <h2>Edge-First. Browser-Heavy. Serverless in Between.</h2>
-                <p>Lightweight by design. Heavy computation pushed to the analyst's device. Vercel Edge handles the rest.</p>
-            </div>
-            <div class="arch-table reveal">
-                <div class="arch-row arch-head">
-                    <span>Layer</span>
-                    <span>Technology</span>
-                </div>
-                <div class="arch-row"><span class="arch-layer-label">Frontend</span><span>TypeScript SPA (Vite), no framework &mdash; custom Panel component system</span></div>
-                <div class="arch-row"><span class="arch-layer-label">Map Engine</span><span>DeckGL 9.2 + MapLibre GL &mdash; 34 toggleable intelligence layers</span></div>
-                <div class="arch-row"><span class="arch-layer-label">ML Inference</span><span>ONNX Runtime Web + HuggingFace Transformers (browser-side, no server roundtrip)</span></div>
-                <div class="arch-row"><span class="arch-layer-label">Serverless API</span><span>Vercel Edge Functions &mdash; 13+ endpoints (RPC router, RSS proxy, email gate, story generation, OG metadata, YouTube discovery, EIA proxy)</span></div>
-                <div class="arch-row"><span class="arch-layer-label">Data Store</span><span>Upstash Redis (caching, email gate, session state)</span></div>
-                <div class="arch-row"><span class="arch-layer-label">LLM Integration</span><span>Groq (Llama 3.3 70B) for country intel briefs on demand</span></div>
-                <div class="arch-row"><span class="arch-layer-label">Analytics</span><span>PostHog + Vercel Analytics + Sentry error tracking</span></div>
-                <div class="arch-row"><span class="arch-layer-label">i18n</span><span>i18next (multi-language ready)</span></div>
-                <div class="arch-row"><span class="arch-layer-label">Access Control</span><span>Email-gated portal, bot-filtering middleware, bearer-token admin dashboard, PWA-ready with offline fallback</span></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ── STRATEGIC POSITIONING (LIGHT) ── -->
-    <section class="section position-section">
+    <!-- ── SIBLING PRODUCTS ── -->
+    <section class="section siblings-section">
         <div class="container">
-            <div class="position-grid reveal">
-                <div class="position-text">
+            <div class="siblings-grid reveal">
+                <div class="siblings-text">
                     <span class="section-label">Where It Sits</span>
-                    <h2>The Front-Facing Demonstration of Levenhall's Analytical Capability</h2>
+                    <h2>One of Three Levenhall Products</h2>
                     <div class="gold-rule"></div>
-                    <p>Levenhall Intelligence sits alongside <strong>BRIDGER</strong> and <strong>AIGIS</strong> in Levenhall's product portfolio. Where BRIDGER routes pre-RFP procurement signal and AIGIS evaluates AI systems across classification levels, Intelligence is the live, unified operating picture &mdash; a working platform <em>and</em> a proof of capability that prospective clients can open in a browser today.</p>
-                    <p>It serves defense, intelligence community, and government contracting clients as evidence of what Levenhall's analytical stack actually does: real-time multi-source fusion, proprietary instability modeling, on-device ML, and an opinionated operating picture that mirrors how analysts actually work.</p>
+                    <p>Intelligence is the live, public-facing dashboard. <strong>BRIDGER</strong> is the federal contracting platform. <strong>AIGIS</strong> is the AI evaluation infrastructure.</p>
                 </div>
-                <div class="position-products">
-                    <a href="/products/bridger" class="position-card">
-                        <span class="position-card-tag">Sibling Product</span>
+                <div class="siblings-cards">
+                    <a href="/products/bridger" class="sibling-card">
                         <h4>BRIDGER</h4>
-                        <p>Market entry intelligence and capture workflow for US federal contracting.</p>
+                        <p>Market entry intelligence for US federal contracting.</p>
+                        <span class="sibling-arrow">&rarr;</span>
                     </a>
-                    <a href="/products/aigis" class="position-card">
-                        <span class="position-card-tag">Sibling Product</span>
+                    <a href="/products/aigis" class="sibling-card">
                         <h4>AIGIS</h4>
-                        <p>AI evaluation and governance platform from unclassified through TS/SCI.</p>
+                        <p>AI evaluation &amp; governance, unclassified through TS/SCI.</p>
+                        <span class="sibling-arrow">&rarr;</span>
                     </a>
                 </div>
             </div>
@@ -487,8 +200,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="intel-cta-inner">
             <div class="intel-cta-accent"></div>
             <div class="intel-cta-badge">Live Now</div>
-            <h2>Open the Dashboard.</h2>
-            <p>Levenhall Intelligence is live at intel.levenhall.com. Access is email-gated; a verified email unlocks the full operating picture. Bespoke deployments and licensed access are available through Levenhall's market intelligence practice.</p>
+            <h2>Open the dashboard.</h2>
+            <p>A verified email unlocks the full operating picture. Bespoke deployments are available through Levenhall's intelligence practice.</p>
             <div class="btn-group" style="justify-content: center;">
                 <a href="https://intel.levenhall.com" class="btn btn-gold" target="_blank" rel="noopener noreferrer">Open Intelligence</a>
                 <a href="/contact" class="btn btn-outline-white">Contact Levenhall</a>
@@ -517,8 +230,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         inset: 0;
         background-image:
             radial-gradient(ellipse at 50% 40%, rgba(201, 169, 97, 0.08) 0%, transparent 55%),
-            radial-gradient(ellipse at 20% 80%, rgba(30, 58, 95, 0.18) 0%, transparent 50%),
-            radial-gradient(ellipse at 80% 20%, rgba(139, 21, 56, 0.06) 0%, transparent 50%);
+            radial-gradient(ellipse at 20% 80%, rgba(30, 58, 95, 0.18) 0%, transparent 50%);
         pointer-events: none;
     }
 
@@ -544,7 +256,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         opacity: 0.4;
     }
 
-    /* HUD corner brackets */
     .hud-bracket {
         position: absolute;
         width: 36px;
@@ -569,7 +280,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     }
 
     .hero-inner {
-        max-width: 780px;
+        max-width: 720px;
         margin: 0 auto;
         position: relative;
         z-index: 1;
@@ -633,11 +344,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     }
 
     .hero-description {
-        font-size: 1.08rem;
-        color: rgba(255, 255, 255, 0.6);
-        line-height: 1.85;
-        max-width: 660px;
-        margin: 0 auto 2.2rem;
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.65);
+        line-height: 1.8;
+        max-width: 580px;
+        margin: 0 auto 2rem;
     }
 
     .hero-cta {
@@ -701,39 +412,48 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
     .section-header {
         text-align: center;
-        max-width: 760px;
+        max-width: 720px;
         margin: 0 auto 3rem;
     }
 
     .section-header h2 { margin-bottom: 0.8rem; }
     .section-header p { font-size: 1.02rem; line-height: 1.75; }
 
+    .muted {
+        color: var(--text-medium);
+        font-weight: 400;
+    }
+
     /* ── AT A GLANCE ── */
     .glance-section {
         background: var(--cream);
-        padding: 4rem 0;
+        padding: 3.5rem 0;
     }
 
     .glance-grid {
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 1rem;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
         max-width: 1100px;
         margin: 0 auto;
+        background: #fff;
+        border: 1px solid var(--border-warm);
+        border-top: 3px solid var(--gold);
     }
 
     .glance-card {
-        background: #fff;
+        padding: 2rem 1.4rem;
         text-align: center;
-        padding: 1.6rem 1rem;
-        border: 1px solid var(--border-warm);
-        border-top: 3px solid var(--gold);
-        transition: all 0.3s ease;
+        border-right: 1px solid var(--border-warm);
+        transition: background 0.3s ease;
+    }
+
+    .glance-card:last-child {
+        border-right: none;
     }
 
     .glance-card:hover {
-        transform: translateY(-3px);
-        box-shadow: var(--shadow-warm-md);
+        background: var(--cream);
     }
 
     .glance-value {
@@ -743,7 +463,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         font-weight: 700;
         color: var(--deep-navy);
         line-height: 1;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.6rem;
     }
 
     .glance-label {
@@ -751,100 +471,58 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         font-family: 'Source Sans Pro', sans-serif;
         font-size: 0.7rem;
         font-weight: 600;
-        letter-spacing: 1.5px;
+        letter-spacing: 1.4px;
         text-transform: uppercase;
         color: var(--text-medium);
-        line-height: 1.4;
+        line-height: 1.45;
     }
 
-    /* ── PICTURE ── */
-    .picture-section {
+    /* ── PITCH ── */
+    .pitch-section {
         background: var(--stone);
         padding: 5rem 0;
     }
 
-    .picture-grid {
-        display: grid;
-        grid-template-columns: 1.3fr 0.7fr;
-        gap: 3rem;
-        align-items: start;
+    .pitch-text {
+        max-width: 760px;
+        margin: 0 auto;
+        text-align: center;
     }
 
-    .picture-text h2 {
+    .pitch-text h2 {
         color: var(--deep-navy);
-        margin-bottom: 1rem;
+        font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+        margin-bottom: 1.2rem;
     }
 
-    .picture-text p {
-        font-size: 1.02rem;
-        line-height: 1.75;
+    .pitch-text .gold-rule {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .pitch-text p {
+        font-size: 1.05rem;
+        line-height: 1.8;
         color: var(--text-medium);
-        margin-bottom: 0.9rem;
+        margin-bottom: 0.8rem;
     }
 
-    .picture-card {
-        background: var(--deep-navy);
-        color: #fff;
-        padding: 1.8rem 1.6rem;
-        border-top: 3px solid var(--gold);
-    }
-
-    .picture-card-label {
-        display: block;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.65rem;
-        font-weight: 700;
-        letter-spacing: 2.5px;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: 1rem;
-    }
-
-    .picture-card ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .picture-card li {
-        font-size: 0.9rem;
-        line-height: 1.55;
-        color: rgba(255, 255, 255, 0.7);
-        padding: 0.55rem 0 0.55rem 1rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        position: relative;
-    }
-
-    .picture-card li:last-child { border-bottom: none; }
-
-    .picture-card li::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 4px;
-        height: 4px;
-        background: var(--gold);
-        border-radius: 50%;
-    }
-
-    /* ── MODULES (DARK) ── */
-    .modules-section {
+    /* ── WHAT'S INSIDE (DARK) ── */
+    .inside-section {
         background: linear-gradient(135deg, #0a1628 0%, var(--navy) 50%, #162d4f 100%);
         padding: 5.5rem 0;
         position: relative;
         overflow: hidden;
     }
 
-    .modules-bg {
+    .inside-bg {
         position: absolute;
         inset: 0;
         background-image: radial-gradient(ellipse at 50% 80%, rgba(201, 169, 97, 0.04) 0%, transparent 50%);
         pointer-events: none;
     }
 
-    .modules-section::before {
+    .inside-section::before {
         content: '';
         position: absolute;
         top: 0;
@@ -855,12 +533,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         opacity: 0.4;
     }
 
-    .modules-section h2 { color: #fff; }
-    .modules-section .section-header p { color: rgba(255, 255, 255, 0.55); }
+    .inside-section h2 { color: #fff; }
+    .inside-section .section-header p { color: rgba(255, 255, 255, 0.55); }
 
     .modules-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 1fr;
         gap: 1.2rem;
         max-width: 1100px;
         margin: 0 auto;
@@ -869,25 +548,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     .module-card {
         background: rgba(255, 255, 255, 0.04);
         border: 1px solid rgba(255, 255, 255, 0.06);
-        border-left: 3px solid var(--gold);
-        padding: 1.8rem;
+        border-top: 2px solid var(--gold);
+        padding: 1.8rem 1.6rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
         transition: all 0.3s ease;
-    }
-
-    .module-card-wide {
-        grid-column: span 2;
     }
 
     .module-card:hover {
         background: rgba(255, 255, 255, 0.07);
+        transform: translateY(-3px);
         box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
-    }
-
-    .module-head {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        margin-bottom: 0.6rem;
     }
 
     .module-num {
@@ -897,482 +569,97 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         color: var(--gold);
         opacity: 0.5;
         line-height: 1;
-    }
-
-    .module-tag {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.62rem;
-        font-weight: 700;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: var(--gold);
+        display: block;
+        margin-bottom: 0.7rem;
     }
 
     .module-card h3 {
-        font-size: 1.3rem;
+        font-size: 1.15rem;
         color: #fff;
         margin-bottom: 0.7rem;
     }
 
     .module-card p {
-        font-size: 0.94rem;
-        line-height: 1.7;
-        color: rgba(255, 255, 255, 0.55);
-        margin-bottom: 0.6rem;
-    }
-
-    .module-card em {
-        font-style: italic;
-        color: rgba(255, 255, 255, 0.75);
-    }
-
-    .module-list {
-        list-style: none;
-        margin: 0.3rem 0 0 0;
-        padding: 0;
-    }
-
-    .module-list li {
         font-size: 0.92rem;
-        color: rgba(255, 255, 255, 0.6);
-        padding: 0.35rem 0 0.35rem 1rem;
-        position: relative;
-    }
-
-    .module-list li::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 5px;
-        height: 5px;
-        background: var(--gold);
-        border-radius: 50%;
-    }
-
-    .module-list strong {
-        color: #fff;
-        font-weight: 600;
-    }
-
-    .module-foot {
-        margin-top: 1rem !important;
-        padding-top: 0.9rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.06);
-        font-size: 0.88rem !important;
-    }
-
-    .module-foot strong {
-        color: var(--gold);
-        font-weight: 600;
-    }
-
-    /* CII formula */
-    .formula-box {
-        background: rgba(0, 0, 0, 0.25);
-        border-left: 2px solid var(--gold);
-        padding: 1rem 1.2rem;
-        margin: 1rem 0;
-    }
-
-    .formula-label {
-        display: block;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.62rem;
-        font-weight: 700;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: 0.5rem;
-    }
-
-    .formula-box code {
-        display: block;
-        font-family: 'SF Mono', 'Menlo', 'Consolas', monospace;
-        font-size: 0.82rem;
         line-height: 1.7;
-        color: rgba(255, 255, 255, 0.75);
-        white-space: pre;
+        color: rgba(255, 255, 255, 0.6);
     }
 
-    .event-mix {
-        margin-top: 1rem;
-    }
-
-    .event-mix-label {
-        display: block;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.65rem;
-        font-weight: 700;
-        letter-spacing: 2px;
-        text-transform: uppercase;
+    .module-card strong {
         color: var(--gold);
-        margin-bottom: 0.6rem;
+        font-weight: 600;
     }
 
-    .event-mix-bars {
-        display: flex;
-        flex-direction: column;
-        gap: 0.4rem;
-    }
-
-    .event-mix-row {
-        display: grid;
-        grid-template-columns: 100px 1fr 44px;
-        gap: 0.8rem;
-        align-items: center;
-        font-size: 0.85rem;
-    }
-
-    .emr-name {
-        color: rgba(255, 255, 255, 0.75);
-        font-weight: 500;
-    }
-
-    .emr-bar {
-        height: 6px;
-        background: rgba(255, 255, 255, 0.08);
-        overflow: hidden;
-    }
-
-    .emr-fill {
-        height: 100%;
-        background: linear-gradient(90deg, var(--gold), rgba(201, 169, 97, 0.5));
-    }
-
-    .emr-pct {
-        font-family: 'Crimson Text', serif;
-        font-weight: 700;
-        color: var(--gold);
-        text-align: right;
-    }
-
-    /* ML model table */
-    .ml-table {
-        background: rgba(0, 0, 0, 0.18);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        margin-top: 1rem;
-    }
-
-    .ml-row {
-        display: grid;
-        grid-template-columns: 1fr 1.6fr 0.5fr;
-        gap: 1rem;
-        padding: 0.85rem 1.1rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-        font-size: 0.87rem;
-    }
-
-    .ml-row:last-child { border-bottom: none; }
-
-    .ml-head {
-        background: rgba(201, 169, 97, 0.06);
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.62rem;
-        font-weight: 700;
-        letter-spacing: 1.8px;
-        text-transform: uppercase;
-        color: var(--gold);
-    }
-
-    .ml-name {
-        font-family: 'SF Mono', 'Menlo', monospace;
-        font-size: 0.82rem;
-        color: rgba(201, 169, 97, 0.85);
-    }
-
-    .ml-row span:not(.ml-name):not(.ml-size) {
-        color: rgba(255, 255, 255, 0.55);
-    }
-
-    .ml-size {
-        font-family: 'Crimson Text', serif;
-        font-weight: 700;
-        color: #fff;
-        text-align: right;
-    }
-
-    /* ── MAP (LIGHT) ── */
+    /* ── THE MAP ── */
     .map-section {
         background: var(--cream);
         padding: 5rem 0;
     }
 
-    .map-section h2 { color: var(--deep-navy); }
-
-    .map-layers {
-        max-width: 1000px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
+    .map-grid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 3rem;
+        align-items: center;
     }
 
-    .map-group {
+    .map-text h2 {
+        color: var(--deep-navy);
+        margin-bottom: 1rem;
+    }
+
+    .map-text p {
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: var(--text-medium);
+    }
+
+    .map-callout {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    .map-callout-row {
         background: #fff;
         border: 1px solid var(--border-warm);
         border-left: 3px solid var(--gold);
         padding: 1.4rem 1.6rem;
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        gap: 0.4rem 1.4rem;
+        align-items: start;
     }
 
-    .map-group h4 {
-        display: flex;
-        align-items: center;
-        gap: 0.8rem;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 700;
-        font-size: 0.78rem;
-        letter-spacing: 2.5px;
-        text-transform: uppercase;
-        color: var(--deep-navy);
-        margin-bottom: 1rem;
-    }
-
-    .map-group-count {
+    .map-callout-num {
         font-family: 'Crimson Text', serif;
-        font-size: 1.4rem;
+        font-size: 3rem;
         font-weight: 700;
         color: var(--gold);
-        letter-spacing: 0;
+        line-height: 1;
+        grid-row: span 2;
     }
 
-    .map-chips {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-    }
-
-    .map-chip {
+    .map-callout-label {
         font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.82rem;
-        color: var(--deep-navy);
-        background: var(--stone);
-        border: 1px solid var(--border-subtle);
-        padding: 0.4rem 0.85rem;
-    }
-
-    .map-chips-muted .map-chip {
-        color: var(--text-medium);
-        background: transparent;
-        border-color: var(--border-warm);
-    }
-
-    /* ── 27 PANELS (CREAM) ── */
-    .panels-section {
-        background: var(--stone);
-        padding: 5rem 0;
-    }
-
-    .panels-section h2 { color: var(--deep-navy); }
-
-    .panels-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1.2rem;
-        max-width: 1100px;
-        margin: 0 auto;
-    }
-
-    .panel-group {
-        background: #fff;
-        border: 1px solid var(--border-warm);
-        border-top: 3px solid var(--gold);
-        padding: 1.4rem 1.4rem;
-        transition: all 0.3s ease;
-    }
-
-    .panel-group:hover {
-        transform: translateY(-3px);
-        box-shadow: var(--shadow-warm-md);
-    }
-
-    .panel-cat {
-        display: inline-block;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.62rem;
+        font-size: 0.7rem;
         font-weight: 700;
         letter-spacing: 2px;
         text-transform: uppercase;
-        color: var(--burgundy);
-        margin-bottom: 0.8rem;
+        color: var(--deep-navy);
+        align-self: end;
     }
 
-    .panel-group ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .panel-group li {
-        font-size: 0.86rem;
-        line-height: 1.55;
+    .map-callout-row p {
+        font-size: 0.92rem;
+        line-height: 1.65;
         color: var(--text-medium);
-        padding: 0.3rem 0 0.3rem 0.9rem;
-        position: relative;
-    }
-
-    .panel-group li::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 4px;
-        height: 4px;
-        background: var(--gold);
-        border-radius: 50%;
-    }
-
-    /* ── DATA SOURCES (DARK) ── */
-    .sources-section {
-        background: linear-gradient(180deg, #0a1628 0%, var(--deep-navy) 100%);
-        padding: 5.5rem 0;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .sources-bg {
-        position: absolute;
-        inset: 0;
-        background-image: radial-gradient(ellipse at 50% 50%, rgba(201, 169, 97, 0.05) 0%, transparent 50%);
-        pointer-events: none;
-    }
-
-    .sources-section h2 { color: #fff; }
-    .sources-section .section-header p { color: rgba(255, 255, 255, 0.55); }
-
-    .sources-grid {
-        display: grid;
-        grid-template-columns: 1.3fr 0.7fr;
-        gap: 1.8rem;
-        max-width: 1100px;
-        margin: 0 auto;
-    }
-
-    .source-table {
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        border-top: 3px solid var(--gold);
-    }
-
-    .source-row {
-        display: grid;
-        grid-template-columns: 1fr 0.4fr 1.8fr;
-        gap: 0.8rem;
-        padding: 0.78rem 1.1rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-        font-size: 0.85rem;
-        color: rgba(255, 255, 255, 0.55);
-    }
-
-    .source-row:last-child { border-bottom: none; }
-
-    .source-head {
-        background: rgba(201, 169, 97, 0.06);
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.62rem;
-        font-weight: 700;
-        letter-spacing: 1.8px;
-        text-transform: uppercase;
-        color: var(--gold);
-    }
-
-    .src-cat {
-        font-weight: 600;
-        color: #fff;
-    }
-
-    .src-count {
-        font-family: 'Crimson Text', serif;
-        font-weight: 700;
-        color: var(--gold);
-        text-align: center;
-    }
-
-    .sources-side {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .credibility-card,
-    .apis-card {
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        padding: 1.4rem 1.4rem;
-    }
-
-    .cc-label {
-        display: block;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.62rem;
-        font-weight: 700;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: 1rem;
-    }
-
-    .cc-tier {
-        display: grid;
-        grid-template-columns: 40px 1fr;
-        gap: 0.8rem;
-        padding: 0.7rem 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .cc-tier:first-of-type {
-        border-top: none;
-        padding-top: 0;
-    }
-
-    .cc-tier-num {
-        font-family: 'Crimson Text', serif;
-        font-size: 1.05rem;
-        font-weight: 700;
-        color: var(--gold);
-        line-height: 1.2;
-    }
-
-    .cc-tier strong {
-        font-size: 0.85rem;
-        color: #fff;
-        display: block;
-        margin-bottom: 0.15rem;
-    }
-
-    .cc-tier p {
-        font-size: 0.78rem;
-        line-height: 1.5;
-        color: rgba(255, 255, 255, 0.5);
         margin: 0;
     }
 
-    .apis-card ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .apis-card li {
-        font-size: 0.85rem;
-        line-height: 1.55;
-        color: rgba(255, 255, 255, 0.55);
-        padding: 0.32rem 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-    }
-
-    .apis-card li:last-child { border-bottom: none; }
-
-    .apis-card strong {
-        color: var(--gold);
-        font-weight: 600;
-    }
-
-    /* ── COVERAGE (LIGHT) ── */
+    /* ── COVERAGE ── */
     .coverage-section {
-        background: var(--cream);
+        background: var(--stone);
         padding: 5rem 0;
     }
 
@@ -1380,206 +667,132 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
     .coverage-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.2rem;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 1fr;
+        gap: 1rem;
         max-width: 1100px;
         margin: 0 auto;
     }
 
-    .coverage-group {
+    .coverage-card {
         background: #fff;
         border: 1px solid var(--border-warm);
-        padding: 1.5rem 1.6rem;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .cov-cat {
-        display: inline-block;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.65rem;
-        font-weight: 700;
-        letter-spacing: 2.5px;
-        text-transform: uppercase;
-        padding: 0.4rem 0.9rem;
-        align-self: flex-start;
-    }
-
-    .cov-cat-allied {
-        color: var(--gold);
-        background: rgba(201, 169, 97, 0.1);
-        border: 1px solid rgba(201, 169, 97, 0.25);
-    }
-
-    .cov-cat-adversary {
-        color: var(--burgundy);
-        background: var(--burgundy-surface);
-    }
-
-    .cov-cat-conflict {
-        color: #a13e0a;
-        background: rgba(161, 62, 10, 0.08);
-        border: 1px solid rgba(161, 62, 10, 0.18);
-    }
-
-    .cov-cat-regional {
-        color: var(--deep-navy);
-        background: rgba(30, 58, 95, 0.06);
-        border: 1px solid rgba(30, 58, 95, 0.15);
-    }
-
-    .cov-flags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-    }
-
-    .cov-flag {
-        font-size: 0.88rem;
-        color: var(--deep-navy);
-        background: var(--stone);
-        border: 1px solid var(--border-warm);
-        padding: 0.4rem 0.7rem;
-    }
-
-    /* ── ARCH (DARK) ── */
-    .arch-section {
-        background: linear-gradient(135deg, #0a1628 0%, var(--navy) 50%, #162d4f 100%);
-        padding: 5.5rem 0;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .arch-bg {
-        position: absolute;
-        inset: 0;
-        background-image: radial-gradient(ellipse at 80% 20%, rgba(201, 169, 97, 0.04) 0%, transparent 50%);
-        pointer-events: none;
-    }
-
-    .arch-section h2 { color: #fff; }
-    .arch-section .section-header p { color: rgba(255, 255, 255, 0.55); }
-
-    .arch-table {
-        max-width: 1000px;
-        margin: 0 auto;
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.06);
         border-top: 3px solid var(--gold);
-    }
-
-    .arch-row {
-        display: grid;
-        grid-template-columns: 0.8fr 2.2fr;
-        gap: 1.4rem;
-        padding: 1rem 1.4rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        font-size: 0.92rem;
-        color: rgba(255, 255, 255, 0.6);
-        align-items: center;
-        line-height: 1.6;
-    }
-
-    .arch-row:last-child { border-bottom: none; }
-
-    .arch-head {
-        background: rgba(201, 169, 97, 0.06);
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.62rem;
-        font-weight: 700;
-        letter-spacing: 1.8px;
-        text-transform: uppercase;
-        color: var(--gold);
-    }
-
-    .arch-layer-label {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.72rem;
-        font-weight: 700;
-        letter-spacing: 1.8px;
-        text-transform: uppercase;
-        color: #fff;
-    }
-
-    /* ── POSITION (LIGHT) ── */
-    .position-section {
-        background: var(--stone);
-        padding: 5rem 0;
-    }
-
-    .position-grid {
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 3rem;
-        align-items: center;
-    }
-
-    .position-text h2 {
-        color: var(--deep-navy);
-        margin-bottom: 1rem;
-    }
-
-    .position-text p {
-        font-size: 1.02rem;
-        line-height: 1.75;
-        color: var(--text-medium);
-        margin-bottom: 0.9rem;
-    }
-
-    .position-text strong {
-        color: var(--deep-navy);
-        font-weight: 700;
-    }
-
-    .position-text em {
-        font-style: italic;
-        color: var(--burgundy);
-    }
-
-    .position-products {
+        padding: 1.6rem 1.4rem;
         display: flex;
         flex-direction: column;
-        gap: 1rem;
-    }
-
-    .position-card {
-        background: #fff;
-        border: 1px solid var(--border-warm);
-        border-left: 3px solid var(--gold);
-        padding: 1.4rem 1.5rem;
-        text-decoration: none;
+        gap: 0.9rem;
+        text-align: center;
+        align-items: center;
         transition: all 0.3s ease;
     }
 
-    .position-card:hover {
-        transform: translateX(4px);
+    .coverage-card:hover {
+        transform: translateY(-3px);
         box-shadow: var(--shadow-warm-md);
     }
 
-    .position-card-tag {
-        display: block;
+    .cov-cat {
         font-family: 'Source Sans Pro', sans-serif;
         font-size: 0.62rem;
         font-weight: 700;
         letter-spacing: 2px;
         text-transform: uppercase;
-        color: var(--burgundy);
-        margin-bottom: 0.4rem;
+        padding: 0.35rem 0.7rem;
     }
 
-    .position-card h4 {
+    .cov-cat-allied { color: var(--gold); background: rgba(201, 169, 97, 0.1); border: 1px solid rgba(201, 169, 97, 0.25); }
+    .cov-cat-adversary { color: var(--burgundy); background: var(--burgundy-surface); }
+    .cov-cat-conflict { color: #a13e0a; background: rgba(161, 62, 10, 0.08); border: 1px solid rgba(161, 62, 10, 0.18); }
+    .cov-cat-regional { color: var(--deep-navy); background: rgba(30, 58, 95, 0.06); border: 1px solid rgba(30, 58, 95, 0.15); }
+
+    .cov-count {
+        font-family: 'Crimson Text', serif;
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: var(--deep-navy);
+        line-height: 1;
+    }
+
+    .cov-flags-row {
+        font-size: 1.3rem;
+        line-height: 1.5;
+        word-spacing: 0.15rem;
+        color: var(--text-medium);
+    }
+
+    /* ── SIBLINGS ── */
+    .siblings-section {
+        background: var(--cream);
+        padding: 5rem 0;
+    }
+
+    .siblings-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    .siblings-text h2 {
+        color: var(--deep-navy);
+        margin-bottom: 1rem;
+    }
+
+    .siblings-text p {
+        font-size: 1.02rem;
+        line-height: 1.75;
+        color: var(--text-medium);
+    }
+
+    .siblings-text strong {
+        color: var(--deep-navy);
+        font-weight: 700;
+    }
+
+    .siblings-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .sibling-card {
+        background: #fff;
+        border: 1px solid var(--border-warm);
+        border-left: 3px solid var(--gold);
+        padding: 1.4rem 1.5rem;
+        text-decoration: none;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 0.4rem 1rem;
+        align-items: center;
+        transition: all 0.3s ease;
+    }
+
+    .sibling-card:hover {
+        transform: translateX(4px);
+        box-shadow: var(--shadow-warm-md);
+    }
+
+    .sibling-card h4 {
         font-family: 'Crimson Text', serif;
         font-size: 1.3rem;
         font-weight: 700;
         color: var(--deep-navy);
-        margin-bottom: 0.3rem;
+        margin: 0;
         letter-spacing: 0.5px;
     }
 
-    .position-card p {
-        font-size: 0.9rem;
-        line-height: 1.6;
+    .sibling-arrow {
+        font-size: 1.4rem;
+        color: var(--gold);
+        grid-row: span 2;
+        align-self: center;
+    }
+
+    .sibling-card p {
+        font-size: 0.92rem;
+        line-height: 1.55;
         color: var(--text-medium);
         margin: 0;
     }
@@ -1596,8 +809,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     .intel-cta-bg {
         position: absolute;
         inset: 0;
-        background-image:
-            radial-gradient(ellipse at 50% 50%, rgba(201, 169, 97, 0.08) 0%, transparent 50%);
+        background-image: radial-gradient(ellipse at 50% 50%, rgba(201, 169, 97, 0.08) 0%, transparent 50%);
         pointer-events: none;
     }
 
@@ -1613,7 +825,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     }
 
     .intel-cta-inner {
-        max-width: 700px;
+        max-width: 680px;
         margin: 0 auto;
         position: relative;
         z-index: 1;
@@ -1641,7 +853,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     }
 
     .intel-cta h2 {
-        font-size: clamp(1.6rem, 3vw, 2.2rem);
+        font-size: clamp(1.7rem, 3vw, 2.3rem);
         color: #fff;
         margin-bottom: 1.2rem;
     }
@@ -1655,19 +867,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1100px) {
-        .panels-grid { grid-template-columns: repeat(3, 1fr); }
-        .glance-grid { grid-template-columns: repeat(3, 1fr); }
+        .modules-grid { grid-template-columns: repeat(2, 1fr); }
+        .coverage-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 992px) {
-        .picture-grid { grid-template-columns: 1fr; }
-        .position-grid { grid-template-columns: 1fr; }
-        .modules-grid { grid-template-columns: 1fr; }
-        .module-card-wide { grid-column: span 1; }
-        .sources-grid { grid-template-columns: 1fr; }
-        .panels-grid { grid-template-columns: repeat(2, 1fr); }
         .glance-grid { grid-template-columns: repeat(2, 1fr); }
-        .coverage-grid { grid-template-columns: 1fr; }
+        .glance-card { border-right: none; }
+        .glance-card:nth-child(odd) { border-right: 1px solid var(--border-warm); }
+        .glance-card:nth-child(-n+2) { border-bottom: 1px solid var(--border-warm); }
+        .map-grid { grid-template-columns: 1fr; }
+        .siblings-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 768px) {
@@ -1677,15 +887,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         .hud-bl, .hud-br { bottom: 16px; }
         .hud-tl, .hud-bl { left: 16px; }
         .hud-tr, .hud-br { right: 16px; }
-        .glance-grid { grid-template-columns: 1fr 1fr; }
-        .panels-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
-        .source-row { grid-template-columns: 1fr; gap: 0.3rem; padding: 1rem 1.1rem; }
-        .source-row.source-head { display: none; }
-        .arch-row { grid-template-columns: 1fr; gap: 0.3rem; padding: 1rem 1.2rem; }
-        .arch-row.arch-head { display: none; }
-        .ml-row { grid-template-columns: 1fr; gap: 0.2rem; padding: 0.9rem 1rem; }
-        .ml-row.ml-head { display: none; }
-        .event-mix-row { grid-template-columns: 80px 1fr 40px; }
-        .formula-box code { font-size: 0.74rem; white-space: pre-wrap; }
+        .glance-grid { grid-template-columns: 1fr; }
+        .glance-card { border-right: none !important; }
+        .modules-grid { grid-template-columns: 1fr; }
+        .coverage-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+        .map-callout-row { grid-template-columns: 1fr; }
+        .map-callout-num { grid-row: auto; }
     }
 </style>
