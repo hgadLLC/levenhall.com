@@ -104,14 +104,20 @@ import { nations } from '../data/nations';
                 <div class="avenue-card">
                     <span class="avenue-tag">Platform</span>
                     <h4>BRIDGER</h4>
-                    <p>The allied defense dealmaking platform. Curated introductions between vetted international firms and US buyers, primes, and program offices.</p>
+                    <p>Market entry intelligence for US federal contracting. Pre-RFP signal, opportunity scoring, marketplace, and capture workflow.</p>
                     <a href="/products/bridger" class="avenue-link">Explore Bridger &rarr;</a>
                 </div>
                 <div class="avenue-card">
                     <span class="avenue-tag">Product</span>
                     <h4>AIGIS</h4>
-                    <p>AI-powered intelligence and threat assessment built for defense and national security decision-makers. Currently in active development.</p>
+                    <p>AI evaluation and governance platform &mdash; vendor-agnostic, designed to run from unclassified through TS/SCI air-gapped.</p>
                     <a href="/products/aigis" class="avenue-link">Explore AIGIS &rarr;</a>
+                </div>
+                <div class="avenue-card">
+                    <span class="avenue-tag">Dashboard</span>
+                    <h4>Intelligence</h4>
+                    <p>Real-time defense and geopolitical operating picture. 119 RSS feeds, on-device ML, and a proprietary instability index on one WebGL globe.</p>
+                    <a href="/products/intelligence" class="avenue-link">Explore Intelligence &rarr;</a>
                 </div>
                 <div class="avenue-card">
                     <span class="avenue-tag">Ventures</span>
@@ -380,10 +386,10 @@ import { nations } from '../data/nations';
         gap: 1.5rem;
     }
 
-    /* ── OTHER AVENUES (BRIDGER / AIGIS / VENTURES) ── */
+    /* ── OTHER AVENUES (BRIDGER / AIGIS / INTELLIGENCE / VENTURES) ── */
     .other-avenues {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 1.5rem;
         margin-top: 2.5rem;
         padding-top: 2.5rem;
@@ -557,7 +563,7 @@ import { nations } from '../data/nations';
     /* ── RESPONSIVE ── */
     @media (max-width: 1200px) {
         .services-grid { grid-template-columns: repeat(2, 1fr); }
-        .other-avenues { grid-template-columns: repeat(3, 1fr); }
+        .other-avenues { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 1024px) {
