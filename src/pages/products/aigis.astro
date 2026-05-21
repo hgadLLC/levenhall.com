@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="AIGIS | Levenhall" description="AIGIS is Levenhall's AI-powered intelligence and threat assessment product for defense and national security decision-makers. The firm's market intelligence practice, productized.">
+<BaseLayout title="AIGIS | Levenhall" description="AIGIS is Levenhall's modular, containerized AI evaluation and governance platform — vendor-agnostic infrastructure for continuous model assessment across every classification level, from unclassified through TS/SCI air-gapped.">
 
     <!-- ── HERO ── -->
     <section class="aigis-hero">
@@ -11,62 +11,394 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="hero-inner">
             <div class="aigis-badge">A Levenhall Product</div>
             <div class="aigis-wordmark">AIGIS</div>
-            <p class="aigis-sub">AI-Powered Intelligence &amp; Threat Assessment</p>
+            <p class="aigis-sub">AI Evaluation &amp; Governance &middot; Across Every Classification Level</p>
             <div class="hero-rule"></div>
-            <p class="hero-description">AIGIS is Levenhall's market intelligence practice productized. It delivers machine-speed analysis for defense and national security decision-makers &mdash; purpose-built to process, synthesize, and surface actionable intelligence across classified and open-source data streams.</p>
+            <p class="hero-description">A modular, containerized AI evaluation and governance platform. Vendor-agnostic infrastructure for continuous model assessment &mdash; designed to run from unclassified environments through TS/SCI air-gapped networks on the same container images.</p>
+            <div class="hero-cta">
+                <a href="/contact" class="btn btn-gold">Request Early Access</a>
+                <a href="#capabilities" class="btn btn-outline-white">See Capabilities</a>
+            </div>
         </div>
     </section>
 
-    <!-- ── CAPABILITIES ── -->
-    <section class="section capabilities-section">
+    <!-- ── THE SHIELD (LIGHT) ── -->
+    <section class="section shield-section">
+        <div class="container">
+            <div class="shield-grid reveal">
+                <div class="shield-text">
+                    <span class="section-label">The Shield</span>
+                    <h2>One Question, Asked Continuously: Is This Model Safe and Mission-Ready?</h2>
+                    <div class="gold-rule"></div>
+                    <p>AIGIS takes its name from the mythological <em>aegis</em>. The function follows the name: determine whether an AI model is safe and mission-ready for a specific deployment context &mdash; not in the abstract, but for this user, this network, this mission, this classification level.</p>
+                    <p>AIGIS is built for the operational evaluator, not the research scientist. It treats AI assessment as a continuous infrastructure problem, not a one-time benchmark.</p>
+                </div>
+                <div class="shield-stat">
+                    <div class="shield-stat-card">
+                        <span class="shield-stat-label">Designed For</span>
+                        <span class="shield-stat-value">UNCLASS &rarr; TS/SCI</span>
+                        <span class="shield-stat-detail">Identical container images across every classification level. Only Helm values change.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── THE GAP (CREAM) ── -->
+    <section class="section gap-section">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-label">Capabilities</span>
-                <h2>Intelligence at Machine Speed</h2>
-                <p>AIGIS augments human analysts &mdash; including Levenhall's own &mdash; with AI that understands the language of defense, geopolitics, and emerging threats.</p>
+                <span class="section-label">Why AIGIS Exists</span>
+                <h2>The Gap Between Research Tools and Program Tools</h2>
+                <p>Levenhall identified the gap through defense advisory engagements: DoD and IC organizations evaluating AI lack standardized, deployment-ready infrastructure for rigorous model assessment &mdash; particularly across classification boundaries. Existing tools fall into two categories. Neither is sufficient.</p>
             </div>
-            <div class="caps-grid">
-                <div class="cap-card reveal">
-                    <div class="cap-icon-wrap">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07"/></svg>
-                    </div>
-                    <h3>Threat Intelligence</h3>
-                    <p>Continuous monitoring and synthesis of global threat indicators across cyber, kinetic, and grey zone domains. Automated correlation of multi-source intelligence.</p>
+            <div class="gap-grid reveal">
+                <div class="gap-card">
+                    <span class="gap-tag">Category 1</span>
+                    <h3>Research-Grade</h3>
+                    <p class="gap-list">HELM &middot; Inspect &middot; lm-evaluation-harness</p>
+                    <p>Designed for ML researchers. Not deployable to classified networks. No operational context.</p>
                 </div>
-                <div class="cap-card reveal">
-                    <div class="cap-icon-wrap">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>
-                    </div>
-                    <h3>Geopolitical Analysis</h3>
-                    <p>Real-time geopolitical risk scoring and scenario modeling. Tracks state and non-state actor behavior patterns across the Indo-Pacific, Middle East, and Euro-Atlantic.</p>
+                <div class="gap-card">
+                    <span class="gap-tag">Category 2</span>
+                    <h3>Program-Proprietary</h3>
+                    <p class="gap-list">Built for a single program</p>
+                    <p>Reflects one program's mission profile and dies when the program does. Not reusable across organizations.</p>
                 </div>
-                <div class="cap-card reveal">
-                    <div class="cap-icon-wrap">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-                    </div>
-                    <h3>Decision Support</h3>
-                    <p>AI-generated briefings, net assessments, and strategic recommendations calibrated for executive and operational decision-making in high-consequence environments.</p>
-                </div>
-                <div class="cap-card reveal">
-                    <div class="cap-icon-wrap">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    </div>
-                    <h3>Secure by Design</h3>
-                    <p>Built for deployment in classified and sensitive environments. Zero-trust architecture with air-gapped deployment options for IC and DoD customers.</p>
+                <div class="gap-card gap-card-aigis">
+                    <span class="gap-tag gap-tag-aigis">AIGIS</span>
+                    <h3>Operational Infrastructure</h3>
+                    <p class="gap-list">Vendor-agnostic &middot; Cross-classification &middot; Continuous</p>
+                    <p>Purpose-built for the operational evaluator. Same platform across DoD, IC, and commercial deployments &mdash; from air-gapped TS/SCI to managed cloud.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ── COMING SOON CTA ── -->
-    <section class="coming-soon-section">
-        <div class="cs-bg"></div>
-        <div class="cs-inner">
-            <div class="cs-accent"></div>
-            <div class="cs-badge">Coming Soon</div>
-            <h2>AIGIS is in active development.</h2>
-            <p>We are building AIGIS in partnership with defense and intelligence community stakeholders. If your organization operates in national security and is interested in early access or partnership, we'd like to hear from you.</p>
-            <a href="/contact" class="btn btn-gold">Get in Touch</a>
+    <!-- ── DUAL-USE STRATEGY (DARK) ── -->
+    <section class="section dual-use-section">
+        <div class="dual-use-bg"></div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="section-header reveal">
+                <span class="dark-label">Dual-Use Strategy</span>
+                <h2>Two Markets, One Platform</h2>
+                <p>Defense rigor and commercial cadence on the same core. Government users benefit from continuous commercial R&amp;D. Commercial customers benefit from defense-grade evaluation rigor.</p>
+            </div>
+            <div class="dual-use-grid reveal">
+                <div class="dual-use-card">
+                    <span class="du-tag">Defense</span>
+                    <h3>DoD &amp; IC</h3>
+                    <p>Model evaluation across classification levels. DDIL degradation profiling. Adversarial red-teaming aligned to MITRE ATLAS. Human-AI teaming measurement. Mission-specific benchmark development.</p>
+                </div>
+                <div class="dual-use-card">
+                    <span class="du-tag du-tag-commercial">Commercial</span>
+                    <h3>Enterprise AI Governance</h3>
+                    <p>Regulatory compliance for the EU AI Act, NIST AI RMF, and ISO 42001. Insurance risk assessment for regulated industries. Continuous governance, not point-in-time audit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── ARCHITECTURE (LIGHT) ── -->
+    <section class="section arch-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Architecture</span>
+                <h2>API-First. Microservices. Containerized End-to-End.</h2>
+                <p>Independently deployable components, decoupled infrastructure (harness) and content (benchmarks), and an LLM &amp; vector-store abstraction that lets the same platform run on OpenAI, Bedrock, or local Ollama.</p>
+            </div>
+            <div class="arch-stack reveal">
+                <div class="arch-layer">
+                    <span class="arch-layer-tag">Layer 01</span>
+                    <h4>Presentation</h4>
+                    <p>React / Next.js web dashboard, REST API, CLI.</p>
+                </div>
+                <div class="arch-layer">
+                    <span class="arch-layer-tag">Layer 02</span>
+                    <h4>API Gateway</h4>
+                    <p>Traefik with auth, RBAC, rate limiting, and TLS termination.</p>
+                </div>
+                <div class="arch-layer arch-layer-core">
+                    <span class="arch-layer-tag">Layer 03 &middot; Core Services</span>
+                    <h4>Five Pluggable Engines</h4>
+                    <div class="arch-engines">
+                        <div class="arch-engine">
+                            <span class="ae-name">Model Interface Layer</span>
+                            <span class="ae-detail">Pluggable adapters (OpenAI, HuggingFace, Ollama, SageMaker / Bedrock, gRPC) behind a uniform InvokeRequest / InvokeResponse protocol.</span>
+                        </div>
+                        <div class="arch-engine">
+                            <span class="ae-name">Execution Engine</span>
+                            <span class="ae-detail">Python / FastAPI + Celery + Redis. Distributed task orchestration with parallel runs, priority queuing, automatic retry, and real-time progress streaming.</span>
+                        </div>
+                        <div class="arch-engine">
+                            <span class="ae-name">Scoring Engine</span>
+                            <span class="ae-detail">Pluggable scorer registry. Exact match, contains match, similarity scoring, classification accuracy, and human-evaluation routing.</span>
+                        </div>
+                        <div class="arch-engine">
+                            <span class="ae-name">Benchmark Management</span>
+                            <span class="ae-detail">Versioned benchmark suites with immutable snapshots, semver, and full task metadata.</span>
+                        </div>
+                        <div class="arch-engine">
+                            <span class="ae-name">Governance &amp; Risk Engine</span>
+                            <span class="ae-detail">Compliance tracking (NIST AI RMF, MITRE ATLAS, EU AI Act, ISO 42001, OWASP Agentic AI Top 10, DoD AI Ethical Principles), risk scoring, insurance coverage monitoring, incident tracking.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="arch-layer">
+                    <span class="arch-layer-tag">Layer 04</span>
+                    <h4>Data</h4>
+                    <p>PostgreSQL + pgvector, Redis, object storage, LLM providers behind LLMProvider / VectorStoreProvider interfaces.</p>
+                </div>
+                <div class="arch-layer">
+                    <span class="arch-layer-tag">Layer 05</span>
+                    <h4>Runtime</h4>
+                    <p>Docker / OCI containers, orchestrated via Kubernetes. K3s for resource-constrained tactical environments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CAPABILITIES (DARK) ── -->
+    <section class="section capabilities-section" id="capabilities">
+        <div class="capabilities-bg"></div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="section-header reveal">
+                <span class="dark-label">Capabilities</span>
+                <h2>Two Lines of Effort</h2>
+                <p>LOE 1 is the platform itself. LOE 2 is the methodology that lets a government team build, validate, and maintain their own benchmarks on top of it.</p>
+            </div>
+
+            <div class="loe-block reveal">
+                <div class="loe-head">
+                    <span class="loe-tag">LOE 01</span>
+                    <h3>Evaluation Harness</h3>
+                </div>
+                <div class="caps-grid">
+                    <div class="cap-card">
+                        <h4>Model Interface Layer</h4>
+                        <p>Adapters for OpenAI-compatible APIs, HuggingFace Inference, AWS SageMaker / Bedrock, local Ollama, and gRPC endpoints. New adapters are written against a documented SDK without modifying the core platform.</p>
+                    </div>
+                    <div class="cap-card">
+                        <h4>Evaluation Execution</h4>
+                        <p>Each run records a full environment snapshot (Python version, platform, AIGIS version, LLM provider, timestamp) for complete reproducibility. Per-task scoring with latency, token counts, and pass/fail determinations.</p>
+                    </div>
+                    <div class="cap-card">
+                        <h4>Benchmark Domains</h4>
+                        <p>General, safety, adversarial, agentic, multimodal, DDIL (denied / disconnected / intermittent / limited), and mission-specific.</p>
+                    </div>
+                    <div class="cap-card">
+                        <h4>Task Types</h4>
+                        <p>Multiple choice, free text, code generation, classification, extraction, summarization, agentic workflow, and human evaluation.</p>
+                    </div>
+                    <div class="cap-card">
+                        <h4>DDIL Conditions Simulator</h4>
+                        <p>Injects operational stress &mdash; latency, jitter, bandwidth throttling, intermittent connectivity, compute constraints &mdash; and evaluates degradation curves rather than binary pass/fail.</p>
+                    </div>
+                    <div class="cap-card">
+                        <h4>Agentic AI Evaluation</h4>
+                        <p>Full execution-trace capture, scored on task completion rate, efficiency, tool-selection accuracy, and safety-boundary adherence. Aligned with OWASP Agentic AI Top 10 and the MAESTRO framework.</p>
+                    </div>
+                    <div class="cap-card">
+                        <h4>Adversarial Red-Teaming</h4>
+                        <p>Automated pipeline aligned with MITRE ATLAS &mdash; prompt injection, jailbreak generation, data-poisoning probes, model-extraction resistance. Results map to ATLAS technique IDs.</p>
+                    </div>
+                    <div class="cap-card">
+                        <h4>Human Evaluation</h4>
+                        <p>Likert, pairwise comparison, best-of-N ranking. Inter-rater reliability computed automatically (Krippendorff's alpha, Fleiss' kappa).</p>
+                    </div>
+                    <div class="cap-card">
+                        <h4>Multimodal Support</h4>
+                        <p>Text, image, audio, and video pipelines with modality-specific metrics.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="loe-block reveal">
+                <div class="loe-head">
+                    <span class="loe-tag">LOE 02</span>
+                    <h3>Benchmark Development Methodology</h3>
+                </div>
+                <p class="loe-lead">A structured eight-phase toolkit that lets government personnel independently build, validate, and maintain mission-specific benchmarks. Written methodology guide, worked examples, QA checklist, and training curriculum &mdash; targeting team self-sufficiency within 90 days.</p>
+                <div class="phases-grid">
+                    <div class="phase-card"><span class="phase-num">01</span><span class="phase-name">Requirements elicitation</span></div>
+                    <div class="phase-card"><span class="phase-num">02</span><span class="phase-name">Task decomposition</span></div>
+                    <div class="phase-card"><span class="phase-num">03</span><span class="phase-name">Input design</span></div>
+                    <div class="phase-card"><span class="phase-num">04</span><span class="phase-name">Scoring criteria</span></div>
+                    <div class="phase-card"><span class="phase-num">05</span><span class="phase-name">Baseline establishment</span></div>
+                    <div class="phase-card"><span class="phase-num">06</span><span class="phase-name">Validation</span></div>
+                    <div class="phase-card"><span class="phase-num">07</span><span class="phase-name">Gaming resistance</span></div>
+                    <div class="phase-card"><span class="phase-num">08</span><span class="phase-name">Maintenance</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CLASSIFICATION DEPLOYMENT (LIGHT) ── -->
+    <section class="section classification-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Classification-Level Deployment</span>
+                <h2>Same Container. Every Network.</h2>
+                <p>Identical container images at every level. Only Helm configuration values change. Air-gapped deployments bundle all model weights, benchmarks, and knowledge base as container volumes.</p>
+            </div>
+            <div class="class-table reveal">
+                <div class="class-row class-head">
+                    <span>Environment</span>
+                    <span>LLM Provider</span>
+                    <span>Vector DB</span>
+                    <span>External APIs</span>
+                </div>
+                <div class="class-row">
+                    <span class="env">Unclassified</span>
+                    <span>OpenAI API</span>
+                    <span>Managed cloud</span>
+                    <span>Full</span>
+                </div>
+                <div class="class-row">
+                    <span class="env">IL5 Cloud</span>
+                    <span>OpenAI (FedRAMP) or Ollama</span>
+                    <span>pgvector</span>
+                    <span>Restricted</span>
+                </div>
+                <div class="class-row">
+                    <span class="env">IL6 / SECRET</span>
+                    <span>Ollama (local)</span>
+                    <span>pgvector</span>
+                    <span>None</span>
+                </div>
+                <div class="class-row">
+                    <span class="env">TS/SCI · JWICS</span>
+                    <span>Ollama (quantized, local)</span>
+                    <span>pgvector</span>
+                    <span>None</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── GOVERNANCE DASHBOARD (DARK) ── -->
+    <section class="section governance-section">
+        <div class="governance-bg"></div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="section-header reveal">
+                <span class="dark-label">Governance Dashboard</span>
+                <h2>Compliance, Risk &amp; Insurance, Continuously</h2>
+                <p>The governance module tracks framework coverage with last-audit dates, scores risk against active incidents, monitors insurance coverage across the portfolio, and surfaces real-time activity across evaluations, adversarial detections, bias audits, and model registrations.</p>
+            </div>
+            <div class="frameworks-grid reveal">
+                <div class="framework-card">
+                    <div class="framework-bar"><div class="framework-fill" style="width: 94%;"></div></div>
+                    <span class="framework-pct">94%</span>
+                    <span class="framework-name">DoD AI Ethical Principles</span>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-bar"><div class="framework-fill" style="width: 87%;"></div></div>
+                    <span class="framework-pct">87%</span>
+                    <span class="framework-name">NIST AI RMF</span>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-bar"><div class="framework-fill" style="width: 72%;"></div></div>
+                    <span class="framework-pct">72%</span>
+                    <span class="framework-name">MITRE ATLAS</span>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-bar"><div class="framework-fill" style="width: 65%;"></div></div>
+                    <span class="framework-pct">65%</span>
+                    <span class="framework-name">EU AI Act</span>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-bar"><div class="framework-fill" style="width: 48%;"></div></div>
+                    <span class="framework-pct">48%</span>
+                    <span class="framework-name">ISO 42001</span>
+                </div>
+                <div class="framework-card framework-card-stat">
+                    <span class="framework-stat-value">$60M+</span>
+                    <span class="framework-name">Insurance Coverage Tracked</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── STATUS & STACK (LIGHT) ── -->
+    <section class="section status-section">
+        <div class="container">
+            <div class="status-grid reveal">
+                <div class="status-block">
+                    <span class="section-label">Development Status</span>
+                    <h2>Working Prototype, Hardening for Classified</h2>
+                    <div class="gold-rule"></div>
+                    <div class="status-list">
+                        <div class="status-item status-item-ok">
+                            <span class="status-dot"></span>
+                            <span class="status-text">Core evaluation engine (model interface, execution, scoring) &mdash; <strong>demonstrable in unclassified environment</strong></span>
+                        </div>
+                        <div class="status-item status-item-ok">
+                            <span class="status-dot"></span>
+                            <span class="status-text">Human evaluation forms and reliability computation &mdash; <strong>functional</strong></span>
+                        </div>
+                        <div class="status-item status-item-ok">
+                            <span class="status-dot"></span>
+                            <span class="status-text">Benchmark management and versioning &mdash; <strong>functional</strong></span>
+                        </div>
+                        <div class="status-item status-item-ok">
+                            <span class="status-dot"></span>
+                            <span class="status-text">Web dashboard (React / Next.js) &mdash; <strong>functional with all major views</strong></span>
+                        </div>
+                        <div class="status-item status-item-progress">
+                            <span class="status-dot"></span>
+                            <span class="status-text">DDIL simulator, adversarial pipeline, agentic evaluation, multimodal &mdash; <strong>designed, partially implemented</strong></span>
+                        </div>
+                        <div class="status-item status-item-progress">
+                            <span class="status-dot"></span>
+                            <span class="status-text">Classification-level deployment hardening &mdash; <strong>architecture complete; IL5+ testing requires Government access</strong></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="stack-block">
+                    <span class="section-label">Technology Stack</span>
+                    <h3>Open-Source All the Way Down</h3>
+                    <div class="stack-list">
+                        <div class="stack-row">
+                            <span class="stack-label">Backend</span>
+                            <span class="stack-value">Python, FastAPI, Celery, SQLAlchemy (async), Alembic</span>
+                        </div>
+                        <div class="stack-row">
+                            <span class="stack-label">Frontend</span>
+                            <span class="stack-value">React, Next.js, TypeScript, Tailwind CSS, Lucide</span>
+                        </div>
+                        <div class="stack-row">
+                            <span class="stack-label">Data</span>
+                            <span class="stack-value">PostgreSQL + pgvector, Redis</span>
+                        </div>
+                        <div class="stack-row">
+                            <span class="stack-label">Infra</span>
+                            <span class="stack-value">Docker / OCI, Kubernetes, K3s (edge), Traefik</span>
+                        </div>
+                        <div class="stack-row">
+                            <span class="stack-label">LLM Providers</span>
+                            <span class="stack-value">Ollama (local / air-gapped), OpenAI, HuggingFace</span>
+                        </div>
+                        <div class="stack-row stack-row-emphasis">
+                            <span class="stack-label">Lock-In</span>
+                            <span class="stack-value">None &mdash; all infrastructure components are open-source.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── PROPRIETARY IP + CTA ── -->
+    <section class="ip-cta-section">
+        <div class="ip-cta-bg"></div>
+        <div class="ip-cta-inner">
+            <div class="ip-cta-accent"></div>
+            <div class="ip-cta-badge">Levenhall Proprietary</div>
+            <h2>AIGIS is Active. Early Access is Selective.</h2>
+            <p>The platform architecture, adapter SDK, governance-integrated scoring methodology, DDIL degradation profiling system, and benchmark development toolkit are Levenhall proprietary technology. We work with DoD and IC organizations, regulated commercial customers, and insurance counterparties on early access.</p>
+            <div class="btn-group" style="justify-content: center;">
+                <a href="/contact" class="btn btn-gold">Request Early Access</a>
+                <a href="/services#market-intelligence" class="btn btn-outline-white">Levenhall Intelligence Practice</a>
+            </div>
         </div>
     </section>
 
@@ -116,7 +448,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     }
 
     .hero-inner {
-        max-width: 720px;
+        max-width: 760px;
         margin: 0 auto;
         position: relative;
         z-index: 1;
@@ -169,25 +501,21 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     }
 
     .hero-description {
-        font-size: 1.12rem;
-        color: rgba(255, 255, 255, 0.5);
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.6);
         line-height: 1.85;
-        max-width: 600px;
-        margin: 0 auto;
+        max-width: 640px;
+        margin: 0 auto 2.5rem;
     }
 
-    /* ── CAPABILITIES ── */
-    .capabilities-section {
-        background: var(--cream);
-        padding: 6rem 0;
+    .hero-cta {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
-    .section-header {
-        text-align: center;
-        max-width: 650px;
-        margin: 0 auto 3.5rem;
-    }
-
+    /* ── SHARED ── */
     .section-label {
         display: inline-block;
         font-family: 'Source Sans Pro', sans-serif;
@@ -201,127 +529,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         margin-bottom: 1.2rem;
     }
 
-    .section-header h2 {
-        color: var(--deep-navy);
-        margin-bottom: 1rem;
-    }
-
-    .section-header p {
-        color: var(--text-medium);
-        font-size: 1.05rem;
-        line-height: 1.75;
-    }
-
-    .caps-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-        max-width: 950px;
-        margin: 0 auto;
-    }
-
-    .cap-card {
-        background: #fff;
-        padding: 2.2rem 2rem;
-        border: 1px solid rgba(30, 58, 95, 0.06);
-        position: relative;
-        transition: all 0.4s ease;
-    }
-
-    .cap-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background: linear-gradient(90deg, var(--deep-navy), rgba(56, 217, 201, 0.4));
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.4s ease;
-    }
-
-    .cap-card:hover::before {
-        transform: scaleX(1);
-    }
-
-    .cap-card:hover {
-        box-shadow: 0 20px 50px rgba(30, 58, 95, 0.1);
-        transform: translateY(-4px);
-    }
-
-    .cap-icon-wrap {
-        width: 44px;
-        height: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 1.2rem;
-        color: var(--navy);
-        opacity: 0.5;
-    }
-
-    .cap-icon-wrap svg {
-        width: 28px;
-        height: 28px;
-    }
-
-    .cap-card h3 {
-        font-size: 1.15rem;
-        color: var(--deep-navy);
-        margin-bottom: 0.7rem;
-    }
-
-    .cap-card p {
-        font-size: 0.92rem;
-        color: var(--text-medium);
-        line-height: 1.7;
-    }
-
-    /* ── COMING SOON ── */
-    .coming-soon-section {
-        background: linear-gradient(135deg, #060b16 0%, var(--deep-navy) 50%, #162d4f 100%);
-        padding: 5rem 2rem;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .cs-bg {
-        position: absolute;
-        inset: 0;
-        background-image:
-            radial-gradient(ellipse at 50% 50%, rgba(56, 217, 201, 0.04) 0%, transparent 50%),
-            radial-gradient(ellipse at 80% 20%, rgba(201, 169, 97, 0.04) 0%, transparent 40%);
-        pointer-events: none;
-    }
-
-    .coming-soon-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background: linear-gradient(90deg, transparent, var(--gold), transparent);
-        opacity: 0.3;
-    }
-
-    .cs-inner {
-        max-width: 620px;
-        margin: 0 auto;
-        position: relative;
-        z-index: 1;
-    }
-
-    .cs-accent {
-        width: 40px;
-        height: 2px;
-        background: var(--gold);
-        margin: 0 auto 2rem;
-    }
-
-    .cs-badge {
+    .dark-label {
         display: inline-block;
         font-family: 'Source Sans Pro', sans-serif;
         font-weight: 600;
@@ -330,27 +538,827 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         text-transform: uppercase;
         color: rgba(56, 217, 201, 0.8);
         background: rgba(56, 217, 201, 0.08);
-        border: 1px solid rgba(56, 217, 201, 0.15);
+        padding: 0.5rem 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .gold-rule {
+        width: 50px;
+        height: 2px;
+        background: var(--gold);
+        margin-bottom: 1.5rem;
+    }
+
+    .section-header {
+        text-align: center;
+        max-width: 760px;
+        margin: 0 auto 3rem;
+    }
+
+    .section-header h2 { margin-bottom: 0.8rem; }
+    .section-header p { font-size: 1.02rem; line-height: 1.75; }
+
+    /* ── SHIELD (LIGHT) ── */
+    .shield-section {
+        background: var(--stone);
+        padding: 5.5rem 0;
+    }
+
+    .shield-grid {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 3.5rem;
+        align-items: center;
+    }
+
+    .shield-text h2 {
+        color: var(--deep-navy);
+        margin-bottom: 1rem;
+    }
+
+    .shield-text p {
+        font-size: 1.02rem;
+        line-height: 1.75;
+        color: var(--text-medium);
+        margin-bottom: 0.9rem;
+    }
+
+    .shield-text em {
+        font-style: italic;
+        color: var(--burgundy);
+    }
+
+    .shield-stat-card {
+        background: var(--deep-navy);
+        color: #fff;
+        padding: 2.2rem 1.8rem;
+        text-align: center;
+        border-top: 3px solid var(--gold);
+        position: relative;
+    }
+
+    .shield-stat-label {
+        display: block;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: rgba(56, 217, 201, 0.7);
+        margin-bottom: 1rem;
+    }
+
+    .shield-stat-value {
+        display: block;
+        font-family: 'Crimson Text', serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+
+    .shield-stat-detail {
+        display: block;
+        font-size: 0.85rem;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.55);
+    }
+
+    /* ── GAP (CREAM) ── */
+    .gap-section {
+        background: var(--cream);
+        padding: 5.5rem 0;
+    }
+
+    .gap-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.2rem;
+    }
+
+    .gap-card {
+        background: #fff;
+        border: 1px solid var(--border-warm);
+        padding: 1.8rem 1.6rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .gap-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 35px rgba(30, 58, 95, 0.08);
+    }
+
+    .gap-tag {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: var(--text-medium);
+    }
+
+    .gap-card h3 {
+        font-size: 1.2rem;
+        color: var(--deep-navy);
+    }
+
+    .gap-list {
+        font-family: 'Crimson Text', serif;
+        font-style: italic;
+        font-size: 0.95rem;
+        color: var(--burgundy);
+    }
+
+    .gap-card p {
+        font-size: 0.92rem;
+        line-height: 1.7;
+        color: var(--text-medium);
+    }
+
+    .gap-card-aigis {
+        background: var(--deep-navy);
+        border-top: 3px solid rgba(56, 217, 201, 0.7);
+        border-color: rgba(56, 217, 201, 0.2);
+    }
+
+    .gap-card-aigis h3 { color: #fff; }
+    .gap-card-aigis .gap-list { color: rgba(56, 217, 201, 0.8); }
+    .gap-card-aigis p { color: rgba(255, 255, 255, 0.6); }
+
+    .gap-tag-aigis {
+        color: rgba(56, 217, 201, 0.8) !important;
+    }
+
+    /* ── DUAL-USE (DARK) ── */
+    .dual-use-section {
+        background: linear-gradient(135deg, #0a1628 0%, var(--navy) 50%, #162d4f 100%);
+        padding: 5.5rem 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .dual-use-bg {
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(ellipse at 50% 50%, rgba(56, 217, 201, 0.04) 0%, transparent 50%);
+        pointer-events: none;
+    }
+
+    .dual-use-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, rgba(56, 217, 201, 0.5), transparent);
+        opacity: 0.5;
+    }
+
+    .dual-use-section h2 { color: #fff; }
+    .dual-use-section .section-header p { color: rgba(255, 255, 255, 0.55); }
+
+    .dual-use-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .dual-use-card {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-left: 3px solid var(--gold);
+        padding: 2rem 1.8rem;
+        transition: all 0.3s ease;
+    }
+
+    .dual-use-card:hover {
+        background: rgba(255, 255, 255, 0.07);
+        transform: translateY(-3px);
+        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .du-tag {
+        display: inline-block;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: var(--gold);
+        background: rgba(201, 169, 97, 0.08);
+        border: 1px solid rgba(201, 169, 97, 0.2);
+        padding: 0.3rem 0.7rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .du-tag-commercial {
+        color: rgba(56, 217, 201, 0.85);
+        background: rgba(56, 217, 201, 0.06);
+        border-color: rgba(56, 217, 201, 0.25);
+    }
+
+    .dual-use-card h3 {
+        font-size: 1.3rem;
+        color: #fff;
+        margin-bottom: 0.7rem;
+    }
+
+    .dual-use-card p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.55);
+    }
+
+    /* ── ARCHITECTURE (LIGHT) ── */
+    .arch-section {
+        background: var(--stone);
+        padding: 5.5rem 0;
+    }
+
+    .arch-section h2 { color: var(--deep-navy); }
+
+    .arch-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .arch-layer {
+        background: #fff;
+        border: 1px solid var(--border-warm);
+        border-left: 3px solid var(--gold);
+        padding: 1.4rem 1.6rem;
+        transition: all 0.3s ease;
+    }
+
+    .arch-layer:hover {
+        box-shadow: var(--shadow-warm-md);
+        transform: translateX(3px);
+    }
+
+    .arch-layer-tag {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: var(--burgundy);
+        margin-bottom: 0.3rem;
+        display: block;
+    }
+
+    .arch-layer h4 {
+        font-size: 1.1rem;
+        color: var(--deep-navy);
+        margin-bottom: 0.3rem;
+    }
+
+    .arch-layer p {
+        font-size: 0.92rem;
+        line-height: 1.6;
+        color: var(--text-medium);
+    }
+
+    .arch-layer-core {
+        background: var(--deep-navy);
+        border-color: rgba(56, 217, 201, 0.2);
+        border-left-color: rgba(56, 217, 201, 0.7);
+    }
+
+    .arch-layer-core .arch-layer-tag {
+        color: rgba(56, 217, 201, 0.8);
+    }
+
+    .arch-layer-core h4 {
+        color: #fff;
+        margin-bottom: 0.9rem;
+    }
+
+    .arch-engines {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.6rem 1.2rem;
+        margin-top: 0.4rem;
+    }
+
+    .arch-engine {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        padding: 0.6rem 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .ae-name {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: rgba(56, 217, 201, 0.85);
+    }
+
+    .ae-detail {
+        font-size: 0.88rem;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.55);
+    }
+
+    /* ── CAPABILITIES (DARK) ── */
+    .capabilities-section {
+        background: linear-gradient(180deg, #060b16 0%, var(--deep-navy) 50%, #0c1628 100%);
+        padding: 5.5rem 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .capabilities-bg {
+        position: absolute;
+        inset: 0;
+        background-image:
+            radial-gradient(ellipse at 50% 80%, rgba(56, 217, 201, 0.04) 0%, transparent 50%),
+            radial-gradient(ellipse at 80% 20%, rgba(201, 169, 97, 0.04) 0%, transparent 40%);
+        pointer-events: none;
+    }
+
+    .capabilities-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        opacity: 0.4;
+    }
+
+    .capabilities-section h2,
+    .capabilities-section h3 { color: #fff; }
+    .capabilities-section .section-header p { color: rgba(255, 255, 255, 0.55); }
+
+    .loe-block {
+        max-width: 1100px;
+        margin: 0 auto 3rem;
+    }
+
+    .loe-block:last-child {
+        margin-bottom: 0;
+    }
+
+    .loe-head {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        margin-bottom: 1.8rem;
+        padding-bottom: 1.2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .loe-tag {
+        font-family: 'Crimson Text', serif;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: rgba(56, 217, 201, 0.85);
+        line-height: 1;
+        letter-spacing: 1px;
+    }
+
+    .loe-head h3 {
+        font-size: 1.6rem;
+    }
+
+    .loe-lead {
+        font-size: 1rem;
+        line-height: 1.75;
+        color: rgba(255, 255, 255, 0.6);
+        margin-bottom: 1.5rem;
+        max-width: 900px;
+    }
+
+    .caps-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+
+    .cap-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-top: 2px solid rgba(56, 217, 201, 0.4);
+        padding: 1.4rem 1.4rem;
+        transition: all 0.3s ease;
+    }
+
+    .cap-card:hover {
+        background: rgba(255, 255, 255, 0.06);
+        border-top-color: rgba(56, 217, 201, 0.8);
+        transform: translateY(-3px);
+    }
+
+    .cap-card h4 {
+        font-size: 0.98rem;
+        color: #fff;
+        margin-bottom: 0.6rem;
+    }
+
+    .cap-card p {
+        font-size: 0.88rem;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.55);
+    }
+
+    .phases-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.8rem;
+    }
+
+    .phase-card {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-left: 2px solid var(--gold);
+        padding: 0.9rem 1.1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+        transition: all 0.3s ease;
+    }
+
+    .phase-card:hover {
+        background: rgba(255, 255, 255, 0.07);
+        transform: translateX(3px);
+    }
+
+    .phase-num {
+        font-family: 'Crimson Text', serif;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--gold);
+        opacity: 0.6;
+        line-height: 1;
+        flex-shrink: 0;
+    }
+
+    .phase-name {
+        font-size: 0.85rem;
+        color: #fff;
+        line-height: 1.4;
+    }
+
+    /* ── CLASSIFICATION DEPLOYMENT (LIGHT) ── */
+    .classification-section {
+        background: var(--cream);
+        padding: 5.5rem 0;
+    }
+
+    .classification-section h2 { color: var(--deep-navy); }
+
+    .class-table {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: #fff;
+        border: 1px solid var(--border-warm);
+        border-top: 3px solid var(--gold);
+    }
+
+    .class-row {
+        display: grid;
+        grid-template-columns: 1fr 1.4fr 1fr 0.8fr;
+        gap: 1.4rem;
+        padding: 1.1rem 1.4rem;
+        border-bottom: 1px solid var(--border-warm);
+        font-size: 0.94rem;
+        align-items: center;
+        color: var(--text-medium);
+    }
+
+    .class-row:last-child {
+        border-bottom: none;
+    }
+
+    .class-head {
+        background: var(--stone);
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--burgundy);
+    }
+
+    .env {
+        font-family: 'Crimson Text', serif;
+        font-size: 1.02rem;
+        font-weight: 700;
+        color: var(--deep-navy);
+    }
+
+    /* ── GOVERNANCE (DARK) ── */
+    .governance-section {
+        background: linear-gradient(135deg, #0a1628 0%, var(--navy) 50%, #162d4f 100%);
+        padding: 5.5rem 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .governance-bg {
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(ellipse at 50% 50%, rgba(56, 217, 201, 0.04) 0%, transparent 50%);
+        pointer-events: none;
+    }
+
+    .governance-section h2 { color: #fff; }
+    .governance-section .section-header p { color: rgba(255, 255, 255, 0.55); }
+
+    .frameworks-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .framework-card {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        padding: 1.4rem 1.4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        transition: all 0.3s ease;
+    }
+
+    .framework-card:hover {
+        background: rgba(255, 255, 255, 0.07);
+        transform: translateY(-3px);
+    }
+
+    .framework-bar {
+        height: 4px;
+        background: rgba(255, 255, 255, 0.06);
+        margin-bottom: 0.7rem;
+        overflow: hidden;
+    }
+
+    .framework-fill {
+        height: 100%;
+        background: linear-gradient(90deg, var(--gold), rgba(56, 217, 201, 0.7));
+    }
+
+    .framework-pct {
+        font-family: 'Crimson Text', serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1;
+    }
+
+    .framework-name {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: rgba(56, 217, 201, 0.75);
+    }
+
+    .framework-card-stat {
+        background: rgba(201, 169, 97, 0.05);
+        border-color: rgba(201, 169, 97, 0.18);
+    }
+
+    .framework-stat-value {
+        font-family: 'Crimson Text', serif;
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: var(--gold);
+        line-height: 1;
+        margin-bottom: 0.5rem;
+    }
+
+    .framework-card-stat .framework-name {
+        color: rgba(201, 169, 97, 0.85);
+    }
+
+    /* ── STATUS & STACK (LIGHT) ── */
+    .status-section {
+        background: var(--stone);
+        padding: 5.5rem 0;
+    }
+
+    .status-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 3rem;
+        align-items: start;
+    }
+
+    .status-block h2 {
+        color: var(--deep-navy);
+        margin-bottom: 1rem;
+    }
+
+    .stack-block h3 {
+        color: var(--deep-navy);
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+
+    .status-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .status-item {
+        background: #fff;
+        padding: 1rem 1.2rem;
+        border: 1px solid var(--border-warm);
+        border-left: 3px solid;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.9rem;
+        font-size: 0.94rem;
+        line-height: 1.65;
+        color: var(--text-medium);
+    }
+
+    .status-item-ok {
+        border-left-color: #2a8c5e;
+    }
+
+    .status-item-progress {
+        border-left-color: var(--gold);
+    }
+
+    .status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        margin-top: 0.55rem;
+    }
+
+    .status-item-ok .status-dot {
+        background: #2a8c5e;
+    }
+
+    .status-item-progress .status-dot {
+        background: var(--gold);
+    }
+
+    .status-text strong {
+        color: var(--deep-navy);
+        font-weight: 600;
+    }
+
+    .stack-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        background: #fff;
+        border: 1px solid var(--border-warm);
+        border-top: 3px solid var(--gold);
+    }
+
+    .stack-row {
+        display: grid;
+        grid-template-columns: 0.7fr 1.6fr;
+        gap: 1rem;
+        padding: 0.85rem 1.2rem;
+        border-bottom: 1px solid var(--border-warm);
+        font-size: 0.88rem;
+        line-height: 1.55;
+    }
+
+    .stack-row:last-child {
+        border-bottom: none;
+    }
+
+    .stack-label {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 1.8px;
+        text-transform: uppercase;
+        color: var(--burgundy);
+    }
+
+    .stack-value {
+        color: var(--text-medium);
+    }
+
+    .stack-row-emphasis {
+        background: rgba(201, 169, 97, 0.06);
+    }
+
+    .stack-row-emphasis .stack-value {
+        color: var(--deep-navy);
+        font-weight: 600;
+    }
+
+    /* ── IP & CTA ── */
+    .ip-cta-section {
+        background: linear-gradient(135deg, #060b16 0%, var(--deep-navy) 50%, #162d4f 100%);
+        padding: 5.5rem 2rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .ip-cta-bg {
+        position: absolute;
+        inset: 0;
+        background-image:
+            radial-gradient(ellipse at 50% 50%, rgba(56, 217, 201, 0.05) 0%, transparent 50%),
+            radial-gradient(ellipse at 80% 20%, rgba(201, 169, 97, 0.05) 0%, transparent 40%);
+        pointer-events: none;
+    }
+
+    .ip-cta-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        opacity: 0.4;
+    }
+
+    .ip-cta-inner {
+        max-width: 680px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .ip-cta-accent {
+        width: 40px;
+        height: 2px;
+        background: var(--gold);
+        margin: 0 auto 2rem;
+    }
+
+    .ip-cta-badge {
+        display: inline-block;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 600;
+        font-size: 0.72rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: rgba(56, 217, 201, 0.85);
+        background: rgba(56, 217, 201, 0.08);
+        border: 1px solid rgba(56, 217, 201, 0.18);
         padding: 0.5rem 1.4rem;
         margin-bottom: 1.5rem;
     }
 
-    .coming-soon-section h2 {
-        font-size: clamp(1.5rem, 3vw, 2rem);
+    .ip-cta-section h2 {
+        font-size: clamp(1.5rem, 3vw, 2.1rem);
         color: #fff;
         margin-bottom: 1.2rem;
     }
 
-    .coming-soon-section p {
-        color: rgba(255, 255, 255, 0.5);
-        font-size: 1.05rem;
+    .ip-cta-section p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 1.02rem;
         line-height: 1.75;
-        margin-bottom: 2.2rem;
+        margin-bottom: 2rem;
     }
 
     /* ── RESPONSIVE ── */
+    @media (max-width: 1100px) {
+        .caps-grid { grid-template-columns: repeat(2, 1fr); }
+        .phases-grid { grid-template-columns: repeat(2, 1fr); }
+        .frameworks-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 992px) {
+        .shield-grid { grid-template-columns: 1fr; }
+        .gap-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+        .dual-use-grid { grid-template-columns: 1fr; max-width: 540px; }
+        .arch-engines { grid-template-columns: 1fr; }
+        .status-grid { grid-template-columns: 1fr; }
+    }
+
     @media (max-width: 768px) {
         .aigis-hero { padding: 8rem 2rem 4rem; }
-        .caps-grid { grid-template-columns: 1fr; max-width: 500px; }
+        .caps-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+        .phases-grid { grid-template-columns: 1fr; }
+        .frameworks-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+        .class-row { grid-template-columns: 1fr; gap: 0.3rem; padding: 1rem 1.2rem; }
+        .class-head { display: none; }
+        .env { font-size: 1.08rem; }
     }
 </style>
