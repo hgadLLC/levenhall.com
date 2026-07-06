@@ -1,0 +1,195 @@
+---
+// 3D interactive coverage globe — orthographic projection, real 110m coastlines.
+// Drag to rotate (inertia), auto-rotates when idle, gold geodesic arcs from
+// Washington to each allied capital. Engraved in the brand palette.
+interface Props { class?: string; }
+const { class: className = '' } = Astro.props;
+---
+
+<div class={`globe-wrap ${className}`}>
+    <canvas id="coverageGlobe" aria-label="Interactive globe showing Levenhall's allied coverage: Washington DC connected to Ottawa, London, Canberra and Wellington. Drag to rotate."></canvas>
+</div>
+
+<script>
+    import { geoOrthographic, geoPath, geoGraticule10, geoDistance, geoInterpolate } from 'd3-geo';
+    import { feature } from 'topojson-client';
+    // @ts-ignore — JSON module
+    import world from 'world-atlas/land-110m.json';
+
+    const canvas = document.getElementById('coverageGlobe') as HTMLCanvasElement | null;
+
+    if (canvas) {
+        const land = feature(world as any, (world as any).objects.land);
+        const graticule = geoGraticule10();
+
+        const DC: [number, number] = [-77.0369, 38.9072];
+        const capitals: { name: string; coords: [number, number]; home?: boolean }[] = [
+            { name: 'WASHINGTON', coords: DC, home: true },
+            { name: 'OTTAWA', coords: [-75.6972, 45.4215] },
+            { name: 'LONDON', coords: [-0.1276, 51.5074] },
+            { name: 'CANBERRA', coords: [149.13, -35.2809] },
+            { name: 'WELLINGTON', coords: [174.7762, -41.2865] },
+        ];
+        const arcs = capitals.slice(1).map(c => ({
+            interp: geoInterpolate(DC, c.coords),
+        }));
+
+        const ctx = canvas.getContext('2d')!;
+        const projection = geoOrthographic().clipAngle(90);
+        const path = geoPath(projection, ctx);
+
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // State
+        let rotation: [number, number] = [77, -30];   // start centered near DC
+        let autorotate = !reduceMotion;
+        let idleTimer: ReturnType<typeof setTimeout> | null = null;
+        let dragging = false;
+        let lastX = 0, lastY = 0;
+        let velocity = 0;
+        let width = 0, height = 0, radius = 0;
+        let pingT = 0;
+
+        function resize() {
+            const rect = canvas.parentElement!.getBoundingClientRect();
+            const size = Math.min(rect.width, 520);
+            const dpr = Math.min(window.devicePixelRatio || 1, 2);
+            width = size; height = size;
+            canvas.width = size * dpr;
+            canvas.height = size * dpr;
+            canvas.style.width = `${size}px`;
+            canvas.style.height = `${size}px`;
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            radius = size / 2 - 10;
+            projection.translate([size / 2, size / 2]).scale(radius);
+        }
+
+        function visible(coords: [number, number]): boolean {
+            const r = projection.rotate();
+            return geoDistance(coords, [-r[0], -r[1]]) < Math.PI / 2 - 0.05;
+        }
+
+        function draw() {
+            projection.rotate(rotation);
+            ctx.clearRect(0, 0, width, height);
+
+            // Sphere — deep navy ink with a faint rim
+            ctx.beginPath();
+            path({ type: 'Sphere' });
+            ctx.fillStyle = '#0f1f3a';
+            ctx.fill();
+            ctx.strokeStyle = '#c4bcab';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+
+            // Graticule
+            ctx.beginPath();
+            path(graticule);
+            ctx.strokeStyle = 'rgba(250, 250, 248, 0.09)';
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+
+            // Land — engraved
+            ctx.beginPath();
+            path(land as any);
+            ctx.fillStyle = 'rgba(250, 250, 248, 0.07)';
+            ctx.fill();
+            ctx.strokeStyle = 'rgba(250, 250, 248, 0.4)';
+            ctx.lineWidth = 0.7;
+            ctx.stroke();
+
+            // Geodesic arcs DC → capitals (only visible segments; clipAngle handles it)
+            ctx.setLineDash([3, 4]);
+            ctx.strokeStyle = 'rgba(201, 169, 97, 0.85)';
+            ctx.lineWidth = 1;
+            for (const a of arcs) {
+                ctx.beginPath();
+                path({ type: 'LineString', coordinates: Array.from({ length: 41 }, (_, i) => a.interp(i / 40)) });
+                ctx.stroke();
+            }
+            ctx.setLineDash([]);
+
+            // Capitals
+            ctx.font = '10px "JetBrains Mono", monospace';
+            for (const c of capitals) {
+                if (!visible(c.coords)) continue;
+                const [x, y] = projection(c.coords)!;
+                ctx.beginPath();
+                ctx.arc(x, y, c.home ? 3.5 : 2.5, 0, Math.PI * 2);
+                ctx.fillStyle = c.home ? '#c9a961' : '#fafaf8';
+                ctx.fill();
+                if (c.home) {
+                    // expanding ping ring
+                    const t = (pingT % 180) / 180;
+                    ctx.beginPath();
+                    ctx.arc(x, y, 4 + t * 16, 0, Math.PI * 2);
+                    ctx.strokeStyle = `rgba(201, 169, 97, ${0.8 * (1 - t)})`;
+                    ctx.lineWidth = 1;
+                    ctx.stroke();
+                }
+                ctx.fillStyle = c.home ? '#c9a961' : 'rgba(250, 250, 248, 0.75)';
+                ctx.fillText(c.name, x + 8, y + 3.5);
+            }
+        }
+
+        function frame() {
+            if (!dragging) {
+                if (Math.abs(velocity) > 0.005) {
+                    rotation[0] += velocity;
+                    velocity *= 0.95;
+                } else if (autorotate) {
+                    rotation[0] += 0.06;
+                }
+            }
+            if (!reduceMotion) pingT++;
+            draw();
+            requestAnimationFrame(frame);
+        }
+
+        function pauseAutorotate() {
+            autorotate = false;
+            if (idleTimer) clearTimeout(idleTimer);
+            idleTimer = setTimeout(() => { autorotate = !reduceMotion; }, 4000);
+        }
+
+        canvas.addEventListener('pointerdown', (e) => {
+            dragging = true;
+            lastX = e.clientX; lastY = e.clientY;
+            velocity = 0;
+            canvas.setPointerCapture(e.pointerId);
+            pauseAutorotate();
+        });
+        canvas.addEventListener('pointermove', (e) => {
+            if (!dragging) return;
+            const dx = e.clientX - lastX;
+            const dy = e.clientY - lastY;
+            const k = 90 / radius; // degrees per pixel, scaled to globe size
+            rotation[0] += dx * k;
+            rotation[1] = Math.max(-75, Math.min(75, rotation[1] - dy * k));
+            velocity = dx * k;
+            lastX = e.clientX; lastY = e.clientY;
+        });
+        const endDrag = () => { dragging = false; pauseAutorotate(); };
+        canvas.addEventListener('pointerup', endDrag);
+        canvas.addEventListener('pointercancel', endDrag);
+
+        new ResizeObserver(() => { resize(); }).observe(canvas.parentElement!);
+        resize();
+        if (reduceMotion) { draw(); requestAnimationFrame(frame); } else { frame(); }
+    }
+</script>
+
+<style>
+    .globe-wrap {
+        display: flex;
+        justify-content: center;
+        padding: 0.4rem 0 0.8rem;
+    }
+    .globe-wrap canvas {
+        display: block;
+        cursor: grab;
+        touch-action: none;
+        max-width: 100%;
+    }
+    .globe-wrap canvas:active { cursor: grabbing; }
+</style>
