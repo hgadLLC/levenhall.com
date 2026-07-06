@@ -6,6 +6,9 @@ interface Props {
 
 const { title, description = 'Levenhall is a market intelligence consulting firm serving defense, government, and dual-use markets. Intelligence, US federal market entry, ventures, and proprietary products.' } = Astro.props;
 
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://levenhall.com');
+const ogImage = new URL('/images/levenhall-logo-full.png', Astro.site ?? 'https://levenhall.com');
+
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
@@ -18,6 +21,17 @@ import '../styles/global.css';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
     <meta name="description" content={description}>
+    <link rel="canonical" href={canonicalURL}>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Levenhall">
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content={description}>
+    <meta property="og:url" content={canonicalURL}>
+    <meta property="og:image" content={ogImage}>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content={title}>
+    <meta name="twitter:description" content={description}>
+    <meta name="twitter:image" content={ogImage}>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
