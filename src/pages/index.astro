@@ -6,6 +6,7 @@ import BioModal from '../components/BioModal.astro';
 import NishankBioModal from '../components/NishankBioModal.astro';
 import HassanBioModal from '../components/HassanBioModal.astro';
 import AzimuthalMap from '../components/AzimuthalMap.astro';
+import CoverageGlobe from '../components/CoverageGlobe.astro';
 import { team } from '../data/team';
 import { services } from '../data/services';
 import { nations } from '../data/nations';
@@ -27,6 +28,7 @@ const romans = ['I', 'II', 'III', 'IV', 'V'];
         <div class="hero-grid">
             <div class="hero-statement">
                 <div>
+                    <img src="/images/five-eyes-star.png" alt="Levenhall — five allied nations" class="hero-emblem">
                     <span class="route-line hero-route">Market Intelligence · Allied Defense &amp; Dual-Use · <span class="live">● Washington, DC</span></span>
                     <h1>They see what others can&rsquo;t.</h1>
                     <p class="hero-tagline editorial-italic">Structure, not access.</p>
@@ -41,24 +43,24 @@ const romans = ['I', 'II', 'III', 'IV', 'V'];
             <div class="hero-instrument" id="lensField">
                 <div class="feed-head">
                     <span>Procurement Signal / Bridger Index</span>
-                    <span class="feed-utc" id="utcClock">--:--:-- UTC</span>
+                    <span class="feed-utc" id="etClock">--:--:-- ET</span>
                 </div>
                 <div class="feed" id="feed">
                     <div class="feed-layer feed-dim" aria-hidden="true">
-                        <div class="sig"><span class="t">14:31Z</span><span class="b">AFRL · <span class="redact">██████████</span> · CSO PRE-RFP</span><span class="v">$<span class="redact">███</span>M</span></div>
-                        <div class="sig"><span class="t">14:12Z</span><span class="b">DIU · AUTONOMY <span class="redact">████████</span> OTA</span><span class="v">$<span class="redact">██</span>M</span></div>
-                        <div class="sig"><span class="t">13:58Z</span><span class="b">NAVSEA · <span class="redact">████████████</span> P-2028</span><span class="v">$<span class="redact">███</span>M</span></div>
-                        <div class="sig"><span class="t">13:41Z</span><span class="b">DARPA · <span class="redact">██████</span> PHASE III</span><span class="v">$<span class="redact">██</span>M</span></div>
-                        <div class="sig"><span class="t">13:22Z</span><span class="b">USSOCOM · <span class="redact">███████████</span> FOLLOW-ON</span><span class="v">$<span class="redact">███</span>M</span></div>
-                        <div class="sig"><span class="t">13:05Z</span><span class="b">SDA · TRANCHE <span class="redact">██</span> TRANSPORT</span><span class="v">$<span class="redact">███</span>M</span></div>
+                        <div class="sig"><span class="t">09:31 ET</span><span class="b">AFRL · <span class="redact">██████████</span> · CSO PRE-RFP</span><span class="v">$<span class="redact">███</span>M</span></div>
+                        <div class="sig"><span class="t">09:12 ET</span><span class="b">DIU · AUTONOMY <span class="redact">████████</span> OTA</span><span class="v">$<span class="redact">██</span>M</span></div>
+                        <div class="sig"><span class="t">08:58 ET</span><span class="b">NAVSEA · <span class="redact">████████████</span> P-2028</span><span class="v">$<span class="redact">███</span>M</span></div>
+                        <div class="sig"><span class="t">08:41 ET</span><span class="b">DARPA · <span class="redact">██████</span> PHASE III</span><span class="v">$<span class="redact">██</span>M</span></div>
+                        <div class="sig"><span class="t">08:22 ET</span><span class="b">USSOCOM · <span class="redact">███████████</span> FOLLOW-ON</span><span class="v">$<span class="redact">███</span>M</span></div>
+                        <div class="sig"><span class="t">08:05 ET</span><span class="b">SDA · TRANCHE <span class="redact">██</span> TRANSPORT</span><span class="v">$<span class="redact">███</span>M</span></div>
                     </div>
                     <div class="feed-layer feed-resolved" id="lensResolved">
-                        <div class="sig"><span class="t">14:31Z</span><span class="b">AFRL · HYPERSONIC TPS · CSO PRE-RFP</span><span class="v">$140M</span></div>
-                        <div class="sig"><span class="t">14:12Z</span><span class="b">DIU · AUTONOMY MARITIME OTA</span><span class="v">$62M</span></div>
-                        <div class="sig"><span class="t">13:58Z</span><span class="b">NAVSEA · UNDERSEA SENSING P-2028</span><span class="v">$310M</span></div>
-                        <div class="sig"><span class="t">13:41Z</span><span class="b">DARPA · ACE-II PHASE III</span><span class="v">$48M</span></div>
-                        <div class="sig"><span class="t">13:22Z</span><span class="b">USSOCOM · ISR-EDGE FOLLOW-ON</span><span class="v">$215M</span></div>
-                        <div class="sig"><span class="t">13:05Z</span><span class="b">SDA · TRANCHE 4 TRANSPORT</span><span class="v">$480M</span></div>
+                        <div class="sig"><span class="t">09:31 ET</span><span class="b">AFRL · HYPERSONIC TPS · CSO PRE-RFP</span><span class="v">$140M</span></div>
+                        <div class="sig"><span class="t">09:12 ET</span><span class="b">DIU · AUTONOMY MARITIME OTA</span><span class="v">$62M</span></div>
+                        <div class="sig"><span class="t">08:58 ET</span><span class="b">NAVSEA · UNDERSEA SENSING P-2028</span><span class="v">$310M</span></div>
+                        <div class="sig"><span class="t">08:41 ET</span><span class="b">DARPA · ACE-II PHASE III</span><span class="v">$48M</span></div>
+                        <div class="sig"><span class="t">08:22 ET</span><span class="b">USSOCOM · ISR-EDGE FOLLOW-ON</span><span class="v">$215M</span></div>
+                        <div class="sig"><span class="t">08:05 ET</span><span class="b">SDA · TRANCHE 4 TRANSPORT</span><span class="v">$480M</span></div>
                     </div>
                     <div class="lens-ring" id="lensRing" aria-hidden="true"></div>
                 </div>
@@ -113,11 +115,14 @@ const romans = ['I', 'II', 'III', 'IV', 'V'];
                 </div>
                 <div class="allied-chart">
                     <div class="chart-head">
-                        <span>Coverage / Azimuthal · DC-Centered</span>
+                        <span>Coverage / Live Globe · Drag to Rotate</span>
                     </div>
-                    <div class="az-wrap">
-                        <AzimuthalMap />
-                    </div>
+                    <CoverageGlobe />
+                    <noscript>
+                        <div class="az-wrap">
+                            <AzimuthalMap />
+                        </div>
+                    </noscript>
                     <div class="nations-ledger">
                         {nations.map(nation => (
                             <div class="nation-row">
@@ -181,7 +186,7 @@ const romans = ['I', 'II', 'III', 'IV', 'V'];
                         <text class="ins-note" x="0" y="10">$760B/YR INDEXED</text>
                     </svg>
                     <span class="sys-tag">Platform</span>
-                    <h3>Bridger</h3>
+                    <span class="sys-brand"><img src="/images/products/bridger-mark.png" alt="" class="sys-mark" loading="lazy"><h3>Bridger</h3></span>
                     <p>Market entry intelligence for US federal contracting. $760B/yr indexed, pre-RFP signal, opportunity scoring, and a six-officer agentic staff running the watch cycle.</p>
                     <span class="sys-link">Explore Bridger →</span>
                 </a>
@@ -197,7 +202,7 @@ const romans = ['I', 'II', 'III', 'IV', 'V'];
                         </g>
                     </svg>
                     <span class="sys-tag">Platform</span>
-                    <h3>AIGIS</h3>
+                    <span class="sys-brand"><img src="/images/products/aigis-lockup.png" alt="AIGIS" class="sys-mark sys-mark-wide" loading="lazy"></span>
                     <p>The system of record for AI governance. Inventory, map, test, and prove &mdash; audit-ready evidence across the EU AI Act, NIST AI RMF, and every framework in between.</p>
                     <span class="sys-link">Explore AIGIS →</span>
                 </a>
@@ -217,7 +222,7 @@ const romans = ['I', 'II', 'III', 'IV', 'V'];
                         <circle class="ins-dot ins-dot-2" cx="132" cy="44" r="2"/>
                     </svg>
                     <span class="sys-tag">Dashboard</span>
-                    <h3>Intelligence</h3>
+                    <span class="sys-brand"><img src="/images/products/intelligence-mark.png" alt="" class="sys-mark" loading="lazy"><h3>Intelligence</h3></span>
                     <p>Defense &amp; alliance advisory dashboard. Live procurement, alliance dynamics, Indo-Pacific strategy, and government contracting intel.</p>
                     <span class="sys-link">Explore Intelligence →</span>
                 </a>
@@ -271,12 +276,15 @@ const romans = ['I', 'II', 'III', 'IV', 'V'];
 </BaseLayout>
 
 <script>
-    // UTC clock
-    const clock = document.getElementById('utcClock');
+    // Eastern-time clock (platform timing is ET per user directive)
+    const clock = document.getElementById('etClock');
+    const etFmt = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'America/New_York',
+        hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit',
+        timeZoneName: 'short',
+    });
     function tick() {
-        const d = new Date();
-        const p = (n: number) => String(n).padStart(2, '0');
-        if (clock) clock.textContent = `${p(d.getUTCHours())}:${p(d.getUTCMinutes())}:${p(d.getUTCSeconds())} UTC`;
+        if (clock) clock.textContent = etFmt.format(new Date()).replace(',', '');
     }
     tick();
     setInterval(tick, 1000);
@@ -338,6 +346,12 @@ const romans = ['I', 'II', 'III', 'IV', 'V'];
         flex-direction: column;
         justify-content: space-between;
         gap: 3rem;
+    }
+
+    .hero-emblem {
+        width: 72px;
+        height: auto;
+        margin-bottom: 1.6rem;
     }
 
     .hero-route {
@@ -744,6 +758,15 @@ const romans = ['I', 'II', 'III', 'IV', 'V'];
     @media (prefers-reduced-motion: reduce) {
         .ins-sweep-g, .ins-dot { animation: none; }
     }
+
+    .sys-brand {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        min-height: 34px;
+    }
+    .sys-mark { height: 30px; width: auto; }
+    .sys-mark-wide { height: 22px; }
 
     .system-cell h3 { font-size: 1.3rem; }
     .system-cell p { font-size: 0.87rem; line-height: 1.62; color: var(--muted); flex: 1; }
