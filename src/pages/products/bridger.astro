@@ -1,201 +1,226 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import CTASection from '../../components/CTASection.astro';
 ---
 
-<BaseLayout title="Bridger | Levenhall" description="Bridger is Levenhall's pre-RFP intelligence platform for US federal contracting.">
+<BaseLayout title="Bridger by Levenhall — Market Entry Intelligence for US Federal Contracting" description="$760B in federal contracts a year. Bridger surfaces the work before the RFP, scores it against your profile, and stands watch after — built first for allied technology firms entering the US and for US tech companies capturing federal work.">
 
     <!-- ── HERO ── -->
     <section class="b-hero">
         <div class="b-hero-glow"></div>
-        <div class="b-hero-stage">
+        <div class="b-hero-inner">
             <p class="b-hero-tag">A Levenhall Product</p>
-            <img src="/images/products/bridger-logo.png" alt="Bridger" class="b-hero-logo">
-            <p class="b-hero-tagline">Market entry intelligence for US federal contracting.</p>
+            <div class="b-hero-brand">
+                <img src="/images/products/bridger-mark.png" alt="" class="b-hero-mark" aria-hidden="true">
+                <span class="b-hero-wordmark">Bridger</span>
+            </div>
+            <h1 class="b-hero-h1">Market Entry Intelligence<br/>for US Federal Contracting.</h1>
+            <p class="b-hero-tagline">$760B in federal contracts a year. Bridger surfaces the work before the RFP, scores it against your profile, and stands watch after &mdash; built first for allied technology firms entering the US and for US tech companies capturing federal work.</p>
             <div class="b-hero-cta">
-                <a href="https://bridger.levenhall.com" class="btn btn-gold" target="_blank" rel="noopener noreferrer">Open Bridger</a>
-                <a href="https://bridger.levenhall.com/brief" class="btn btn-outline-white" target="_blank" rel="noopener noreferrer">Daily Brief</a>
+                <a href="https://bridger.levenhall.com/get-started" class="btn btn-gold" target="_blank" rel="noopener noreferrer">Request Access</a>
+                <a href="https://bridger.levenhall.com/brief" class="btn btn-outline-white" target="_blank" rel="noopener noreferrer">Read Today's Intel Brief</a>
+            </div>
+            <p class="b-hero-meta">Live at <a href="https://bridger.levenhall.com" target="_blank" rel="noopener noreferrer">bridger.levenhall.com</a></p>
+        </div>
+    </section>
+
+    <!-- ── RIGHT NOW ON BRIDGER (STAT STRIP) ── -->
+    <section class="b-live">
+        <div class="b-live-inner">
+            <p class="b-live-label">Right now on Bridger</p>
+            <div class="b-live-stats">
+                <div class="b-stat"><span class="b-stat-val">$760<span class="b-u">B</span></span><span class="b-stat-lbl">Annual federal contracts</span></div>
+                <div class="b-stat"><span class="b-stat-val">2,300<span class="b-u">+</span></span><span class="b-stat-lbl">Signals indexed this week</span></div>
+                <div class="b-stat"><span class="b-stat-val">1,400<span class="b-u">+</span></span><span class="b-stat-lbl">Allied tech firms</span></div>
+                <div class="b-stat"><span class="b-stat-val">60<span class="b-u">+</span></span><span class="b-stat-lbl">Countries represented</span></div>
+                <div class="b-stat"><span class="b-stat-val">40<span class="b-u">+</span></span><span class="b-stat-lbl">Live sources</span></div>
             </div>
         </div>
     </section>
 
     <!-- ── OPENING ── -->
     <section class="b-opening">
-        <div class="b-opening-grid reveal">
-            <div class="b-opening-main">
-                <p class="b-lede">The US government will spend roughly $750 billion this year. By the time any of it shows up on SAM.gov, it has already been decided.</p>
-                <p>Appropriations bills, committee markups, agency forecasts, GAO bid protests, OFAC entity-list updates &mdash; the signal that decides who wins moves six to twelve months ahead of the RFP. Incumbents pay fifty thousand dollars a year for that signal. Everyone else competes blind.</p>
-                <p>For allied technology firms it is worse. They arrive cold into a regulatory landscape they don't speak, and the partners who could shorten the path are invisible without a local network.</p>
-                <p class="b-lede-close">Bridger is the platform we built so they don't have to.</p>
-            </div>
-            <aside class="b-marg">
-                <div class="b-marg-item">
-                    <span class="b-marg-val">$750<span class="b-marg-unit">B</span></span>
-                    <span class="b-marg-lbl">Annual US federal procurement</span>
-                </div>
-                <div class="b-marg-item">
-                    <span class="b-marg-val">6&ndash;12<span class="b-marg-unit">mo</span></span>
-                    <span class="b-marg-lbl">Signal lead time before the RFP</span>
-                </div>
-                <div class="b-marg-item">
-                    <span class="b-marg-val">$50<span class="b-marg-unit">K/yr</span></span>
-                    <span class="b-marg-lbl">A stack of legacy procurement-intel tools</span>
-                </div>
-                <div class="b-marg-item">
-                    <span class="b-marg-val">2,300<span class="b-marg-unit">+</span></span>
-                    <span class="b-marg-lbl">Signals Bridger indexes each week</span>
-                </div>
-            </aside>
-        </div>
-    </section>
-
-    <!-- ── STRUCTURE ── -->
-    <section class="b-structure">
-        <div class="b-structure-grid">
-            <aside class="b-rail reveal">
-                <span class="b-eyebrow b-eyebrow-light">§ Structure</span>
-                <h2>A three-part system, in the order it works.</h2>
-                <ol class="b-rail-toc">
-                    <li><span>I</span>Intelligence</li>
-                    <li><span>II</span>Marketplace</li>
-                    <li><span>III</span>Capture</li>
-                </ol>
-            </aside>
-            <div class="b-blocks">
-                <article class="b-block reveal">
-                    <span class="b-block-num">I</span>
-                    <div>
-                        <h3>Intelligence</h3>
-                        <p>About twenty-three hundred procurement signals flow into the index every week &mdash; SAM.gov, FPDS, GAO, OFAC, Congress.gov, agency forecasts, allied defense ministries, the Federal Register.</p>
-                        <p>A clustering layer synthesizes them into roughly a thousand confidence-rated assessments. A Country Instability Index scores the markets that matter. Every opportunity is matched against a contractor's profile across five separate signals, and the system will not generate a rationale unless at least two of them actually fired.</p>
-                    </div>
-                </article>
-
-                <article class="b-block reveal">
-                    <span class="b-block-num">II</span>
-                    <div>
-                        <h3>Marketplace</h3>
-                        <p>Three search surfaces on one fit-scoring engine. <strong>Providers</strong> &mdash; C3PAOs, proposal writers, incorporation specialists, JV partners, manufacturers. <strong>Lobbyists</strong> by specialty. <strong>Tech Scout</strong> for the fourteen hundred allied technology firms vetted across sixty-plus countries.</p>
-                        <p>Warm introductions at the point of intent. Not a directory you have to remember to open.</p>
-                    </div>
-                </article>
-
-                <article class="b-block reveal">
-                    <span class="b-block-num">III</span>
-                    <div>
-                        <h3>Capture</h3>
-                        <p>A pipeline that knows what stage you're in. An AI-generated capture brief built from the opportunity, the profile, and the match intelligence. A capability statement and past performance auto-filled from one canonical record, so nothing drifts.</p>
-                        <p>The distance between <em>I'm watching this</em> and <em>I'm submitting on this</em>, closed.</p>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- ── ALLIED MOAT ── -->
-    <section class="b-moat">
         <div class="b-prose reveal">
-            <span class="b-eyebrow">§ The allied moat</span>
-            <h2>The compliance regimes other tools won't touch.</h2>
-            <p>Bridger indexes the regulatory regimes that govern who can sell what, side by side: <span class="b-tag-inline">🇺🇸 ITAR</span> with AUKUS Final Rule (§ 126.7) eligibility, <span class="b-tag-inline">🇺🇸 FOCI</span> and <span class="b-tag-inline">🇺🇸 CFIUS</span>, <span class="b-tag-inline">🇺🇸 ECCN</span> and BIS licensing, <span class="b-tag-inline">🇦🇺 DSGL</span> and <span class="b-tag-inline">🇦🇺 DISP</span> on the Australian side, <span class="b-tag-inline">🇬🇧 List X</span> on the UK side.</p>
-            <p class="b-moat-foot">No general procurement tool tracks these together. That's the layer that makes allied entry tractable.</p>
+            <p class="b-lede">Most platforms tell you what already happened. Bridger sees the work before SAM.gov publishes it.</p>
+            <p>Appropriations bills, committee markups, agency forecasts, GAO bid protests, OFAC entity-list updates &mdash; the signal that decides who wins moves six to twelve months ahead of the RFP. Bridger indexes the signal, scores every opportunity against your profile, and gives a <strong>GO / MONITOR / NO-GO</strong> verdict overnight.</p>
+            <p>Then it stands watch: forty automated jobs a day, running while you sleep.</p>
         </div>
     </section>
 
-    <!-- ── DIFFERENTIATION ── -->
-    <section class="b-diff">
-        <div class="b-diff-frame">
-            <header class="b-diff-head reveal">
-                <span class="b-eyebrow">§ The short version</span>
-                <h2>What you get that you can't get elsewhere.</h2>
+    <!-- ── WHO IT'S FOR ── -->
+    <section class="b-who">
+        <div class="b-who-inner">
+            <header class="b-who-head reveal">
+                <span class="b-eyebrow b-eyebrow-light">§ Who Bridger is for</span>
+                <h2>Three sides. One platform.</h2>
             </header>
-            <div class="b-diff-rows reveal">
-                <div class="b-diff-row b-diff-headrow">
-                    <span></span>
-                    <span>Bridger</span>
-                    <span>Most procurement tools</span>
+            <div class="b-who-grid reveal">
+                <a href="https://bridger.levenhall.com/for-tech-companies" class="b-who-card" target="_blank" rel="noopener noreferrer">
+                    <span class="b-who-num">01</span>
+                    <h3>Tech Companies</h3>
+                    <p>Allied firms from AUKUS, Five Eyes, and NATO nations entering the US. US tech companies capturing federal work. Appropriations signal, pre-RFP scoring, competitor reconstruction, and the compliance layer &mdash; ITAR, FOCI, CFIUS, DSGL, DISP &mdash; that no other platform touches.</p>
+                    <span class="b-who-cta">How tech companies use Bridger &rarr;</span>
+                </a>
+                <a href="https://bridger.levenhall.com/for-providers" class="b-who-card" target="_blank" rel="noopener noreferrer">
+                    <span class="b-who-num">02</span>
+                    <h3>Service Providers</h3>
+                    <p>Compliance advisors, proposal writers, US incorporation specialists, 8(a) JV partners, contract manufacturers. Free listing. Inbound leads at the point of intent. 10% commission on completed engagements via Stripe Connect.</p>
+                    <span class="b-who-cta">How providers use Bridger &rarr;</span>
+                </a>
+                <a href="https://bridger.levenhall.com/for-lobbyists" class="b-who-card" target="_blank" rel="noopener noreferrer">
+                    <span class="b-who-num">03</span>
+                    <h3>Lobbyists</h3>
+                    <p>Government-relations firms writing policy briefings on appropriations, defense, and tech trade. Free listing. 15% commission on engagements.</p>
+                    <span class="b-who-cta">How lobbyists use Bridger &rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── STANDING WATCH ── -->
+    <section class="b-watch">
+        <div class="b-watch-grid">
+            <aside class="b-watch-rail reveal">
+                <span class="b-eyebrow">§ Standing Watch</span>
+                <h2>Forty automated jobs a day.<br/>You get one page.</h2>
+                <p class="b-watch-lede">Watches run in the background across appropriations, awards, deadlines, competitors, programs, and countries. What lands in your morning brief is what actually moved.</p>
+            </aside>
+            <div class="b-watch-body">
+                <article class="b-watch-item reveal">
+                    <span class="b-watch-num">01</span>
+                    <div>
+                        <h3>Morning Intelligence Brief</h3>
+                        <p>Tailored to your profile, delivered at 6 AM Eastern. Overnight signal condensed into what deserves the first hour of your day.</p>
+                    </div>
+                </article>
+                <article class="b-watch-item reveal">
+                    <span class="b-watch-num">02</span>
+                    <div>
+                        <h3>Deadline Watch</h3>
+                        <p>14, 7, 3, 1 days. The pipeline you are actually pursuing, held against the clock.</p>
+                    </div>
+                </article>
+                <article class="b-watch-item reveal">
+                    <span class="b-watch-num">03</span>
+                    <div>
+                        <h3>Competitor Watch</h3>
+                        <p>Awards, value jumps, recompetes, agency moves. Every incumbent, reconstructed from public records and watched for movement.</p>
+                    </div>
+                </article>
+                <article class="b-watch-item reveal">
+                    <span class="b-watch-num">04</span>
+                    <div>
+                        <h3>Program Watch</h3>
+                        <p>Funding moves, forecast shifts, new solicitations against the programs of record you care about.</p>
+                    </div>
+                </article>
+                <article class="b-watch-item reveal">
+                    <span class="b-watch-num">05</span>
+                    <div>
+                        <h3>Country Watch</h3>
+                        <p>Instability tracking on the countries where your supply chain, partners, or opportunities sit.</p>
+                    </div>
+                </article>
+                <article class="b-watch-item reveal">
+                    <span class="b-watch-num">06</span>
+                    <div>
+                        <h3>Analyst Desk</h3>
+                        <p>Instant AI response or human analyst, on demand. Ask, and get the answer inside the platform.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── BRIDGER STAFF ── -->
+    <section class="b-staff">
+        <div class="b-staff-inner">
+            <header class="b-staff-head reveal">
+                <span class="b-eyebrow b-eyebrow-light">§ Bridger Staff</span>
+                <h2>Six officers on the cycle.</h2>
+                <p class="b-staff-lede">On <strong>Pathfinder Agentic ($1,499/mo)</strong> Bridger runs a six-officer staff against your pipeline &mdash; briefing, capture, entry, profile, marketplace, and briefing officers, drafting the work you would draft. Nothing submits, sends, or files without your click.</p>
+            </header>
+            <div class="b-staff-grid reveal">
+                <div class="b-officer">
+                    <span class="b-officer-role">Intelligence Officer</span>
+                    <p>Assembles the 6 AM briefing.</p>
                 </div>
-                <div class="b-diff-row">
-                    <span class="b-diff-cap">Signal timing</span>
-                    <span>Pre-RFP signal, forecasts, appropriations</span>
-                    <span class="b-diff-other">RFP listings after SAM.gov publishes</span>
+                <div class="b-officer">
+                    <span class="b-officer-role">Capture Officer</span>
+                    <p>Drafts bid / no-bid analysis.</p>
                 </div>
-                <div class="b-diff-row">
-                    <span class="b-diff-cap">Matching</span>
-                    <span>5-signal scoring with cited rationales</span>
-                    <span class="b-diff-other">Keyword search</span>
+                <div class="b-officer">
+                    <span class="b-officer-role">Allied-Entry Officer</span>
+                    <p>Maps US-entry pathways for allied firms.</p>
                 </div>
-                <div class="b-diff-row">
-                    <span class="b-diff-cap">Cross-border</span>
-                    <span>ITAR / FOCI / CFIUS / DSGL / DISP indexed together</span>
-                    <span class="b-diff-other">US-only</span>
+                <div class="b-officer">
+                    <span class="b-officer-role">Profile Officer</span>
+                    <p>Watches SAM, FPDS, CMMC posture.</p>
                 </div>
-                <div class="b-diff-row">
-                    <span class="b-diff-cap">Marketplace</span>
-                    <span>Warm intros inside the intelligence</span>
-                    <span class="b-diff-other">Standalone directory or separate CRM</span>
+                <div class="b-officer">
+                    <span class="b-officer-role">Marketplace Officer</span>
+                    <p>Drafts replies to inbound demand.</p>
                 </div>
-                <div class="b-diff-row">
-                    <span class="b-diff-cap">Audience</span>
-                    <span>Allied technology firms entering the US</span>
-                    <span class="b-diff-other">US-only contractors</span>
+                <div class="b-officer">
+                    <span class="b-officer-role">Briefing Officer</span>
+                    <p>Drafts policy and program briefings.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <CTASection
-        heading="Open Bridger."
-        description="Production at bridger.levenhall.com. Free daily brief at 6 AM Eastern."
-        primaryLabel="Open Bridger"
-        primaryHref="https://bridger.levenhall.com"
-        secondaryLabel="Daily Brief"
-        secondaryHref="https://bridger.levenhall.com/brief"
-    />
+    <!-- ── CTA ── -->
+    <section class="b-cta">
+        <div class="b-cta-glow"></div>
+        <div class="b-cta-inner">
+            <div class="b-cta-rule"></div>
+            <p class="b-cta-eyebrow">Live Now &middot; v2026.06</p>
+            <h2>Open Bridger.</h2>
+            <p>Production at bridger.levenhall.com. The daily brief is free and public. Scout tier free; Pathfinder Agentic unlocks the officer stack and the full watch cycle.</p>
+            <div class="btn-group" style="justify-content: center;">
+                <a href="https://bridger.levenhall.com/get-started" class="btn btn-gold" target="_blank" rel="noopener noreferrer">Request Access</a>
+                <a href="https://bridger.levenhall.com/brief" class="btn btn-outline-white" target="_blank" rel="noopener noreferrer">Daily Brief</a>
+            </div>
+        </div>
+    </section>
 
 </BaseLayout>
 
 <style>
-    /* ───────────── HERO ───────────── */
+    /* ── HERO ── */
     .b-hero {
         background:
-            radial-gradient(ellipse 80% 60% at 50% 50%, rgba(201, 169, 97, 0.08), transparent 70%),
+            radial-gradient(ellipse 80% 60% at 50% 50%, rgba(201, 169, 97, 0.06), transparent 70%),
             #060c18;
-        padding: var(--s-20) var(--s-3) var(--s-12);
+        padding: var(--s-16) var(--s-3) var(--s-12);
         position: relative;
         overflow: hidden;
     }
 
     .b-hero-glow {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 720px;
-        height: 720px;
+        top: 50%; left: 50%;
+        width: 720px; height: 720px;
         transform: translate(-50%, -50%);
-        background: radial-gradient(circle, rgba(201, 169, 97, 0.18) 0%, transparent 60%);
-        filter: blur(40px);
+        background: radial-gradient(circle, rgba(201, 169, 97, 0.14) 0%, transparent 60%);
+        filter: blur(48px);
         pointer-events: none;
     }
 
     .b-hero::after {
         content: '';
         position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        bottom: 0; left: 0; right: 0;
         height: 1px;
         background: linear-gradient(90deg, transparent, var(--gold), transparent);
-        opacity: 0.4;
+        opacity: 0.45;
     }
 
-    .b-hero-stage {
+    .b-hero-inner {
+        max-width: 720px;
+        margin: 0 auto;
         text-align: center;
         position: relative;
         z-index: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
 
     .b-hero-tag {
@@ -205,27 +230,48 @@ import CTASection from '../../components/CTASection.astro';
         letter-spacing: 3.5px;
         text-transform: uppercase;
         color: var(--gold);
+        margin-bottom: var(--s-5);
+    }
+
+    .b-hero-brand {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--s-3);
         margin-bottom: var(--s-6);
     }
 
-    .b-hero-logo {
-        max-width: 360px;
-        width: 100%;
-        height: auto;
-        margin-bottom: var(--s-4);
-        filter: drop-shadow(0 0 40px rgba(201, 169, 97, 0.25));
+    .b-hero-mark {
+        width: 64px;
+        height: 64px;
+        filter: drop-shadow(0 0 24px rgba(201, 169, 97, 0.25));
+    }
+
+    .b-hero-wordmark {
+        font-family: 'Fraunces', serif;
+        font-weight: 600;
+        font-size: 3rem;
+        color: #fff;
+        letter-spacing: -1.5px;
+        line-height: 1;
+    }
+
+    .b-hero-h1 {
+        font-family: 'Fraunces', serif;
+        font-weight: 600;
+        font-size: clamp(1.9rem, 4vw, 2.9rem);
+        color: #fff;
+        line-height: 1.15;
+        margin: 0 0 var(--s-4);
+        letter-spacing: -0.8px;
     }
 
     .b-hero-tagline {
-        font-family: 'Fraunces', serif;
-        font-style: italic;
-        font-weight: 400;
-        font-size: 1.35rem;
-        color: rgba(255, 255, 255, 0.7);
-        line-height: 1.5;
-        letter-spacing: -0.2px;
-        max-width: 520px;
-        margin: 0 0 var(--s-8);
+        font-family: 'Georgia', 'Times New Roman', serif;
+        font-size: 1.05rem;
+        color: rgba(255, 255, 255, 0.65);
+        line-height: 1.75;
+        max-width: 620px;
+        margin: 0 auto var(--s-5);
     }
 
     .b-hero-cta {
@@ -233,15 +279,83 @@ import CTASection from '../../components/CTASection.astro';
         gap: var(--s-2);
         flex-wrap: wrap;
         justify-content: center;
+        margin-bottom: var(--s-3);
     }
 
-    /* ───────────── SHARED RHYTHM ───────────── */
-    .b-prose {
-        max-width: var(--col-prose);
+    .b-hero-meta {
+        font-family: 'SF Mono', 'Menlo', monospace;
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.4);
+    }
+    .b-hero-meta a { color: var(--gold); text-decoration: none; }
+
+    /* ── LIVE STATS ── */
+    .b-live {
+        background: #0a1628;
+        padding: var(--s-6) 0;
+        border-bottom: 1px solid rgba(201, 169, 97, 0.15);
+    }
+
+    .b-live-inner {
+        max-width: 1080px;
         margin: 0 auto;
         padding: 0 var(--s-3);
     }
 
+    .b-live-label {
+        display: block;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 600;
+        font-size: 0.66rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: var(--s-3);
+        text-align: center;
+    }
+
+    .b-live-stats {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .b-stat {
+        padding: var(--s-4) var(--s-2);
+        text-align: center;
+        border-right: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .b-stat:last-child { border-right: none; }
+
+    .b-stat-val {
+        display: block;
+        font-family: 'Fraunces', serif;
+        font-weight: 600;
+        font-size: 1.9rem;
+        color: #fff;
+        line-height: 1;
+        margin-bottom: 0.35rem;
+        letter-spacing: -0.5px;
+    }
+
+    .b-u {
+        font-size: 0.9rem;
+        color: var(--gold);
+    }
+
+    .b-stat-lbl {
+        display: block;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 0.68rem;
+        letter-spacing: 1.3px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.5);
+        line-height: 1.4;
+    }
+
+    /* ── SHARED ── */
     .b-eyebrow {
         display: block;
         font-family: 'Source Sans Pro', sans-serif;
@@ -253,38 +367,29 @@ import CTASection from '../../components/CTASection.astro';
         margin-bottom: var(--s-4);
     }
 
-    .b-eyebrow-light {
-        color: var(--gold);
-    }
+    .b-eyebrow-light { color: var(--gold); }
 
-    /* All h2 across the page */
     .b-opening h2,
-    .b-structure h2,
-    .b-moat h2,
-    .b-diff h2,
-    .b-lede,
-    .b-lede-close {
+    .b-who h2,
+    .b-watch h2,
+    .b-staff h2,
+    .b-cta h2,
+    .b-lede {
         font-family: 'Fraunces', serif;
-        letter-spacing: -0.6px;
+        letter-spacing: -0.5px;
     }
 
-    /* ───────────── OPENING ───────────── */
+    /* ── OPENING ── */
     .b-opening {
         background: var(--cream);
         padding: var(--s-16) 0;
     }
 
-    .b-opening-grid {
-        max-width: 1040px;
+    .b-prose {
+        max-width: 660px;
         margin: 0 auto;
         padding: 0 var(--s-3);
-        display: grid;
-        grid-template-columns: 1.7fr 0.7fr;
-        gap: var(--s-12);
-        align-items: start;
     }
-
-    .b-opening-main { max-width: 620px; }
 
     .b-lede {
         font-weight: 500;
@@ -295,76 +400,29 @@ import CTASection from '../../components/CTASection.astro';
         letter-spacing: -0.4px;
     }
 
-    .b-opening-main p {
+    .b-opening p {
         font-size: 1.05rem;
         line-height: 1.85;
         color: var(--text-medium);
         margin: 0 0 var(--s-4);
     }
 
-    .b-lede-close {
-        font-style: italic;
-        font-weight: 500;
-        font-size: 1.25rem;
-        line-height: 1.5;
-        color: var(--burgundy);
-        border-top: 1px solid var(--border-warm);
-        padding-top: var(--s-5);
-        margin-top: var(--s-5);
-    }
-
-    /* ── MARGINAL CALLOUTS ── */
-    .b-marg {
-        display: flex;
-        flex-direction: column;
-        gap: var(--s-5);
-        padding-top: var(--s-2);
-        border-top: 1px solid var(--border-warm);
-    }
-
-    .b-marg-item {
-        display: flex;
-        flex-direction: column;
-        gap: 0.4rem;
-        padding-left: var(--s-3);
-        border-left: 2px solid var(--gold);
-    }
-
-    .b-marg-val {
-        font-family: 'Fraunces', serif;
-        font-weight: 600;
-        font-size: 1.85rem;
+    .b-opening strong {
+        font-family: 'SF Mono', 'Menlo', monospace;
+        font-size: 0.95rem;
+        font-weight: 700;
         color: var(--deep-navy);
-        line-height: 1;
-        letter-spacing: -0.5px;
+        letter-spacing: 0.5px;
     }
 
-    .b-marg-unit {
-        font-size: 0.85rem;
-        font-weight: 600;
-        color: var(--gold);
-        margin-left: 0.1rem;
-        letter-spacing: 0;
-    }
-
-    .b-marg-lbl {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.7rem;
-        font-weight: 600;
-        letter-spacing: 1.4px;
-        text-transform: uppercase;
-        color: var(--text-medium);
-        line-height: 1.4;
-    }
-
-    /* ───────────── STRUCTURE (DARK) ───────────── */
-    .b-structure {
-        background: #0a1628;
+    /* ── WHO ── */
+    .b-who {
+        background: linear-gradient(180deg, #0a1628 0%, var(--deep-navy) 100%);
         padding: var(--s-16) 0;
         position: relative;
     }
 
-    .b-structure::before {
+    .b-who::before {
         content: '';
         position: absolute;
         top: 0; left: 0; right: 0;
@@ -372,7 +430,93 @@ import CTASection from '../../components/CTASection.astro';
         background: rgba(201, 169, 97, 0.25);
     }
 
-    .b-structure-grid {
+    .b-who-inner {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 0 var(--s-3);
+    }
+
+    .b-who-head {
+        text-align: center;
+        max-width: 620px;
+        margin: 0 auto var(--s-10);
+    }
+
+    .b-who-head h2 {
+        font-weight: 600;
+        font-size: clamp(2rem, 3.4vw, 2.6rem);
+        color: #fff;
+        margin: 0;
+    }
+
+    .b-who-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 1fr;
+        gap: var(--s-3);
+    }
+
+    .b-who-card {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-top: 3px solid var(--gold);
+        padding: var(--s-5);
+        display: flex;
+        flex-direction: column;
+        gap: var(--s-3);
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .b-who-card:hover {
+        background: rgba(255, 255, 255, 0.07);
+        transform: translateY(-3px);
+        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .b-who-num {
+        font-family: 'Fraunces', serif;
+        font-style: italic;
+        font-weight: 500;
+        font-size: 1.4rem;
+        color: var(--gold);
+        line-height: 1;
+    }
+
+    .b-who-card h3 {
+        font-family: 'Fraunces', serif;
+        font-weight: 600;
+        font-size: 1.5rem;
+        color: #fff;
+        margin: 0;
+        letter-spacing: -0.4px;
+    }
+
+    .b-who-card p {
+        font-size: 0.98rem;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.6);
+        margin: 0;
+        flex: 1;
+    }
+
+    .b-who-cta {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-top: auto;
+    }
+
+    /* ── WATCH ── */
+    .b-watch {
+        background: var(--cream);
+        padding: var(--s-16) 0;
+    }
+
+    .b-watch-grid {
         max-width: 1080px;
         margin: 0 auto;
         padding: 0 var(--s-3);
@@ -382,227 +526,228 @@ import CTASection from '../../components/CTASection.astro';
         align-items: start;
     }
 
-    .b-rail {
+    .b-watch-rail {
         position: sticky;
         top: 100px;
         padding-right: var(--s-3);
     }
 
-    .b-rail h2 {
+    .b-watch-rail h2 {
         font-weight: 600;
-        font-size: clamp(1.7rem, 2.6vw, 2.1rem);
-        line-height: 1.2;
-        color: #fff;
-        margin: 0 0 var(--s-5);
-        letter-spacing: -0.4px;
+        font-size: clamp(1.8rem, 3vw, 2.3rem);
+        color: var(--deep-navy);
+        margin: 0 0 var(--s-4);
+        line-height: 1.15;
     }
 
-    .b-rail-toc {
-        list-style: none;
-        margin: var(--s-5) 0 0;
-        padding: 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .b-rail-toc li {
-        display: grid;
-        grid-template-columns: 40px 1fr;
-        gap: var(--s-2);
-        padding: 0.65rem 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.85rem;
-        letter-spacing: 0.5px;
-        color: rgba(255, 255, 255, 0.55);
-    }
-
-    .b-rail-toc li span {
-        font-family: 'Fraunces', serif;
-        font-style: italic;
+    .b-watch-lede {
         font-size: 1rem;
-        color: var(--gold);
-        line-height: 1;
+        line-height: 1.8;
+        color: var(--text-medium);
     }
 
-    .b-block {
+    .b-watch-item {
         display: grid;
         grid-template-columns: 48px 1fr;
-        gap: var(--s-5);
-        padding: 0 0 var(--s-6);
-        margin-bottom: var(--s-6);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        gap: var(--s-4);
+        padding-bottom: var(--s-4);
+        margin-bottom: var(--s-4);
+        border-bottom: 1px solid rgba(30, 58, 95, 0.08);
     }
 
-    .b-block:first-child { padding-top: 0; }
+    .b-watch-item:last-of-type { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
 
-    .b-block:last-of-type { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-
-    .b-block-num {
+    .b-watch-num {
         font-family: 'Fraunces', serif;
-        font-size: 2.4rem;
-        font-weight: 500;
         font-style: italic;
+        font-weight: 500;
+        font-size: 1.6rem;
         color: var(--gold);
         line-height: 1;
-        letter-spacing: -1px;
-        padding-top: 0.4rem;
+        padding-top: 0.2rem;
     }
 
-    .b-block h3 {
+    .b-watch-item h3 {
         font-family: 'Fraunces', serif;
         font-weight: 600;
-        font-size: 1.65rem;
-        color: #fff;
-        margin: 0 0 var(--s-3);
-        line-height: 1.25;
-        letter-spacing: -0.4px;
-    }
-
-    .b-block p {
-        font-size: 1.02rem;
-        line-height: 1.85;
-        color: rgba(255, 255, 255, 0.65);
-        margin: 0 0 var(--s-3);
-    }
-
-    .b-block p:last-child { margin-bottom: 0; }
-
-    .b-block strong { color: #fff; font-weight: 600; }
-    .b-block em { font-style: italic; color: rgba(255, 255, 255, 0.85); }
-
-    /* ───────────── MOAT ───────────── */
-    .b-moat {
-        background: var(--stone);
-        padding: var(--s-16) 0;
-    }
-
-    .b-moat h2 {
-        font-weight: 600;
-        font-size: clamp(1.9rem, 3.2vw, 2.4rem);
-        line-height: 1.2;
+        font-size: 1.25rem;
         color: var(--deep-navy);
-        margin-bottom: var(--s-5);
+        margin: 0 0 0.5rem;
+        letter-spacing: -0.3px;
     }
 
-    .b-moat p {
-        font-size: 1.08rem;
-        line-height: 2;
+    .b-watch-item p {
+        font-size: 0.98rem;
+        line-height: 1.75;
         color: var(--text-medium);
-        margin-bottom: var(--s-4);
+        margin: 0;
     }
 
-    .b-tag-inline {
-        display: inline-block;
-        font-family: 'Twemoji Country Flags', 'Source Sans Pro', sans-serif;
-        font-weight: 600;
-        color: var(--deep-navy);
-        background: #fff;
-        border: 1px solid var(--border-warm);
-        padding: 0.15rem 0.55rem;
-        margin: 0 0.1rem;
-        white-space: nowrap;
-        font-size: 0.92rem;
-    }
-
-    .b-moat-foot {
-        font-family: 'Fraunces', serif;
-        font-style: italic;
-        font-weight: 500;
-        font-size: 1.15rem;
-        color: var(--burgundy);
-        border-top: 1px solid var(--border-warm);
-        padding-top: var(--s-5);
-        margin-top: var(--s-5);
-    }
-
-    /* ───────────── DIFFERENTIATION ───────────── */
-    .b-diff {
-        background: var(--cream);
+    /* ── STAFF ── */
+    .b-staff {
+        background: #0a1628;
         padding: var(--s-16) 0;
+        position: relative;
     }
 
-    .b-diff-frame {
-        max-width: 980px;
+    .b-staff::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 1px;
+        background: rgba(201, 169, 97, 0.25);
+    }
+
+    .b-staff-inner {
+        max-width: 1080px;
         margin: 0 auto;
         padding: 0 var(--s-3);
     }
 
-    .b-diff-head {
+    .b-staff-head {
+        max-width: 720px;
+        margin: 0 auto var(--s-8);
         text-align: center;
-        max-width: var(--col-prose);
-        margin: 0 auto var(--s-10);
     }
 
-    .b-diff-head h2 {
+    .b-staff-head h2 {
         font-weight: 600;
-        font-size: clamp(1.9rem, 3.2vw, 2.4rem);
-        line-height: 1.2;
-        color: var(--deep-navy);
+        font-size: clamp(2rem, 3.4vw, 2.6rem);
+        color: #fff;
+        margin: 0 0 var(--s-4);
     }
 
-    .b-diff-rows {
-        display: flex;
-        flex-direction: column;
+    .b-staff-lede {
+        font-family: 'Georgia', 'Times New Roman', serif;
+        font-size: 1.05rem;
+        color: rgba(255, 255, 255, 0.6);
+        line-height: 1.85;
     }
 
-    .b-diff-row {
+    .b-staff-lede strong {
+        color: var(--gold);
+        font-family: 'SF Mono', 'Menlo', monospace;
+        font-size: 0.95rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+    }
+
+    .b-staff-grid {
         display: grid;
-        grid-template-columns: 0.7fr 1.4fr 1fr;
-        gap: var(--s-5);
-        padding: var(--s-4) 0;
-        border-bottom: 1px solid rgba(30, 58, 95, 0.1);
-        align-items: center;
-        font-size: 1rem;
-        line-height: 1.6;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--s-3);
     }
 
-    .b-diff-row:last-child { border-bottom: none; }
+    .b-officer {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-left: 3px solid rgba(201, 169, 97, 0.5);
+        padding: var(--s-4) var(--s-4);
+    }
 
-    .b-diff-headrow {
-        border-bottom: 2px solid var(--deep-navy);
+    .b-officer-role {
+        display: block;
         font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 700;
         font-size: 0.7rem;
-        font-weight: 700;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: var(--text-medium);
-    }
-
-    .b-diff-headrow span:nth-child(2) { color: var(--burgundy); }
-
-    .b-diff-cap {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.78rem;
-        font-weight: 700;
         letter-spacing: 1.5px;
         text-transform: uppercase;
-        color: var(--deep-navy);
+        color: var(--gold);
+        margin-bottom: 0.5rem;
     }
 
-    .b-diff-other {
-        color: var(--text-medium);
-        font-style: italic;
+    .b-officer p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.7);
+        margin: 0;
     }
 
-    /* ───────────── RESPONSIVE ───────────── */
+    /* ── CTA ── */
+    .b-cta {
+        background:
+            radial-gradient(ellipse 80% 60% at 50% 50%, rgba(201, 169, 97, 0.08), transparent 70%),
+            #060c18;
+        padding: var(--s-14) var(--s-3);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .b-cta-glow {
+        position: absolute;
+        top: 50%; left: 50%;
+        width: 600px; height: 600px;
+        transform: translate(-50%, -50%);
+        background: radial-gradient(circle, rgba(201, 169, 97, 0.12) 0%, transparent 60%);
+        filter: blur(40px);
+        pointer-events: none;
+    }
+
+    .b-cta::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .b-cta-inner {
+        max-width: 640px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .b-cta-rule {
+        width: 32px; height: 1px;
+        background: var(--gold);
+        margin: 0 auto var(--s-4);
+    }
+
+    .b-cta-eyebrow {
+        font-family: 'SF Mono', 'Menlo', monospace;
+        font-size: 0.72rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: var(--s-4);
+    }
+
+    .b-cta h2 {
+        font-weight: 600;
+        font-size: clamp(2rem, 3.4vw, 2.6rem);
+        color: #fff;
+        margin: 0 0 var(--s-3);
+        line-height: 1.15;
+    }
+
+    .b-cta p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 1.05rem;
+        line-height: 1.85;
+        margin: 0 0 var(--s-6);
+    }
+
+    /* ── RESPONSIVE ── */
     @media (max-width: 980px) {
-        .b-opening-grid { grid-template-columns: 1fr; gap: var(--s-8); }
-        .b-marg { border-top: none; padding-top: 0; display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-4); }
-        .b-structure-grid { grid-template-columns: 1fr; gap: var(--s-8); }
-        .b-rail { position: static; padding-right: 0; }
+        .b-live-stats { grid-template-columns: repeat(3, 1fr); }
+        .b-stat:nth-child(3) { border-right: none; }
+        .b-stat:nth-child(-n+3) { border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+        .b-who-grid { grid-template-columns: 1fr; }
+        .b-watch-grid { grid-template-columns: 1fr; gap: var(--s-8); }
+        .b-watch-rail { position: static; padding-right: 0; }
+        .b-staff-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
-    @media (max-width: 768px) {
-        .b-hero { padding: var(--s-16) var(--s-3) var(--s-10); }
-        .b-hero-logo { max-width: 280px; }
-        .b-hero-tagline { font-size: 1.15rem; }
-        .b-opening, .b-structure, .b-moat, .b-diff { padding: var(--s-12) 0; }
-        .b-lede { font-size: 1.4rem; }
-        .b-marg { grid-template-columns: 1fr; }
-        .b-block { grid-template-columns: 1fr; gap: var(--s-2); padding-bottom: var(--s-5); margin-bottom: var(--s-5); }
-        .b-block-num { font-size: 2rem; padding-top: 0; }
-        .b-diff-row { grid-template-columns: 1fr; gap: var(--s-1); padding: var(--s-3) 0; }
-        .b-diff-headrow { display: none; }
-        .b-diff-cap { color: var(--burgundy); }
+    @media (max-width: 640px) {
+        .b-hero-mark { width: 52px; height: 52px; }
+        .b-hero-wordmark { font-size: 2.4rem; }
+        .b-live-stats { grid-template-columns: 1fr 1fr; }
+        .b-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .b-stat:nth-child(2n+1) { border-right: 1px solid rgba(255,255,255,0.06); }
+        .b-staff-grid { grid-template-columns: 1fr; }
+        .b-watch-item { grid-template-columns: 1fr; gap: var(--s-2); }
+        .b-watch-num { font-size: 1.3rem; padding-top: 0; }
     }
 </style>

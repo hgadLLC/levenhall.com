@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Intelligence | Levenhall" description="Levenhall Intelligence is a live geopolitical operating picture for the corporate risk function. Live at intel.levenhall.com.">
+<BaseLayout title="Levenhall Intelligence — Defense &amp; Alliance Advisory Dashboard" description="Real-time defense intelligence dashboard for allied defense advisory. Procurement tracking, alliance dynamics, Indo-Pacific strategy, and government contracting intel. Live at intel.levenhall.com.">
 
     <!-- ── HERO ── -->
     <section class="i-hero">
@@ -17,9 +17,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
         <div class="i-hero-stage">
             <p class="i-hero-tag">A Levenhall Product</p>
-            <p class="i-hero-pre">Levenhall</p>
-            <h1 class="i-wordmark">INTELLIGENCE</h1>
-            <p class="i-hero-tagline">Geopolitical intelligence for the corporate risk function.</p>
+            <div class="i-hero-brand">
+                <img src="/images/products/intelligence-mark.png" alt="" class="i-hero-mark" aria-hidden="true">
+                <div class="i-hero-typo">
+                    <span class="i-hero-pre">Levenhall</span>
+                    <h1 class="i-wordmark">INTELLIGENCE</h1>
+                </div>
+            </div>
+            <p class="i-hero-tagline">Defense &amp; Alliance Advisory Dashboard.</p>
 
             <div class="i-hero-meta">
                 <span class="i-meta-dot"></span>
@@ -27,153 +32,104 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </div>
 
             <div class="i-hero-cta">
-                <a href="https://intel.levenhall.com" class="btn btn-gold" target="_blank" rel="noopener noreferrer">Open the Dashboard</a>
-                <a href="#how" class="btn btn-outline-white">How It Works</a>
+                <a href="https://intel.levenhall.com" class="btn btn-gold" target="_blank" rel="noopener noreferrer">Enter Portal</a>
+                <a href="#coverage" class="btn btn-outline-white">See what it covers</a>
             </div>
         </div>
     </section>
 
-    <!-- ── OPENING ── -->
+    <!-- ── WHAT IT IS ── -->
     <section class="i-opening">
-        <div class="i-opening-grid reveal">
-            <div class="i-opening-main">
-                <p class="i-lede">The risk events that move share prices, disrupt supply chains, and reshape market access do not announce themselves in the news cycle. They surface in signal &mdash; weeks or months before the headlines.</p>
-                <p>Levenhall Intelligence is the operating picture we built for the corporate risk function. Enterprise risk officers, geopolitical risk leads, supply chain teams, security functions, and investment committees with international exposure all work the same way: one screen, every layer, on a globe that updates in real time.</p>
-                <p>Heavy machine learning runs in a Web Worker on your own device. Nothing leaves the browser. No round-trip to our servers.</p>
-                <p class="i-lede-close">Open it. The rest of this page explains what you'll see.</p>
-            </div>
-            <aside class="i-marg">
-                <div class="i-marg-item">
-                    <span class="i-marg-val">119</span>
-                    <span class="i-marg-lbl">Intelligence feeds</span>
-                </div>
-                <div class="i-marg-item">
-                    <span class="i-marg-val">34</span>
-                    <span class="i-marg-lbl">Layers on the globe</span>
-                </div>
-                <div class="i-marg-item">
-                    <span class="i-marg-val">31</span>
-                    <span class="i-marg-lbl">Tier-1 markets</span>
-                </div>
-                <div class="i-marg-item">
-                    <span class="i-marg-val">4</span>
-                    <span class="i-marg-lbl">ML models running on-device</span>
-                </div>
-            </aside>
+        <div class="i-prose reveal">
+            <p class="i-lede">Real-time defense intelligence, on one screen, for the allied defense advisor.</p>
+            <p>Levenhall Intelligence is the situational-awareness layer of the Levenhall stack. Live signal &mdash; procurement moves, alliance dynamics, Indo-Pacific posture, government-contracting activity &mdash; visualised on a WebGL globe, with the machine learning that fuses it running in your own browser. Nothing sensitive leaves the tab.</p>
+            <p class="i-lede-close">Situational awareness, not finished intelligence. For the assessed, sourced version, that's <a href="/products/bridger">Bridger</a>.</p>
         </div>
     </section>
 
-    <!-- ── THE CII (CENTERPIECE) ── -->
-    <section class="i-cii" id="how">
-        <div class="i-cii-stage">
-            <header class="i-cii-head reveal">
-                <span class="i-eyebrow i-eyebrow-gold">§ The proprietary layer</span>
-                <h2>The Country Instability Index.</h2>
-                <p>A composite 0&ndash;100 score across thirty-one countries that drive corporate risk exposure &mdash; markets where your supply chain runs, your assets sit, or your operating environment can change overnight.</p>
-            </header>
-
-            <figure class="i-formula reveal">
-                <figcaption class="i-formula-label">Blended Score</figcaption>
-                <pre class="i-formula-code"><span class="i-fc-b">(</span><span class="i-fc-v">Baseline Risk</span> <span class="i-fc-op">×</span> <span class="i-fc-n">0.4</span><span class="i-fc-b">)</span> <span class="i-fc-op">+</span> <span class="i-fc-b">(</span><span class="i-fc-v">Event Score</span> <span class="i-fc-op">×</span> <span class="i-fc-n">0.6</span><span class="i-fc-b">)</span>
-<span class="i-fc-op">+</span> <span class="i-fc-v">Hotspot Boost</span>
-<span class="i-fc-op">+</span> <span class="i-fc-v">News Urgency Boost</span>
-<span class="i-fc-op">+</span> <span class="i-fc-v">Focal Point Boost</span>
-<span class="i-fc-op">+</span> <span class="i-fc-v">Displacement Boost</span>
-<span class="i-fc-op">+</span> <span class="i-fc-v">Climate Stress</span></pre>
-            </figure>
-
-            <div class="i-cii-foot reveal">
-                <p>The Event Score itself is weighted: <span class="i-tag i-tag-conf">Conflict 30%</span> <span class="i-tag i-tag-unr">Unrest 25%</span> <span class="i-tag i-tag-inf">Information 25%</span> <span class="i-tag i-tag-sec">Security 20%</span>. Active wars score 70 or higher automatically. A million displaced adds 8. Each country carries a multiplier from 0.3× to 3× to compensate for media suppression and expected event frequency.</p>
-                <div class="i-tier-row">
-                    <span class="i-tier-lbl">Output</span>
-                    <span class="i-tier i-tier-low">Low</span>
-                    <span class="i-tier i-tier-norm">Normal</span>
-                    <span class="i-tier i-tier-elev">Elevated</span>
-                    <span class="i-tier i-tier-high">High</span>
-                    <span class="i-tier i-tier-crit">Critical</span>
-                </div>
+    <!-- ── WHAT'S ON THE DASHBOARD ── -->
+    <section class="i-coverage" id="coverage">
+        <div class="i-cov-grid">
+            <aside class="i-cov-rail reveal">
+                <span class="i-eyebrow">§ On the dashboard</span>
+                <h2>Four watches. One operating picture.</h2>
+                <p>Each watch runs its own signal stream, layered together on the globe. Toggle what you're tracking, expand what changes.</p>
+            </aside>
+            <div class="i-cov-body">
+                <article class="i-watch reveal">
+                    <span class="i-watch-num">01</span>
+                    <div>
+                        <h3>Procurement Tracking</h3>
+                        <p>Live view of US federal procurement activity &mdash; solicitations, awards, contract movements. Where the dollars are landing and where they're about to.</p>
+                    </div>
+                </article>
+                <article class="i-watch reveal">
+                    <span class="i-watch-num">02</span>
+                    <div>
+                        <h3>Alliance Dynamics</h3>
+                        <p>AUKUS, Five Eyes, NATO, and the wider allied ecosystem. Force posture, joint exercises, capability announcements, allied procurement flows.</p>
+                    </div>
+                </article>
+                <article class="i-watch reveal">
+                    <span class="i-watch-num">03</span>
+                    <div>
+                        <h3>Indo-Pacific Strategy</h3>
+                        <p>The theatre that drives allied planning. Movements, statements, exercises, and instability signals across the Indo-Pacific, with country-level drill-down.</p>
+                    </div>
+                </article>
+                <article class="i-watch reveal">
+                    <span class="i-watch-num">04</span>
+                    <div>
+                        <h3>Government Contracting Intel</h3>
+                        <p>Federal programs of record, agency forecasts, incumbent watch. The activity behind the awards, not just the awards themselves.</p>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- ── HOW IT WORKS ── -->
     <section class="i-how">
-        <div class="i-how-grid">
-            <aside class="i-rail reveal">
-                <span class="i-eyebrow">§ Around the index</span>
-                <h2>Five more layers, briefly.</h2>
-                <ol class="i-rail-toc">
-                    <li><span>02</span>Geo-Convergence</li>
-                    <li><span>03</span>Strategic Risk</li>
-                    <li><span>04</span>Signal Aggregation</li>
-                    <li><span>05</span>On-Device ML</li>
-                    <li><span>06</span>Cascade Analysis</li>
-                </ol>
-            </aside>
-            <div class="i-mods">
-                <article class="i-mod reveal">
-                    <span class="i-mod-num">02</span>
-                    <div>
-                        <h3>Geo-Convergence</h3>
-                        <p>The globe split into 1&deg; grid cells. When conflict, protest, military, and news signals cluster in the same cell within twenty-four hours, the system flags an emerging hotspot &mdash; before mainstream reporting catches up.</p>
-                    </div>
-                </article>
-                <article class="i-mod reveal">
-                    <span class="i-mod-num">03</span>
-                    <div>
-                        <h3>Strategic Risk Composite</h3>
-                        <p>One score per region. Geo-convergence at thirty percent, the CII at fifty, infrastructure cascade risk at twenty. The single number a board paper can carry.</p>
-                    </div>
-                </article>
-                <article class="i-mod reveal">
-                    <span class="i-mod-num">04</span>
-                    <div>
-                        <h3>Signal Aggregation</h3>
-                        <p>A unified bus that ingests conflict, unrest, economy, cyber, military, and climate streams, prioritizes by urgency, and feeds the rest of the dashboard.</p>
-                    </div>
-                </article>
-                <article class="i-mod reveal">
-                    <span class="i-mod-num">05</span>
-                    <div>
-                        <h3>On-Device ML</h3>
-                        <p>Four ONNX models in a Web Worker: MiniLM for embeddings, DistilBERT for sentiment, FLAN-T5 for summarization, BERT for named-entity recognition. Two-hundred-megabyte budget. Zero server roundtrips.</p>
-                    </div>
-                </article>
-                <article class="i-mod reveal">
-                    <span class="i-mod-num">06</span>
-                    <div>
-                        <h3>Infrastructure Cascade</h3>
-                        <p>Models dependencies between undersea cables, power grids, pipelines, and data centers. One disruption tells you what falls next &mdash; useful when your operations run through any of them.</p>
-                    </div>
-                </article>
+        <div class="i-how-inner reveal">
+            <span class="i-eyebrow i-eyebrow-cyan">§ How it works</span>
+            <h2>WebGL globe. On-device ML. Nothing leaves the browser.</h2>
+            <div class="i-how-grid">
+                <div class="i-how-card">
+                    <span class="i-how-tag">Rendering</span>
+                    <p>Multi-layer WebGL globe with 30+ intelligence layers &mdash; toggle what you need, hide what you don't.</p>
+                </div>
+                <div class="i-how-card">
+                    <span class="i-how-tag">Signal</span>
+                    <p>Over one hundred continuously-refreshed sources, aggregated into a single event stream and scored for salience.</p>
+                </div>
+                <div class="i-how-card">
+                    <span class="i-how-tag">Analysis</span>
+                    <p>Four ONNX models running client-side in a Web Worker &mdash; embeddings, sentiment, summarisation, named-entity extraction &mdash; so heavy inference never leaves the tab.</p>
+                </div>
+                <div class="i-how-card">
+                    <span class="i-how-tag">Access</span>
+                    <p>Email-gated portal. No password. Access and activity may be monitored per Levenhall's terms of use.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ── MAP & COVERAGE ── -->
-    <section class="i-map">
-        <div class="i-prose reveal">
-            <span class="i-eyebrow">§ The globe</span>
-            <h2>34 layers on a WebGL globe. 31 markets you can drill into.</h2>
-            <p>Eleven layers default on &mdash; conflicts, military assets, sanctions, hotspots, nuclear facilities, infrastructure outages. Twenty-three more a click away &mdash; undersea cables, pipelines, AIS tracking, cyber threats, displacement camps, financial centers, commodity hubs.</p>
-        </div>
-
-        <div class="i-cov reveal">
-            <div class="i-cov-row">
-                <span class="i-cov-cat i-cov-allied">Core &amp; Allied</span>
-                <span class="i-cov-flags">🇺🇸 🇬🇧 🇫🇷 🇩🇪 🇵🇱 🇦🇺</span>
-            </div>
-            <div class="i-cov-row">
-                <span class="i-cov-cat i-cov-adv">Sanctioned &amp; Adversarial</span>
-                <span class="i-cov-flags">🇷🇺 🇨🇳 🇮🇷 🇰🇵</span>
-            </div>
-            <div class="i-cov-row">
-                <span class="i-cov-cat i-cov-conf">Active Conflict</span>
-                <span class="i-cov-flags">🇺🇦 🇸🇾 🇾🇪 🇲🇲 🇸🇩 🇪🇹 🇨🇩 🇸🇴 🇦🇫 🇮🇶 🇱🇾 🇳🇬 🇱🇧</span>
-            </div>
-            <div class="i-cov-row">
-                <span class="i-cov-cat i-cov-reg">Strategic Emerging</span>
-                <span class="i-cov-flags">🇮🇳 🇵🇰 🇸🇦 🇹🇷 🇦🇪 🇧🇷 🇻🇪 🇹🇼</span>
+    <!-- ── WHERE IT FITS ── -->
+    <section class="i-stack">
+        <div class="i-stack-inner reveal">
+            <span class="i-eyebrow">§ Where it fits</span>
+            <h2>Situational awareness sits above Bridger.<br/>Bridger closes the loop.</h2>
+            <div class="i-stack-grid">
+                <a href="/products/intelligence" class="i-stack-card i-stack-card-current">
+                    <span class="i-stack-tag">This product</span>
+                    <h3>Intelligence</h3>
+                    <p>Situational awareness. Live signal, on a globe, filtered to what allied defense advisors need to see.</p>
+                </a>
+                <a href="/products/bridger" class="i-stack-card">
+                    <span class="i-stack-tag">Sibling product</span>
+                    <h3>Bridger</h3>
+                    <p>Finished intelligence. Assessed, sourced, and scored against your profile. The next step when situational awareness turns into a pursuit.</p>
+                </a>
             </div>
         </div>
     </section>
@@ -184,8 +140,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="i-cta-inner">
             <span class="i-cta-dot"></span>
             <p class="i-cta-eyebrow">Live Now</p>
-            <h2>Open the dashboard.</h2>
-            <p>Email-gated. Free to enter. Enterprise deployments and bespoke briefings available through Levenhall's intelligence practice.</p>
+            <h2>Enter the portal.</h2>
+            <p>Email-gated. No password. Enterprise deployments and bespoke defense-advisory briefings available through Levenhall.</p>
             <div class="btn-group" style="justify-content: center;">
                 <a href="https://intel.levenhall.com" class="btn btn-gold" target="_blank" rel="noopener noreferrer">intel.levenhall.com</a>
                 <a href="/contact" class="btn btn-outline-white">Contact Levenhall</a>
@@ -196,23 +152,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
-    /* ───────────── HERO ───────────── */
+    /* ── HERO ── */
     .i-hero {
-        background:
-            radial-gradient(ellipse 80% 60% at 50% 50%, rgba(56, 217, 201, 0.06), transparent 70%),
-            radial-gradient(ellipse 60% 50% at 50% 30%, rgba(201, 169, 97, 0.1), transparent 60%),
-            #04060c;
-        padding: var(--s-20) var(--s-3) var(--s-12);
+        background: radial-gradient(ellipse at 50% 0%, #0c2540 0%, #060c18 70%, #03060d 100%);
+        padding: var(--s-16) var(--s-3) var(--s-12);
         position: relative;
         overflow: hidden;
     }
 
     .i-hero-glow {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 760px;
-        height: 760px;
+        top: 50%; left: 50%;
+        width: 760px; height: 760px;
         transform: translate(-50%, -50%);
         background: radial-gradient(circle, rgba(201, 169, 97, 0.14) 0%, transparent 60%);
         filter: blur(48px);
@@ -243,8 +194,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
     .i-hud {
         position: absolute;
-        width: 40px;
-        height: 40px;
+        width: 40px; height: 40px;
         border: 2px solid var(--gold);
         opacity: 0.55;
     }
@@ -256,21 +206,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     .i-hero::after {
         content: '';
         position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        bottom: 0; left: 0; right: 0;
         height: 1px;
-        background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
         opacity: 0.55;
     }
 
     .i-hero-stage {
-        text-align: center;
+        max-width: 720px;
+        margin: 0 auto;
         position: relative;
         z-index: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        text-align: center;
     }
 
     .i-hero-tag {
@@ -280,30 +227,48 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         letter-spacing: 3.5px;
         text-transform: uppercase;
         color: var(--gold);
-        margin-bottom: var(--s-6);
+        margin-bottom: var(--s-5);
+    }
+
+    .i-hero-brand {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--s-3);
+        margin-bottom: var(--s-4);
+    }
+
+    .i-hero-mark {
+        width: 56px;
+        height: 56px;
+        filter: drop-shadow(0 0 22px rgba(201, 169, 97, 0.25));
+    }
+
+    .i-hero-typo {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
     }
 
     .i-hero-pre {
         font-family: 'Source Sans Pro', sans-serif;
         font-weight: 700;
-        font-size: 0.78rem;
-        letter-spacing: 6px;
+        font-size: 0.72rem;
+        letter-spacing: 5px;
         text-transform: uppercase;
         color: rgba(255, 255, 255, 0.45);
-        margin: 0 0 var(--s-2);
-        text-indent: 6px;
+        margin-bottom: 0.2rem;
     }
 
     .i-wordmark {
-        font-family: 'Fraunces', serif;
-        font-variation-settings: 'SOFT' 0;
-        font-weight: 600;
-        font-size: clamp(3rem, 7.5vw, 5.4rem);
-        letter-spacing: -1.5px;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 700;
+        font-size: clamp(1.6rem, 3.4vw, 2.2rem);
+        letter-spacing: 6px;
         color: #fff;
         line-height: 1;
-        margin: 0 0 var(--s-6);
-        background: linear-gradient(180deg, #fff 30%, rgba(201, 169, 97, 0.7) 100%);
+        margin: 0;
+        background: linear-gradient(180deg, #fff 30%, rgba(201, 169, 97, 0.75) 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -313,12 +278,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         font-family: 'Fraunces', serif;
         font-style: italic;
         font-weight: 400;
-        font-size: 1.35rem;
+        font-size: 1.3rem;
         color: rgba(255, 255, 255, 0.7);
         line-height: 1.5;
+        margin: 0 0 var(--s-4);
         letter-spacing: -0.2px;
-        max-width: 540px;
-        margin: 0 0 var(--s-6);
     }
 
     .i-hero-meta {
@@ -326,17 +290,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         align-items: center;
         gap: var(--s-1);
         font-family: 'SF Mono', 'Menlo', monospace;
-        font-size: 0.8rem;
+        font-size: 0.78rem;
         color: rgba(255, 255, 255, 0.55);
-        margin-bottom: var(--s-8);
-        padding: 0.5rem 0.95rem;
+        margin-bottom: var(--s-5);
+        padding: 0.45rem 0.9rem;
         background: rgba(56, 217, 201, 0.05);
         border: 1px solid rgba(56, 217, 201, 0.18);
     }
 
     .i-meta-dot {
-        width: 7px;
-        height: 7px;
+        width: 7px; height: 7px;
         background: rgba(56, 217, 201, 0.9);
         border-radius: 50%;
         box-shadow: 0 0 8px rgba(56, 217, 201, 0.6);
@@ -348,28 +311,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         50% { opacity: 0.4; }
     }
 
-    .i-meta-text a {
-        color: var(--gold);
-        text-decoration: none;
-        letter-spacing: 0.5px;
-    }
-
+    .i-meta-text a { color: var(--gold); text-decoration: none; letter-spacing: 0.5px; }
     .i-meta-text a:hover { text-decoration: underline; }
 
     .i-hero-cta {
         display: flex;
         gap: var(--s-2);
-        flex-wrap: wrap;
         justify-content: center;
+        flex-wrap: wrap;
     }
 
-    /* ───────────── SHARED ───────────── */
-    .i-prose {
-        max-width: var(--col-prose);
-        margin: 0 auto;
-        padding: 0 var(--s-3);
-    }
-
+    /* ── SHARED ── */
     .i-eyebrow {
         display: block;
         font-family: 'Source Sans Pro', sans-serif;
@@ -381,248 +333,81 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         margin-bottom: var(--s-4);
     }
 
-    .i-eyebrow-gold { color: var(--gold); }
+    .i-eyebrow-cyan { color: rgba(56, 217, 201, 0.85); }
 
     .i-opening h2,
-    .i-cii h2,
+    .i-coverage h2,
     .i-how h2,
-    .i-map h2,
+    .i-stack h2,
     .i-cta h2,
     .i-lede,
     .i-lede-close,
-    .i-mod h3 {
+    .i-watch h3,
+    .i-stack-card h3 {
         font-family: 'Fraunces', serif;
         letter-spacing: -0.5px;
     }
 
-    /* ───────────── OPENING ───────────── */
+    /* ── OPENING ── */
     .i-opening {
         background: var(--cream);
         padding: var(--s-16) 0;
     }
 
-    .i-opening-grid {
-        max-width: 1040px;
+    .i-prose {
+        max-width: 660px;
         margin: 0 auto;
         padding: 0 var(--s-3);
-        display: grid;
-        grid-template-columns: 1.7fr 0.7fr;
-        gap: var(--s-12);
-        align-items: start;
     }
-
-    .i-opening-main { max-width: 620px; }
 
     .i-lede {
         font-weight: 500;
         font-size: 1.75rem;
         line-height: 1.4;
         color: var(--deep-navy);
-        margin: 0 0 var(--s-5);
+        margin: 0 0 var(--s-4);
         letter-spacing: -0.4px;
     }
 
-    .i-opening-main p {
+    .i-opening p {
         font-size: 1.05rem;
         line-height: 1.85;
         color: var(--text-medium);
         margin: 0 0 var(--s-4);
-    }
-
-    /* ── MARGINAL CALLOUTS ── */
-    .i-marg {
-        display: flex;
-        flex-direction: column;
-        gap: var(--s-5);
-        padding-top: var(--s-2);
-        border-top: 1px solid var(--border-warm);
-    }
-
-    .i-marg-item {
-        display: flex;
-        flex-direction: column;
-        gap: 0.4rem;
-        padding-left: var(--s-3);
-        border-left: 2px solid var(--gold);
-    }
-
-    .i-marg-val {
-        font-family: 'Fraunces', serif;
-        font-weight: 600;
-        font-size: 1.85rem;
-        color: var(--deep-navy);
-        line-height: 1;
-        letter-spacing: -0.5px;
-    }
-
-    .i-marg-lbl {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.7rem;
-        font-weight: 600;
-        letter-spacing: 1.4px;
-        text-transform: uppercase;
-        color: var(--text-medium);
-        line-height: 1.4;
     }
 
     .i-lede-close {
         font-style: italic;
         font-weight: 500;
-        font-size: 1.25rem;
-        line-height: 1.55;
-        color: var(--burgundy);
+        font-size: 1.15rem !important;
+        color: var(--burgundy) !important;
         border-top: 1px solid var(--border-warm);
-        padding-top: var(--s-5);
-        margin-top: var(--s-5);
+        padding-top: var(--s-4);
+        margin-top: var(--s-4) !important;
     }
 
-    /* ───────────── CII ───────────── */
-    .i-cii {
+    .i-lede-close a {
+        color: inherit;
+        text-decoration: underline;
+        text-decoration-color: rgba(139, 21, 56, 0.4);
+    }
+
+    /* ── COVERAGE ── */
+    .i-coverage {
         background: #0a1628;
         padding: var(--s-16) 0;
         position: relative;
-        overflow: hidden;
     }
 
-    .i-cii::before {
+    .i-coverage::before {
         content: '';
         position: absolute;
         top: 0; left: 0; right: 0;
         height: 1px;
-        background: rgba(201, 169, 97, 0.3);
+        background: rgba(201, 169, 97, 0.25);
     }
 
-    .i-cii-stage {
-        max-width: 820px;
-        margin: 0 auto;
-        padding: 0 var(--s-3);
-        position: relative;
-        z-index: 1;
-    }
-
-    .i-cii-head {
-        text-align: center;
-        margin-bottom: var(--s-8);
-    }
-
-    .i-cii-head h2 {
-        font-weight: 600;
-        font-size: clamp(2rem, 3.5vw, 2.7rem);
-        line-height: 1.15;
-        color: #fff;
-        margin: 0 0 var(--s-4);
-        letter-spacing: -0.8px;
-    }
-
-    .i-cii-head p {
-        font-size: 1.05rem;
-        line-height: 1.85;
-        color: rgba(255, 255, 255, 0.6);
-        max-width: 600px;
-        margin: 0 auto;
-    }
-
-    .i-formula {
-        background: rgba(0, 0, 0, 0.35);
-        border-left: 2px solid var(--gold);
-        padding: var(--s-6) var(--s-6);
-        margin: 0 auto var(--s-8);
-        max-width: 640px;
-    }
-
-    .i-formula-label {
-        display: block;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.65rem;
-        font-weight: 700;
-        letter-spacing: 2.5px;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: var(--s-4);
-    }
-
-    .i-formula-code {
-        margin: 0;
-        font-family: 'SF Mono', 'Menlo', monospace;
-        font-size: 0.95rem;
-        line-height: 2;
-        color: rgba(255, 255, 255, 0.85);
-        white-space: pre;
-        overflow-x: auto;
-    }
-
-    .i-fc-v { color: rgba(56, 217, 201, 0.9); }
-    .i-fc-n { color: var(--gold); font-weight: 700; }
-    .i-fc-op, .i-fc-b { color: rgba(255, 255, 255, 0.5); }
-
-    .i-cii-foot {
-        max-width: 640px;
-        margin: 0 auto;
-    }
-
-    .i-cii-foot p {
-        font-size: 0.98rem;
-        line-height: 1.9;
-        color: rgba(255, 255, 255, 0.65);
-        margin: 0 0 var(--s-5);
-    }
-
-    .i-tag {
-        display: inline-block;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.78rem;
-        font-weight: 600;
-        padding: 0.2rem 0.55rem;
-        margin: 0.15rem;
-        white-space: nowrap;
-    }
-
-    .i-tag-conf { background: rgba(161, 62, 10, 0.18); color: #d77a40; border: 1px solid rgba(161, 62, 10, 0.3); }
-    .i-tag-unr  { background: rgba(139, 21, 56, 0.2);  color: #d8638a; border: 1px solid rgba(139, 21, 56, 0.3); }
-    .i-tag-inf  { background: rgba(201, 169, 97, 0.15); color: var(--gold); border: 1px solid rgba(201, 169, 97, 0.3); }
-    .i-tag-sec  { background: rgba(56, 217, 201, 0.1); color: rgba(56, 217, 201, 0.9); border: 1px solid rgba(56, 217, 201, 0.25); }
-
-    .i-tier-row {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: var(--s-1);
-        padding-top: var(--s-5);
-        border-top: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .i-tier-lbl {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.65rem;
-        font-weight: 700;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.5);
-        margin-right: var(--s-2);
-    }
-
-    .i-tier {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.72rem;
-        font-weight: 700;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        padding: 0.25rem 0.6rem;
-    }
-
-    .i-tier-low  { color: #6da17a; background: rgba(109, 161, 122, 0.12); }
-    .i-tier-norm { color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.06); }
-    .i-tier-elev { color: var(--gold); background: rgba(201, 169, 97, 0.12); }
-    .i-tier-high { color: #d77a40; background: rgba(161, 62, 10, 0.18); }
-    .i-tier-crit { color: #ff5c7c; background: rgba(255, 92, 124, 0.15); }
-
-    /* ───────────── HOW ───────────── */
-    .i-how {
-        background: var(--cream);
-        padding: var(--s-16) 0;
-    }
-
-    .i-how-grid {
+    .i-cov-grid {
         max-width: 1080px;
         margin: 0 auto;
         padding: 0 var(--s-3);
@@ -632,143 +417,186 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         align-items: start;
     }
 
-    .i-rail {
+    .i-cov-rail {
         position: sticky;
         top: 100px;
         padding-right: var(--s-3);
     }
 
-    .i-rail h2 {
+    .i-cov-rail h2 {
         font-weight: 600;
-        font-size: clamp(1.7rem, 2.6vw, 2.1rem);
-        line-height: 1.2;
-        color: var(--deep-navy);
-        margin: 0 0 var(--s-5);
-        letter-spacing: -0.4px;
+        font-size: clamp(1.8rem, 3vw, 2.3rem);
+        color: #fff;
+        line-height: 1.15;
+        margin: 0 0 var(--s-4);
     }
 
-    .i-rail-toc {
-        list-style: none;
-        margin: var(--s-5) 0 0;
-        padding: 0;
-        border-top: 1px solid rgba(30, 58, 95, 0.12);
+    .i-cov-rail p {
+        font-size: 1rem;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.55);
     }
 
-    .i-rail-toc li {
-        display: grid;
-        grid-template-columns: 40px 1fr;
-        gap: var(--s-2);
-        padding: 0.55rem 0;
-        border-bottom: 1px solid rgba(30, 58, 95, 0.08);
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.85rem;
-        color: var(--text-medium);
-    }
-
-    .i-rail-toc li span {
-        font-family: 'Fraunces', serif;
-        font-style: italic;
-        font-size: 0.95rem;
-        color: var(--gold);
-        line-height: 1;
-    }
-
-    .i-mod {
+    .i-watch {
         display: grid;
         grid-template-columns: 48px 1fr;
         gap: var(--s-4);
-        padding-bottom: var(--s-5);
-        margin-bottom: var(--s-5);
-        border-bottom: 1px solid rgba(30, 58, 95, 0.08);
+        padding-bottom: var(--s-4);
+        margin-bottom: var(--s-4);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .i-mod:last-of-type { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .i-watch:last-of-type { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
 
-    .i-mod-num {
+    .i-watch-num {
         font-family: 'Fraunces', serif;
         font-style: italic;
         font-weight: 500;
-        font-size: 2rem;
+        font-size: 1.7rem;
         color: var(--gold);
         line-height: 1;
-        padding-top: 0.3rem;
-        letter-spacing: -0.5px;
+        padding-top: 0.2rem;
     }
 
-    .i-mod h3 {
+    .i-watch h3 {
         font-weight: 600;
-        font-size: 1.4rem;
-        color: var(--deep-navy);
-        margin: 0 0 var(--s-2);
+        font-size: 1.3rem;
+        color: #fff;
+        margin: 0 0 0.5rem;
     }
 
-    .i-mod p {
+    .i-watch p {
         font-size: 0.98rem;
-        line-height: 1.85;
-        color: var(--text-medium);
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.6);
         margin: 0;
     }
 
-    /* ───────────── MAP & COVERAGE ───────────── */
-    .i-map {
+    /* ── HOW ── */
+    .i-how {
         background: var(--stone);
         padding: var(--s-16) 0;
     }
 
-    .i-map h2 {
-        font-weight: 600;
-        font-size: clamp(1.7rem, 2.8vw, 2.2rem);
-        line-height: 1.2;
-        color: var(--deep-navy);
-        margin: 0 0 var(--s-4);
+    .i-how-inner {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 0 var(--s-3);
     }
 
-    .i-map p {
-        font-size: 1.05rem;
-        line-height: 1.85;
+    .i-how h2 {
+        font-weight: 600;
+        font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+        color: var(--deep-navy);
+        margin: 0 0 var(--s-8);
+        max-width: 720px;
+        line-height: 1.15;
+    }
+
+    .i-how-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--s-3);
+    }
+
+    .i-how-card {
+        background: #fff;
+        border: 1px solid var(--border-warm);
+        border-left: 3px solid rgba(56, 217, 201, 0.6);
+        padding: var(--s-4);
+    }
+
+    .i-how-tag {
+        display: block;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 700;
+        font-size: 0.65rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: rgba(56, 217, 201, 0.95);
+        margin-bottom: var(--s-2);
+    }
+
+    .i-how-card p {
+        font-size: 0.94rem;
+        line-height: 1.7;
         color: var(--text-medium);
         margin: 0;
     }
 
-    .i-cov {
-        max-width: 820px;
-        margin: var(--s-10) auto 0;
+    /* ── STACK RELATIONSHIP ── */
+    .i-stack {
+        background: var(--cream);
+        padding: var(--s-16) 0;
+    }
+
+    .i-stack-inner {
+        max-width: 1080px;
+        margin: 0 auto;
         padding: 0 var(--s-3);
     }
 
-    .i-cov-row {
-        display: grid;
-        grid-template-columns: 220px 1fr;
-        gap: var(--s-5);
-        padding: var(--s-4) 0;
-        border-bottom: 1px solid rgba(30, 58, 95, 0.1);
-        align-items: center;
+    .i-stack h2 {
+        font-weight: 600;
+        font-size: clamp(1.8rem, 3vw, 2.3rem);
+        color: var(--deep-navy);
+        margin: 0 0 var(--s-8);
+        line-height: 1.2;
     }
 
-    .i-cov-row:last-child { border-bottom: none; }
+    .i-stack-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--s-4);
+    }
 
-    .i-cov-cat {
+    .i-stack-card {
+        background: #fff;
+        border: 1px solid var(--border-warm);
+        border-left: 3px solid var(--gold);
+        padding: var(--s-5);
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .i-stack-card:hover { transform: translateX(4px); box-shadow: var(--shadow-warm-md); }
+
+    .i-stack-card-current {
+        background: var(--deep-navy);
+        border-left-color: rgba(56, 217, 201, 0.7);
+    }
+
+    .i-stack-card-current .i-stack-tag { color: rgba(56, 217, 201, 0.85); }
+    .i-stack-card-current h3 { color: #fff; }
+    .i-stack-card-current p { color: rgba(255, 255, 255, 0.6); }
+
+    .i-stack-tag {
         font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.7rem;
+        font-size: 0.62rem;
         font-weight: 700;
         letter-spacing: 2px;
         text-transform: uppercase;
-        padding: 0.45rem 0.85rem;
-        justify-self: start;
+        color: var(--burgundy);
     }
 
-    .i-cov-allied { color: var(--gold); background: rgba(201, 169, 97, 0.1); border: 1px solid rgba(201, 169, 97, 0.25); }
-    .i-cov-adv    { color: var(--burgundy); background: var(--burgundy-surface); }
-    .i-cov-conf   { color: #a13e0a; background: rgba(161, 62, 10, 0.08); border: 1px solid rgba(161, 62, 10, 0.18); }
-    .i-cov-reg    { color: var(--deep-navy); background: rgba(30, 58, 95, 0.06); border: 1px solid rgba(30, 58, 95, 0.15); }
-
-    .i-cov-flags {
-        font-size: 1.55rem;
-        line-height: 1;
-        word-spacing: 0.3rem;
+    .i-stack-card h3 {
+        font-weight: 600;
+        font-size: 1.5rem;
+        color: var(--deep-navy);
+        margin: 0.1rem 0 0.3rem;
     }
 
-    /* ───────────── CTA ───────────── */
+    .i-stack-card p {
+        font-size: 0.98rem;
+        line-height: 1.75;
+        color: var(--text-medium);
+        margin: 0;
+    }
+
+    /* ── CTA ── */
     .i-cta {
         background:
             radial-gradient(ellipse 80% 60% at 50% 50%, rgba(201, 169, 97, 0.08), transparent 70%),
@@ -781,10 +609,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
     .i-cta-glow {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 600px;
-        height: 600px;
+        top: 50%; left: 50%;
+        width: 600px; height: 600px;
         transform: translate(-50%, -50%);
         background: radial-gradient(circle, rgba(56, 217, 201, 0.06) 0%, transparent 60%);
         filter: blur(40px);
@@ -808,8 +634,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
     .i-cta-dot {
         display: inline-block;
-        width: 10px;
-        height: 10px;
+        width: 10px; height: 10px;
         background: rgba(56, 217, 201, 0.9);
         border-radius: 50%;
         box-shadow: 0 0 14px rgba(56, 217, 201, 0.7);
@@ -832,7 +657,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         font-size: clamp(2rem, 3.4vw, 2.6rem);
         color: #fff;
         margin: 0 0 var(--s-3);
-        line-height: 1.18;
+        line-height: 1.15;
     }
 
     .i-cta p {
@@ -842,28 +667,25 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         margin: 0 0 var(--s-6);
     }
 
-    /* ───────────── RESPONSIVE ───────────── */
+    /* ── RESPONSIVE ── */
     @media (max-width: 980px) {
-        .i-opening-grid { grid-template-columns: 1fr; gap: var(--s-8); }
-        .i-marg { border-top: none; padding-top: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s-4); }
-        .i-how-grid { grid-template-columns: 1fr; gap: var(--s-8); }
-        .i-rail { position: static; padding-right: 0; }
+        .i-cov-grid { grid-template-columns: 1fr; gap: var(--s-8); }
+        .i-cov-rail { position: static; padding-right: 0; }
+        .i-how-grid { grid-template-columns: repeat(2, 1fr); }
+        .i-stack-grid { grid-template-columns: 1fr; }
     }
 
-    @media (max-width: 768px) {
-        .i-hero { padding: var(--s-16) var(--s-3) var(--s-10); }
+    @media (max-width: 640px) {
         .i-hud { width: 28px; height: 28px; }
         .i-hud-tl, .i-hud-tr { top: 18px; }
         .i-hud-bl, .i-hud-br { bottom: 18px; }
         .i-hud-tl, .i-hud-bl { left: 18px; }
         .i-hud-tr, .i-hud-br { right: 18px; }
-        .i-opening, .i-cii, .i-how, .i-map { padding: var(--s-12) 0; }
-        .i-formula { padding: var(--s-4) var(--s-3); }
-        .i-formula-code { font-size: 0.82rem; }
-        .i-lede { font-size: 1.4rem; }
-        .i-marg { grid-template-columns: 1fr; }
-        .i-mod { grid-template-columns: 1fr; gap: var(--s-2); padding-bottom: var(--s-4); margin-bottom: var(--s-4); }
-        .i-mod-num { font-size: 1.7rem; padding-top: 0; }
-        .i-cov-row { grid-template-columns: 1fr; gap: var(--s-2); }
+        .i-hero-brand { flex-direction: column; align-items: center; gap: var(--s-2); }
+        .i-hero-typo { align-items: center; text-align: center; }
+        .i-hero-mark { width: 44px; height: 44px; }
+        .i-how-grid { grid-template-columns: 1fr; }
+        .i-watch { grid-template-columns: 1fr; gap: var(--s-2); }
+        .i-watch-num { font-size: 1.4rem; padding-top: 0; }
     }
 </style>
