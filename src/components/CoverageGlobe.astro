@@ -7,7 +7,8 @@ const { class: className = '' } = Astro.props;
 ---
 
 <div class={`globe-wrap ${className}`}>
-    <canvas id="coverageGlobe" aria-label="Interactive globe showing Levenhall's allied coverage: Washington DC connected to Ottawa, London, Canberra and Wellington. Drag to rotate."></canvas>
+    <canvas id="coverageGlobe" aria-label="Interactive globe showing Levenhall's allied network: Washington DC connected to every NATO capital, the Five Eyes capitals, Tokyo and Seoul. Drag to rotate; hover a point for its name."></canvas>
+    <span class="globe-legend">36 allied capitals · NATO / FVEY / Indo-Pacific · Hub: Washington</span>
 </div>
 
 <script>
@@ -23,14 +24,50 @@ const { class: className = '' } = Astro.props;
         const graticule = geoGraticule10();
 
         const DC: [number, number] = [-77.0369, 38.9072];
-        const capitals: { name: string; coords: [number, number]; home?: boolean }[] = [
-            { name: 'WASHINGTON', coords: DC, home: true },
-            { name: 'OTTAWA', coords: [-75.6972, 45.4215] },
-            { name: 'LONDON', coords: [-0.1276, 51.5074] },
-            { name: 'CANBERRA', coords: [149.13, -35.2809] },
-            { name: 'WELLINGTON', coords: [174.7762, -41.2865] },
+        type Tier = 'home' | 'fvey' | 'nato' | 'partner';
+        const capitals: { name: string; coords: [number, number]; tier: Tier }[] = [
+            { name: 'WASHINGTON', coords: DC, tier: 'home' },
+            // Five Eyes
+            { name: 'OTTAWA', coords: [-75.6972, 45.4215], tier: 'fvey' },
+            { name: 'LONDON', coords: [-0.1276, 51.5074], tier: 'fvey' },
+            { name: 'CANBERRA', coords: [149.13, -35.2809], tier: 'fvey' },
+            { name: 'WELLINGTON', coords: [174.7762, -41.2865], tier: 'fvey' },
+            // NATO capitals
+            { name: 'TIRANA', coords: [19.8187, 41.3275], tier: 'nato' },
+            { name: 'BRUSSELS', coords: [4.3517, 50.8503], tier: 'nato' },
+            { name: 'SOFIA', coords: [23.3219, 42.6977], tier: 'nato' },
+            { name: 'ZAGREB', coords: [15.9819, 45.815], tier: 'nato' },
+            { name: 'PRAGUE', coords: [14.4378, 50.0755], tier: 'nato' },
+            { name: 'COPENHAGEN', coords: [12.5683, 55.6761], tier: 'nato' },
+            { name: 'TALLINN', coords: [24.7536, 59.437], tier: 'nato' },
+            { name: 'HELSINKI', coords: [24.9384, 60.1699], tier: 'nato' },
+            { name: 'PARIS', coords: [2.3522, 48.8566], tier: 'nato' },
+            { name: 'BERLIN', coords: [13.405, 52.52], tier: 'nato' },
+            { name: 'ATHENS', coords: [23.7275, 37.9838], tier: 'nato' },
+            { name: 'BUDAPEST', coords: [19.0402, 47.4979], tier: 'nato' },
+            { name: 'REYKJAVIK', coords: [-21.8174, 64.1265], tier: 'nato' },
+            { name: 'ROME', coords: [12.4964, 41.9028], tier: 'nato' },
+            { name: 'RIGA', coords: [24.1052, 56.9496], tier: 'nato' },
+            { name: 'VILNIUS', coords: [25.2797, 54.6872], tier: 'nato' },
+            { name: 'LUXEMBOURG', coords: [6.1296, 49.6116], tier: 'nato' },
+            { name: 'PODGORICA', coords: [19.2594, 42.4304], tier: 'nato' },
+            { name: 'AMSTERDAM', coords: [4.9041, 52.3676], tier: 'nato' },
+            { name: 'SKOPJE', coords: [21.4254, 41.9981], tier: 'nato' },
+            { name: 'OSLO', coords: [10.7522, 59.9139], tier: 'nato' },
+            { name: 'WARSAW', coords: [21.0122, 52.2297], tier: 'nato' },
+            { name: 'LISBON', coords: [-9.1393, 38.7223], tier: 'nato' },
+            { name: 'BUCHAREST', coords: [26.1025, 44.4268], tier: 'nato' },
+            { name: 'BRATISLAVA', coords: [17.1077, 48.1486], tier: 'nato' },
+            { name: 'LJUBLJANA', coords: [14.5058, 46.0569], tier: 'nato' },
+            { name: 'MADRID', coords: [-3.7038, 40.4168], tier: 'nato' },
+            { name: 'STOCKHOLM', coords: [18.0686, 59.3293], tier: 'nato' },
+            { name: 'ANKARA', coords: [32.8597, 39.9334], tier: 'nato' },
+            // Key strategic allies
+            { name: 'TOKYO', coords: [139.6917, 35.6895], tier: 'partner' },
+            { name: 'SEOUL', coords: [126.978, 37.5665], tier: 'partner' },
         ];
         const arcs = capitals.slice(1).map(c => ({
+            tier: c.tier,
             interp: geoInterpolate(DC, c.coords),
         }));
 
@@ -41,7 +78,8 @@ const { class: className = '' } = Astro.props;
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
         // State
-        let rotation: [number, number] = [77, -30];   // start centered near DC
+        let rotation: [number, number] = [45, -35];   // Atlantic view: DC + Europe both visible
+        let hovered: typeof capitals[number] | null = null;
         let autorotate = !reduceMotion;
         let idleTimer: ReturnType<typeof setTimeout> | null = null;
         let dragging = false;
@@ -98,13 +136,23 @@ const { class: className = '' } = Astro.props;
             ctx.lineWidth = 0.7;
             ctx.stroke();
 
-            // Geodesic arcs DC → capitals (only visible segments; clipAngle handles it)
-            ctx.setLineDash([3, 4]);
-            ctx.strokeStyle = 'rgba(201, 169, 97, 0.85)';
-            ctx.lineWidth = 1;
+            // Geodesic arcs DC → every allied capital. NATO/partner web faint;
+            // Five Eyes bright and dashed on top.
             for (const a of arcs) {
+                if (a.tier === 'fvey') continue;
                 ctx.beginPath();
                 path({ type: 'LineString', coordinates: Array.from({ length: 41 }, (_, i) => a.interp(i / 40)) });
+                ctx.strokeStyle = 'rgba(201, 169, 97, 0.3)';
+                ctx.lineWidth = 0.6;
+                ctx.stroke();
+            }
+            ctx.setLineDash([3, 4]);
+            for (const a of arcs) {
+                if (a.tier !== 'fvey') continue;
+                ctx.beginPath();
+                path({ type: 'LineString', coordinates: Array.from({ length: 41 }, (_, i) => a.interp(i / 40)) });
+                ctx.strokeStyle = 'rgba(201, 169, 97, 0.85)';
+                ctx.lineWidth = 1;
                 ctx.stroke();
             }
             ctx.setLineDash([]);
@@ -114,21 +162,38 @@ const { class: className = '' } = Astro.props;
             for (const c of capitals) {
                 if (!visible(c.coords)) continue;
                 const [x, y] = projection(c.coords)!;
-                ctx.beginPath();
-                ctx.arc(x, y, c.home ? 3.5 : 2.5, 0, Math.PI * 2);
-                ctx.fillStyle = c.home ? '#c9a961' : '#fafaf8';
-                ctx.fill();
-                if (c.home) {
-                    // expanding ping ring
+                const isHovered = hovered === c;
+                if (c.tier === 'home') {
+                    ctx.beginPath();
+                    ctx.arc(x, y, 3.5, 0, Math.PI * 2);
+                    ctx.fillStyle = '#c9a961';
+                    ctx.fill();
                     const t = (pingT % 180) / 180;
                     ctx.beginPath();
                     ctx.arc(x, y, 4 + t * 16, 0, Math.PI * 2);
                     ctx.strokeStyle = `rgba(201, 169, 97, ${0.8 * (1 - t)})`;
                     ctx.lineWidth = 1;
                     ctx.stroke();
+                    ctx.fillStyle = '#c9a961';
+                    ctx.fillText(c.name, x + 8, y + 3.5);
+                } else if (c.tier === 'fvey') {
+                    ctx.beginPath();
+                    ctx.arc(x, y, isHovered ? 3.2 : 2.5, 0, Math.PI * 2);
+                    ctx.fillStyle = '#fafaf8';
+                    ctx.fill();
+                    ctx.fillStyle = 'rgba(250, 250, 248, 0.75)';
+                    ctx.fillText(c.name, x + 8, y + 3.5);
+                } else {
+                    // NATO / partner: small point, label on hover only
+                    ctx.beginPath();
+                    ctx.arc(x, y, isHovered ? 2.6 : 1.6, 0, Math.PI * 2);
+                    ctx.fillStyle = isHovered ? '#c9a961' : 'rgba(250, 250, 248, 0.6)';
+                    ctx.fill();
+                    if (isHovered) {
+                        ctx.fillStyle = '#c9a961';
+                        ctx.fillText(c.name, x + 8, y + 3.5);
+                    }
                 }
-                ctx.fillStyle = c.home ? '#c9a961' : 'rgba(250, 250, 248, 0.75)';
-                ctx.fillText(c.name, x + 8, y + 3.5);
             }
         }
 
@@ -160,7 +225,23 @@ const { class: className = '' } = Astro.props;
             pauseAutorotate();
         });
         canvas.addEventListener('pointermove', (e) => {
-            if (!dragging) return;
+            if (!dragging) {
+                // hover hit-test: nearest visible capital within 12px
+                const rect = canvas.getBoundingClientRect();
+                const mx = e.clientX - rect.left;
+                const my = e.clientY - rect.top;
+                let best: typeof capitals[number] | null = null;
+                let bestD = 12;
+                for (const c of capitals) {
+                    if (!visible(c.coords)) continue;
+                    const p = projection(c.coords);
+                    if (!p) continue;
+                    const d = Math.hypot(p[0] - mx, p[1] - my);
+                    if (d < bestD) { bestD = d; best = c; }
+                }
+                hovered = best;
+                return;
+            }
             const dx = e.clientX - lastX;
             const dy = e.clientY - lastY;
             const k = 90 / radius; // degrees per pixel, scaled to globe size
@@ -182,8 +263,17 @@ const { class: className = '' } = Astro.props;
 <style>
     .globe-wrap {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.7rem;
         padding: 0.4rem 0 0.8rem;
+    }
+    .globe-legend {
+        font-family: var(--mono);
+        font-size: 0.58rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--text-medium);
     }
     .globe-wrap canvas {
         display: block;
