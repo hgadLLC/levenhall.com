@@ -7,8 +7,8 @@ const { class: className = '' } = Astro.props;
 ---
 
 <div class={`globe-wrap ${className}`}>
-    <canvas id="coverageGlobe" aria-label="Interactive globe showing Levenhall's allied network: Washington DC connected to every NATO capital, the Five Eyes capitals, Tokyo and Seoul. Drag to rotate; hover a point for its name."></canvas>
-    <span class="globe-legend">36 allied capitals · NATO / FVEY / Indo-Pacific · Hub: Washington</span>
+    <canvas id="coverageGlobe" aria-label="Interactive globe showing Levenhall's allied network: Washington DC connected to every NATO capital, the Five Eyes capitals, Tokyo, Seoul, and Tel Aviv. Drag to rotate; hover a point for its name."></canvas>
+    <span class="globe-legend">37 allied capitals · NATO / FVEY / Strategic Allies · Hub: Washington</span>
 </div>
 
 <script>
@@ -65,6 +65,7 @@ const { class: className = '' } = Astro.props;
             // Key strategic allies
             { name: 'TOKYO', coords: [139.6917, 35.6895], tier: 'partner' },
             { name: 'SEOUL', coords: [126.978, 37.5665], tier: 'partner' },
+            { name: 'TEL AVIV', coords: [34.7818, 32.0853], tier: 'partner' },
         ];
         const arcs = capitals.slice(1).map(c => ({
             tier: c.tier,
