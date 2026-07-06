@@ -73,10 +73,11 @@
 
 ## Graphics Doctrine — no basic graphics
 The bar: every graphic must be an **instrument, not an illustration**. If a visual could appear in a generic template, it's out.
-1. **Real cartography or none.** Maps are computed from real geodata (d3-geo at build time — see `scripts/generate-azimuthal.mjs` → `src/components/AzimuthalMap.astro`). Azimuthal equidistant, DC-centered, real 110m coastlines, graticule, dashed range rings, animated geodesic arcs, degree-tick outer ring. Never placeholder circles, never clip-art, never spinning globes.
+1. **Real cartography or none.** Maps are computed from real geodata. The sanctioned coverage instrument is the **interactive orthographic globe** (`src/components/CoverageGlobe.astro`): canvas-rendered, real 110m coastlines, drag-to-rotate with inertia, idle auto-rotation, gold geodesic arcs DC→allied capitals (user directive 2026-07-06: 3D interactive). The flat azimuthal projection (`AzimuthalMap.astro`) remains the print/noscript form. Never placeholder circles, never clip-art, never passive stock-video globes.
 2. **Data-drawn, not iconography.** Product/feature visuals are drawn from the product's own data concepts as hairline SVG with mono annotations (Bridger = index sparkline, AIGIS = framework-coverage matrix, Intelligence = radar with rotating sweep, Ventures = allocation bars). Icons in circles are banned.
 3. **Material, not flat.** Dark surfaces carry film grain (`.texture-grain`, 5% SVG turbulence) and/or chart-paper grids (28px hairline grid with a legibility fade). Flat solid backgrounds are for paper sections only.
 4. **Photography is treated.** People photos render in navy duotone (grayscale→sepia→hue-rotate filter chain) and resolve to true color on hover — the Lens applied to people. Square-cut with the 45° notch. Never round avatars.
+   **Brand marks are exempt** from all treatments: the five-eyes star, wordmark, and product marks (Bridger bridge, AIGIS lockup, Intelligence star) render full-color, and must stay visible — hero emblem, nav/footer wordmark, systems panels, product pages (user directive 2026-07-06: never strip the logos).
 5. **Engraving weights.** SVG linework stays 0.5–1.2px; gold reserved for the data layer; land fills ≤6% opacity. If a graphic looks bold, it's wrong.
 
 ## Voice (from brand guide — enforce in UI copy)
@@ -90,3 +91,5 @@ Concrete over abstract. Short sentences mixed with long. Say the thing. No hedgi
 | 2026-07-06 | Gold = live-data signal color (not phosphor green) | Keeps palette discipline; gold-on-ink reads luxury instrument; phosphor abandoned brand. |
 | 2026-07-06 | Centering banned; hairlines replace cards/shadows | Kills the AI-template feel at the root. |
 | 2026-07-06 | Graphics Doctrine added (round two) | User directive: no basic graphics. Real d3-geo cartography, data-drawn instrument SVGs, film grain, duotone-resolve photography. |
+| 2026-07-06 | Interactive 3D globe replaces flat azimuthal on homepage | User directive: flat projection read as inaccurate; wanted 3D interactive. Engraved orthographic canvas globe, brand palette. |
+| 2026-07-06 | Brand marks restored + exempt from treatments; platform timing = Eastern | User directive: logos must never be stripped; clocks/timestamps in ET not UTC. |
