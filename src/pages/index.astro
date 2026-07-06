@@ -5,137 +5,248 @@ import TeamCard from '../components/TeamCard.astro';
 import BioModal from '../components/BioModal.astro';
 import NishankBioModal from '../components/NishankBioModal.astro';
 import HassanBioModal from '../components/HassanBioModal.astro';
+import AzimuthalMap from '../components/AzimuthalMap.astro';
 import { team } from '../data/team';
 import { services } from '../data/services';
 import { nations } from '../data/nations';
+
+const romans = ['I', 'II', 'III', 'IV', 'V'];
 ---
 
 <BaseLayout title="Levenhall | Market Intelligence Consulting" description="Levenhall is a market intelligence consulting firm serving defense, government, and dual-use markets. Intelligence, market entry, ventures, and proprietary products.">
 
-    <!-- ── HERO ── -->
-    <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-inner">
-            <div class="hero-text">
-                <span class="hero-badge">Market Intelligence Consulting</span>
-                <h1><span class="gold-text">Intelligence</span> for the<br/>Markets That Matter Most</h1>
-                <div class="hero-rule"></div>
-                <p class="hero-subtitle">Levenhall is a market intelligence consulting firm. We help allied companies, investors, and government partners navigate the markets where information asymmetry decides outcomes &mdash; defense procurement, regulated dual-use technology, and the geopolitical environment shaping both. US federal market entry is one avenue of that work. Our products, ventures, and advisory practice are the others.</p>
-                <div class="btn-group">
-                    <a href="https://calendly.com/hgad-levenhall/30min" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Schedule Consultation</a>
-                    <a href="/services" class="btn btn-outline-white">Explore Our Practice</a>
+    <!-- ── HERO: POSTER + INSTRUMENT ── -->
+    <section class="hero sweep-field texture-grain">
+        <div class="rail" aria-hidden="true">
+            <span class="idx"><b>01</b> / Advisory</span>
+            <span class="idx"><b>02</b> / Market Entry</span>
+            <span class="idx"><b>03</b> / Ventures</span>
+            <span class="idx"><b>04</b> / Systems</span>
+        </div>
+
+        <div class="hero-grid">
+            <div class="hero-statement">
+                <div>
+                    <span class="route-line hero-route">Market Intelligence · Allied Defense &amp; Dual-Use · <span class="live">● Washington, DC</span></span>
+                    <h1>They see what others can&rsquo;t.</h1>
+                    <p class="hero-tagline editorial-italic">Structure, not access.</p>
+                    <p class="hero-subtitle">Levenhall is a market intelligence consulting firm. We help allied companies, investors, and government partners navigate the markets where information asymmetry decides outcomes &mdash; defense procurement, regulated dual-use technology, and the geopolitical environment shaping both.</p>
+                </div>
+                <div class="btn-group hero-cta">
+                    <a href="https://calendly.com/hgad-levenhall/30min" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Request a Briefing</a>
+                    <a href="/services" class="mono-link">The Practice →</a>
                 </div>
             </div>
-            <div class="hero-visual">
-                <img src="/images/five-eyes-star.png" alt="Allied Nations" class="hero-star">
+
+            <div class="hero-instrument" id="lensField">
+                <div class="feed-head">
+                    <span>Procurement Signal / Bridger Index</span>
+                    <span class="feed-utc" id="utcClock">--:--:-- UTC</span>
+                </div>
+                <div class="feed" id="feed">
+                    <div class="feed-layer feed-dim" aria-hidden="true">
+                        <div class="sig"><span class="t">14:31Z</span><span class="b">AFRL · <span class="redact">██████████</span> · CSO PRE-RFP</span><span class="v">$<span class="redact">███</span>M</span></div>
+                        <div class="sig"><span class="t">14:12Z</span><span class="b">DIU · AUTONOMY <span class="redact">████████</span> OTA</span><span class="v">$<span class="redact">██</span>M</span></div>
+                        <div class="sig"><span class="t">13:58Z</span><span class="b">NAVSEA · <span class="redact">████████████</span> P-2028</span><span class="v">$<span class="redact">███</span>M</span></div>
+                        <div class="sig"><span class="t">13:41Z</span><span class="b">DARPA · <span class="redact">██████</span> PHASE III</span><span class="v">$<span class="redact">██</span>M</span></div>
+                        <div class="sig"><span class="t">13:22Z</span><span class="b">USSOCOM · <span class="redact">███████████</span> FOLLOW-ON</span><span class="v">$<span class="redact">███</span>M</span></div>
+                        <div class="sig"><span class="t">13:05Z</span><span class="b">SDA · TRANCHE <span class="redact">██</span> TRANSPORT</span><span class="v">$<span class="redact">███</span>M</span></div>
+                    </div>
+                    <div class="feed-layer feed-resolved" id="lensResolved">
+                        <div class="sig"><span class="t">14:31Z</span><span class="b">AFRL · HYPERSONIC TPS · CSO PRE-RFP</span><span class="v">$140M</span></div>
+                        <div class="sig"><span class="t">14:12Z</span><span class="b">DIU · AUTONOMY MARITIME OTA</span><span class="v">$62M</span></div>
+                        <div class="sig"><span class="t">13:58Z</span><span class="b">NAVSEA · UNDERSEA SENSING P-2028</span><span class="v">$310M</span></div>
+                        <div class="sig"><span class="t">13:41Z</span><span class="b">DARPA · ACE-II PHASE III</span><span class="v">$48M</span></div>
+                        <div class="sig"><span class="t">13:22Z</span><span class="b">USSOCOM · ISR-EDGE FOLLOW-ON</span><span class="v">$215M</span></div>
+                        <div class="sig"><span class="t">13:05Z</span><span class="b">SDA · TRANCHE 4 TRANSPORT</span><span class="v">$480M</span></div>
+                    </div>
+                    <div class="lens-ring" id="lensRing" aria-hidden="true"></div>
+                </div>
+                <div class="feed-foot">
+                    <span class="lens-hint" id="lensHint">Move cursor to resolve · client access decrypts in full</span>
+                    <span class="feed-note">Representative signal</span>
+                </div>
             </div>
+        </div>
+
+        <!-- Evidence bar — replaces the floating stat cards -->
+        <div class="data-bar">
+            <div class="datum"><span class="d-val">$1.5T+</span><span class="d-cap">US Defense Budget</span></div>
+            <div class="datum"><span class="d-val">60–120</span><span class="d-cap">Days to Award · CSO/OTA</span></div>
+            <div class="datum"><span class="d-val">$18B+</span><span class="d-cap">OTA Obligations Tracked</span></div>
+            <div class="datum"><span class="d-val gold">100%</span><span class="d-cap">Engagement Success Rate</span></div>
         </div>
     </section>
 
-    <!-- ── ABOUT PREVIEW ── -->
-    <section class="section about-section">
-        <div class="about-bg"></div>
-        <div class="container about-inner">
-            <!-- ── FLOATING STATS ── -->
-            <div class="stats-float">
-                <div class="stat-card">
-                    <span class="stat-value">$1.5T+</span>
-                    <span class="stat-label">Defense Budget</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-value">60-120</span>
-                    <span class="stat-label">Days to Award</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-value">$18B+</span>
-                    <span class="stat-label">OTA Obligations</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-value">100%</span>
-                    <span class="stat-label">Success Rate</span>
-                </div>
-            </div>
-            <div class="about-preview-grid">
-                <div class="about-preview-text reveal">
-                    <span class="about-label">Who We Serve</span>
-                    <h2>Intelligence-Led.<br/>Allied-Aligned.</h2>
-                    <div class="about-rule"></div>
-                    <p>Levenhall serves allied defense, government technology, and dual-use firms, along with the investors and program offices that work alongside them. Our intelligence practice is the foundation; our market entry, ventures, and product work all run on top of it.</p>
+    <!-- ── PRACTICE STRIP ── -->
+    <section class="practice-strip">
+        <a href="/services#market-intelligence" class="practice-cell">
+            <span class="p-num">I.</span>
+            <h3>Market Intelligence</h3>
+            <p>The core practice. Assessed, sourced intelligence on defense procurement, allied policy, and regulated markets.</p>
+            <span class="p-arrow">→</span>
+        </a>
+        <a href="/services#advisory" class="practice-cell">
+            <span class="p-num">II.</span>
+            <h3>US Federal Market Entry</h3>
+            <p>Advisory for allied-nation technology firms entering the US &mdash; CSOs, OTAs, follow-on production. Months, not years.</p>
+            <span class="p-arrow">→</span>
+        </a>
+        <a href="/ventures" class="practice-cell">
+            <span class="p-num">III.</span>
+            <h3>Ventures &amp; Systems</h3>
+            <p>Services-for-equity in five allied companies a year. Bridger, AIGIS, and Intelligence &mdash; proof the practice works.</p>
+            <span class="p-arrow">→</span>
+        </a>
+    </section>
+
+    <!-- ── ALLIED COVERAGE (PAPER) ── -->
+    <section class="section section-paper allied-section">
+        <div class="container">
+            <div class="allied-grid">
+                <div class="allied-text">
+                    <span class="section-label">02 / Who We Serve</span>
+                    <h2>Intelligence-led.<br/>Allied-aligned.</h2>
+                    <p class="allied-lede">Levenhall serves allied defense, government technology, and dual-use firms, along with the investors and program offices that work alongside them. Our intelligence practice is the foundation; our market entry, ventures, and product work all run on top of it.</p>
                     <p>For firms targeting the US federal market, CSOs, OTAs, and follow-on production agreements have created a faster procurement ecosystem. We architect that entry, reducing timelines from years to months &mdash; intelligence first, execution second.</p>
-                    <a href="/partners" class="btn btn-secondary" style="margin-top: 1.5rem;">Our Partners</a>
+                    <a href="/partners" class="mono-link allied-link">Our Partners →</a>
                 </div>
-                <div class="nations-grid reveal">
-                    {nations.map(nation => (
-                        <div class="nation-card">
-                            <span class="nation-flag">{nation.flag}</span>
-                            <div class="nation-text">
+                <div class="allied-chart">
+                    <div class="chart-head">
+                        <span>Coverage / Azimuthal · DC-Centered</span>
+                    </div>
+                    <div class="az-wrap">
+                        <AzimuthalMap />
+                    </div>
+                    <div class="nations-ledger">
+                        {nations.map(nation => (
+                            <div class="nation-row">
+                                <span class="nation-flag">{nation.flag}</span>
                                 <span class="nation-name">{nation.name}</span>
                                 <span class="nation-tag">{nation.tagline}</span>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ── SERVICES PREVIEW (LIGHT) ── -->
-    <section class="section services-preview">
+    <!-- ── PRACTICE LEDGER (INK) ── -->
+    <section class="section services-section">
         <div class="container">
-            <div class="section-header reveal">
-                <span class="section-label">Our Practice</span>
-                <h2>What We Do</h2>
+            <div class="section-header">
+                <span class="section-label">01 / The Practice</span>
+                <h2>What we do.</h2>
                 <p>Market intelligence is the core. Everything else &mdash; federal market entry, executive placement, rapid procurement, tax structuring &mdash; runs on top of it.</p>
             </div>
-            <div class="services-grid">
+            <div class="services-ledger">
                 {services.map((service, i) => (
-                    <a href={`/services#${service.id}`} class="service-card reveal">
-                        <div class="service-top">
-                            <span class="service-num">0{i + 1}</span>
-                            <span class="service-label">{service.label}</span>
-                        </div>
-                        <h3>{service.title}</h3>
-                        <p>{service.summary}</p>
-                        <span class="service-arrow">&rarr;</span>
+                    <a href={`/services#${service.id}`} class="service-row">
+                        <span class="sr-num">{romans[i]}.</span>
+                        <span class="sr-label">{service.label}</span>
+                        <span class="sr-body">
+                            <h3>{service.title}</h3>
+                            <p>{service.summary}</p>
+                        </span>
+                        <span class="sr-metric">
+                            <span class="sr-val">{service.highlight.value}</span>
+                            <span class="sr-cap">{service.highlight.label}</span>
+                        </span>
+                        <span class="sr-arrow">→</span>
                     </a>
                 ))}
             </div>
-            <div class="other-avenues reveal">
-                <div class="avenue-card">
-                    <span class="avenue-tag">Platform</span>
-                    <h4>Bridger</h4>
+        </div>
+    </section>
+
+    <!-- ── SYSTEMS (PANEL) ── -->
+    <section class="section section-panel systems-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">04 / Systems</span>
+                <h2>The proprietary layer.</h2>
+                <p>The technology built on the intelligence practice &mdash; and the investment arm that runs alongside it.</p>
+            </div>
+            <div class="systems-grid">
+                <a href="/products/bridger" class="system-cell">
+                    <svg class="sys-instrument" viewBox="0 0 220 64" aria-hidden="true">
+                        <g class="ins-frame">
+                            <line x1="0" y1="63.5" x2="220" y2="63.5"/>
+                            {Array.from({ length: 12 }, (_, i) => <line x1={i * 20} y1="60" x2={i * 20} y2="64"/>)}
+                        </g>
+                        <path class="ins-area" d="M0 52 L18 48 L36 50 L54 41 L72 44 L90 34 L108 37 L126 27 L144 30 L162 20 L180 24 L198 12 L216 15 L216 63 L0 63 Z"/>
+                        <path class="ins-line" d="M0 52 L18 48 L36 50 L54 41 L72 44 L90 34 L108 37 L126 27 L144 30 L162 20 L180 24 L198 12 L216 15"/>
+                        <circle class="ins-dot" cx="216" cy="15" r="2.5"/>
+                        <text class="ins-note" x="0" y="10">$760B/YR INDEXED</text>
+                    </svg>
+                    <span class="sys-tag">Platform</span>
+                    <h3>Bridger</h3>
                     <p>Market entry intelligence for US federal contracting. $760B/yr indexed, pre-RFP signal, opportunity scoring, and a six-officer agentic staff running the watch cycle.</p>
-                    <a href="/products/bridger" class="avenue-link">Explore Bridger &rarr;</a>
-                </div>
-                <div class="avenue-card">
-                    <span class="avenue-tag">Platform</span>
-                    <h4>AIGIS</h4>
-                    <p>The system of record for AI governance. Inventory, map, test, and prove — audit-ready evidence across the EU AI Act, NIST AI RMF, and every framework in between.</p>
-                    <a href="/products/aigis" class="avenue-link">Explore AIGIS &rarr;</a>
-                </div>
-                <div class="avenue-card">
-                    <span class="avenue-tag">Dashboard</span>
-                    <h4>Intelligence</h4>
-                    <p>Defense &amp; alliance advisory dashboard. Live procurement, alliance dynamics, Indo-Pacific strategy, and government contracting intel on a WebGL globe.</p>
-                    <a href="/products/intelligence" class="avenue-link">Explore Intelligence &rarr;</a>
-                </div>
-                <div class="avenue-card">
-                    <span class="avenue-tag">Ventures</span>
-                    <h4>Levenhall Ventures</h4>
+                    <span class="sys-link">Explore Bridger →</span>
+                </a>
+                <a href="/products/aigis" class="system-cell">
+                    <svg class="sys-instrument" viewBox="0 0 220 64" aria-hidden="true">
+                        <g class="ins-matrix">
+                            {Array.from({ length: 3 }, (_, r) =>
+                                Array.from({ length: 11 }, (_, c) => {
+                                    const covered = [0,1,2,3,4,5,7,8,11,12,13,14,16,18,22,23,24,26,28,30].includes(r * 11 + c);
+                                    return <rect x={c * 20 + 1} y={r * 20 + 1} width="14" height="14" class={covered ? 'ins-cell-on' : 'ins-cell'}/>;
+                                })
+                            )}
+                        </g>
+                    </svg>
+                    <span class="sys-tag">Platform</span>
+                    <h3>AIGIS</h3>
+                    <p>The system of record for AI governance. Inventory, map, test, and prove &mdash; audit-ready evidence across the EU AI Act, NIST AI RMF, and every framework in between.</p>
+                    <span class="sys-link">Explore AIGIS →</span>
+                </a>
+                <a href="/products/intelligence" class="system-cell">
+                    <svg class="sys-instrument" viewBox="0 0 220 64" aria-hidden="true">
+                        <g class="ins-frame">
+                            <circle cx="110" cy="58" r="14"/>
+                            <circle cx="110" cy="58" r="30"/>
+                            <circle cx="110" cy="58" r="46"/>
+                            <line x1="110" y1="58" x2="110" y2="8"/>
+                            <line x1="60" y1="58" x2="160" y2="58"/>
+                        </g>
+                        <g class="ins-sweep-g">
+                            <path class="ins-sweep" d="M110 58 L110 8 A50 50 0 0 1 145 22 Z"/>
+                        </g>
+                        <circle class="ins-dot" cx="88" cy="34" r="2"/>
+                        <circle class="ins-dot ins-dot-2" cx="132" cy="44" r="2"/>
+                    </svg>
+                    <span class="sys-tag">Dashboard</span>
+                    <h3>Intelligence</h3>
+                    <p>Defense &amp; alliance advisory dashboard. Live procurement, alliance dynamics, Indo-Pacific strategy, and government contracting intel.</p>
+                    <span class="sys-link">Explore Intelligence →</span>
+                </a>
+                <a href="/ventures" class="system-cell">
+                    <svg class="sys-instrument" viewBox="0 0 220 64" aria-hidden="true">
+                        {[46, 30, 38, 18, 26].map((h, i) => (
+                            <g>
+                                <rect class="ins-bar" x={i * 44 + 2} y={62 - h} width="30" height={h}/>
+                                <rect class="ins-bar-cap" x={i * 44 + 2} y={62 - h} width="30" height="2"/>
+                            </g>
+                        ))}
+                        <line class="ins-baseline" x1="0" y1="63" x2="220" y2="63"/>
+                        <text class="ins-note" x="0" y="8">5 / YR · SERVICES-FOR-EQUITY</text>
+                    </svg>
+                    <span class="sys-tag">Ventures</span>
+                    <h3>Levenhall Ventures</h3>
                     <p>Our investment arm. Services-for-equity partnerships with five allied defense and government technology companies per year.</p>
-                    <a href="/ventures" class="avenue-link">Explore Ventures &rarr;</a>
-                </div>
+                    <span class="sys-link">Explore Ventures →</span>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- ── TEAM PREVIEW (DARK) ── -->
-    <section class="section team-section">
-        <div class="team-bg"></div>
-        <div class="container team-inner">
-            <div class="section-header reveal">
-                <span class="team-label">Our Leadership</span>
-                <h2>Meet the Team</h2>
+    <!-- ── TEAM (STONE) ── -->
+    <section class="section section-stone team-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">03 / Leadership</span>
+                <h2>Meet the team.</h2>
                 <p>Former intelligence, military, diplomatic, and government professionals who understand the markets we cover from inside.</p>
             </div>
             <div class="team-grid">
@@ -159,434 +270,535 @@ import { nations } from '../data/nations';
 
 </BaseLayout>
 
+<script>
+    // UTC clock
+    const clock = document.getElementById('utcClock');
+    function tick() {
+        const d = new Date();
+        const p = (n: number) => String(n).padStart(2, '0');
+        if (clock) clock.textContent = `${p(d.getUTCHours())}:${p(d.getUTCMinutes())}:${p(d.getUTCSeconds())} UTC`;
+    }
+    tick();
+    setInterval(tick, 1000);
+
+    // The Lens — cursor resolves the dimmed signal feed
+    const field = document.getElementById('lensField');
+    const feed = document.getElementById('feed');
+    const resolved = document.getElementById('lensResolved');
+    const ring = document.getElementById('lensRing');
+    const hint = document.getElementById('lensHint');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isTouch = window.matchMedia('(pointer: coarse)').matches;
+
+    if (field && feed && resolved && ring) {
+        if (isTouch || reduceMotion) {
+            // Touch / reduced motion: press-and-hold (or tap) toggles full reveal
+            if (hint) hint.textContent = 'Tap to resolve · client access decrypts in full';
+            let revealed = false;
+            field.addEventListener('click', () => {
+                revealed = !revealed;
+                resolved.style.clipPath = revealed ? 'none' : 'circle(0px at 50% 50%)';
+            });
+        } else {
+            field.addEventListener('mousemove', (e) => {
+                const r = feed.getBoundingClientRect();
+                const x = e.clientX - r.left;
+                const y = e.clientY - r.top;
+                resolved.style.clipPath = `circle(90px at ${x}px ${y}px)`;
+                ring.style.left = `${x}px`;
+                ring.style.top = `${y}px`;
+                ring.style.opacity = '1';
+            });
+            field.addEventListener('mouseleave', () => {
+                resolved.style.clipPath = 'circle(0px at 50% 50%)';
+                ring.style.opacity = '0';
+            });
+        }
+    }
+</script>
+
 <style>
     /* ── HERO ── */
     .hero {
-        background: linear-gradient(135deg, #080e1c 0%, var(--deep-navy) 40%, #162d4f 100%);
-        min-height: 90vh;
-        display: flex;
-        align-items: center;
-        padding: 7rem 2rem 8rem;
-        overflow: hidden;
         position: relative;
+        padding-top: 72px; /* nav clearance */
+        border-bottom: 1px solid var(--hairline);
     }
 
-    .hero-bg {
-        position: absolute;
-        inset: 0;
-        background-image:
-            radial-gradient(ellipse at 20% 50%, rgba(201, 169, 97, 0.06) 0%, transparent 60%),
-            radial-gradient(ellipse at 80% 20%, rgba(30, 58, 95, 0.2) 0%, transparent 50%);
-        pointer-events: none;
-    }
-
-    .hero-inner {
-        max-width: 1200px;
-        margin: 0 auto;
-        width: 100%;
+    .hero-grid {
         display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        align-items: center;
-        gap: 3rem;
-        position: relative;
-        z-index: 1;
+        grid-template-columns: minmax(0, 58fr) minmax(0, 42fr);
+        min-height: calc(88vh - 72px);
     }
 
-    .hero-badge {
-        display: inline-block;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 600;
-        font-size: 0.68rem;
-        letter-spacing: 3.5px;
-        text-transform: uppercase;
-        color: var(--gold);
-        background: rgba(201, 169, 97, 0.08);
-        border: 1px solid rgba(201, 169, 97, 0.15);
-        padding: 0.5rem 1.4rem;
-        margin-bottom: 1.8rem;
+    .hero-statement {
+        padding: 5rem 3rem 3.5rem calc(var(--rail-w) + 3rem);
+        border-right: 1px solid var(--hairline);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 3rem;
+    }
+
+    .hero-route {
+        display: block;
+        margin-bottom: 2.2rem;
     }
 
     .hero h1 {
-        color: #fff;
-        font-size: clamp(2.6rem, 5vw, 4rem);
-        line-height: 1.1;
-        margin-bottom: 1.5rem;
+        max-width: 11ch;
     }
 
-    .hero-rule {
-        width: 60px;
-        height: 2px;
-        background: var(--gold);
-        margin-bottom: 1.5rem;
+    .hero-tagline {
+        font-size: 1.35rem;
+        margin-top: 1.6rem;
     }
 
     .hero-subtitle {
-        color: rgba(255, 255, 255, 0.5);
-        font-size: 1.05rem;
-        line-height: 1.85;
-        margin-bottom: 2.5rem;
-        max-width: 520px;
+        margin-top: 1.8rem;
+        max-width: 54ch;
+        font-size: 1rem;
+        color: var(--muted);
     }
 
-    .hero-visual {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .hero-star {
-        max-width: 420px;
-        width: 100%;
-        opacity: 1;
-        filter: drop-shadow(0 0 80px rgba(201, 169, 97, 0.15));
-        animation: float 6s ease-in-out infinite;
-    }
-
-    @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-14px); }
-    }
-
-    /* ── FLOATING STATS ── */
-    .stats-float {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1.2rem;
-        margin-top: -8rem;
-        margin-bottom: 4rem;
+    /* ── INSTRUMENT (signal feed + lens) ── */
+    .hero-instrument {
         position: relative;
-        z-index: 2;
+        padding: 2.4rem 2.4rem 3.6rem;
+        font-family: var(--mono);
+        cursor: none;
+        display: flex;
+        flex-direction: column;
+        /* chart-paper grid */
+        background-image:
+            linear-gradient(var(--hairline-soft) 1px, transparent 1px),
+            linear-gradient(90deg, var(--hairline-soft) 1px, transparent 1px);
+        background-size: 28px 28px;
+        background-position: 0 0;
     }
 
-    .stat-card {
-        background: #fff;
-        text-align: center;
-        padding: 1.8rem 1.2rem;
-        border-top: 3px solid var(--gold);
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-    }
-
-    .stat-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.14);
-    }
-
-    .stat-value {
-        display: block;
-        font-family: 'Fraunces', serif;
-        font-size: 2.4rem;
-        font-weight: 700;
-        color: var(--deep-navy);
-        line-height: 1;
-        margin-bottom: 0.5rem;
-    }
-
-    .stat-label {
-        display: block;
-        font-size: 0.7rem;
-        font-weight: 600;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: var(--text-medium);
-    }
-
-    /* ── ABOUT PREVIEW (WARM STONE SECTION) ── */
-    .about-section {
-        background: var(--stone);
-        padding: 6rem 0;
-        overflow: visible;
-    }
-
-    .about-bg {
+    .hero-instrument::after {
+        /* fade the grid toward the fold so the feed stays legible */
+        content: '';
         position: absolute;
         inset: 0;
-        background-image: radial-gradient(ellipse at 70% 50%, rgba(201, 169, 97, 0.08) 0%, transparent 60%);
+        pointer-events: none;
+        z-index: 0;
+        background: linear-gradient(180deg, rgba(10,18,32,0.25) 0%, rgba(10,18,32,0.7) 78%, var(--ink) 100%);
+    }
+    .feed-head, .feed { position: relative; z-index: 1; }
+
+    .feed-head {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.6rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--dim);
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--hairline);
+        margin-bottom: 0.4rem;
+    }
+
+    .feed-utc { color: var(--gold); }
+
+    .feed { position: relative; }
+
+    .feed-layer { display: flex; flex-direction: column; }
+
+    .sig {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 1rem;
+        align-items: baseline;
+        padding: 0.78rem 0;
+        border-bottom: 1px solid var(--hairline-soft);
+        font-size: 0.7rem;
+        letter-spacing: 0.02em;
+    }
+
+    .sig .t { color: var(--dim); font-size: 0.62rem; }
+    .sig .b { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .sig .v { color: var(--muted); }
+
+    .feed-resolved {
+        position: absolute;
+        inset: 0;
+        background: var(--ink);
+        clip-path: circle(0px at 50% 50%);
         pointer-events: none;
     }
 
-    .about-inner {
-        position: relative;
+    .feed-resolved .sig .b { color: var(--bone); }
+    .feed-resolved .sig .t,
+    .feed-resolved .sig .v { color: var(--gold); }
+    .feed-resolved .sig .v { font-weight: 700; }
+
+    .lens-ring {
+        position: absolute;
+        width: 180px;
+        height: 180px;
+        border: 1px solid var(--gold);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.25s;
+    }
+
+    .lens-ring::after {
+        content: 'RESOLVED';
+        position: absolute;
+        top: calc(100% + 6px);
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.55rem;
+        letter-spacing: 0.2em;
+        color: var(--gold);
+    }
+
+    .feed-foot {
+        position: absolute;
         z-index: 1;
-    }
-
-    .about-preview-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-        align-items: center;
-    }
-
-    .about-label {
-        display: inline-block;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 600;
-        font-size: 0.72rem;
-        letter-spacing: 3px;
+        bottom: 1.2rem;
+        left: 2.4rem;
+        right: 2.4rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        font-size: 0.58rem;
+        letter-spacing: 0.16em;
         text-transform: uppercase;
-        color: var(--burgundy);
-        background: var(--burgundy-surface);
-        padding: 0.5rem 1.2rem;
-        margin-bottom: 1.2rem;
+        color: var(--dim);
     }
 
-    .about-preview-text h2 {
+    /* ── DATA BAR ── */
+    .data-bar {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        border-top: 1px solid var(--hairline);
+    }
+
+    .datum {
+        padding: 1.5rem 2rem;
+        border-right: 1px solid var(--hairline);
+        font-family: var(--mono);
+    }
+    .datum:first-child { padding-left: calc(var(--rail-w) + 3rem); }
+    .datum:last-child { border-right: none; }
+
+    .d-val {
+        display: block;
+        font-size: 1.35rem;
+        font-weight: 500;
+        color: var(--bone);
+        letter-spacing: 0.01em;
+    }
+    .d-val.gold { color: var(--gold); }
+
+    .d-cap {
+        display: block;
+        margin-top: 0.35rem;
+        font-size: 0.58rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--dim);
+    }
+
+    /* ── PRACTICE STRIP ── */
+    .practice-strip {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border-bottom: 1px solid var(--hairline);
+    }
+
+    .practice-cell {
+        position: relative;
+        padding: 2.4rem 2.6rem 2.6rem;
+        border-right: 1px solid var(--hairline);
+        text-decoration: none;
+        transition: background var(--t-short);
+    }
+    .practice-cell:first-child { padding-left: calc(var(--rail-w) + 3rem); }
+    .practice-cell:last-child { border-right: none; }
+    .practice-cell:hover { background: var(--ink-panel); }
+
+    .p-num {
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: 1.2rem;
+        color: var(--gold);
+        display: block;
+        margin-bottom: 0.7rem;
+    }
+
+    .practice-cell h3 { margin-bottom: 0.5rem; font-size: 1.15rem; }
+    .practice-cell p { font-size: 0.88rem; line-height: 1.6; color: var(--muted); max-width: 40ch; }
+
+    .p-arrow {
+        position: absolute;
+        top: 2.4rem;
+        right: 2rem;
+        font-family: var(--mono);
+        color: var(--dim);
+        transition: color var(--t-short), transform var(--t-short) var(--ease-enter);
+    }
+    .practice-cell:hover .p-arrow { color: var(--gold); transform: translateX(4px); }
+
+    /* ── ALLIED (PAPER) ── */
+    .allied-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 5fr) minmax(0, 5fr);
+        gap: 4.5rem;
+        align-items: start;
+    }
+
+    .allied-text h2 { margin-bottom: 1.4rem; }
+
+    .allied-lede {
+        font-size: 1.08rem;
+        margin-bottom: 1rem;
+    }
+    .allied-lede::first-letter {
+        font-family: var(--serif);
+        font-size: 3.2em;
+        float: left;
+        line-height: 0.82;
+        padding-right: 0.14em;
         color: var(--deep-navy);
+    }
+
+    .allied-text p { margin-bottom: 1rem; }
+    .allied-link { display: inline-block; margin-top: 1.2rem; }
+
+    .allied-chart {
+        border: 1px solid var(--hairline-paper);
+        padding: 1.6rem 1.8rem 0.6rem;
+    }
+
+    .chart-head {
+        font-family: var(--mono);
+        font-size: 0.58rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--text-medium);
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--hairline-paper);
         margin-bottom: 1rem;
     }
 
-    .about-rule {
-        width: 50px;
-        height: 2px;
-        background: var(--gold);
-        margin-bottom: 1.5rem;
+    .az-wrap {
+        /* Engraved on paper: navy linework, bank-note style */
+        --az-strong: #c4bcab;
+        --az-faint: rgba(196, 188, 171, 0.55);
+        --az-coast: #3d4d6e;
+        --az-land: rgba(15, 31, 58, 0.05);
+        --az-pt: #0f1f3a;
+        --az-text: #4a5568;
+        --az-text-home: #0f1f3a;
+        padding: 0.6rem 1.4rem;
     }
 
-    .about-preview-text p {
-        color: var(--text-medium);
-        margin-bottom: 0.8rem;
+    .nations-ledger {
+        margin-top: 1rem;
+        border-top: 1px solid var(--hairline-paper);
     }
 
-    .nations-grid {
+    .nation-row {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0.6rem;
-    }
-
-    .nation-card {
-        display: flex;
-        align-items: center;
+        grid-template-columns: auto 1fr auto;
         gap: 1rem;
-        padding: 1rem 1.2rem;
-        background: var(--warm-white);
-        border: 1px solid var(--border-warm);
-        border-left: 3px solid rgba(201, 169, 97, 0.4);
-        transition: all 0.3s ease;
+        align-items: center;
+        padding: 0.7rem 0.2rem;
+        border-bottom: 1px solid var(--hairline-paper);
+    }
+    .nation-row:last-child { border-bottom: none; }
+
+    .nation-flag { font-size: 1.15rem; line-height: 1; }
+    .nation-name { font-weight: 600; font-size: 0.86rem; color: var(--deep-navy); }
+    .nation-tag {
+        font-family: var(--mono);
+        font-size: 0.6rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--text-medium);
     }
 
-    .nation-card:hover {
-        background: #fff;
-        border-left-color: var(--gold);
-        box-shadow: var(--shadow-warm-md);
-        transform: translateX(4px);
+    /* ── SERVICES LEDGER (INK) ── */
+    .services-ledger {
+        border-top: 1px solid var(--hairline);
     }
 
-    .nation-flag { font-size: 1.6rem; flex-shrink: 0; }
-    .nation-name { display: block; font-weight: 600; font-size: 0.88rem; color: var(--deep-navy); }
-    .nation-tag { display: block; font-size: 0.7rem; color: var(--text-medium); }
-
-    /* ── SERVICES PREVIEW (LIGHT) ── */
-    .services-preview {
-        background: var(--cream);
-    }
-
-    .services-grid {
+    .service-row {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
+        grid-template-columns: 56px 130px minmax(0, 1fr) 170px 40px;
+        gap: 2rem;
+        align-items: center;
+        padding: 1.9rem 0.5rem;
+        border-bottom: 1px solid var(--hairline);
+        text-decoration: none;
+        transition: background var(--t-short);
+    }
+    .service-row:hover { background: var(--ink-panel); }
+
+    .sr-num {
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: 1.5rem;
+        color: var(--gold);
     }
 
-    /* ── OTHER AVENUES (BRIDGER / AIGIS / INTELLIGENCE / VENTURES) ── */
-    .other-avenues {
+    .sr-label {
+        font-family: var(--mono);
+        font-size: 0.6rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--dim);
+    }
+
+    .sr-body h3 { font-size: 1.2rem; margin-bottom: 0.4rem; }
+    .sr-body p { font-size: 0.88rem; line-height: 1.6; color: var(--muted); max-width: 62ch; }
+
+    .sr-metric { font-family: var(--mono); text-align: right; }
+    .sr-val { display: block; font-size: 1.05rem; font-weight: 500; color: var(--bone); }
+    .sr-cap { display: block; margin-top: 0.3rem; font-size: 0.56rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); }
+
+    .sr-arrow {
+        font-family: var(--mono);
+        color: var(--dim);
+        transition: color var(--t-short), transform var(--t-short) var(--ease-enter);
+    }
+    .service-row:hover .sr-arrow { color: var(--gold); transform: translateX(4px); }
+
+    /* ── SYSTEMS (PANEL) ── */
+    .systems-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 1.5rem;
-        margin-top: 2.5rem;
-        padding-top: 2.5rem;
-        border-top: 1px solid rgba(30, 58, 95, 0.08);
+        border: 1px solid var(--hairline);
     }
 
-    .avenue-card {
-        background: var(--warm-white, #fff);
-        padding: 1.8rem 1.6rem;
-        border: 1px solid rgba(30, 58, 95, 0.06);
-        border-left: 3px solid rgba(201, 169, 97, 0.4);
+    .system-cell {
+        padding: 2.2rem 2rem 2.4rem;
+        border-right: 1px solid var(--hairline);
+        text-decoration: none;
         display: flex;
         flex-direction: column;
-        gap: 0.6rem;
-        transition: all 0.3s ease;
+        gap: 0.7rem;
+        background: var(--ink);
+        transition: background var(--t-short);
+    }
+    .system-cell:last-child { border-right: none; }
+    .system-cell:hover { background: var(--ink-panel); }
+
+    .sys-tag {
+        font-family: var(--mono);
+        font-size: 0.56rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
     }
 
-    .avenue-card:hover {
-        border-left-color: var(--gold);
-        box-shadow: 0 12px 35px rgba(30, 58, 95, 0.08);
-        transform: translateY(-3px);
+    /* Instrument graphics — data-drawn, not iconography */
+    .sys-instrument {
+        width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
+        display: block;
     }
 
-    .avenue-tag {
-        font-family: 'Source Sans Pro', sans-serif;
+    .ins-frame line, .ins-frame circle {
+        fill: none;
+        stroke: var(--hairline);
+        stroke-width: 1;
+    }
+
+    .ins-line { fill: none; stroke: var(--gold); stroke-width: 1.2; }
+    .ins-area { fill: rgba(201, 169, 97, 0.07); stroke: none; }
+    .ins-dot { fill: var(--gold); animation: pulse-live 2.4s ease-in-out infinite; }
+    .ins-dot-2 { animation-delay: -1.2s; }
+    .ins-note {
+        font-family: var(--mono);
+        font-size: 8px;
+        letter-spacing: 0.14em;
+        fill: var(--dim);
+    }
+
+    .ins-cell { fill: none; stroke: var(--hairline); stroke-width: 1; }
+    .ins-cell-on { fill: rgba(201, 169, 97, 0.55); stroke: none; }
+    .system-cell:hover .ins-cell-on { fill: var(--gold); }
+
+    .ins-sweep { fill: rgba(201, 169, 97, 0.14); stroke: var(--gold); stroke-width: 0.7; }
+    .ins-sweep-g {
+        transform-origin: 110px 58px;
+        animation: ins-radar 6s linear infinite;
+    }
+    @keyframes ins-radar {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    .ins-bar { fill: rgba(201, 169, 97, 0.12); }
+    .ins-bar-cap { fill: var(--gold); }
+    .ins-baseline { stroke: var(--hairline); stroke-width: 1; }
+
+    @media (prefers-reduced-motion: reduce) {
+        .ins-sweep-g, .ins-dot { animation: none; }
+    }
+
+    .system-cell h3 { font-size: 1.3rem; }
+    .system-cell p { font-size: 0.87rem; line-height: 1.62; color: var(--muted); flex: 1; }
+
+    .sys-link {
+        font-family: var(--mono);
         font-size: 0.62rem;
-        font-weight: 700;
-        letter-spacing: 2.5px;
+        letter-spacing: 0.16em;
         text-transform: uppercase;
-        color: var(--burgundy);
+        color: var(--dim);
+        margin-top: 0.6rem;
+        transition: color var(--t-short);
     }
+    .system-cell:hover .sys-link { color: var(--gold); }
 
-    .avenue-card h4 {
-        font-family: 'Fraunces', serif;
-        font-size: 1.3rem;
-        font-weight: 700;
-        color: var(--deep-navy);
-        letter-spacing: 0.5px;
-    }
-
-    .avenue-card p {
-        font-size: 0.9rem;
-        line-height: 1.65;
-        color: var(--text-medium);
-        flex: 1;
-    }
-
-    .avenue-link {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.78rem;
-        font-weight: 600;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        color: var(--gold);
-        text-decoration: none;
-        margin-top: 0.5rem;
-        transition: color 0.2s ease;
-    }
-
-    .avenue-link:hover {
-        color: var(--burgundy);
-    }
-
-    .service-card {
-        background: #fff;
-        padding: 2.2rem 2rem;
-        text-decoration: none;
-        border: 1px solid rgba(30, 58, 95, 0.06);
-        position: relative;
-        transition: all 0.4s ease;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .service-card::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0;
-        height: 3px;
-        background: linear-gradient(90deg, var(--gold), var(--burgundy));
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.4s ease;
-    }
-
-    .service-card:hover::before { transform: scaleX(1); }
-
-    .service-card:hover {
-        box-shadow: 0 20px 50px rgba(30, 58, 95, 0.12);
-        transform: translateY(-4px);
-    }
-
-    .service-top {
-        display: flex;
-        align-items: baseline;
-        gap: 1rem;
-        margin-bottom: 0.8rem;
-    }
-
-    .service-num {
-        font-family: 'Fraunces', serif;
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: var(--gold);
-        opacity: 0.25;
-        line-height: 1;
-    }
-
-    .service-label {
-        font-size: 0.68rem;
-        font-weight: 600;
-        letter-spacing: 2.5px;
-        text-transform: uppercase;
-        color: var(--burgundy);
-    }
-
-    .service-card h3 { font-size: 1.25rem; margin-bottom: 0.6rem; color: var(--navy); }
-    .service-card p { font-size: 0.92rem; line-height: 1.65; color: var(--text-medium); flex: 1; }
-
-    .service-arrow {
-        display: inline-block;
-        font-size: 1.2rem;
-        color: var(--gold);
-        margin-top: 1.2rem;
-        opacity: 0;
-        transform: translateX(-10px);
-        transition: all 0.3s ease;
-    }
-
-    .service-card:hover .service-arrow {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    /* ── TEAM PREVIEW ── */
-    .team-section {
-        background: var(--stone);
-        padding: 6rem 0;
-    }
-
-    .team-bg {
-        display: none;
-    }
-
-    .team-inner {
-        position: relative;
-        z-index: 1;
-    }
-
-    .team-label {
-        display: inline-block;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 600;
-        font-size: 0.72rem;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        color: var(--burgundy);
-        background: var(--burgundy-surface);
-        padding: 0.5rem 1.2rem;
-        margin-bottom: 1.2rem;
-    }
-
+    /* ── TEAM ── */
     .team-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;
-        max-width: 1100px;
-        margin: 0 auto;
     }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 1200px) {
-        .services-grid { grid-template-columns: repeat(2, 1fr); }
-        .other-avenues { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 1024px) {
-        .team-grid { grid-template-columns: repeat(2, 1fr); max-width: 800px; }
+    @media (max-width: 1100px) {
+        .service-row { grid-template-columns: 44px 1fr 150px 32px; }
+        .sr-label { display: none; }
+        .systems-grid { grid-template-columns: repeat(2, 1fr); }
+        .system-cell:nth-child(2) { border-right: none; }
+        .system-cell:nth-child(-n+2) { border-bottom: 1px solid var(--hairline); }
     }
 
     @media (max-width: 992px) {
-        .hero-inner { grid-template-columns: 1fr; text-align: center; }
-        .hero-subtitle { margin: 0 auto 2.5rem; }
-        .hero-rule { margin: 0 auto 1.5rem; }
-        .hero-visual { display: none; }
-        .stats-float { grid-template-columns: repeat(2, 1fr); }
-        .about-preview-grid { grid-template-columns: 1fr; }
+        .hero-grid { grid-template-columns: 1fr; min-height: 0; }
+        .hero-statement { border-right: none; border-bottom: 1px solid var(--hairline); padding: 4.5rem 2rem 3rem; }
+        .hero-instrument { min-height: 400px; }
+        .data-bar { grid-template-columns: repeat(2, 1fr); }
+        .datum:first-child { padding-left: 2rem; }
+        .datum:nth-child(2) { border-right: none; }
+        .datum:nth-child(-n+2) { border-bottom: 1px solid var(--hairline); }
+        .practice-strip { grid-template-columns: 1fr; }
+        .practice-cell { border-right: none; border-bottom: 1px solid var(--hairline); }
+        .practice-cell:first-child { padding-left: 2.6rem; }
+        .practice-cell:last-child { border-bottom: none; }
+        .allied-grid { grid-template-columns: 1fr; gap: 3rem; }
+        .team-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
-    @media (max-width: 768px) {
-        .hero { min-height: auto; padding: 7rem 2rem 3rem; }
-        .stats-float { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; margin-top: -5rem; }
-        .stat-card { padding: 1.4rem 1rem; }
-        .stat-value { font-size: 2rem; }
-        .nations-grid { grid-template-columns: 1fr; }
-        .services-grid { grid-template-columns: 1fr; }
-        .other-avenues { grid-template-columns: 1fr; }
-        .team-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+    @media (max-width: 700px) {
+        .service-row { grid-template-columns: 44px 1fr 32px; }
+        .sr-metric { display: none; }
+        .systems-grid { grid-template-columns: 1fr; }
+        .system-cell { border-right: none; border-bottom: 1px solid var(--hairline); }
+        .system-cell:last-child { border-bottom: none; }
+        .team-grid { grid-template-columns: 1fr; max-width: 420px; }
+        .hero-instrument { padding: 2rem 1.4rem 3.4rem; }
+        .feed-foot { left: 1.4rem; right: 1.4rem; }
     }
 </style>

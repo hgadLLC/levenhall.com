@@ -9,25 +9,26 @@ interface Props {
 }
 
 const {
-    heading = 'Ready to Work With Us?',
+    heading = 'Ready to work with us?',
     description = 'Schedule a confidential consultation to explore how Levenhall can support your work — whether you need market intelligence, US federal market entry, a venture engagement, or access to our products.',
-    primaryLabel = 'Schedule Consultation',
+    primaryLabel = 'Request a Briefing',
     primaryHref = 'https://calendly.com/hgad-levenhall/30min',
     secondaryLabel = '',
     secondaryHref = '',
 } = Astro.props;
 ---
 
-<section class="cta-section">
-    <div class="cta-bg"></div>
+<section class="cta-section sweep-field">
     <div class="cta-inner">
-        <div class="cta-accent"></div>
-        <h2>{heading}</h2>
-        <p>{description}</p>
-        <div class="btn-group" style="justify-content: center;">
-            <a href={primaryHref} class="btn btn-gold" target={primaryHref.startsWith('http') ? '_blank' : undefined} rel={primaryHref.startsWith('http') ? 'noopener noreferrer' : undefined}>{primaryLabel}</a>
+        <div class="cta-text">
+            <span class="route-line">LEVENHALL / ENGAGEMENT / CONFIDENTIAL</span>
+            <h2>{heading}</h2>
+            <p>{description}</p>
+        </div>
+        <div class="cta-actions">
+            <a href={primaryHref} class="btn btn-primary" target={primaryHref.startsWith('http') ? '_blank' : undefined} rel={primaryHref.startsWith('http') ? 'noopener noreferrer' : undefined}>{primaryLabel}</a>
             {secondaryLabel && (
-                <a href={secondaryHref} class="btn btn-outline-white">{secondaryLabel}</a>
+                <a href={secondaryHref} class="mono-link">{secondaryLabel} →</a>
             )}
         </div>
     </div>
@@ -35,57 +36,53 @@ const {
 
 <style>
     .cta-section {
-        background: linear-gradient(135deg, var(--burgundy-deep) 0%, var(--burgundy) 50%, #9e1a3e 100%);
-        padding: 5rem 2rem;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .cta-bg {
-        position: absolute;
-        inset: 0;
-        background-image:
-            radial-gradient(ellipse at 50% 50%, rgba(201, 169, 97, 0.08) 0%, transparent 50%),
-            radial-gradient(ellipse at 80% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 40%);
-        pointer-events: none;
-    }
-
-    .cta-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background: linear-gradient(90deg, transparent, var(--gold), transparent);
-        opacity: 0.4;
+        background: var(--ink-panel);
+        border-top: 1px solid var(--hairline);
+        border-bottom: 1px solid var(--hairline);
+        padding: 4.5rem 2rem;
     }
 
     .cta-inner {
-        max-width: 680px;
+        max-width: var(--col-wide);
         margin: 0 auto;
-        position: relative;
-        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 3rem;
     }
 
-    .cta-accent {
-        width: 40px;
-        height: 2px;
-        background: var(--gold);
-        margin: 0 auto 2rem;
+    .cta-text .route-line {
+        display: block;
+        margin-bottom: 1.4rem;
     }
 
     .cta-section h2 {
-        font-size: clamp(1.6rem, 3vw, 2.2rem);
-        color: #fff;
-        margin-bottom: 1.2rem;
+        font-size: clamp(1.7rem, 3vw, 2.4rem);
+        color: var(--bone);
+        margin-bottom: 1rem;
+        max-width: 18ch;
     }
 
     .cta-section p {
-        color: rgba(255, 255, 255, 0.65);
-        font-size: 1.05rem;
-        line-height: 1.75;
-        margin-bottom: 2rem;
+        color: var(--muted);
+        font-size: 1rem;
+        line-height: 1.7;
+        max-width: 56ch;
+    }
+
+    .cta-actions {
+        display: flex;
+        align-items: center;
+        gap: 1.6rem;
+        flex-shrink: 0;
+        padding-bottom: 0.4rem;
+    }
+
+    @media (max-width: 860px) {
+        .cta-inner {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .cta-actions { padding-bottom: 0; }
     }
 </style>

@@ -40,11 +40,13 @@ const year = new Date().getFullYear();
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; {year} Levenhall LLC. All rights reserved. Market intelligence consulting &mdash; Washington, DC.</p>
+            <p class="footer-route">LEVENHALL LLC / WASHINGTON DC / FVEY / {year}</p>
             <p class="footer-credentials">
                 <span><span class="cred-label">UEI</span> Z4N8GQNVG826</span>
                 <span class="cred-sep">·</span>
                 <span><span class="cred-label">CAGE</span> 20CN1</span>
+                <span class="cred-sep">·</span>
+                <span>&copy; {year} Levenhall LLC. All rights reserved.</span>
             </p>
         </div>
     </div>
@@ -52,16 +54,15 @@ const year = new Date().getFullYear();
 
 <style>
     footer {
-        background: var(--deep-navy);
-        color: rgba(255, 255, 255, 0.6);
+        background: var(--ink);
+        color: var(--muted);
         padding: 0;
         position: relative;
     }
 
     .footer-accent {
         height: 1px;
-        background: linear-gradient(90deg, transparent, var(--gold), transparent);
-        opacity: 0.3;
+        background: var(--hairline);
     }
 
     .footer-inner {
@@ -93,10 +94,10 @@ const year = new Date().getFullYear();
     }
 
     .footer-section h4 {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 600;
-        font-size: 0.7rem;
-        letter-spacing: 2.5px;
+        font-family: var(--mono);
+        font-weight: 500;
+        font-size: 0.62rem;
+        letter-spacing: 0.22em;
         text-transform: uppercase;
         color: var(--gold);
         margin-bottom: 1.2rem;
@@ -105,39 +106,48 @@ const year = new Date().getFullYear();
     .footer-section a {
         display: block;
         font-size: 0.88rem;
-        color: rgba(255, 255, 255, 0.5);
+        color: var(--muted);
         text-decoration: none;
         margin-bottom: 0.6rem;
         transition: color 0.25s ease;
     }
 
     .footer-section a:hover {
-        color: #fff;
+        color: var(--bone);
     }
 
     .footer-bottom {
-        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        border-top: 1px solid var(--hairline-soft);
         padding: 1.8rem 0;
-        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1rem;
+        flex-wrap: wrap;
     }
 
     .footer-bottom p {
-        font-size: 0.78rem;
-        color: rgba(255, 255, 255, 0.25);
         margin: 0;
     }
 
+    .footer-route {
+        font-family: var(--mono);
+        font-size: 0.62rem;
+        letter-spacing: 0.2em;
+        color: var(--dim);
+    }
+
     .footer-credentials {
-        margin-top: 0.5rem !important;
-        font-family: 'Source Sans Pro', sans-serif;
-        letter-spacing: 0.5px;
-        color: rgba(255, 255, 255, 0.4) !important;
+        font-family: var(--mono);
+        font-size: 0.64rem;
+        letter-spacing: 0.06em;
+        color: var(--dim) !important;
     }
 
     .footer-credentials .cred-label {
         color: var(--gold);
-        font-weight: 600;
-        letter-spacing: 1.5px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
         margin-right: 0.3rem;
     }
 

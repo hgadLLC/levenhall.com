@@ -145,9 +145,10 @@
     .bio-modal-photo {
         width: 120px;
         height: 120px;
-        border-radius: 50%;
         object-fit: cover;
-        border: 3px solid var(--gold);
+        clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
+        border: 1px solid var(--hairline);
+        filter: grayscale(1) contrast(1.06) brightness(0.92) sepia(0.32) hue-rotate(180deg) saturate(1.5);
         flex-shrink: 0;
     }
 

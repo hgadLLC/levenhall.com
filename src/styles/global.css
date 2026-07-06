@@ -1,3 +1,9 @@
+/* ═══════════════════════════════════════════════════════════════
+   LEVENHALL — "The Dossier & The Instrument"
+   Source of truth: DESIGN.md. Dark-first. Hairlines, not cards.
+   Ranged left, always. Gold is signal, not decoration.
+   ═══════════════════════════════════════════════════════════════ */
+
 /* ── RESET ── */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -15,47 +21,64 @@
 
 /* ── TOKENS ── */
 :root {
+    /* Surfaces */
+    --ink: #0a1220;             /* page base — navy ink */
+    --ink-panel: #0e1729;       /* raised panel on ink */
+    --hairline: #2a3548;        /* 1px rules on dark */
+    --hairline-soft: rgba(42, 53, 72, 0.55);
+
+    /* Paper (light editorial sections) */
+    --cream: #fafaf8;
+    --stone: #f0ebe3;
+    --hairline-paper: #d8d2c4;
+
+    /* Text on dark */
+    --bone: #fafaf8;
+    --muted: #8a94a8;
+    --dim: #5a6478;
+
+    /* Text on paper */
+    --silver: #c8ccd6;
     --deep-navy: #0f1f3a;
     --navy: #1e3a5f;
-    --burgundy: #8b1538;
-    --burgundy-deep: #6b0f2a;
-    --burgundy-mid: #7a1230;
-    --burgundy-surface: rgba(139, 21, 56, 0.06);
-    --gold: #c9a961;
-    --gold-light: rgba(201, 169, 97, 0.12);
-    --silver: #c8ccd6;
-    --cream: #fafaf8;
-    --warm-white: #f5f3ef;
-    --stone: #f0ebe3;
-    --text-dark: #1a1a1a;
+    --text-dark: #16213a;
     --text-medium: #4a5568;
-    --border-subtle: rgba(30, 58, 95, 0.08);
-    --border-warm: rgba(100, 70, 40, 0.1);
-    --shadow-sm: 0 2px 8px rgba(30, 58, 95, 0.06);
-    --shadow-md: 0 8px 30px rgba(30, 58, 95, 0.1);
-    --shadow-lg: 0 16px 50px rgba(30, 58, 95, 0.14);
-    --shadow-warm-md: 0 8px 30px rgba(80, 50, 20, 0.08);
 
-    /* ── SPACING SCALE (compact) ── */
-    --s-1: 0.4rem;
-    --s-2: 0.75rem;
-    --s-3: 1rem;
-    --s-4: 1.3rem;
-    --s-5: 1.6rem;
+    /* Accents — each with one job */
+    --gold: #c9a961;            /* SIGNAL: live data, index numerals, one accent per viewport */
+    --burgundy: #8b1538;        /* EDITORIAL: italic pull-quotes, emphasis (on paper) */
+    --burgundy-bright: #b3536e; /* EDITORIAL on dark */
+
+    /* Type */
+    --serif: 'Fraunces', serif;
+    --sans: 'Twemoji Country Flags', 'Source Sans 3', 'Source Sans Pro', sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
+
+    /* Spacing (4px base) */
+    --s-1: 0.25rem;
+    --s-2: 0.5rem;
+    --s-3: 0.75rem;
+    --s-4: 1rem;
+    --s-5: 1.5rem;
     --s-6: 2rem;
-    --s-8: 2.5rem;
-    --s-10: 3rem;
-    --s-12: 3.75rem;
-    --s-14: 4.5rem;
-    --s-16: 5rem;
-    --s-20: 6rem;
+    --s-8: 3rem;
+    --s-10: 4.5rem;
+    --s-12: 6rem;
 
-    /* ── LAYOUT ── */
-    --section-pad: var(--s-14);
-    --hero-pad-top: var(--s-16);
-    --hero-pad-bottom: var(--s-10);
-    --col-prose: 620px;
-    --col-wide: 1080px;
+    /* Layout */
+    --rail-w: 64px;
+    --col-wide: 1240px;
+    --col-prose: 640px;
+    --section-pad: var(--s-10);
+
+    /* Signature shape: the 45° notch */
+    --notch: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+
+    /* Motion */
+    --ease-enter: cubic-bezier(0.16, 1, 0.3, 1);
+    --t-micro: 100ms;
+    --t-short: 200ms;
+    --t-resolve: 300ms;
 }
 
 /* ── BASE ── */
@@ -65,9 +88,9 @@ html {
 }
 
 body {
-    font-family: 'Twemoji Country Flags', 'Source Sans Pro', sans-serif;
-    color: var(--text-dark);
-    background: var(--cream);
+    font-family: var(--sans);
+    color: var(--bone);
+    background: var(--ink);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -75,263 +98,269 @@ body {
 
 img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; }
+::selection { background: var(--gold); color: var(--ink); }
 
 /* ── TYPOGRAPHY ── */
-h1, h2, h3, h4 {
-    font-family: 'Fraunces', serif;
+h1, h2, h3 {
+    font-family: var(--serif);
     font-weight: 600;
-    line-height: 1.15;
-    color: var(--deep-navy);
-    font-variation-settings: 'SOFT' 30, 'WONK' 0;
+    line-height: 1.05;
+    color: var(--bone);
+    font-variation-settings: 'SOFT' 0, 'WONK' 0;
 }
 
-h1 { font-size: clamp(2.2rem, 4.2vw, 3.4rem); letter-spacing: -1px; font-weight: 600; }
-h2 { font-size: clamp(1.8rem, 3.2vw, 2.7rem); letter-spacing: -0.6px; font-weight: 600; }
-h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); letter-spacing: -0.2px; }
-h4 { font-family: 'Source Sans Pro', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-size: 0.75rem; line-height: 1.4; }
+h1 { font-size: clamp(2.6rem, 5.4vw, 4.6rem); letter-spacing: -0.03em; }
+h2 { font-size: clamp(1.9rem, 3.4vw, 2.9rem); letter-spacing: -0.02em; }
+h3 { font-size: clamp(1.15rem, 1.8vw, 1.5rem); letter-spacing: -0.01em; line-height: 1.2; }
+h4 {
+    font-family: var(--mono);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.68rem;
+    line-height: 1.5;
+    color: var(--muted);
+}
 
 p {
-    font-size: 1.05rem;
-    line-height: 1.75;
-    color: var(--text-medium);
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--muted);
 }
+
+/* Light editorial sections flip text colors */
+.section-paper h1, .section-paper h2, .section-paper h3,
+.section-stone h1, .section-stone h2, .section-stone h3 { color: var(--deep-navy); }
+.section-paper p, .section-stone p { color: var(--text-medium); }
+.section-paper h4, .section-stone h4 { color: var(--text-medium); }
 
 /* ── UTILITIES ── */
 .container {
-    max-width: 1200px;
+    max-width: var(--col-wide);
     margin: 0 auto;
     padding: 0 2rem;
 }
 
 .section {
-    padding: 5rem 0;
+    padding: var(--section-pad) 0;
     position: relative;
 }
 
+/* Mono micro-label — replaces the old badge pill. No background, no border. */
 .section-label {
-    display: inline-block;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 600;
-    font-size: 0.72rem;
-    letter-spacing: 3px;
+    display: block;
+    font-family: var(--mono);
+    font-weight: 500;
+    font-size: 0.64rem;
+    letter-spacing: 0.24em;
     text-transform: uppercase;
-    color: var(--burgundy);
-    background: rgba(139, 21, 56, 0.06);
-    padding: 0.5rem 1.2rem;
-    margin-bottom: 1.2rem;
+    color: var(--gold);
+    margin-bottom: 1.4rem;
 }
 
+/* Routing line — classification-style metadata string */
+.route-line {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--dim);
+}
+.route-line .live { color: var(--gold); animation: pulse-live 2.4s ease-in-out infinite; }
+
+@keyframes pulse-live {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+}
+
+/* Section headers are RANGED LEFT. Centering is banned (DESIGN.md). */
 .section-header {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 3rem;
+    max-width: 760px;
+    margin-bottom: var(--s-8);
 }
-
-.section-header p {
-    margin-top: 1rem;
-}
+.section-header p { margin-top: 1rem; max-width: 58ch; }
 
 .gold-text { color: var(--gold); }
 
-/* ── DECORATIVE ELEMENTS ── */
-
-/* Gold accent line - use as ::before or ::after */
-.gold-rule::before {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 2px;
-    background: var(--gold);
-    margin-bottom: 1.5rem;
+/* Editorial italic (Fraunces) */
+.editorial-italic {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--burgundy-bright);
 }
+.section-paper .editorial-italic { color: var(--burgundy); }
 
-.gold-rule-center::before {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 2px;
-    background: var(--gold);
-    margin: 0 auto 1.5rem;
+/* Redaction bar — confidentiality made visible */
+.redact {
+    background: var(--hairline);
+    color: transparent;
+    padding: 0 0.2rem;
+    user-select: none;
 }
+.section-paper .redact { background: var(--deep-navy); }
 
-/* Subtle diagonal pattern for dark sections */
-.pattern-overlay {
-    position: relative;
-}
+/* ── SECTION SURFACES ── */
+.section-ink   { background: var(--ink); }
+.section-panel { background: var(--ink-panel); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+.section-paper { background: var(--cream); color: var(--text-dark); }
+.section-stone { background: var(--stone); color: var(--text-dark); }
 
-.pattern-overlay::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    opacity: 0.03;
-    background-image: repeating-linear-gradient(
-        -45deg,
-        transparent,
-        transparent 20px,
-        rgba(255,255,255,0.5) 20px,
-        rgba(255,255,255,0.5) 21px
-    );
-    pointer-events: none;
-}
+/* Hairline dividers */
+.rule-top { border-top: 1px solid var(--hairline); }
+.rule-bottom { border-bottom: 1px solid var(--hairline); }
+.section-paper .rule-top, .section-stone .rule-top { border-top-color: var(--hairline-paper); }
+.section-paper .rule-bottom, .section-stone .rule-bottom { border-bottom-color: var(--hairline-paper); }
 
-/* Subtle dot grid for light sections */
-.dot-pattern {
-    position: relative;
-}
-
-.dot-pattern::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    opacity: 0.35;
-    background-image: radial-gradient(circle, rgba(30, 58, 95, 0.08) 1px, transparent 1px);
-    background-size: 24px 24px;
-    pointer-events: none;
-}
-
-/* Warm section background with subtle texture */
-.section-warm {
-    background: linear-gradient(180deg, var(--warm-white) 0%, var(--cream) 100%);
-}
-
-/* White section with subtle warmth */
-.section-white {
-    background: #fff;
-}
-
-/* Navy section */
-.section-navy {
-    background: var(--navy);
-}
-
-.section-navy h2,
-.section-navy h3 {
-    color: #fff;
-}
-
-.section-navy p {
-    color: rgba(255, 255, 255, 0.65);
-}
-
-/* Burgundy section */
-.section-burgundy {
-    background: linear-gradient(180deg, var(--burgundy-deep) 0%, var(--burgundy-mid) 100%);
-}
-
-.section-burgundy h2,
-.section-burgundy h3 {
-    color: #fff;
-}
-
-.section-burgundy p {
-    color: rgba(255, 255, 255, 0.65);
-}
-
-/* Stone section */
-.section-stone {
-    background: var(--stone);
-}
-
-/* ── BUTTONS ── */
+/* ── BUTTONS — mono voice, square, notch on primary ── */
 .btn {
     display: inline-block;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 2px;
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     text-decoration: none;
-    padding: 0.9rem 2.2rem;
-    border: 1.5px solid transparent;
+    padding: 1rem 1.9rem;
+    border: 1px solid transparent;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background var(--t-short) var(--ease-enter), color var(--t-short) var(--ease-enter), border-color var(--t-short) var(--ease-enter);
 }
 
-.btn-primary {
-    background: var(--burgundy);
-    color: #fff;
-    border-color: var(--burgundy);
-}
-.btn-primary:hover {
-    background: #a01d45;
-    border-color: #a01d45;
-}
-
-.btn-secondary {
-    background: transparent;
-    color: var(--navy);
-    border-color: var(--navy);
-}
-.btn-secondary:hover {
-    background: var(--navy);
-    color: #fff;
-}
-
-.btn-white {
-    background: #fff;
-    color: var(--deep-navy);
-    border-color: #fff;
-}
-.btn-white:hover {
-    background: transparent;
-    color: #fff;
-    border-color: #fff;
-}
-
-.btn-gold {
+/* Primary: gold notch — the one accent moment */
+.btn-primary, .btn-gold {
     background: var(--gold);
-    color: var(--deep-navy);
-    border-color: var(--gold);
+    color: var(--ink);
+    clip-path: var(--notch);
 }
-.btn-gold:hover {
+.btn-primary:hover, .btn-gold:hover {
     background: #dbbe74;
-    border-color: #dbbe74;
 }
 
+/* Secondary on dark: hairline ghost */
 .btn-outline-white {
     background: transparent;
-    color: #fff;
-    border-color: rgba(255,255,255,0.4);
+    color: var(--muted);
+    border-color: var(--hairline);
 }
 .btn-outline-white:hover {
-    background: rgba(255,255,255,0.1);
-    border-color: #fff;
+    color: var(--bone);
+    border-color: var(--gold);
 }
+
+/* Secondary on paper: navy block */
+.btn-secondary {
+    background: var(--deep-navy);
+    color: var(--cream);
+}
+.btn-secondary:hover { background: var(--navy); }
+
+.btn-white {
+    background: transparent;
+    color: var(--deep-navy);
+    border-color: var(--deep-navy);
+}
+.btn-white:hover { background: var(--deep-navy); color: var(--cream); }
 
 .btn-group {
     display: flex;
-    gap: 1rem;
+    gap: 1.2rem;
     flex-wrap: wrap;
+    align-items: center;
 }
 
-/* ── REVEAL ANIMATION ── */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+/* Mono text link */
+.mono-link {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid var(--hairline);
+    padding-bottom: 0.35rem;
+    transition: color var(--t-short), border-color var(--t-short);
+}
+.mono-link:hover { color: var(--bone); border-color: var(--gold); }
+.section-paper .mono-link { color: var(--text-medium); border-color: var(--hairline-paper); }
+.section-paper .mono-link:hover { color: var(--deep-navy); border-color: var(--gold); }
+
+/* ── MARGINALIA RAIL ── */
+.rail {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: var(--rail-w);
+    border-right: 1px solid var(--hairline);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--s-10) 0 var(--s-5);
+    gap: 2.4rem;
+    z-index: 2;
+}
+.rail .idx {
+    writing-mode: vertical-rl;
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--dim);
+    white-space: nowrap;
+}
+.rail .idx b { color: var(--gold); font-weight: 500; }
+
+/* ── FILM GRAIN — material texture on dark surfaces ── */
+.texture-grain { position: relative; }
+.texture-grain::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 3; /* thin film over the surface — 5% noise, reads as material not haze */
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
+/* ── AMBIENT RADAR SWEEP ── */
+.sweep-field { position: relative; overflow: hidden; }
+.sweep-field::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(105deg, transparent 32%, rgba(201, 169, 97, 0.035) 50%, transparent 68%);
+    background-size: 300% 100%;
+    animation: radar-sweep 9s linear infinite;
+}
+@keyframes radar-sweep {
+    0% { background-position: 120% 0; }
+    100% { background-position: -60% 0; }
 }
 
+/* ── REDUCED MOTION ── */
 @media (prefers-reduced-motion: reduce) {
-    .reveal {
-        opacity: 1;
-        transform: none;
-        transition: none;
-    }
+    .sweep-field::after { animation: none; opacity: 0; }
+    .route-line .live { animation: none; }
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
 }
 
 /* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+    .rail { display: none; }
+}
+
 @media (max-width: 768px) {
     .section { padding: 3.5rem 0; }
     .section-header { margin-bottom: 2rem; }
-    .btn-group { flex-direction: column; align-items: stretch; text-align: center; }
+    .btn-group { flex-direction: column; align-items: stretch; }
+    .btn { text-align: center; }
 }
 
 @media (max-width: 480px) {
     .container { padding: 0 1.2rem; }
-    .section { padding: 2.5rem 0; }
+    .section { padding: 2.75rem 0; }
 }

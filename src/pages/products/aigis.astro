@@ -1,151 +1,212 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+
+const frameworks = [
+    { region: 'EU', name: 'EU AI Act' },
+    { region: 'US', name: 'NIST AI RMF' },
+    { region: 'US · CO', name: 'Colorado SB 205' },
+    { region: 'US · NYC', name: 'NYC Local Law 144' },
+    { region: 'CA', name: 'Canada AIDA' },
+    { region: 'UK', name: 'UK AI Principles' },
+    { region: 'SG', name: 'Singapore Model AI' },
+    { region: 'AU', name: 'Australia AI Ethics' },
+];
+
+/* Matrix instrument: rows = the eight frameworks, cols = obligation cells.
+   Coverage pattern is illustrative linework, drawn from the product's own concept. */
+const matrixRows = frameworks.map(f => f.region + ' — ' + f.name);
+const covered = new Set([
+    0,1,2,3,4,5,6,8,9,11,
+    12,13,14,15,17,18,20,22,
+    24,25,26,28,29,31,33,
+    36,37,38,39,40,42,44,46,
+    48,49,51,52,54,56,
+    60,61,62,63,65,67,68,
+    72,73,75,77,80,
+    84,85,86,88,90,92,94
+]);
+const pulsing = new Set([5, 17, 29, 42, 56, 68, 90]);
 ---
 
 <BaseLayout title="AIGIS by Levenhall — The system of record for AI governance" description="Prove your AI is compliant in every jurisdiction you operate in. Inventory, map, test, and prove — audit-ready evidence for the EU AI Act, NIST AI RMF, Colorado SB 205, NYC LL 144, and every framework in between.">
 
-    <!-- ── HERO ── -->
-    <section class="a-hero">
-        <div class="a-hero-glow"></div>
-        <div class="a-hero-grid"></div>
-        <div class="a-hero-stage">
-            <p class="a-hero-tag">A Levenhall Product</p>
-            <img src="/images/products/aigis-lockup.png" alt="AIGIS by Levenhall" class="a-hero-lockup">
-            <h1 class="a-hero-h1">Prove your AI is compliant.<br/>In every jurisdiction you operate in.</h1>
-            <p class="a-hero-tagline">AIGIS is the system of record for AI governance. Inventory your AI systems, map them to the regulations that apply, run the regulator's own tests, and produce audit-ready evidence &mdash; so compliance is defensible, not a spreadsheet.</p>
-            <div class="a-hero-cta">
-                <a href="https://aigis.levenhall.com/register" class="btn btn-gold" target="_blank" rel="noopener noreferrer">Request Access</a>
-                <a href="https://aigis.levenhall.com/demo" class="btn btn-outline-white" target="_blank" rel="noopener noreferrer">See the Interactive Demo</a>
-            </div>
-            <p class="a-hero-meta">Live at <a href="https://aigis.levenhall.com" target="_blank" rel="noopener noreferrer">aigis.levenhall.com</a></p>
-        </div>
-    </section>
+    <PageHeader
+        label="Systems / AIGIS / A Levenhall Product"
+        index="02"
+        title="Prove your AI is compliant. In every jurisdiction you operate in."
+    />
 
-    <!-- ── REGISTRY EXAMPLE ── -->
-    <section class="a-registry">
-        <div class="a-reg-grid">
-            <div class="a-reg-copy reveal">
-                <span class="a-eyebrow">§ AI System Registry</span>
-                <h2>Every AI system, every jurisdiction, every regulator's test.</h2>
-                <p>The registry is the spine of the platform. Register every AI system in production &mdash; internal models, vendor systems, GenAI &mdash; and AIGIS classifies risk tier, auto-maps the obligations that apply, and runs the tests the regulator would run. When the auditor knocks, the evidence is already there.</p>
+    <!-- ── CONSOLE: STATEMENT + COVERAGE MATRIX ── -->
+    <section class="console sweep-field texture-grain">
+        <div class="console-grid">
+            <div class="console-statement">
+                <img src="/images/products/aigis-lockup.png" alt="AIGIS by Levenhall" class="brand-lockup" />
+                <p class="console-lede">AIGIS is the system of record for AI governance. Inventory your AI systems, map them to the regulations that apply, run the regulator's own tests, and produce audit-ready evidence &mdash; so compliance is defensible, not a spreadsheet.</p>
+                <div class="btn-group console-cta">
+                    <a href="https://aigis.levenhall.com/register" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Request Access</a>
+                    <a href="https://aigis.levenhall.com/demo" class="mono-link" target="_blank" rel="noopener noreferrer">See the Interactive Demo →</a>
+                </div>
+                <p class="console-meta">Live at <a href="https://aigis.levenhall.com" target="_blank" rel="noopener noreferrer">aigis.levenhall.com</a></p>
             </div>
-            <aside class="a-reg-card reveal">
-                <div class="a-reg-head">
-                    <div>
-                        <span class="a-reg-name">Loan Underwriting Model</span>
-                        <span class="a-reg-cat">Credit &amp; Lending &middot; EU &middot; NYC &middot; Colorado</span>
-                    </div>
-                    <span class="a-reg-tier">High risk</span>
-                </div>
-                <div class="a-reg-block">
-                    <span class="a-reg-block-label">Regulatory mapping</span>
-                    <ul class="a-reg-maps">
-                        <li><span class="a-reg-map">EU AI Act — Art. 9</span><span class="a-status a-status-ok">Compliant</span></li>
-                        <li><span class="a-reg-map">EU AI Act — Art. 10</span><span class="a-status a-status-warn">In progress</span></li>
-                        <li><span class="a-reg-map">Colorado SB 205</span><span class="a-status a-status-ok">Compliant</span></li>
-                        <li><span class="a-reg-map">NYC Local Law 144</span><span class="a-status a-status-fail">Non-compliant</span></li>
-                    </ul>
-                </div>
-                <div class="a-reg-block">
-                    <span class="a-reg-block-label">Latest bias test</span>
-                    <div class="a-reg-bias">
-                        <span class="a-bias-val">DI 0.66</span>
-                        <span class="a-bias-fail">FAIL</span>
-                    </div>
-                    <span class="a-bias-detail">female 41% vs male 62% selection</span>
-                </div>
-            </aside>
-        </div>
-    </section>
 
-    <!-- ── ONE PLATFORM · EVERY FRAMEWORK ── -->
-    <section class="a-frameworks">
-        <div class="a-frameworks-inner reveal">
-            <span class="a-eyebrow a-eyebrow-cyan">§ One platform &middot; every framework</span>
-            <h2>The regulations, mapped once.</h2>
-            <p class="a-frameworks-lede">Frameworks are added and updated by Levenhall's regulatory team. You classify the system once. The mapping travels with it.</p>
-            <div class="a-fw-grid">
-                <div class="a-fw"><span class="a-fw-region">EU</span><span class="a-fw-name">EU AI Act</span></div>
-                <div class="a-fw"><span class="a-fw-region">US</span><span class="a-fw-name">NIST AI RMF</span></div>
-                <div class="a-fw"><span class="a-fw-region">US · CO</span><span class="a-fw-name">Colorado SB 205</span></div>
-                <div class="a-fw"><span class="a-fw-region">US · NYC</span><span class="a-fw-name">NYC Local Law 144</span></div>
-                <div class="a-fw"><span class="a-fw-region">CA</span><span class="a-fw-name">Canada AIDA</span></div>
-                <div class="a-fw"><span class="a-fw-region">UK</span><span class="a-fw-name">UK AI Principles</span></div>
-                <div class="a-fw"><span class="a-fw-region">SG</span><span class="a-fw-name">Singapore Model AI</span></div>
-                <div class="a-fw"><span class="a-fw-region">AU</span><span class="a-fw-name">Australia AI Ethics</span></div>
+            <div class="console-instrument" aria-hidden="true">
+                <div class="inst-head">
+                    <span>Framework Coverage Matrix</span>
+                    <span class="inst-live">● Regulatory Graph</span>
+                </div>
+                <svg class="inst-svg" viewBox="0 0 484 262" xmlns="http://www.w3.org/2000/svg">
+                    <text class="mx-col-note" x="168" y="12">OBLIGATIONS · ARTICLE BY ARTICLE, CONTROL BY CONTROL</text>
+                    {matrixRows.map((label, r) => (
+                        <g>
+                            <text class="mx-row" x="158" y={38 + r * 28} text-anchor="end">{label.toUpperCase()}</text>
+                            {Array.from({ length: 12 }, (_, c) => {
+                                const i = r * 12 + c;
+                                const cls = covered.has(i) ? (pulsing.has(i) ? 'mx-cell-on mx-cell-pulse' : 'mx-cell-on') : 'mx-cell';
+                                return <rect x={168 + c * 26} y={26 + r * 28} width="18" height="18" class={cls} />;
+                            })}
+                        </g>
+                    ))}
+                </svg>
+                <div class="inst-foot">
+                    <span>Representative mapping</span>
+                    <span class="inst-cyan">Classified once · mapping travels</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ── THE PLATFORM (4 STEPS) ── -->
-    <section class="a-platform">
-        <div class="a-plat-grid">
-            <aside class="a-plat-rail reveal">
-                <span class="a-eyebrow">§ The platform</span>
-                <h2>Four steps.<br/>Four proofs.</h2>
-                <ol class="a-plat-toc">
-                    <li><span>01</span>Inventory</li>
-                    <li><span>02</span>Map</li>
-                    <li><span>03</span>Test</li>
-                    <li><span>04</span>Prove</li>
-                </ol>
-            </aside>
-            <div class="a-plat-body">
-                <article class="a-plat-step reveal">
-                    <span class="a-plat-num">01</span>
-                    <div>
-                        <h3>Inventory</h3>
-                        <p>Register every AI or ML system in production &mdash; internal, vendor, GenAI. Owner, purpose, data source, deployment context, jurisdiction of use.</p>
+    <!-- ── REGISTRY ── -->
+    <section class="section">
+        <div class="container">
+            <div class="reg-grid">
+                <div class="reg-copy">
+                    <span class="section-label">§ AI System Registry</span>
+                    <h2>Every AI system, every jurisdiction, every regulator's test.</h2>
+                    <p>The registry is the spine of the platform. Register every AI system in production &mdash; internal models, vendor systems, GenAI &mdash; and AIGIS classifies risk tier, auto-maps the obligations that apply, and runs the tests the regulator would run. When the auditor knocks, the evidence is already there.</p>
+                </div>
+                <aside class="spec-panel">
+                    <div class="spec-head">
+                        <div>
+                            <span class="spec-name">Loan Underwriting Model</span>
+                            <span class="spec-cat">Credit &amp; Lending &middot; EU &middot; NYC &middot; Colorado</span>
+                        </div>
+                        <span class="spec-tier">Tier: High Risk</span>
                     </div>
-                </article>
-                <article class="a-plat-step reveal">
-                    <span class="a-plat-num">02</span>
-                    <div>
-                        <h3>Map</h3>
-                        <p>AIGIS classifies risk tier and auto-maps obligations across every market the system touches &mdash; article by article, control by control &mdash; using the regulatory graph maintained by Levenhall.</p>
+                    <div class="spec-block">
+                        <span class="spec-block-label">Regulatory mapping</span>
+                        <ul class="spec-rows">
+                            <li><span class="spec-key">EU AI Act — Art. 9</span><span class="status status-ok">Compliant</span></li>
+                            <li><span class="spec-key">EU AI Act — Art. 10</span><span class="status status-warn">In progress</span></li>
+                            <li><span class="spec-key">Colorado SB 205</span><span class="status status-ok">Compliant</span></li>
+                            <li><span class="spec-key">NYC Local Law 144</span><span class="status status-fail">Non-compliant</span></li>
+                        </ul>
                     </div>
-                </article>
-                <article class="a-plat-step reveal">
-                    <span class="a-plat-num">03</span>
-                    <div>
-                        <h3>Test</h3>
-                        <p>Run the tests the regulator runs: bias and disparate impact, robustness, toxicity, hallucination, data provenance. Automated where the regulator accepts automation, routed for human review where it doesn't.</p>
+                    <div class="spec-block">
+                        <span class="spec-block-label">Latest bias test</span>
+                        <div class="bias-row">
+                            <span class="bias-val">DI 0.66</span>
+                            <span class="status status-fail">FAIL</span>
+                        </div>
+                        <span class="bias-detail">female 41% vs male 62% selection</span>
                     </div>
-                </article>
-                <article class="a-plat-step reveal">
-                    <span class="a-plat-num">04</span>
-                    <div>
-                        <h3>Prove</h3>
-                        <p>Generate the artefacts the board, the underwriter, and the regulator ask for: technical documentation, conformance reports, incident logs, an audit-ready evidence pack that maps to each obligation.</p>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── ONE PLATFORM · EVERY FRAMEWORK (PANEL) ── -->
+    <section class="section section-panel">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">§ One platform &middot; every framework</span>
+                <h2>The regulations, mapped once.</h2>
+                <p>Frameworks are added and updated by Levenhall's regulatory team. You classify the system once. The mapping travels with it.</p>
+            </div>
+            <div class="fw-grid">
+                {frameworks.map(fw => (
+                    <div class="fw-cell">
+                        <span class="fw-region">{fw.region}</span>
+                        <span class="fw-name">{fw.name}</span>
                     </div>
-                </article>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- ── THE PLATFORM (PAPER — the one light passage) ── -->
+    <section class="section section-paper">
+        <div class="container">
+            <div class="plat-grid">
+                <aside class="plat-rail">
+                    <span class="section-label">§ The platform</span>
+                    <h2>Four steps.<br/>Four proofs.</h2>
+                    <ol class="plat-toc">
+                        <li><span>01</span>Inventory</li>
+                        <li><span>02</span>Map</li>
+                        <li><span>03</span>Test</li>
+                        <li><span>04</span>Prove</li>
+                    </ol>
+                </aside>
+                <div class="plat-body">
+                    <article class="plat-step">
+                        <span class="lg-num">01</span>
+                        <div>
+                            <h3>Inventory</h3>
+                            <p>Register every AI or ML system in production &mdash; internal, vendor, GenAI. Owner, purpose, data source, deployment context, jurisdiction of use.</p>
+                        </div>
+                    </article>
+                    <article class="plat-step">
+                        <span class="lg-num">02</span>
+                        <div>
+                            <h3>Map</h3>
+                            <p>AIGIS classifies risk tier and auto-maps obligations across every market the system touches &mdash; article by article, control by control &mdash; using the regulatory graph maintained by Levenhall.</p>
+                        </div>
+                    </article>
+                    <article class="plat-step">
+                        <span class="lg-num">03</span>
+                        <div>
+                            <h3>Test</h3>
+                            <p>Run the tests the regulator runs: bias and disparate impact, robustness, toxicity, hallucination, data provenance. Automated where the regulator accepts automation, routed for human review where it doesn't.</p>
+                        </div>
+                    </article>
+                    <article class="plat-step">
+                        <span class="lg-num">04</span>
+                        <div>
+                            <h3>Prove</h3>
+                            <p>Generate the artefacts the board, the underwriter, and the regulator ask for: technical documentation, conformance reports, incident logs, an audit-ready evidence pack that maps to each obligation.</p>
+                        </div>
+                    </article>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- ── COVERAGE ── -->
-    <section class="a-coverage">
-        <div class="a-cov-inner reveal">
-            <span class="a-eyebrow a-eyebrow-cyan">§ Coverage</span>
-            <h2>Every market that regulates AI.</h2>
-            <div class="a-cov-grid">
-                <div class="a-cov-region">
-                    <span class="a-cov-flag">🇺🇸 🇨🇦</span>
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">§ Coverage</span>
+                <h2>Every market that regulates AI.</h2>
+            </div>
+            <div class="cov-grid">
+                <div class="cov-cell">
+                    <span class="cov-flag">🇺🇸 🇨🇦</span>
                     <h4>North America</h4>
                     <p>EU AI Act readiness for North American exporters, Colorado SB 205, NYC Local Law 144, Canada AIDA, NIST AI RMF.</p>
                 </div>
-                <div class="a-cov-region">
-                    <span class="a-cov-flag">🇪🇺 🇬🇧</span>
+                <div class="cov-cell">
+                    <span class="cov-flag">🇪🇺 🇬🇧</span>
                     <h4>Europe</h4>
                     <p>EU AI Act (full title mapping), UK AI Principles and member-state guidance.</p>
                 </div>
-                <div class="a-cov-region">
-                    <span class="a-cov-flag">🇦🇺 🇳🇿</span>
+                <div class="cov-cell">
+                    <span class="cov-flag">🇦🇺 🇳🇿</span>
                     <h4>Australia &amp; NZ</h4>
                     <p>Australia AI Ethics Principles, New Zealand Algorithm Charter.</p>
                 </div>
-                <div class="a-cov-region">
-                    <span class="a-cov-flag">🇸🇬 🇯🇵 🇰🇷</span>
+                <div class="cov-cell">
+                    <span class="cov-flag">🇸🇬 🇯🇵 🇰🇷</span>
                     <h4>Asia</h4>
                     <p>Singapore Model AI Governance, Japan and South Korea guidance, more added continuously.</p>
                 </div>
@@ -153,53 +214,65 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         </div>
     </section>
 
-    <!-- ── PROTECT YOUR AI (INSURANCE) ── -->
-    <section class="a-insurance">
-        <div class="a-ins-grid">
-            <div class="a-ins-copy reveal">
-                <span class="a-eyebrow">§ Protect your AI</span>
-                <h2>The AI you can prove is the AI you can insure.</h2>
-                <p>AIGIS matches your evaluation record against the AI insurance market. Twenty-four carriers, four live feeds, eight partner feeds. Get an insurability score based on the same evidence your regulator will see.</p>
-                <p>For underwriters, the record is a continuous signal to price against. For brokers, a defensible file at renewal. For the enterprise, coverage that doesn't require a fire drill every quarter.</p>
+    <!-- ── PROTECT YOUR AI (PANEL) ── -->
+    <section class="section section-panel">
+        <div class="container">
+            <div class="ins-grid">
+                <div class="ins-copy">
+                    <span class="section-label">§ Protect your AI</span>
+                    <h2>The AI you can prove is the AI you can insure.</h2>
+                    <p>AIGIS matches your evaluation record against the AI insurance market. Twenty-four carriers, four live feeds, eight partner feeds. Get an insurability score based on the same evidence your regulator will see.</p>
+                    <p>For underwriters, the record is a continuous signal to price against. For brokers, a defensible file at renewal. For the enterprise, coverage that doesn't require a fire drill every quarter.</p>
+                </div>
+                <aside class="spec-panel">
+                    <div class="spec-head">
+                        <span class="ins-score">72<span class="ins-of">/100</span></span>
+                        <span class="ins-verdict">Insurable</span>
+                    </div>
+                    <svg class="ins-gauge" viewBox="0 0 320 34" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <line class="g-track" x1="4" y1="16" x2="316" y2="16" />
+                        {Array.from({ length: 11 }, (_, i) => (
+                            <line class="g-tick" x1={4 + i * 31.2} y1="12" x2={4 + i * 31.2} y2="20" />
+                        ))}
+                        <line class="g-fill" x1="4" y1="16" x2="228.6" y2="16" />
+                        <circle class="g-marker" cx="228.6" cy="16" r="3" />
+                        <text class="g-note" x="4" y="32">0</text>
+                        <text class="g-note g-note-end" x="316" y="32">100</text>
+                    </svg>
+                    <div class="spec-block">
+                        <span class="spec-block-label">Coverage categories</span>
+                        <ul class="spec-rows">
+                            <li><span class="spec-key">AI Liability &amp; E&amp;O</span></li>
+                            <li><span class="spec-key">Algorithmic Bias &amp; Discrimination</span></li>
+                            <li><span class="spec-key">Regulatory Defense &amp; Penalty</span></li>
+                        </ul>
+                    </div>
+                    <div class="spec-block">
+                        <span class="spec-block-label">Matched carriers</span>
+                        <ul class="spec-rows">
+                            <li><span class="spec-key">Armilla AI</span><span class="carrier-pct">99%</span></li>
+                            <li><span class="spec-key">Coalition</span><span class="carrier-pct">99%</span></li>
+                            <li><span class="spec-key">Counterpart</span><span class="carrier-pct">99%</span></li>
+                            <li><span class="spec-key">Relm Insurance</span><span class="carrier-pct">96%</span></li>
+                            <li><span class="spec-key">Resilience</span><span class="carrier-pct">96%</span></li>
+                        </ul>
+                    </div>
+                </aside>
             </div>
-            <aside class="a-ins-card reveal">
-                <div class="a-ins-head">
-                    <span class="a-ins-score">72<span class="a-ins-of">/100</span></span>
-                    <span class="a-ins-verdict">Insurable</span>
-                </div>
-                <div class="a-ins-block">
-                    <span class="a-ins-block-label">Coverage categories</span>
-                    <ul>
-                        <li>AI Liability &amp; E&amp;O</li>
-                        <li>Algorithmic Bias &amp; Discrimination</li>
-                        <li>Regulatory Defense &amp; Penalty</li>
-                    </ul>
-                </div>
-                <div class="a-ins-block">
-                    <span class="a-ins-block-label">Matched carriers</span>
-                    <ul class="a-carriers">
-                        <li><span>Armilla AI</span><span class="a-c-pct">99%</span></li>
-                        <li><span>Coalition</span><span class="a-c-pct">99%</span></li>
-                        <li><span>Counterpart</span><span class="a-c-pct">99%</span></li>
-                        <li><span>Relm Insurance</span><span class="a-c-pct">96%</span></li>
-                        <li><span>Resilience</span><span class="a-c-pct">96%</span></li>
-                    </ul>
-                </div>
-            </aside>
         </div>
     </section>
 
     <!-- ── CTA ── -->
-    <section class="a-cta">
-        <div class="a-cta-glow"></div>
-        <div class="a-cta-inner">
-            <div class="a-cta-rule"></div>
-            <p class="a-cta-eyebrow">Live Now &middot; v2026.06</p>
-            <h2>Built for regulated enterprises.<br/>Financial services, insurance, healthcare.</h2>
-            <p>Request access to the platform, or step through an industry-specific walkthrough of the interactive demo.</p>
-            <div class="btn-group" style="justify-content: center;">
-                <a href="https://aigis.levenhall.com/register" class="btn btn-gold" target="_blank" rel="noopener noreferrer">Request Access</a>
-                <a href="https://aigis.levenhall.com/demo" class="btn btn-outline-white" target="_blank" rel="noopener noreferrer">See the Demo</a>
+    <section class="section">
+        <div class="container">
+            <div class="cta-block rule-top">
+                <span class="route-line">Live Now &middot; v2026.06 <span class="live-cyan">●</span></span>
+                <h2>Built for regulated enterprises.<br/>Financial services, insurance, healthcare.</h2>
+                <p>Request access to the platform, or step through an industry-specific walkthrough of the interactive demo.</p>
+                <div class="btn-group">
+                    <a href="https://aigis.levenhall.com/register" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Request Access</a>
+                    <a href="https://aigis.levenhall.com/demo" class="btn btn-outline-white" target="_blank" rel="noopener noreferrer">See the Demo</a>
+                </div>
             </div>
         </div>
     </section>
@@ -207,718 +280,441 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
-    /* ── HERO ── */
-    .a-hero {
-        background:
-            radial-gradient(ellipse 80% 60% at 50% 50%, rgba(56, 217, 201, 0.06), transparent 70%),
-            radial-gradient(ellipse 60% 50% at 50% 0%, rgba(201, 169, 97, 0.08), transparent 60%),
-            #04070e;
-        padding: var(--s-16) var(--s-3) var(--s-12);
+    /* AIGIS brand exception (DESIGN.md): cyan #38D9C9 is reserved for the AIGIS
+       product family — used here for live/data elements in place of gold. */
+
+    /* ── CONSOLE ── */
+    .console {
+        border-bottom: 1px solid var(--hairline);
         position: relative;
-        overflow: hidden;
     }
 
-    .a-hero-glow {
-        position: absolute;
-        top: 50%; left: 50%;
-        width: 800px; height: 800px;
-        transform: translate(-50%, -50%);
-        background: radial-gradient(circle, rgba(56, 217, 201, 0.14) 0%, transparent 60%);
-        filter: blur(50px);
-        pointer-events: none;
-    }
-
-    .a-hero-grid {
-        position: absolute;
-        inset: 0;
-        background-image:
-            linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px);
-        background-size: 64px 64px;
-        pointer-events: none;
-        mask-image: radial-gradient(ellipse at center, black 25%, transparent 75%);
-        -webkit-mask-image: radial-gradient(ellipse at center, black 25%, transparent 75%);
-    }
-
-    .a-hero::after {
-        content: '';
-        position: absolute;
-        bottom: 0; left: 0; right: 0;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, rgba(56, 217, 201, 0.5), transparent);
-        opacity: 0.55;
-    }
-
-    .a-hero-stage {
-        text-align: center;
-        max-width: 720px;
-        margin: 0 auto;
-        position: relative;
-        z-index: 1;
-    }
-
-    .a-hero-tag {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 600;
-        font-size: 0.66rem;
-        letter-spacing: 3.5px;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: var(--s-4);
-    }
-
-    .a-hero-lockup {
-        max-width: 380px;
-        width: 90%;
-        height: auto;
-        margin: 0 auto var(--s-6);
-        display: block;
-        filter: brightness(0) invert(1) drop-shadow(0 0 30px rgba(56, 217, 201, 0.2));
-    }
-
-    .a-hero-h1 {
-        font-family: 'Fraunces', serif;
-        font-weight: 600;
-        font-size: clamp(1.9rem, 4vw, 2.9rem);
-        line-height: 1.15;
-        color: #fff;
-        margin: 0 0 var(--s-4);
-        letter-spacing: -0.8px;
-    }
-
-    .a-hero-tagline {
-        font-family: 'Georgia', 'Times New Roman', serif;
-        font-size: 1.05rem;
-        color: rgba(255, 255, 255, 0.65);
-        line-height: 1.75;
-        max-width: 620px;
-        margin: 0 auto var(--s-5);
-    }
-
-    .a-hero-cta {
-        display: flex;
-        gap: var(--s-2);
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-bottom: var(--s-3);
-    }
-
-    .a-hero-meta {
-        font-family: 'SF Mono', 'Menlo', monospace;
-        font-size: 0.78rem;
-        color: rgba(255, 255, 255, 0.4);
-        letter-spacing: 0.5px;
-    }
-
-    .a-hero-meta a { color: rgba(56, 217, 201, 0.85); text-decoration: none; }
-
-    /* ── SHARED ── */
-    .a-eyebrow {
-        display: block;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 600;
-        font-size: 0.7rem;
-        letter-spacing: 2.5px;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: var(--s-4);
-    }
-
-    .a-eyebrow-cyan { color: rgba(56, 217, 201, 0.85); }
-
-    .a-registry h2,
-    .a-frameworks h2,
-    .a-platform h2,
-    .a-coverage h2,
-    .a-insurance h2,
-    .a-cta h2 {
-        font-family: 'Fraunces', serif;
-        font-weight: 600;
-        letter-spacing: -0.5px;
-    }
-
-    /* ── REGISTRY ── */
-    .a-registry {
-        background: var(--cream);
-        padding: var(--s-16) 0;
-    }
-
-    .a-reg-grid {
-        max-width: 1080px;
-        margin: 0 auto;
-        padding: 0 var(--s-3);
+    .console-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: var(--s-10);
-        align-items: center;
+        grid-template-columns: minmax(0, 50fr) minmax(0, 50fr);
+        max-width: var(--col-wide);
+        margin: 0 auto;
     }
 
-    .a-reg-copy h2 {
-        font-size: clamp(1.8rem, 3vw, 2.4rem);
-        color: var(--deep-navy);
-        margin: 0 0 var(--s-5);
-        line-height: 1.18;
-    }
-
-    .a-reg-copy p {
-        font-size: 1.05rem;
-        line-height: 1.85;
-        color: var(--text-medium);
-    }
-
-    .a-reg-card {
-        background: #fff;
-        border: 1px solid var(--border-warm);
-        border-top: 3px solid rgba(56, 217, 201, 0.8);
-        padding: var(--s-5);
+    .console-statement {
+        padding: 3.5rem 3rem 3.5rem 2rem;
+        border-right: 1px solid var(--hairline);
         display: flex;
         flex-direction: column;
-        gap: var(--s-4);
-    }
-
-    .a-reg-head {
-        display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: flex-start;
-        gap: var(--s-3);
-        padding-bottom: var(--s-3);
-        border-bottom: 1px solid var(--border-warm);
+        gap: 1.8rem;
     }
 
-    .a-reg-name {
-        display: block;
-        font-family: 'Fraunces', serif;
-        font-weight: 600;
-        font-size: 1.15rem;
-        color: var(--deep-navy);
-        letter-spacing: -0.3px;
-        margin-bottom: 0.2rem;
+    .brand-lockup {
+        width: 220px;
+        height: auto;
+        filter: brightness(0) invert(1);
     }
 
-    .a-reg-cat {
-        display: block;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.75rem;
-        letter-spacing: 0.5px;
-        color: var(--text-medium);
+    .console-lede {
+        max-width: 52ch;
+        font-size: 1.02rem;
+        color: var(--muted);
     }
 
-    .a-reg-tier {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.68rem;
-        font-weight: 700;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        color: var(--burgundy);
-        background: var(--burgundy-surface);
-        border: 1px solid rgba(139, 21, 56, 0.2);
-        padding: 0.3rem 0.6rem;
-        white-space: nowrap;
-    }
+    .console-cta { margin-top: 0.4rem; }
 
-    .a-reg-block-label {
-        display: block;
-        font-family: 'Source Sans Pro', sans-serif;
+    .console-meta {
+        font-family: var(--mono);
         font-size: 0.62rem;
-        font-weight: 700;
-        letter-spacing: 2px;
+        letter-spacing: 0.16em;
         text-transform: uppercase;
-        color: var(--text-medium);
-        margin-bottom: var(--s-2);
+        color: var(--dim);
+    }
+    .console-meta a { color: #38d9c9; text-decoration: none; }
+    .console-meta a:hover { border-bottom: 1px solid #38d9c9; }
+
+    /* ── INSTRUMENT: COVERAGE MATRIX ── */
+    .console-instrument {
+        padding: 2.4rem 2rem 1.6rem 2.4rem;
+        font-family: var(--mono);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-image:
+            linear-gradient(var(--hairline-soft) 1px, transparent 1px),
+            linear-gradient(90deg, var(--hairline-soft) 1px, transparent 1px);
+        background-size: 28px 28px;
     }
 
-    .a-reg-maps {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .a-reg-maps li {
+    .inst-head, .inst-foot {
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        gap: var(--s-2);
-        padding: 0.55rem 0;
-        border-bottom: 1px solid rgba(30, 58, 95, 0.06);
-    }
-
-    .a-reg-maps li:last-child { border-bottom: none; }
-
-    .a-reg-map {
-        font-family: 'SF Mono', 'Menlo', monospace;
-        font-size: 0.82rem;
-        color: var(--deep-navy);
-    }
-
-    .a-status {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.66rem;
-        font-weight: 700;
-        letter-spacing: 1px;
+        gap: 1rem;
+        font-size: 0.6rem;
+        letter-spacing: 0.2em;
         text-transform: uppercase;
-        padding: 0.22rem 0.5rem;
+        color: var(--dim);
+    }
+
+    .inst-head {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--hairline);
+        margin-bottom: 1.2rem;
+    }
+
+    .inst-foot {
+        padding-top: 1rem;
+        border-top: 1px solid var(--hairline);
+        margin-top: 1.2rem;
+        font-size: 0.56rem;
+    }
+
+    .inst-live { color: #38d9c9; animation: pulse-cyan 2.4s ease-in-out infinite; }
+    .inst-cyan { color: #38d9c9; }
+
+    .inst-svg { width: 100%; height: auto; display: block; }
+
+    .mx-col-note {
+        font-family: var(--mono);
+        font-size: 8px;
+        letter-spacing: 0.14em;
+        fill: var(--dim);
+    }
+
+    .mx-row {
+        font-family: var(--mono);
+        font-size: 8.5px;
+        letter-spacing: 0.08em;
+        fill: var(--muted);
+    }
+
+    .mx-cell { fill: none; stroke: var(--hairline); stroke-width: 1; }
+    .mx-cell-on { fill: rgba(56, 217, 201, 0.45); stroke: none; }
+    .mx-cell-pulse { animation: pulse-cyan 3.2s ease-in-out infinite; }
+
+    @keyframes pulse-cyan {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.3; }
+    }
+
+    /* ── REGISTRY / INSURANCE GRIDS ── */
+    .reg-grid, .ins-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 5fr) minmax(0, 5fr);
+        gap: 4rem;
+        align-items: start;
+    }
+
+    .reg-copy h2, .ins-copy h2 { margin-bottom: 1.4rem; }
+    .reg-copy p, .ins-copy p { margin-bottom: 1rem; max-width: 56ch; }
+
+    /* ── SPEC PANEL (mono documentation card, hairline only) ── */
+    .spec-panel {
+        border: 1px solid var(--hairline);
+        background: var(--ink);
+        padding: 1.8rem 2rem 2rem;
+        font-family: var(--mono);
+    }
+
+    .spec-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1.5rem;
+        padding-bottom: 1.2rem;
+        border-bottom: 1px solid var(--hairline);
+        margin-bottom: 1.4rem;
+    }
+
+    .spec-name {
+        display: block;
+        font-family: var(--serif);
+        font-weight: 600;
+        font-size: 1.2rem;
+        letter-spacing: -0.01em;
+        color: var(--bone);
+        margin-bottom: 0.35rem;
+    }
+
+    .spec-cat {
+        display: block;
+        font-size: 0.6rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--dim);
+    }
+
+    .spec-tier {
+        font-size: 0.6rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--burgundy-bright);
         white-space: nowrap;
     }
 
-    .a-status-ok { color: #2a8c5e; background: rgba(42, 140, 94, 0.1); border: 1px solid rgba(42, 140, 94, 0.25); }
-    .a-status-warn { color: #a17a2a; background: rgba(201, 169, 97, 0.15); border: 1px solid rgba(201, 169, 97, 0.35); }
-    .a-status-fail { color: #b1315b; background: rgba(139, 21, 56, 0.1); border: 1px solid rgba(139, 21, 56, 0.3); }
+    .spec-block { margin-bottom: 1.4rem; }
+    .spec-block:last-child { margin-bottom: 0; }
 
-    .a-reg-bias {
+    .spec-block-label {
+        display: block;
+        font-size: 0.58rem;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #38d9c9;
+        margin-bottom: 0.6rem;
+    }
+
+    .spec-rows { list-style: none; margin: 0; padding: 0; }
+
+    .spec-rows li {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1rem;
+        padding: 0.55rem 0;
+        border-bottom: 1px solid var(--hairline-soft);
+        font-size: 0.74rem;
+    }
+    .spec-rows li:last-child { border-bottom: none; }
+
+    .spec-key { color: var(--muted); }
+
+    .status {
+        font-size: 0.58rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        white-space: nowrap;
+    }
+    .status-ok { color: #4caf7d; }
+    .status-warn { color: var(--gold); }
+    .status-fail { color: #d0604f; }
+
+    .bias-row {
         display: flex;
         align-items: baseline;
-        gap: var(--s-3);
+        gap: 1.2rem;
         margin-bottom: 0.4rem;
     }
 
-    .a-bias-val {
-        font-family: 'SF Mono', 'Menlo', monospace;
+    .bias-val {
         font-size: 1.5rem;
         font-weight: 700;
-        color: var(--deep-navy);
-        letter-spacing: -0.5px;
+        color: var(--bone);
+        font-variant-numeric: tabular-nums;
     }
 
-    .a-bias-fail {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.7rem;
-        font-weight: 700;
-        letter-spacing: 1.5px;
-        color: #b1315b;
-        background: rgba(139, 21, 56, 0.1);
-        border: 1px solid rgba(139, 21, 56, 0.3);
-        padding: 0.25rem 0.55rem;
-    }
-
-    .a-bias-detail {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.82rem;
-        color: var(--text-medium);
-        font-style: italic;
+    .bias-detail {
+        font-size: 0.68rem;
+        color: var(--dim);
+        letter-spacing: 0.04em;
     }
 
     /* ── FRAMEWORKS ── */
-    .a-frameworks {
-        background: linear-gradient(180deg, #0a1628 0%, var(--deep-navy) 100%);
-        padding: var(--s-16) 0;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .a-frameworks::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0;
-        height: 1px;
-        background: rgba(56, 217, 201, 0.3);
-    }
-
-    .a-frameworks-inner {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 0 var(--s-3);
-        text-align: center;
-        position: relative;
-        z-index: 1;
-    }
-
-    .a-frameworks-inner h2 {
-        font-size: clamp(2rem, 3.4vw, 2.6rem);
-        line-height: 1.15;
-        color: #fff;
-        margin: 0 0 var(--s-4);
-    }
-
-    .a-frameworks-lede {
-        font-family: 'Georgia', 'Times New Roman', serif;
-        font-size: 1.05rem;
-        color: rgba(255, 255, 255, 0.6);
-        line-height: 1.75;
-        margin: 0 auto var(--s-8);
-        max-width: 640px;
-    }
-
-    .a-fw-grid {
+    .fw-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: var(--s-2);
+        border: 1px solid var(--hairline);
     }
 
-    .a-fw {
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        border-top: 2px solid rgba(56, 217, 201, 0.5);
-        padding: var(--s-4) var(--s-3);
-        text-align: left;
+    .fw-cell {
+        padding: 1.5rem 1.6rem 1.6rem;
+        border-right: 1px solid var(--hairline);
+        border-bottom: 1px solid var(--hairline);
         display: flex;
         flex-direction: column;
-        gap: 0.35rem;
+        gap: 0.4rem;
+        background: var(--ink);
+        transition: background var(--t-short);
     }
+    .fw-cell:nth-child(4n) { border-right: none; }
+    .fw-cell:nth-child(n+5) { border-bottom: none; }
+    .fw-cell:hover { background: var(--ink-panel); }
 
-    .a-fw-region {
-        font-family: 'SF Mono', 'Menlo', monospace;
-        font-size: 0.65rem;
-        letter-spacing: 1.5px;
+    .fw-region {
+        font-family: var(--mono);
+        font-size: 0.58rem;
+        letter-spacing: 0.18em;
         text-transform: uppercase;
-        color: rgba(56, 217, 201, 0.8);
+        color: #38d9c9;
     }
 
-    .a-fw-name {
-        font-family: 'Source Sans Pro', sans-serif;
+    .fw-name {
         font-weight: 600;
         font-size: 0.95rem;
-        color: #fff;
+        color: var(--bone);
     }
 
-    /* ── PLATFORM (4 STEPS) ── */
-    .a-platform {
-        background: var(--stone);
-        padding: var(--s-16) 0;
-    }
-
-    .a-plat-grid {
-        max-width: 1080px;
-        margin: 0 auto;
-        padding: 0 var(--s-3);
+    /* ── PLATFORM (PAPER) ── */
+    .plat-grid {
         display: grid;
-        grid-template-columns: 0.85fr 1.4fr;
-        gap: var(--s-10);
+        grid-template-columns: minmax(0, 4fr) minmax(0, 6fr);
+        gap: 4rem;
         align-items: start;
     }
 
-    .a-plat-rail {
-        position: sticky;
-        top: 100px;
-        padding-right: var(--s-3);
-    }
+    .plat-rail { position: sticky; top: 100px; }
+    .plat-rail h2 { margin-bottom: 1.6rem; }
 
-    .a-plat-rail h2 {
-        font-size: clamp(2rem, 3.4vw, 2.5rem);
-        line-height: 1.1;
-        color: var(--deep-navy);
-        margin: 0 0 var(--s-5);
-    }
-
-    .a-plat-toc {
+    .plat-toc {
         list-style: none;
-        margin: var(--s-5) 0 0;
-        padding: 0;
-        border-top: 1px solid rgba(30, 58, 95, 0.12);
-    }
-
-    .a-plat-toc li {
-        display: grid;
-        grid-template-columns: 40px 1fr;
-        gap: var(--s-2);
-        padding: 0.65rem 0;
-        border-bottom: 1px solid rgba(30, 58, 95, 0.08);
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.9rem;
-        color: var(--text-medium);
-    }
-
-    .a-plat-toc li span {
-        font-family: 'Fraunces', serif;
-        font-style: italic;
-        font-size: 1rem;
-        color: var(--gold);
-    }
-
-    .a-plat-step {
-        display: grid;
-        grid-template-columns: 48px 1fr;
-        gap: var(--s-5);
-        padding-bottom: var(--s-6);
-        margin-bottom: var(--s-6);
-        border-bottom: 1px solid rgba(30, 58, 95, 0.1);
-    }
-
-    .a-plat-step:last-of-type { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-
-    .a-plat-num {
-        font-family: 'Fraunces', serif;
-        font-style: italic;
-        font-weight: 500;
-        font-size: 2rem;
-        color: var(--gold);
-        line-height: 1;
-        padding-top: 0.3rem;
-        letter-spacing: -0.5px;
-    }
-
-    .a-plat-step h3 {
-        font-family: 'Fraunces', serif;
-        font-weight: 600;
-        font-size: 1.5rem;
-        color: var(--deep-navy);
-        margin: 0 0 var(--s-3);
-        letter-spacing: -0.3px;
-    }
-
-    .a-plat-step p {
-        font-size: 1.02rem;
-        line-height: 1.85;
-        color: var(--text-medium);
         margin: 0;
+        padding: 0;
+        border-top: 1px solid var(--hairline-paper);
+        max-width: 260px;
     }
+
+    .plat-toc li {
+        display: grid;
+        grid-template-columns: 44px 1fr;
+        gap: 0.6rem;
+        padding: 0.65rem 0;
+        border-bottom: 1px solid var(--hairline-paper);
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--text-medium);
+    }
+
+    .plat-toc li span {
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: 0.95rem;
+        color: var(--gold);
+        text-transform: none;
+        letter-spacing: 0;
+    }
+
+    .plat-body { border-top: 1px solid var(--hairline-paper); }
+
+    .plat-step {
+        display: grid;
+        grid-template-columns: 64px 1fr;
+        gap: 1.6rem;
+        padding: 1.8rem 0.5rem;
+        border-bottom: 1px solid var(--hairline-paper);
+    }
+
+    .lg-num {
+        font-family: var(--serif);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 1.6rem;
+        color: var(--gold);
+        line-height: 1.2;
+    }
+
+    .plat-step h3 { margin-bottom: 0.5rem; }
+    .plat-step p { font-size: 0.98rem; line-height: 1.75; max-width: 60ch; }
 
     /* ── COVERAGE ── */
-    .a-coverage {
-        background: var(--cream);
-        padding: var(--s-16) 0;
-    }
-
-    .a-cov-inner {
-        max-width: 1080px;
-        margin: 0 auto;
-        padding: 0 var(--s-3);
-    }
-
-    .a-cov-inner h2 {
-        font-size: clamp(1.9rem, 3.2vw, 2.4rem);
-        color: var(--deep-navy);
-        margin: 0 0 var(--s-8);
-    }
-
-    .a-cov-grid {
+    .cov-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: var(--s-3);
+        border: 1px solid var(--hairline);
     }
 
-    .a-cov-region {
-        background: #fff;
-        border: 1px solid var(--border-warm);
-        border-left: 3px solid var(--gold);
-        padding: var(--s-5);
+    .cov-cell {
+        padding: 1.8rem 1.8rem 2rem;
+        border-right: 1px solid var(--hairline);
         display: flex;
         flex-direction: column;
         gap: 0.6rem;
+        background: var(--ink);
+        transition: background var(--t-short);
     }
+    .cov-cell:last-child { border-right: none; }
+    .cov-cell:hover { background: var(--ink-panel); }
 
-    .a-cov-flag {
-        font-size: 1.5rem;
-        line-height: 1;
-    }
+    .cov-flag { font-size: 1.25rem; line-height: 1; }
+    .cov-cell h4 { color: var(--bone); }
+    .cov-cell p { font-size: 0.88rem; line-height: 1.65; color: var(--muted); }
 
-    .a-cov-region h4 {
-        font-family: 'Fraunces', serif;
+    /* ── INSURANCE PANEL ── */
+    .ins-score {
+        font-family: var(--serif);
         font-weight: 600;
-        font-size: 1.15rem;
-        color: var(--deep-navy);
-        margin: 0;
-        letter-spacing: -0.3px;
-    }
-
-    .a-cov-region p {
-        font-size: 0.92rem;
-        line-height: 1.7;
-        color: var(--text-medium);
-        margin: 0;
-    }
-
-    /* ── INSURANCE ── */
-    .a-insurance {
-        background: linear-gradient(135deg, #0a1628 0%, #162d4f 100%);
-        padding: var(--s-16) 0;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .a-insurance::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0;
-        height: 1px;
-        background: rgba(201, 169, 97, 0.3);
-    }
-
-    .a-ins-grid {
-        max-width: 1080px;
-        margin: 0 auto;
-        padding: 0 var(--s-3);
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: var(--s-10);
-        align-items: start;
-    }
-
-    .a-ins-copy h2 {
-        font-size: clamp(1.9rem, 3.2vw, 2.5rem);
-        color: #fff;
-        line-height: 1.18;
-        margin: 0 0 var(--s-5);
-    }
-
-    .a-ins-copy p {
-        font-size: 1.05rem;
-        line-height: 1.9;
-        color: rgba(255, 255, 255, 0.65);
-        margin: 0 0 var(--s-4);
-    }
-
-    .a-ins-card {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(56, 217, 201, 0.2);
-        padding: var(--s-5);
-        display: flex;
-        flex-direction: column;
-        gap: var(--s-4);
-    }
-
-    .a-ins-head {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        padding-bottom: var(--s-3);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .a-ins-score {
-        font-family: 'Fraunces', serif;
-        font-weight: 600;
-        font-size: 3rem;
-        color: #fff;
+        font-size: 2.8rem;
         line-height: 1;
-        letter-spacing: -1px;
+        color: var(--bone);
+        letter-spacing: -0.02em;
     }
 
-    .a-ins-of {
-        font-size: 1.3rem;
-        color: rgba(255, 255, 255, 0.35);
+    .ins-of {
+        font-size: 1.2rem;
+        color: var(--dim);
     }
 
-    .a-ins-verdict {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 1.8px;
-        text-transform: uppercase;
-        color: rgba(56, 217, 201, 0.95);
-        background: rgba(56, 217, 201, 0.1);
-        border: 1px solid rgba(56, 217, 201, 0.3);
-        padding: 0.35rem 0.65rem;
-    }
-
-    .a-ins-block-label {
-        display: block;
-        font-family: 'Source Sans Pro', sans-serif;
+    .ins-verdict {
         font-size: 0.62rem;
         font-weight: 700;
-        letter-spacing: 2px;
+        letter-spacing: 0.2em;
         text-transform: uppercase;
-        color: rgba(56, 217, 201, 0.85);
-        margin-bottom: var(--s-2);
+        color: #38d9c9;
     }
 
-    .a-ins-block ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
+    .ins-gauge {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-bottom: 1.4rem;
     }
 
-    .a-ins-block li {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.92rem;
-        color: rgba(255, 255, 255, 0.7);
-        padding: 0.35rem 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    .g-track { stroke: var(--hairline); stroke-width: 1; }
+    .g-tick { stroke: var(--hairline); stroke-width: 1; }
+    .g-fill { stroke: #38d9c9; stroke-width: 1.5; }
+    .g-marker { fill: #38d9c9; animation: pulse-cyan 3s ease-in-out infinite; }
+    .g-note {
+        font-family: var(--mono);
+        font-size: 8px;
+        letter-spacing: 0.12em;
+        fill: var(--dim);
     }
+    .g-note-end { text-anchor: end; }
 
-    .a-ins-block li:last-child { border-bottom: none; }
-
-    .a-carriers li {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .a-c-pct {
-        font-family: 'SF Mono', 'Menlo', monospace;
-        font-size: 0.82rem;
-        color: rgba(56, 217, 201, 0.85);
+    .carrier-pct {
+        color: #38d9c9;
+        font-variant-numeric: tabular-nums;
     }
 
     /* ── CTA ── */
-    .a-cta {
-        background:
-            radial-gradient(ellipse 80% 60% at 50% 50%, rgba(56, 217, 201, 0.06), transparent 70%),
-            #060b16;
-        padding: var(--s-14) var(--s-3);
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-    }
+    .cta-block { max-width: 720px; padding-top: 3rem; }
+    .cta-block .route-line { display: block; margin-bottom: 1.6rem; }
+    .cta-block h2 { margin-bottom: 1.2rem; }
+    .cta-block p { margin-bottom: 2rem; max-width: 58ch; }
+    .live-cyan { color: #38d9c9; animation: pulse-cyan 2.4s ease-in-out infinite; }
 
-    .a-cta-glow {
-        position: absolute;
-        top: 50%; left: 50%;
-        width: 600px; height: 600px;
-        transform: translate(-50%, -50%);
-        background: radial-gradient(circle, rgba(201, 169, 97, 0.06) 0%, transparent 60%);
-        filter: blur(40px);
-        pointer-events: none;
-    }
-
-    .a-cta::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, rgba(56, 217, 201, 0.5), transparent);
-    }
-
-    .a-cta-inner {
-        max-width: 680px;
-        margin: 0 auto;
-        position: relative;
-        z-index: 1;
-    }
-
-    .a-cta-rule {
-        width: 32px; height: 1px;
-        background: var(--gold);
-        margin: 0 auto var(--s-4);
-    }
-
-    .a-cta-eyebrow {
-        font-family: 'SF Mono', 'Menlo', monospace;
-        font-size: 0.72rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: rgba(56, 217, 201, 0.85);
-        margin-bottom: var(--s-4);
-    }
-
-    .a-cta h2 {
-        font-size: clamp(1.9rem, 3.2vw, 2.5rem);
-        color: #fff;
-        margin: 0 0 var(--s-4);
-        line-height: 1.15;
-    }
-
-    .a-cta p {
-        color: rgba(255, 255, 255, 0.6);
-        font-size: 1.05rem;
-        line-height: 1.85;
-        margin: 0 0 var(--s-6);
+    /* ── REDUCED MOTION ── */
+    @media (prefers-reduced-motion: reduce) {
+        .inst-live, .mx-cell-pulse, .g-marker, .live-cyan { animation: none; }
     }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 980px) {
-        .a-reg-grid { grid-template-columns: 1fr; gap: var(--s-8); }
-        .a-fw-grid { grid-template-columns: repeat(2, 1fr); }
-        .a-plat-grid { grid-template-columns: 1fr; gap: var(--s-8); }
-        .a-plat-rail { position: static; padding-right: 0; }
-        .a-cov-grid { grid-template-columns: repeat(2, 1fr); }
-        .a-ins-grid { grid-template-columns: 1fr; gap: var(--s-6); }
+    @media (max-width: 992px) {
+        .console-grid { grid-template-columns: 1fr; }
+        .console-statement { border-right: none; border-bottom: 1px solid var(--hairline); padding: 3rem 2rem; }
+        .console-instrument { padding: 2rem 2rem 1.4rem; }
+        .reg-grid, .ins-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+        .plat-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+        .plat-rail { position: static; }
+        .fw-grid { grid-template-columns: repeat(2, 1fr); }
+        .fw-cell:nth-child(4n) { border-right: 1px solid var(--hairline); }
+        .fw-cell:nth-child(2n) { border-right: none; }
+        .fw-cell:nth-child(n+5) { border-bottom: 1px solid var(--hairline); }
+        .fw-cell:nth-child(n+7) { border-bottom: none; }
+        .cov-grid { grid-template-columns: repeat(2, 1fr); }
+        .cov-cell:nth-child(2n) { border-right: none; }
+        .cov-cell:nth-child(-n+2) { border-bottom: 1px solid var(--hairline); }
     }
 
-    @media (max-width: 640px) {
-        .a-hero-lockup { max-width: 260px; }
-        .a-fw-grid { grid-template-columns: 1fr; }
-        .a-cov-grid { grid-template-columns: 1fr; }
-        .a-plat-step { grid-template-columns: 1fr; gap: var(--s-2); padding-bottom: var(--s-5); margin-bottom: var(--s-5); }
-        .a-plat-num { font-size: 1.6rem; padding-top: 0; }
+    @media (max-width: 700px) {
+        .fw-grid, .cov-grid { grid-template-columns: 1fr; }
+        .fw-cell, .fw-cell:nth-child(4n), .fw-cell:nth-child(2n) { border-right: none; border-bottom: 1px solid var(--hairline); }
+        .fw-cell:last-child { border-bottom: none; }
+        .cov-cell, .cov-cell:nth-child(2n) { border-right: none; border-bottom: 1px solid var(--hairline); }
+        .cov-cell:last-child { border-bottom: none; }
+        .plat-step { grid-template-columns: 40px 1fr; gap: 1rem; }
+        .spec-panel { padding: 1.4rem 1.4rem 1.6rem; }
+        .brand-lockup { width: 180px; }
     }
 </style>

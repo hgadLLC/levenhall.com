@@ -14,13 +14,14 @@ import { team } from '../data/team';
     <PageHeader
         label="Our Leadership"
         title="The Team"
+        index="02"
     />
 
-    <!-- ── TEAM GRID ── -->
-    <section class="section team-section">
+    <!-- ── ROSTER (STONE — editorial passage for bios) ── -->
+    <section class="section section-stone team-section">
         <div class="container">
-            <div class="team-intro reveal">
-                <div class="team-intro-rule"></div>
+            <div class="team-intro">
+                <span class="route-line team-route">Levenhall / Leadership / Roster</span>
                 <p>Levenhall's leadership brings direct experience from the <strong>intelligence community</strong>, <strong>military service</strong>, <strong>diplomatic engagement</strong>, <strong>government contracting</strong>, and <strong>allied defense markets</strong>. Our market intelligence work is built on what they know, who they know, and how they read the markets we operate in.</p>
             </div>
             <div class="team-grid">
@@ -36,7 +37,7 @@ import { team } from '../data/team';
                     />
                 ))}
             </div>
-            <p class="selective-note reveal">Engagements are selective and subject to conflict and compliance review.</p>
+            <p class="selective-note editorial-italic">Engagements are selective and subject to conflict and compliance review.</p>
         </div>
     </section>
 
@@ -54,21 +55,18 @@ import { team } from '../data/team';
 </BaseLayout>
 
 <style>
-    /* ── TEAM GRID ── */
-    .team-section {
-        background: var(--cream);
-        padding: 5rem 0 6rem;
-    }
-
+    /* ── ROSTER (STONE) ── */
     .team-intro {
-        max-width: 900px;
-        margin: 0 auto 3rem;
-        padding-left: 1.5rem;
-        border-left: 3px solid var(--gold);
+        max-width: 760px;
+        margin-bottom: 3rem;
+        border-top: 1px solid var(--hairline-paper);
+        padding-top: 1.4rem;
     }
 
-    .team-intro-rule {
-        display: none;
+    .team-route {
+        display: block;
+        margin-bottom: 1.4rem;
+        color: var(--text-medium);
     }
 
     .team-intro p {
@@ -85,25 +83,22 @@ import { team } from '../data/team';
     .team-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-        max-width: 1200px;
-        margin: 0 auto;
+        gap: 1.5rem;
     }
 
     .selective-note {
-        text-align: center;
-        font-size: 0.88rem;
-        font-style: italic;
-        color: var(--text-medium);
-        opacity: 0.5;
+        font-size: 0.95rem;
         margin-top: 3rem;
+        padding-top: 1.2rem;
+        border-top: 1px solid var(--hairline-paper);
+        max-width: 760px;
     }
 
     @media (max-width: 1024px) {
-        .team-grid { grid-template-columns: repeat(2, 1fr); max-width: 900px; }
+        .team-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 768px) {
-        .team-grid { grid-template-columns: 1fr; max-width: 450px; }
+        .team-grid { grid-template-columns: 1fr; max-width: 420px; }
     }
 </style>

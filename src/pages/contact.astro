@@ -11,20 +11,24 @@ import { team } from '../data/team';
         title="Contact"
     />
 
+    <!-- ── CONSULTATION + DIRECT CONTACT (INK) ── -->
     <section class="section contact-section">
         <div class="container">
             <div class="contact-grid">
                 <!-- LEFT: Primary CTA -->
-                <div class="contact-primary reveal">
+                <div class="contact-primary">
+                    <span class="section-label">Consultation</span>
                     <h2>Schedule a Consultation</h2>
-                    <div class="contact-gold-rule"></div>
                     <p>Initial consultations are confidential and without obligation. We will discuss your market, the intelligence questions you are trying to answer, and whether Levenhall is the right partner &mdash; whether your interest is intelligence, US federal market entry, a venture engagement, or one of our products.</p>
-                    <a href="https://calendly.com/hgad-levenhall/30min" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="margin-top: 1rem;">Book a Time</a>
+                    <a href="https://calendly.com/hgad-levenhall/30min" class="btn btn-primary contact-book" target="_blank" rel="noopener noreferrer">Book a Time</a>
                 </div>
 
-                <!-- RIGHT: Direct Contact -->
-                <div class="contact-direct reveal">
-                    <h3>Direct Contact</h3>
+                <!-- RIGHT: Direct Contact — ink panel, hairline ledger -->
+                <div class="contact-direct">
+                    <div class="contact-panel-head">
+                        <span>Direct Contact</span>
+                        <span>Levenhall / DC</span>
+                    </div>
                     <div class="contact-list">
                         {team.map(member => (
                             <div class="contact-person">
@@ -61,29 +65,28 @@ import { team } from '../data/team';
         </div>
     </section>
 
-    <!-- ── WHAT TO EXPECT (DARK) ── -->
-    <section class="section expect-section">
-        <div class="expect-bg"></div>
-        <div class="container" style="position: relative; z-index: 1;">
-            <div class="expect-content reveal">
-                <span class="expect-label">What to Expect</span>
+    <!-- ── WHAT TO EXPECT (PANEL) ── -->
+    <section class="section section-panel expect-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">What to Expect</span>
                 <h2>The Initial Conversation</h2>
-                <div class="expect-grid">
-                    <div class="expect-item">
-                        <div class="expect-num">01</div>
-                        <h4>Confidential</h4>
-                        <p>Every conversation with Levenhall is held in strict confidence. We discuss sensitive technology, competitive positioning, intelligence requirements, and strategic plans, and treat that information accordingly.</p>
-                    </div>
-                    <div class="expect-item">
-                        <div class="expect-num">02</div>
-                        <h4>Direct</h4>
-                        <p>We will tell you honestly whether the market you are targeting is right for your firm at this stage, which pathways are realistic, and what timeline to expect. No inflated projections or vague promises.</p>
-                    </div>
-                    <div class="expect-item">
-                        <div class="expect-num">03</div>
-                        <h4>Selective</h4>
-                        <p>Not every inquiry results in an engagement. We take on a limited number of clients in each technology domain to ensure our intelligence work and institutional knowledge serve each one without dilution.</p>
-                    </div>
+            </div>
+            <div class="expect-grid">
+                <div class="expect-item">
+                    <span class="expect-num">01</span>
+                    <h4>Confidential</h4>
+                    <p>Every conversation with Levenhall is held in strict confidence. We discuss sensitive technology, competitive positioning, intelligence requirements, and strategic plans, and treat that information accordingly.</p>
+                </div>
+                <div class="expect-item">
+                    <span class="expect-num">02</span>
+                    <h4>Direct</h4>
+                    <p>We will tell you honestly whether the market you are targeting is right for your firm at this stage, which pathways are realistic, and what timeline to expect. No inflated projections or vague promises.</p>
+                </div>
+                <div class="expect-item">
+                    <span class="expect-num">03</span>
+                    <h4>Selective</h4>
+                    <p>Not every inquiry results in an engagement. We take on a limited number of clients in each technology domain to ensure our intelligence work and institutional knowledge serve each one without dilution.</p>
                 </div>
             </div>
         </div>
@@ -92,257 +95,199 @@ import { team } from '../data/team';
 </BaseLayout>
 
 <style>
-    .contact-section {
-        background: var(--stone);
-    }
-
-    .contact-gold-rule {
-        width: 50px;
-        height: 2px;
-        background: var(--gold);
-        margin-bottom: 1.5rem;
-    }
+    /* ── CONSULTATION (INK) ── */
+    .contact-section { background: var(--ink); }
 
     .contact-grid {
         display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 4rem;
+        grid-template-columns: minmax(0, 55fr) minmax(0, 45fr);
+        gap: 4.5rem;
         align-items: start;
     }
 
     .contact-primary h2 {
-        font-size: clamp(1.6rem, 3vw, 2.2rem);
-        margin-bottom: 1rem;
+        font-size: clamp(1.7rem, 3vw, 2.4rem);
+        margin-bottom: 1.2rem;
     }
 
     .contact-primary p {
         font-size: 1.02rem;
         line-height: 1.75;
-        margin-bottom: 0.8rem;
+        max-width: 56ch;
     }
 
+    .contact-book {
+        margin-top: 2.2rem;
+    }
+
+    /* Direct contact — ink panel, hairline borders, square corners */
     .contact-direct {
-        background: #fff;
-        padding: 2rem;
-        border: 1px solid var(--border-warm);
-        border-top: 3px solid var(--navy);
+        background: var(--ink-panel);
+        border: 1px solid var(--hairline);
+        padding: 1.8rem 2rem 2rem;
     }
 
-    .contact-direct h3 {
-        font-size: 1.1rem;
-        color: var(--navy);
-        margin-bottom: 1.2rem;
-        padding-bottom: 0.6rem;
-        border-bottom: 1px solid var(--border-subtle);
+    .contact-panel-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        font-family: var(--mono);
+        font-size: 0.6rem;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--dim);
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--hairline);
     }
+    .contact-panel-head span:first-child { color: var(--gold); }
 
     .contact-list {
         display: flex;
         flex-direction: column;
-        gap: 1.2rem;
-        margin-bottom: 1.5rem;
     }
 
     .contact-person {
         display: flex;
         flex-direction: column;
-        gap: 0.15rem;
-        padding-left: 1rem;
-        border-left: 2px solid var(--gold);
+        gap: 0.3rem;
+        padding: 1.2rem 0;
+        border-bottom: 1px solid var(--hairline);
     }
 
     .contact-name {
         font-weight: 600;
-        font-size: 0.95rem;
-        color: var(--navy);
+        font-size: 0.98rem;
+        color: var(--bone);
     }
 
     .contact-role {
-        font-size: 0.78rem;
-        color: var(--text-medium);
-        margin-bottom: 0.2rem;
+        font-family: var(--mono);
+        font-size: 0.6rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--dim);
+        margin-bottom: 0.3rem;
     }
 
     .contact-links {
         display: flex;
         flex-direction: column;
-        gap: 0.1rem;
+        gap: 0.25rem;
     }
 
     .contact-email,
     .contact-phone {
-        font-size: 0.85rem;
-        color: var(--burgundy);
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.04em;
+        color: var(--muted);
         text-decoration: none;
-        transition: color 0.2s ease;
+        transition: color var(--t-short);
     }
 
     .contact-email:hover,
     .contact-phone:hover {
-        color: var(--navy);
+        color: var(--gold);
     }
 
     .contact-location {
-        padding-top: 1.5rem;
-        border-top: 1px solid var(--border-subtle);
+        padding-top: 1.4rem;
     }
 
-    .contact-location h4 {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 600;
-        font-size: 0.7rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: var(--navy);
-        margin-bottom: 0.4rem;
-    }
+    .contact-location h4 { margin-bottom: 0.4rem; color: var(--dim); }
 
     .contact-location p {
         font-size: 0.9rem;
-        color: var(--text-medium);
+        color: var(--muted);
     }
 
     .contact-credentials {
-        padding-top: 1.5rem;
-        margin-top: 1.5rem;
-        border-top: 1px solid var(--border-subtle);
+        padding-top: 1.4rem;
+        margin-top: 1.4rem;
+        border-top: 1px solid var(--hairline);
     }
 
-    .contact-credentials h4 {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 600;
-        font-size: 0.7rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: var(--navy);
-        margin-bottom: 0.7rem;
-    }
+    .contact-credentials h4 { margin-bottom: 0.8rem; color: var(--dim); }
 
     .contact-credentials dl {
         margin: 0;
         display: flex;
         flex-direction: column;
-        gap: 0.3rem;
+        gap: 0.4rem;
     }
 
     .contact-credentials .cred-row {
         display: flex;
         align-items: baseline;
-        gap: 0.8rem;
-        font-size: 0.9rem;
+        gap: 1rem;
     }
 
     .contact-credentials dt {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.7rem;
-        letter-spacing: 1.5px;
+        font-family: var(--mono);
+        font-size: 0.6rem;
+        font-weight: 500;
+        letter-spacing: 0.18em;
         text-transform: uppercase;
         color: var(--gold);
-        font-weight: 600;
-        min-width: 3rem;
+        min-width: 3.2rem;
     }
 
     .contact-credentials dd {
         margin: 0;
-        font-family: 'SF Mono', 'Menlo', monospace;
-        color: var(--text-medium);
-        letter-spacing: 0.5px;
+        font-family: var(--mono);
+        font-size: 0.78rem;
+        letter-spacing: 0.06em;
+        color: var(--muted);
+        font-variant-numeric: tabular-nums;
     }
 
-    /* ── EXPECT (DARK) ── */
-    .expect-section {
-        background: linear-gradient(180deg, var(--deep-navy) 0%, #162d4a 100%);
-        overflow: hidden;
-    }
-
-    .expect-bg {
-        position: absolute;
-        inset: 0;
-        background-image:
-            radial-gradient(ellipse at 50% 80%, rgba(201, 169, 97, 0.05) 0%, transparent 50%);
-        pointer-events: none;
-    }
-
-    .expect-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background: linear-gradient(90deg, transparent, var(--gold), transparent);
-        opacity: 0.4;
-    }
-
-    .expect-label {
-        display: inline-block;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 600;
-        font-size: 0.72rem;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        color: var(--gold);
-        background: rgba(201, 169, 97, 0.08);
-        padding: 0.5rem 1.2rem;
-        margin-bottom: 1.2rem;
-    }
-
-    .expect-content { max-width: 900px; }
-    .expect-content h2 {
-        color: #fff;
-        margin-bottom: 2rem;
-    }
-
+    /* ── EXPECT (PANEL) ── */
     .expect-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
+        border: 1px solid var(--hairline);
     }
 
     .expect-item {
-        padding: 1.5rem;
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        border-left: 3px solid rgba(201, 169, 97, 0.3);
-        transition: all 0.3s ease;
+        padding: 2rem 1.8rem 2.2rem;
+        border-right: 1px solid var(--hairline);
+        background: var(--ink);
+        transition: background var(--t-short);
     }
-
-    .expect-item:hover {
-        background: rgba(255, 255, 255, 0.07);
-        border-left-color: var(--gold);
-        transform: translateX(4px);
-    }
+    .expect-item:last-child { border-right: none; }
+    .expect-item:hover { background: var(--ink-panel); }
 
     .expect-num {
-        font-family: 'Fraunces', serif;
-        font-size: 1.2rem;
-        font-weight: 700;
+        display: block;
+        font-family: var(--mono);
+        font-size: 0.62rem;
+        font-weight: 500;
+        letter-spacing: 0.18em;
         color: var(--gold);
-        opacity: 0.5;
-        margin-bottom: 0.5rem;
+        margin-bottom: 1rem;
     }
 
     .expect-item h4 {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 600;
-        font-size: 0.75rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: #fff;
-        margin-bottom: 0.8rem;
+        color: var(--bone);
+        margin-bottom: 0.7rem;
     }
 
     .expect-item p {
         font-size: 0.9rem;
         line-height: 1.65;
-        color: rgba(255, 255, 255, 0.5);
+        color: var(--muted);
     }
 
+    /* ── RESPONSIVE ── */
     @media (max-width: 992px) {
         .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
     }
 
     @media (max-width: 768px) {
         .expect-grid { grid-template-columns: 1fr; }
+        .expect-item { border-right: none; border-bottom: 1px solid var(--hairline); }
+        .expect-item:last-child { border-bottom: none; }
+        .contact-direct { padding: 1.5rem 1.4rem 1.6rem; }
     }
 </style>

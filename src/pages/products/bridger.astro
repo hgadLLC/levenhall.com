@@ -1,184 +1,241 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
 ---
 
 <BaseLayout title="Bridger by Levenhall — Market Entry Intelligence for US Federal Contracting" description="$760B in federal contracts a year. Bridger surfaces the work before the RFP, scores it against your profile, and stands watch after — built first for allied technology firms entering the US and for US tech companies capturing federal work.">
 
-    <!-- ── HERO ── -->
-    <section class="b-hero">
-        <div class="b-hero-glow"></div>
-        <div class="b-hero-inner">
-            <p class="b-hero-tag">A Levenhall Product</p>
-            <div class="b-hero-brand">
-                <img src="/images/products/bridger-mark.png" alt="" class="b-hero-mark" aria-hidden="true">
-                <span class="b-hero-wordmark">Bridger</span>
+    <PageHeader
+        label="Systems / Bridger / A Levenhall Product"
+        index="01"
+        title="Market Entry Intelligence for US Federal Contracting."
+    />
+
+    <!-- ── CONSOLE: STATEMENT + INDEX INSTRUMENT ── -->
+    <section class="console sweep-field texture-grain">
+        <div class="console-grid">
+            <div class="console-statement">
+                <div class="brand-row">
+                    <img src="/images/products/bridger-mark.png" alt="" class="brand-mark" aria-hidden="true" />
+                    <span class="brand-word">Bridger</span>
+                </div>
+                <p class="console-lede">$760B in federal contracts a year. Bridger surfaces the work before the RFP, scores it against your profile, and stands watch after &mdash; built first for allied technology firms entering the US and for US tech companies capturing federal work.</p>
+                <div class="btn-group console-cta">
+                    <a href="https://bridger.levenhall.com/get-started" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Request Access</a>
+                    <a href="https://bridger.levenhall.com/brief" class="mono-link" target="_blank" rel="noopener noreferrer">Read Today's Intel Brief →</a>
+                </div>
+                <p class="console-meta">Live at <a href="https://bridger.levenhall.com" target="_blank" rel="noopener noreferrer">bridger.levenhall.com</a></p>
             </div>
-            <h1 class="b-hero-h1">Market Entry Intelligence<br/>for US Federal Contracting.</h1>
-            <p class="b-hero-tagline">$760B in federal contracts a year. Bridger surfaces the work before the RFP, scores it against your profile, and stands watch after &mdash; built first for allied technology firms entering the US and for US tech companies capturing federal work.</p>
-            <div class="b-hero-cta">
-                <a href="https://bridger.levenhall.com/get-started" class="btn btn-gold" target="_blank" rel="noopener noreferrer">Request Access</a>
-                <a href="https://bridger.levenhall.com/brief" class="btn btn-outline-white" target="_blank" rel="noopener noreferrer">Read Today's Intel Brief</a>
+
+            <div class="console-instrument" aria-hidden="true">
+                <div class="inst-head">
+                    <span>Procurement Signal / Bridger Index</span>
+                    <span class="inst-live">● 40+ Live Sources</span>
+                </div>
+                <svg class="inst-svg" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg">
+                    <!-- axis frame -->
+                    <g class="ax">
+                        <line x1="52" y1="40" x2="536" y2="40" />
+                        <line x1="52" y1="100" x2="536" y2="100" />
+                        <line x1="52" y1="160" x2="536" y2="160" />
+                        <line x1="52" y1="220" x2="536" y2="220" />
+                        <line x1="52" y1="280" x2="536" y2="280" class="ax-base" />
+                        <line x1="52" y1="40" x2="52" y2="280" />
+                    </g>
+                    <!-- x ticks -->
+                    <g class="ax">
+                        <line x1="52" y1="280" x2="52" y2="286" />
+                        <line x1="173" y1="280" x2="173" y2="286" />
+                        <line x1="294" y1="280" x2="294" y2="286" />
+                        <line x1="415" y1="280" x2="415" y2="286" />
+                        <line x1="536" y1="280" x2="536" y2="286" />
+                    </g>
+                    <text class="ax-note" x="52" y="302">T-12MO</text>
+                    <text class="ax-note" x="173" y="302">T-9</text>
+                    <text class="ax-note" x="294" y="302">T-6</text>
+                    <text class="ax-note" x="415" y="302">T-3</text>
+                    <text class="ax-note ax-note-end" x="536" y="302">RFP</text>
+                    <!-- RFP marker -->
+                    <line class="rfp-line" x1="536" y1="40" x2="536" y2="280" />
+                    <!-- index line -->
+                    <path class="idx-area" d="M52 236 L88 228 L124 232 L160 214 L196 220 L232 198 L268 204 L304 178 L340 186 L376 156 L412 164 L448 122 L484 132 L520 84 L536 76 L536 280 L52 280 Z" />
+                    <path class="idx-line" d="M52 236 L88 228 L124 232 L160 214 L196 220 L232 198 L268 204 L304 178 L340 186 L376 156 L412 164 L448 122 L484 132 L520 84 L536 76" />
+                    <circle class="idx-dot" cx="536" cy="76" r="3" />
+                    <!-- annotations -->
+                    <text class="ann" x="52" y="28">$760B/YR INDEXED</text>
+                    <text class="ann ann-dim" x="232" y="150">SIGNAL · 6–12 MO AHEAD OF THE RFP</text>
+                </svg>
+                <div class="inst-foot">
+                    <span>Representative signal</span>
+                    <span class="inst-verdict">Scored: GO / MONITOR / NO-GO</span>
+                </div>
             </div>
-            <p class="b-hero-meta">Live at <a href="https://bridger.levenhall.com" target="_blank" rel="noopener noreferrer">bridger.levenhall.com</a></p>
+        </div>
+
+        <!-- Right now on Bridger — evidence bar -->
+        <div class="data-bar">
+            <div class="datum datum-label"><span class="d-cap d-cap-gold">Right now on Bridger</span></div>
+            <div class="datum"><span class="d-val">$760<span class="d-u">B</span></span><span class="d-cap">Annual federal contracts</span></div>
+            <div class="datum"><span class="d-val">2,300<span class="d-u">+</span></span><span class="d-cap">Signals indexed this week</span></div>
+            <div class="datum"><span class="d-val">1,400<span class="d-u">+</span></span><span class="d-cap">Allied tech firms</span></div>
+            <div class="datum"><span class="d-val">60<span class="d-u">+</span></span><span class="d-cap">Countries represented</span></div>
+            <div class="datum"><span class="d-val">40<span class="d-u">+</span></span><span class="d-cap">Live sources</span></div>
         </div>
     </section>
 
-    <!-- ── RIGHT NOW ON BRIDGER (STAT STRIP) ── -->
-    <section class="b-live">
-        <div class="b-live-inner">
-            <p class="b-live-label">Right now on Bridger</p>
-            <div class="b-live-stats">
-                <div class="b-stat"><span class="b-stat-val">$760<span class="b-u">B</span></span><span class="b-stat-lbl">Annual federal contracts</span></div>
-                <div class="b-stat"><span class="b-stat-val">2,300<span class="b-u">+</span></span><span class="b-stat-lbl">Signals indexed this week</span></div>
-                <div class="b-stat"><span class="b-stat-val">1,400<span class="b-u">+</span></span><span class="b-stat-lbl">Allied tech firms</span></div>
-                <div class="b-stat"><span class="b-stat-val">60<span class="b-u">+</span></span><span class="b-stat-lbl">Countries represented</span></div>
-                <div class="b-stat"><span class="b-stat-val">40<span class="b-u">+</span></span><span class="b-stat-lbl">Live sources</span></div>
+    <!-- ── OPENING (PAPER — the one light passage) ── -->
+    <section class="section section-paper">
+        <div class="container">
+            <div class="opening-prose">
+                <span class="route-line opening-route">Bridger / Doctrine</span>
+                <p class="opening-lede">Most platforms tell you what already happened. Bridger sees the work before SAM.gov publishes it.</p>
+                <p>Appropriations bills, committee markups, agency forecasts, GAO bid protests, OFAC entity-list updates &mdash; the signal that decides who wins moves six to twelve months ahead of the RFP. Bridger indexes the signal, scores every opportunity against your profile, and gives a <strong class="mono-strong">GO / MONITOR / NO-GO</strong> verdict overnight.</p>
+                <p>Then it stands watch: forty automated jobs a day, running while you sleep.</p>
             </div>
         </div>
     </section>
 
-    <!-- ── OPENING ── -->
-    <section class="b-opening">
-        <div class="b-prose reveal">
-            <p class="b-lede">Most platforms tell you what already happened. Bridger sees the work before SAM.gov publishes it.</p>
-            <p>Appropriations bills, committee markups, agency forecasts, GAO bid protests, OFAC entity-list updates &mdash; the signal that decides who wins moves six to twelve months ahead of the RFP. Bridger indexes the signal, scores every opportunity against your profile, and gives a <strong>GO / MONITOR / NO-GO</strong> verdict overnight.</p>
-            <p>Then it stands watch: forty automated jobs a day, running while you sleep.</p>
-        </div>
-    </section>
-
-    <!-- ── WHO IT'S FOR ── -->
-    <section class="b-who">
-        <div class="b-who-inner">
-            <header class="b-who-head reveal">
-                <span class="b-eyebrow b-eyebrow-light">§ Who Bridger is for</span>
+    <!-- ── WHO IT'S FOR (LEDGER) ── -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">§ Who Bridger is for</span>
                 <h2>Three sides. One platform.</h2>
-            </header>
-            <div class="b-who-grid reveal">
-                <a href="https://bridger.levenhall.com/for-tech-companies" class="b-who-card" target="_blank" rel="noopener noreferrer">
-                    <span class="b-who-num">01</span>
-                    <h3>Tech Companies</h3>
-                    <p>Allied firms from AUKUS, Five Eyes, and NATO nations entering the US. US tech companies capturing federal work. Appropriations signal, pre-RFP scoring, competitor reconstruction, and the compliance layer &mdash; ITAR, FOCI, CFIUS, DSGL, DISP &mdash; that no other platform touches.</p>
-                    <span class="b-who-cta">How tech companies use Bridger &rarr;</span>
+            </div>
+            <div class="ledger">
+                <a href="https://bridger.levenhall.com/for-tech-companies" class="ledger-row" target="_blank" rel="noopener noreferrer">
+                    <span class="lg-num">01</span>
+                    <span class="lg-body">
+                        <h3>Tech Companies</h3>
+                        <p>Allied firms from AUKUS, Five Eyes, and NATO nations entering the US. US tech companies capturing federal work. Appropriations signal, pre-RFP scoring, competitor reconstruction, and the compliance layer &mdash; ITAR, FOCI, CFIUS, DSGL, DISP &mdash; that no other platform touches.</p>
+                    </span>
+                    <span class="lg-cta">How tech companies use Bridger →</span>
                 </a>
-                <a href="https://bridger.levenhall.com/for-providers" class="b-who-card" target="_blank" rel="noopener noreferrer">
-                    <span class="b-who-num">02</span>
-                    <h3>Service Providers</h3>
-                    <p>Compliance advisors, proposal writers, US incorporation specialists, 8(a) JV partners, contract manufacturers. Free listing. Inbound leads at the point of intent. 10% commission on completed engagements via Stripe Connect.</p>
-                    <span class="b-who-cta">How providers use Bridger &rarr;</span>
+                <a href="https://bridger.levenhall.com/for-providers" class="ledger-row" target="_blank" rel="noopener noreferrer">
+                    <span class="lg-num">02</span>
+                    <span class="lg-body">
+                        <h3>Service Providers</h3>
+                        <p>Compliance advisors, proposal writers, US incorporation specialists, 8(a) JV partners, contract manufacturers. Free listing. Inbound leads at the point of intent. 10% commission on completed engagements via Stripe Connect.</p>
+                    </span>
+                    <span class="lg-cta">How providers use Bridger →</span>
                 </a>
-                <a href="https://bridger.levenhall.com/for-lobbyists" class="b-who-card" target="_blank" rel="noopener noreferrer">
-                    <span class="b-who-num">03</span>
-                    <h3>Lobbyists</h3>
-                    <p>Government-relations firms writing policy briefings on appropriations, defense, and tech trade. Free listing. 15% commission on engagements.</p>
-                    <span class="b-who-cta">How lobbyists use Bridger &rarr;</span>
+                <a href="https://bridger.levenhall.com/for-lobbyists" class="ledger-row" target="_blank" rel="noopener noreferrer">
+                    <span class="lg-num">03</span>
+                    <span class="lg-body">
+                        <h3>Lobbyists</h3>
+                        <p>Government-relations firms writing policy briefings on appropriations, defense, and tech trade. Free listing. 15% commission on engagements.</p>
+                    </span>
+                    <span class="lg-cta">How lobbyists use Bridger →</span>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- ── STANDING WATCH ── -->
-    <section class="b-watch">
-        <div class="b-watch-grid">
-            <aside class="b-watch-rail reveal">
-                <span class="b-eyebrow">§ Standing Watch</span>
-                <h2>Forty automated jobs a day.<br/>You get one page.</h2>
-                <p class="b-watch-lede">Watches run in the background across appropriations, awards, deadlines, competitors, programs, and countries. What lands in your morning brief is what actually moved.</p>
-            </aside>
-            <div class="b-watch-body">
-                <article class="b-watch-item reveal">
-                    <span class="b-watch-num">01</span>
-                    <div>
-                        <h3>Morning Intelligence Brief</h3>
-                        <p>Tailored to your profile, delivered at 6 AM Eastern. Overnight signal condensed into what deserves the first hour of your day.</p>
-                    </div>
-                </article>
-                <article class="b-watch-item reveal">
-                    <span class="b-watch-num">02</span>
-                    <div>
-                        <h3>Deadline Watch</h3>
-                        <p>14, 7, 3, 1 days. The pipeline you are actually pursuing, held against the clock.</p>
-                    </div>
-                </article>
-                <article class="b-watch-item reveal">
-                    <span class="b-watch-num">03</span>
-                    <div>
-                        <h3>Competitor Watch</h3>
-                        <p>Awards, value jumps, recompetes, agency moves. Every incumbent, reconstructed from public records and watched for movement.</p>
-                    </div>
-                </article>
-                <article class="b-watch-item reveal">
-                    <span class="b-watch-num">04</span>
-                    <div>
-                        <h3>Program Watch</h3>
-                        <p>Funding moves, forecast shifts, new solicitations against the programs of record you care about.</p>
-                    </div>
-                </article>
-                <article class="b-watch-item reveal">
-                    <span class="b-watch-num">05</span>
-                    <div>
-                        <h3>Country Watch</h3>
-                        <p>Instability tracking on the countries where your supply chain, partners, or opportunities sit.</p>
-                    </div>
-                </article>
-                <article class="b-watch-item reveal">
-                    <span class="b-watch-num">06</span>
-                    <div>
-                        <h3>Analyst Desk</h3>
-                        <p>Instant AI response or human analyst, on demand. Ask, and get the answer inside the platform.</p>
-                    </div>
-                </article>
+    <!-- ── STANDING WATCH (PANEL) ── -->
+    <section class="section section-panel">
+        <div class="container">
+            <div class="watch-grid">
+                <aside class="watch-rail">
+                    <span class="section-label">§ Standing Watch</span>
+                    <h2>Forty automated jobs a day.<br/>You get one page.</h2>
+                    <p class="watch-lede">Watches run in the background across appropriations, awards, deadlines, competitors, programs, and countries. What lands in your morning brief is what actually moved.</p>
+                </aside>
+                <div class="watch-body">
+                    <article class="watch-item">
+                        <span class="lg-num">01</span>
+                        <div>
+                            <h3>Morning Intelligence Brief</h3>
+                            <p>Tailored to your profile, delivered at 6 AM Eastern. Overnight signal condensed into what deserves the first hour of your day.</p>
+                        </div>
+                    </article>
+                    <article class="watch-item">
+                        <span class="lg-num">02</span>
+                        <div>
+                            <h3>Deadline Watch</h3>
+                            <p>14, 7, 3, 1 days. The pipeline you are actually pursuing, held against the clock.</p>
+                        </div>
+                    </article>
+                    <article class="watch-item">
+                        <span class="lg-num">03</span>
+                        <div>
+                            <h3>Competitor Watch</h3>
+                            <p>Awards, value jumps, recompetes, agency moves. Every incumbent, reconstructed from public records and watched for movement.</p>
+                        </div>
+                    </article>
+                    <article class="watch-item">
+                        <span class="lg-num">04</span>
+                        <div>
+                            <h3>Program Watch</h3>
+                            <p>Funding moves, forecast shifts, new solicitations against the programs of record you care about.</p>
+                        </div>
+                    </article>
+                    <article class="watch-item">
+                        <span class="lg-num">05</span>
+                        <div>
+                            <h3>Country Watch</h3>
+                            <p>Instability tracking on the countries where your supply chain, partners, or opportunities sit.</p>
+                        </div>
+                    </article>
+                    <article class="watch-item">
+                        <span class="lg-num">06</span>
+                        <div>
+                            <h3>Analyst Desk</h3>
+                            <p>Instant AI response or human analyst, on demand. Ask, and get the answer inside the platform.</p>
+                        </div>
+                    </article>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- ── BRIDGER STAFF ── -->
-    <section class="b-staff">
-        <div class="b-staff-inner">
-            <header class="b-staff-head reveal">
-                <span class="b-eyebrow b-eyebrow-light">§ Bridger Staff</span>
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">§ Bridger Staff</span>
                 <h2>Six officers on the cycle.</h2>
-                <p class="b-staff-lede">On <strong>Pathfinder Agentic ($1,499/mo)</strong> Bridger runs a six-officer staff against your pipeline &mdash; briefing, capture, entry, profile, marketplace, and briefing officers, drafting the work you would draft. Nothing submits, sends, or files without your click.</p>
-            </header>
-            <div class="b-staff-grid reveal">
-                <div class="b-officer">
-                    <span class="b-officer-role">Intelligence Officer</span>
+                <p class="staff-lede">On <strong class="mono-strong mono-strong-gold">Pathfinder Agentic ($1,499/mo)</strong> Bridger runs a six-officer staff against your pipeline &mdash; briefing, capture, entry, profile, marketplace, and briefing officers, drafting the work you would draft. Nothing submits, sends, or files without your click.</p>
+            </div>
+            <div class="officer-grid">
+                <div class="officer">
+                    <span class="officer-role">Intelligence Officer</span>
                     <p>Assembles the 6 AM briefing.</p>
                 </div>
-                <div class="b-officer">
-                    <span class="b-officer-role">Capture Officer</span>
+                <div class="officer">
+                    <span class="officer-role">Capture Officer</span>
                     <p>Drafts bid / no-bid analysis.</p>
                 </div>
-                <div class="b-officer">
-                    <span class="b-officer-role">Allied-Entry Officer</span>
+                <div class="officer">
+                    <span class="officer-role">Allied-Entry Officer</span>
                     <p>Maps US-entry pathways for allied firms.</p>
                 </div>
-                <div class="b-officer">
-                    <span class="b-officer-role">Profile Officer</span>
+                <div class="officer">
+                    <span class="officer-role">Profile Officer</span>
                     <p>Watches SAM, FPDS, CMMC posture.</p>
                 </div>
-                <div class="b-officer">
-                    <span class="b-officer-role">Marketplace Officer</span>
+                <div class="officer">
+                    <span class="officer-role">Marketplace Officer</span>
                     <p>Drafts replies to inbound demand.</p>
                 </div>
-                <div class="b-officer">
-                    <span class="b-officer-role">Briefing Officer</span>
+                <div class="officer">
+                    <span class="officer-role">Briefing Officer</span>
                     <p>Drafts policy and program briefings.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ── CTA ── -->
-    <section class="b-cta">
-        <div class="b-cta-glow"></div>
-        <div class="b-cta-inner">
-            <div class="b-cta-rule"></div>
-            <p class="b-cta-eyebrow">Live Now &middot; v2026.06</p>
-            <h2>Open Bridger.</h2>
-            <p>Production at bridger.levenhall.com. The daily brief is free and public. Scout tier free; Pathfinder Agentic unlocks the officer stack and the full watch cycle.</p>
-            <div class="btn-group" style="justify-content: center;">
-                <a href="https://bridger.levenhall.com/get-started" class="btn btn-gold" target="_blank" rel="noopener noreferrer">Request Access</a>
-                <a href="https://bridger.levenhall.com/brief" class="btn btn-outline-white" target="_blank" rel="noopener noreferrer">Daily Brief</a>
+    <!-- ── CTA (PANEL) ── -->
+    <section class="section section-panel">
+        <div class="container">
+            <div class="cta-block">
+                <span class="route-line">Live Now &middot; v2026.06 <span class="live">●</span></span>
+                <h2>Open Bridger.</h2>
+                <p>Production at bridger.levenhall.com. The daily brief is free and public. Scout tier free; Pathfinder Agentic unlocks the officer stack and the full watch cycle.</p>
+                <div class="btn-group">
+                    <a href="https://bridger.levenhall.com/get-started" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Request Access</a>
+                    <a href="https://bridger.levenhall.com/brief" class="btn btn-outline-white" target="_blank" rel="noopener noreferrer">Daily Brief</a>
+                </div>
             </div>
         </div>
     </section>
@@ -186,568 +243,353 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
-    /* ── HERO ── */
-    .b-hero {
-        background:
-            radial-gradient(ellipse 80% 60% at 50% 50%, rgba(201, 169, 97, 0.06), transparent 70%),
-            #060c18;
-        padding: var(--s-16) var(--s-3) var(--s-12);
+    /* ── CONSOLE ── */
+    .console {
+        border-bottom: 1px solid var(--hairline);
         position: relative;
-        overflow: hidden;
     }
 
-    .b-hero-glow {
-        position: absolute;
-        top: 50%; left: 50%;
-        width: 720px; height: 720px;
-        transform: translate(-50%, -50%);
-        background: radial-gradient(circle, rgba(201, 169, 97, 0.14) 0%, transparent 60%);
-        filter: blur(48px);
-        pointer-events: none;
-    }
-
-    .b-hero::after {
-        content: '';
-        position: absolute;
-        bottom: 0; left: 0; right: 0;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, var(--gold), transparent);
-        opacity: 0.45;
-    }
-
-    .b-hero-inner {
-        max-width: 720px;
-        margin: 0 auto;
-        text-align: center;
-        position: relative;
-        z-index: 1;
-    }
-
-    .b-hero-tag {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 600;
-        font-size: 0.66rem;
-        letter-spacing: 3.5px;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: var(--s-5);
-    }
-
-    .b-hero-brand {
-        display: inline-flex;
-        align-items: center;
-        gap: var(--s-3);
-        margin-bottom: var(--s-6);
-    }
-
-    .b-hero-mark {
-        width: 64px;
-        height: 64px;
-        filter: drop-shadow(0 0 24px rgba(201, 169, 97, 0.25));
-    }
-
-    .b-hero-wordmark {
-        font-family: 'Fraunces', serif;
-        font-weight: 600;
-        font-size: 3rem;
-        color: #fff;
-        letter-spacing: -1.5px;
-        line-height: 1;
-    }
-
-    .b-hero-h1 {
-        font-family: 'Fraunces', serif;
-        font-weight: 600;
-        font-size: clamp(1.9rem, 4vw, 2.9rem);
-        color: #fff;
-        line-height: 1.15;
-        margin: 0 0 var(--s-4);
-        letter-spacing: -0.8px;
-    }
-
-    .b-hero-tagline {
-        font-family: 'Georgia', 'Times New Roman', serif;
-        font-size: 1.05rem;
-        color: rgba(255, 255, 255, 0.65);
-        line-height: 1.75;
-        max-width: 620px;
-        margin: 0 auto var(--s-5);
-    }
-
-    .b-hero-cta {
-        display: flex;
-        gap: var(--s-2);
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-bottom: var(--s-3);
-    }
-
-    .b-hero-meta {
-        font-family: 'SF Mono', 'Menlo', monospace;
-        font-size: 0.78rem;
-        color: rgba(255, 255, 255, 0.4);
-    }
-    .b-hero-meta a { color: var(--gold); text-decoration: none; }
-
-    /* ── LIVE STATS ── */
-    .b-live {
-        background: #0a1628;
-        padding: var(--s-6) 0;
-        border-bottom: 1px solid rgba(201, 169, 97, 0.15);
-    }
-
-    .b-live-inner {
-        max-width: 1080px;
-        margin: 0 auto;
-        padding: 0 var(--s-3);
-    }
-
-    .b-live-label {
-        display: block;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 600;
-        font-size: 0.66rem;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: var(--s-3);
-        text-align: center;
-    }
-
-    .b-live-stats {
+    .console-grid {
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .b-stat {
-        padding: var(--s-4) var(--s-2);
-        text-align: center;
-        border-right: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .b-stat:last-child { border-right: none; }
-
-    .b-stat-val {
-        display: block;
-        font-family: 'Fraunces', serif;
-        font-weight: 600;
-        font-size: 1.9rem;
-        color: #fff;
-        line-height: 1;
-        margin-bottom: 0.35rem;
-        letter-spacing: -0.5px;
-    }
-
-    .b-u {
-        font-size: 0.9rem;
-        color: var(--gold);
-    }
-
-    .b-stat-lbl {
-        display: block;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.68rem;
-        letter-spacing: 1.3px;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.5);
-        line-height: 1.4;
-    }
-
-    /* ── SHARED ── */
-    .b-eyebrow {
-        display: block;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 600;
-        font-size: 0.7rem;
-        letter-spacing: 2.5px;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: var(--s-4);
-    }
-
-    .b-eyebrow-light { color: var(--gold); }
-
-    .b-opening h2,
-    .b-who h2,
-    .b-watch h2,
-    .b-staff h2,
-    .b-cta h2,
-    .b-lede {
-        font-family: 'Fraunces', serif;
-        letter-spacing: -0.5px;
-    }
-
-    /* ── OPENING ── */
-    .b-opening {
-        background: var(--cream);
-        padding: var(--s-16) 0;
-    }
-
-    .b-prose {
-        max-width: 660px;
+        grid-template-columns: minmax(0, 52fr) minmax(0, 48fr);
+        max-width: var(--col-wide);
         margin: 0 auto;
-        padding: 0 var(--s-3);
     }
 
-    .b-lede {
-        font-weight: 500;
-        font-size: 1.75rem;
-        line-height: 1.4;
-        color: var(--deep-navy);
-        margin: 0 0 var(--s-5);
-        letter-spacing: -0.4px;
-    }
-
-    .b-opening p {
-        font-size: 1.05rem;
-        line-height: 1.85;
-        color: var(--text-medium);
-        margin: 0 0 var(--s-4);
-    }
-
-    .b-opening strong {
-        font-family: 'SF Mono', 'Menlo', monospace;
-        font-size: 0.95rem;
-        font-weight: 700;
-        color: var(--deep-navy);
-        letter-spacing: 0.5px;
-    }
-
-    /* ── WHO ── */
-    .b-who {
-        background: linear-gradient(180deg, #0a1628 0%, var(--deep-navy) 100%);
-        padding: var(--s-16) 0;
-        position: relative;
-    }
-
-    .b-who::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0;
-        height: 1px;
-        background: rgba(201, 169, 97, 0.25);
-    }
-
-    .b-who-inner {
-        max-width: 1080px;
-        margin: 0 auto;
-        padding: 0 var(--s-3);
-    }
-
-    .b-who-head {
-        text-align: center;
-        max-width: 620px;
-        margin: 0 auto var(--s-10);
-    }
-
-    .b-who-head h2 {
-        font-weight: 600;
-        font-size: clamp(2rem, 3.4vw, 2.6rem);
-        color: #fff;
-        margin: 0;
-    }
-
-    .b-who-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-auto-rows: 1fr;
-        gap: var(--s-3);
-    }
-
-    .b-who-card {
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        border-top: 3px solid var(--gold);
-        padding: var(--s-5);
+    .console-statement {
+        padding: 3.5rem 3rem 3.5rem 2rem;
+        border-right: 1px solid var(--hairline);
         display: flex;
         flex-direction: column;
-        gap: var(--s-3);
-        text-decoration: none;
-        transition: all 0.3s ease;
+        justify-content: center;
+        gap: 1.8rem;
     }
 
-    .b-who-card:hover {
-        background: rgba(255, 255, 255, 0.07);
-        transform: translateY(-3px);
-        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
+    .brand-row {
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
     }
 
-    .b-who-num {
-        font-family: 'Fraunces', serif;
-        font-style: italic;
-        font-weight: 500;
-        font-size: 1.4rem;
-        color: var(--gold);
+    .brand-mark {
+        width: 40px;
+        height: 40px;
+    }
+
+    .brand-word {
+        font-family: var(--serif);
+        font-weight: 600;
+        font-size: 2rem;
+        letter-spacing: -0.03em;
+        color: var(--bone);
         line-height: 1;
     }
 
-    .b-who-card h3 {
-        font-family: 'Fraunces', serif;
-        font-weight: 600;
-        font-size: 1.5rem;
-        color: #fff;
-        margin: 0;
-        letter-spacing: -0.4px;
+    .console-lede {
+        max-width: 50ch;
+        font-size: 1.02rem;
+        color: var(--muted);
     }
 
-    .b-who-card p {
-        font-size: 0.98rem;
-        line-height: 1.8;
-        color: rgba(255, 255, 255, 0.6);
-        margin: 0;
-        flex: 1;
-    }
+    .console-cta { margin-top: 0.4rem; }
 
-    .b-who-cta {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.72rem;
-        font-weight: 600;
-        letter-spacing: 1.5px;
+    .console-meta {
+        font-family: var(--mono);
+        font-size: 0.62rem;
+        letter-spacing: 0.16em;
         text-transform: uppercase;
-        color: var(--gold);
-        margin-top: auto;
+        color: var(--dim);
+    }
+    .console-meta a { color: var(--gold); text-decoration: none; }
+    .console-meta a:hover { border-bottom: 1px solid var(--gold); }
+
+    /* ── INSTRUMENT: BRIDGER INDEX ── */
+    .console-instrument {
+        padding: 2.4rem 2rem 1.6rem 2.4rem;
+        font-family: var(--mono);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-image:
+            linear-gradient(var(--hairline-soft) 1px, transparent 1px),
+            linear-gradient(90deg, var(--hairline-soft) 1px, transparent 1px);
+        background-size: 28px 28px;
     }
 
-    /* ── WATCH ── */
-    .b-watch {
-        background: var(--cream);
-        padding: var(--s-16) 0;
+    .inst-head, .inst-foot {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        font-size: 0.6rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--dim);
     }
 
-    .b-watch-grid {
-        max-width: 1080px;
-        margin: 0 auto;
-        padding: 0 var(--s-3);
+    .inst-head {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--hairline);
+        margin-bottom: 1.2rem;
+    }
+
+    .inst-foot {
+        padding-top: 1rem;
+        border-top: 1px solid var(--hairline);
+        margin-top: 1.2rem;
+        font-size: 0.56rem;
+    }
+
+    .inst-live { color: var(--gold); animation: pulse-live 2.4s ease-in-out infinite; }
+    .inst-verdict { color: var(--gold); }
+
+    .inst-svg { width: 100%; height: auto; display: block; }
+
+    .ax line { stroke: var(--hairline-soft); stroke-width: 1; }
+    .ax .ax-base { stroke: var(--hairline); }
+
+    .ax-note {
+        font-family: var(--mono);
+        font-size: 9px;
+        letter-spacing: 0.12em;
+        fill: var(--dim);
+    }
+    .ax-note-end { text-anchor: end; fill: var(--gold); }
+
+    .rfp-line {
+        stroke: var(--gold);
+        stroke-width: 1;
+        stroke-dasharray: 3 5;
+        opacity: 0.6;
+    }
+
+    .idx-line { fill: none; stroke: var(--gold); stroke-width: 1.2; }
+    .idx-area { fill: rgba(201, 169, 97, 0.07); stroke: none; }
+    .idx-dot { fill: var(--gold); animation: pulse-live 3s ease-in-out infinite; }
+
+    .ann {
+        font-family: var(--mono);
+        font-size: 9px;
+        letter-spacing: 0.14em;
+        fill: var(--gold);
+    }
+    .ann-dim { fill: var(--dim); }
+
+    @keyframes pulse-live {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.35; }
+    }
+
+    /* ── DATA BAR ── */
+    .data-bar {
         display: grid;
-        grid-template-columns: 0.85fr 1.4fr;
-        gap: var(--s-10);
+        grid-template-columns: 200px repeat(5, 1fr);
+        border-top: 1px solid var(--hairline);
+        max-width: var(--col-wide);
+        margin: 0 auto;
+    }
+
+    .datum {
+        padding: 1.4rem 1.6rem;
+        border-right: 1px solid var(--hairline);
+        font-family: var(--mono);
+    }
+    .datum:first-child { padding-left: 2rem; }
+    .datum:last-child { border-right: none; }
+
+    .datum-label { display: flex; align-items: center; }
+
+    .d-val {
+        display: block;
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: var(--bone);
+        font-variant-numeric: tabular-nums;
+    }
+    .d-u { font-size: 0.8rem; color: var(--gold); }
+
+    .d-cap {
+        display: block;
+        margin-top: 0.35rem;
+        font-size: 0.56rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--dim);
+    }
+    .d-cap-gold { color: var(--gold); margin-top: 0; }
+
+    /* ── OPENING (PAPER) ── */
+    .opening-prose { max-width: 680px; }
+
+    .opening-route {
+        display: block;
+        margin-bottom: 2rem;
+        color: var(--text-medium);
+    }
+
+    .opening-lede {
+        font-family: var(--serif);
+        font-weight: 600;
+        font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+        line-height: 1.25;
+        letter-spacing: -0.02em;
+        color: var(--deep-navy);
+        margin-bottom: 1.6rem;
+    }
+
+    .opening-prose p:not(.opening-lede) {
+        margin-bottom: 1rem;
+        font-size: 1.05rem;
+        line-height: 1.85;
+    }
+
+    .mono-strong {
+        font-family: var(--mono);
+        font-size: 0.88em;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        color: var(--deep-navy);
+    }
+    .mono-strong-gold { color: var(--gold); }
+
+    /* ── LEDGER (WHO) ── */
+    .ledger { border-top: 1px solid var(--hairline); }
+
+    .ledger-row {
+        display: grid;
+        grid-template-columns: 64px minmax(0, 1fr) 280px;
+        gap: 2rem;
+        align-items: start;
+        padding: 2rem 0.5rem;
+        border-bottom: 1px solid var(--hairline);
+        text-decoration: none;
+        transition: background var(--t-short);
+    }
+    .ledger-row:hover { background: var(--ink-panel); }
+
+    .lg-num {
+        font-family: var(--serif);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 1.5rem;
+        color: var(--gold);
+        line-height: 1.2;
+    }
+
+    .lg-body h3 { margin-bottom: 0.5rem; }
+    .lg-body p { font-size: 0.94rem; line-height: 1.7; color: var(--muted); max-width: 68ch; }
+
+    .lg-cta {
+        font-family: var(--mono);
+        font-size: 0.62rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--dim);
+        text-align: right;
+        padding-top: 0.4rem;
+        transition: color var(--t-short);
+    }
+    .ledger-row:hover .lg-cta { color: var(--gold); }
+
+    /* ── STANDING WATCH ── */
+    .watch-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 4fr) minmax(0, 6fr);
+        gap: 4rem;
         align-items: start;
     }
 
-    .b-watch-rail {
-        position: sticky;
-        top: 100px;
-        padding-right: var(--s-3);
-    }
+    .watch-rail { position: sticky; top: 100px; }
+    .watch-rail h2 { margin-bottom: 1.2rem; }
+    .watch-lede { font-size: 1rem; max-width: 42ch; }
 
-    .b-watch-rail h2 {
-        font-weight: 600;
-        font-size: clamp(1.8rem, 3vw, 2.3rem);
-        color: var(--deep-navy);
-        margin: 0 0 var(--s-4);
-        line-height: 1.15;
-    }
+    .watch-body { border-top: 1px solid var(--hairline); }
 
-    .b-watch-lede {
-        font-size: 1rem;
-        line-height: 1.8;
-        color: var(--text-medium);
-    }
-
-    .b-watch-item {
+    .watch-item {
         display: grid;
-        grid-template-columns: 48px 1fr;
-        gap: var(--s-4);
-        padding-bottom: var(--s-4);
-        margin-bottom: var(--s-4);
-        border-bottom: 1px solid rgba(30, 58, 95, 0.08);
+        grid-template-columns: 64px 1fr;
+        gap: 1.6rem;
+        padding: 1.6rem 0.5rem;
+        border-bottom: 1px solid var(--hairline);
     }
 
-    .b-watch-item:last-of-type { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-
-    .b-watch-num {
-        font-family: 'Fraunces', serif;
-        font-style: italic;
-        font-weight: 500;
-        font-size: 1.6rem;
-        color: var(--gold);
-        line-height: 1;
-        padding-top: 0.2rem;
-    }
-
-    .b-watch-item h3 {
-        font-family: 'Fraunces', serif;
-        font-weight: 600;
-        font-size: 1.25rem;
-        color: var(--deep-navy);
-        margin: 0 0 0.5rem;
-        letter-spacing: -0.3px;
-    }
-
-    .b-watch-item p {
-        font-size: 0.98rem;
-        line-height: 1.75;
-        color: var(--text-medium);
-        margin: 0;
-    }
+    .watch-item h3 { font-size: 1.2rem; margin-bottom: 0.4rem; }
+    .watch-item p { font-size: 0.94rem; line-height: 1.7; color: var(--muted); max-width: 60ch; }
 
     /* ── STAFF ── */
-    .b-staff {
-        background: #0a1628;
-        padding: var(--s-16) 0;
-        position: relative;
-    }
+    .staff-lede { max-width: 66ch; }
 
-    .b-staff::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0;
-        height: 1px;
-        background: rgba(201, 169, 97, 0.25);
-    }
-
-    .b-staff-inner {
-        max-width: 1080px;
-        margin: 0 auto;
-        padding: 0 var(--s-3);
-    }
-
-    .b-staff-head {
-        max-width: 720px;
-        margin: 0 auto var(--s-8);
-        text-align: center;
-    }
-
-    .b-staff-head h2 {
-        font-weight: 600;
-        font-size: clamp(2rem, 3.4vw, 2.6rem);
-        color: #fff;
-        margin: 0 0 var(--s-4);
-    }
-
-    .b-staff-lede {
-        font-family: 'Georgia', 'Times New Roman', serif;
-        font-size: 1.05rem;
-        color: rgba(255, 255, 255, 0.6);
-        line-height: 1.85;
-    }
-
-    .b-staff-lede strong {
-        color: var(--gold);
-        font-family: 'SF Mono', 'Menlo', monospace;
-        font-size: 0.95rem;
-        font-weight: 700;
-        letter-spacing: 0.5px;
-    }
-
-    .b-staff-grid {
+    .officer-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: var(--s-3);
+        border: 1px solid var(--hairline);
     }
 
-    .b-officer {
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        border-left: 3px solid rgba(201, 169, 97, 0.5);
-        padding: var(--s-4) var(--s-4);
+    .officer {
+        padding: 1.8rem 1.8rem 2rem;
+        border-right: 1px solid var(--hairline);
+        border-bottom: 1px solid var(--hairline);
+        transition: background var(--t-short);
     }
+    .officer:nth-child(3n) { border-right: none; }
+    .officer:nth-child(n+4) { border-bottom: none; }
+    .officer:hover { background: var(--ink-panel); }
 
-    .b-officer-role {
+    .officer-role {
         display: block;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 700;
-        font-size: 0.7rem;
-        letter-spacing: 1.5px;
+        font-family: var(--mono);
+        font-size: 0.62rem;
+        font-weight: 500;
+        letter-spacing: 0.2em;
         text-transform: uppercase;
         color: var(--gold);
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.6rem;
     }
 
-    .b-officer p {
-        font-size: 0.95rem;
-        line-height: 1.7;
-        color: rgba(255, 255, 255, 0.7);
-        margin: 0;
-    }
+    .officer p { font-size: 0.9rem; line-height: 1.65; color: var(--muted); }
 
     /* ── CTA ── */
-    .b-cta {
-        background:
-            radial-gradient(ellipse 80% 60% at 50% 50%, rgba(201, 169, 97, 0.08), transparent 70%),
-            #060c18;
-        padding: var(--s-14) var(--s-3);
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-    }
+    .cta-block { max-width: 680px; }
+    .cta-block .route-line { display: block; margin-bottom: 1.6rem; }
+    .cta-block h2 { margin-bottom: 1.2rem; }
+    .cta-block p { margin-bottom: 2rem; max-width: 58ch; }
 
-    .b-cta-glow {
-        position: absolute;
-        top: 50%; left: 50%;
-        width: 600px; height: 600px;
-        transform: translate(-50%, -50%);
-        background: radial-gradient(circle, rgba(201, 169, 97, 0.12) 0%, transparent 60%);
-        filter: blur(40px);
-        pointer-events: none;
-    }
-
-    .b-cta::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    }
-
-    .b-cta-inner {
-        max-width: 640px;
-        margin: 0 auto;
-        position: relative;
-        z-index: 1;
-    }
-
-    .b-cta-rule {
-        width: 32px; height: 1px;
-        background: var(--gold);
-        margin: 0 auto var(--s-4);
-    }
-
-    .b-cta-eyebrow {
-        font-family: 'SF Mono', 'Menlo', monospace;
-        font-size: 0.72rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: var(--s-4);
-    }
-
-    .b-cta h2 {
-        font-weight: 600;
-        font-size: clamp(2rem, 3.4vw, 2.6rem);
-        color: #fff;
-        margin: 0 0 var(--s-3);
-        line-height: 1.15;
-    }
-
-    .b-cta p {
-        color: rgba(255, 255, 255, 0.6);
-        font-size: 1.05rem;
-        line-height: 1.85;
-        margin: 0 0 var(--s-6);
+    /* ── REDUCED MOTION ── */
+    @media (prefers-reduced-motion: reduce) {
+        .idx-dot, .inst-live { animation: none; }
     }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 980px) {
-        .b-live-stats { grid-template-columns: repeat(3, 1fr); }
-        .b-stat:nth-child(3) { border-right: none; }
-        .b-stat:nth-child(-n+3) { border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
-        .b-who-grid { grid-template-columns: 1fr; }
-        .b-watch-grid { grid-template-columns: 1fr; gap: var(--s-8); }
-        .b-watch-rail { position: static; padding-right: 0; }
-        .b-staff-grid { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 1100px) {
+        .data-bar { grid-template-columns: repeat(3, 1fr); }
+        .datum-label { grid-column: 1 / -1; border-right: none; border-bottom: 1px solid var(--hairline); padding: 1rem 2rem; }
+        .datum:nth-child(4) { border-right: none; }
+        .datum:nth-child(-n+4) { border-bottom: 1px solid var(--hairline); }
     }
 
-    @media (max-width: 640px) {
-        .b-hero-mark { width: 52px; height: 52px; }
-        .b-hero-wordmark { font-size: 2.4rem; }
-        .b-live-stats { grid-template-columns: 1fr 1fr; }
-        .b-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
-        .b-stat:nth-child(2n+1) { border-right: 1px solid rgba(255,255,255,0.06); }
-        .b-staff-grid { grid-template-columns: 1fr; }
-        .b-watch-item { grid-template-columns: 1fr; gap: var(--s-2); }
-        .b-watch-num { font-size: 1.3rem; padding-top: 0; }
+    @media (max-width: 992px) {
+        .console-grid { grid-template-columns: 1fr; }
+        .console-statement { border-right: none; border-bottom: 1px solid var(--hairline); padding: 3rem 2rem; }
+        .console-instrument { padding: 2rem 2rem 1.4rem; }
+        .watch-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+        .watch-rail { position: static; }
+        .ledger-row { grid-template-columns: 48px 1fr; }
+        .lg-cta { grid-column: 2; text-align: left; padding-top: 0; }
+        .officer-grid { grid-template-columns: repeat(2, 1fr); }
+        .officer:nth-child(3n) { border-right: 1px solid var(--hairline); }
+        .officer:nth-child(2n) { border-right: none; }
+        .officer:nth-child(n+4) { border-bottom: 1px solid var(--hairline); }
+        .officer:nth-child(n+5) { border-bottom: none; }
+    }
+
+    @media (max-width: 700px) {
+        .data-bar { grid-template-columns: repeat(2, 1fr); }
+        .datum { border-bottom: 1px solid var(--hairline); }
+        .datum:nth-child(2n+1) { border-right: none; }
+        .datum:nth-child(2n) { border-right: 1px solid var(--hairline); }
+        .datum:nth-last-child(-n+2) { border-bottom: none; }
+        .officer-grid { grid-template-columns: 1fr; }
+        .officer, .officer:nth-child(3n), .officer:nth-child(2n) { border-right: none; border-bottom: 1px solid var(--hairline); }
+        .officer:last-child { border-bottom: none; }
+        .watch-item { grid-template-columns: 40px 1fr; gap: 1rem; }
     }
 </style>

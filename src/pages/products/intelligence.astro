@@ -1,113 +1,162 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
 ---
 
 <BaseLayout title="Levenhall Intelligence — Defense &amp; Alliance Advisory Dashboard" description="Real-time defense intelligence dashboard for allied defense advisory. Procurement tracking, alliance dynamics, Indo-Pacific strategy, and government contracting intel. Live at intel.levenhall.com.">
 
-    <!-- ── HERO ── -->
-    <section class="i-hero">
-        <div class="i-hero-glow"></div>
-        <div class="i-hero-grid"></div>
-        <div class="i-hero-scan"></div>
+    <PageHeader
+        label="Systems / Intelligence / A Levenhall Product"
+        index="03"
+        title="Intelligence"
+    />
 
-        <span class="i-hud i-hud-tl"></span>
-        <span class="i-hud i-hud-tr"></span>
-        <span class="i-hud i-hud-bl"></span>
-        <span class="i-hud i-hud-br"></span>
-
-        <div class="i-hero-stage">
-            <p class="i-hero-tag">A Levenhall Product</p>
-            <div class="i-hero-brand">
-                <img src="/images/products/intelligence-mark.png" alt="" class="i-hero-mark" aria-hidden="true">
-                <div class="i-hero-typo">
-                    <span class="i-hero-pre">Levenhall</span>
-                    <h1 class="i-wordmark">INTELLIGENCE</h1>
+    <!-- ── CONSOLE: STATEMENT + RADAR INSTRUMENT ── -->
+    <section class="console sweep-field texture-grain">
+        <div class="console-grid">
+            <div class="console-statement">
+                <div class="brand-row">
+                    <img src="/images/products/intelligence-mark.png" alt="" class="brand-mark" aria-hidden="true" />
+                    <span class="brand-word">Levenhall Intelligence</span>
                 </div>
+                <p class="console-tagline editorial-italic">Defense &amp; Alliance Advisory Dashboard.</p>
+                <div class="btn-group console-cta">
+                    <a href="https://intel.levenhall.com" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Enter Portal</a>
+                    <a href="#coverage" class="mono-link">See what it covers →</a>
+                </div>
+                <p class="console-meta"><span class="live-dot">●</span> Live at <a href="https://intel.levenhall.com" target="_blank" rel="noopener noreferrer">intel.levenhall.com</a></p>
             </div>
-            <p class="i-hero-tagline">Defense &amp; Alliance Advisory Dashboard.</p>
 
-            <div class="i-hero-meta">
-                <span class="i-meta-dot"></span>
-                <span class="i-meta-text">Live at <a href="https://intel.levenhall.com" target="_blank" rel="noopener noreferrer">intel.levenhall.com</a></span>
-            </div>
-
-            <div class="i-hero-cta">
-                <a href="https://intel.levenhall.com" class="btn btn-gold" target="_blank" rel="noopener noreferrer">Enter Portal</a>
-                <a href="#coverage" class="btn btn-outline-white">See what it covers</a>
+            <div class="console-instrument" aria-hidden="true">
+                <div class="inst-head">
+                    <span>Operating Picture / Four Watches</span>
+                    <span class="inst-live">● 100+ Sources</span>
+                </div>
+                <svg class="inst-svg" viewBox="0 0 480 420" xmlns="http://www.w3.org/2000/svg">
+                    <!-- range rings -->
+                    <g class="rr">
+                        <circle cx="240" cy="210" r="52" />
+                        <circle cx="240" cy="210" r="104" />
+                        <circle cx="240" cy="210" r="156" />
+                        <circle cx="240" cy="210" r="196" />
+                        <line x1="240" y1="14" x2="240" y2="406" />
+                        <line x1="44" y1="210" x2="436" y2="210" />
+                        <line x1="101.4" y1="71.4" x2="378.6" y2="348.6" class="rr-soft" />
+                        <line x1="378.6" y1="71.4" x2="101.4" y2="348.6" class="rr-soft" />
+                    </g>
+                    <!-- azimuth annotations -->
+                    <text class="az-note" x="240" y="10" text-anchor="middle">000</text>
+                    <text class="az-note" x="446" y="213">090</text>
+                    <text class="az-note" x="240" y="418" text-anchor="middle">180</text>
+                    <text class="az-note" x="34" y="213" text-anchor="end">270</text>
+                    <!-- sweep -->
+                    <g class="sweep-g">
+                        <path class="sweep-wedge" d="M240 210 L240 14 A196 196 0 0 1 320 31.1 Z" />
+                        <line class="sweep-line" x1="240" y1="210" x2="240" y2="14" />
+                    </g>
+                    <!-- contacts: the four watches -->
+                    <g class="contact">
+                        <circle class="ct-dot" cx="168" cy="128" r="2.6" />
+                        <text class="ct-note" x="178" y="124">Procurement</text>
+                    </g>
+                    <g class="contact">
+                        <circle class="ct-dot ct-2" cx="330" cy="160" r="2.6" />
+                        <text class="ct-note" x="340" y="156">Alliance</text>
+                    </g>
+                    <g class="contact">
+                        <circle class="ct-dot ct-3" cx="186" cy="298" r="2.6" />
+                        <text class="ct-note" x="196" y="294">Indo-Pacific</text>
+                    </g>
+                    <g class="contact">
+                        <circle class="ct-dot ct-4" cx="308" cy="272" r="2.6" />
+                        <text class="ct-note" x="318" y="268">Contracting</text>
+                    </g>
+                </svg>
+                <div class="inst-foot">
+                    <span>Representative picture</span>
+                    <span class="inst-gold">On-device ML · Nothing leaves the browser</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ── WHAT IT IS ── -->
-    <section class="i-opening">
-        <div class="i-prose reveal">
-            <p class="i-lede">Real-time defense intelligence, on one screen, for the allied defense advisor.</p>
-            <p>Levenhall Intelligence is the situational-awareness layer of the Levenhall stack. Live signal &mdash; procurement moves, alliance dynamics, Indo-Pacific posture, government-contracting activity &mdash; visualised on a WebGL globe, with the machine learning that fuses it running in your own browser. Nothing sensitive leaves the tab.</p>
-            <p class="i-lede-close">Situational awareness, not finished intelligence. For the assessed, sourced version, that's <a href="/products/bridger">Bridger</a>.</p>
+    <!-- ── WHAT IT IS (PAPER — the one light passage) ── -->
+    <section class="section section-paper">
+        <div class="container">
+            <div class="opening-prose">
+                <span class="route-line opening-route">Intelligence / Doctrine</span>
+                <p class="opening-lede">Real-time defense intelligence, on one screen, for the allied defense advisor.</p>
+                <p>Levenhall Intelligence is the situational-awareness layer of the Levenhall stack. Live signal &mdash; procurement moves, alliance dynamics, Indo-Pacific posture, government-contracting activity &mdash; visualised on a WebGL globe, with the machine learning that fuses it running in your own browser. Nothing sensitive leaves the tab.</p>
+                <p class="opening-close editorial-italic">Situational awareness, not finished intelligence. For the assessed, sourced version, that's <a href="/products/bridger">Bridger</a>.</p>
+            </div>
         </div>
     </section>
 
     <!-- ── WHAT'S ON THE DASHBOARD ── -->
-    <section class="i-coverage" id="coverage">
-        <div class="i-cov-grid">
-            <aside class="i-cov-rail reveal">
-                <span class="i-eyebrow">§ On the dashboard</span>
-                <h2>Four watches. One operating picture.</h2>
-                <p>Each watch runs its own signal stream, layered together on the globe. Toggle what you're tracking, expand what changes.</p>
-            </aside>
-            <div class="i-cov-body">
-                <article class="i-watch reveal">
-                    <span class="i-watch-num">01</span>
-                    <div>
-                        <h3>Procurement Tracking</h3>
-                        <p>Live view of US federal procurement activity &mdash; solicitations, awards, contract movements. Where the dollars are landing and where they're about to.</p>
-                    </div>
-                </article>
-                <article class="i-watch reveal">
-                    <span class="i-watch-num">02</span>
-                    <div>
-                        <h3>Alliance Dynamics</h3>
-                        <p>AUKUS, Five Eyes, NATO, and the wider allied ecosystem. Force posture, joint exercises, capability announcements, allied procurement flows.</p>
-                    </div>
-                </article>
-                <article class="i-watch reveal">
-                    <span class="i-watch-num">03</span>
-                    <div>
-                        <h3>Indo-Pacific Strategy</h3>
-                        <p>The theatre that drives allied planning. Movements, statements, exercises, and instability signals across the Indo-Pacific, with country-level drill-down.</p>
-                    </div>
-                </article>
-                <article class="i-watch reveal">
-                    <span class="i-watch-num">04</span>
-                    <div>
-                        <h3>Government Contracting Intel</h3>
-                        <p>Federal programs of record, agency forecasts, incumbent watch. The activity behind the awards, not just the awards themselves.</p>
-                    </div>
-                </article>
+    <section class="section" id="coverage">
+        <div class="container">
+            <div class="cov-grid">
+                <aside class="cov-rail">
+                    <span class="section-label">§ On the dashboard</span>
+                    <h2>Four watches. One operating picture.</h2>
+                    <p>Each watch runs its own signal stream, layered together on the globe. Toggle what you're tracking, expand what changes.</p>
+                </aside>
+                <div class="cov-body">
+                    <article class="watch-item">
+                        <span class="lg-num">01</span>
+                        <div>
+                            <h3>Procurement Tracking</h3>
+                            <p>Live view of US federal procurement activity &mdash; solicitations, awards, contract movements. Where the dollars are landing and where they're about to.</p>
+                        </div>
+                    </article>
+                    <article class="watch-item">
+                        <span class="lg-num">02</span>
+                        <div>
+                            <h3>Alliance Dynamics</h3>
+                            <p>AUKUS, Five Eyes, NATO, and the wider allied ecosystem. Force posture, joint exercises, capability announcements, allied procurement flows.</p>
+                        </div>
+                    </article>
+                    <article class="watch-item">
+                        <span class="lg-num">03</span>
+                        <div>
+                            <h3>Indo-Pacific Strategy</h3>
+                            <p>The theatre that drives allied planning. Movements, statements, exercises, and instability signals across the Indo-Pacific, with country-level drill-down.</p>
+                        </div>
+                    </article>
+                    <article class="watch-item">
+                        <span class="lg-num">04</span>
+                        <div>
+                            <h3>Government Contracting Intel</h3>
+                            <p>Federal programs of record, agency forecasts, incumbent watch. The activity behind the awards, not just the awards themselves.</p>
+                        </div>
+                    </article>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ── HOW IT WORKS ── -->
-    <section class="i-how">
-        <div class="i-how-inner reveal">
-            <span class="i-eyebrow i-eyebrow-cyan">§ How it works</span>
-            <h2>WebGL globe. On-device ML. Nothing leaves the browser.</h2>
-            <div class="i-how-grid">
-                <div class="i-how-card">
-                    <span class="i-how-tag">Rendering</span>
+    <!-- ── HOW IT WORKS (PANEL) ── -->
+    <section class="section section-panel">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">§ How it works</span>
+                <h2>WebGL globe. On-device ML.<br/>Nothing leaves the browser.</h2>
+            </div>
+            <div class="how-grid">
+                <div class="how-cell">
+                    <span class="how-tag">Rendering</span>
                     <p>Multi-layer WebGL globe with 30+ intelligence layers &mdash; toggle what you need, hide what you don't.</p>
                 </div>
-                <div class="i-how-card">
-                    <span class="i-how-tag">Signal</span>
+                <div class="how-cell">
+                    <span class="how-tag">Signal</span>
                     <p>Over one hundred continuously-refreshed sources, aggregated into a single event stream and scored for salience.</p>
                 </div>
-                <div class="i-how-card">
-                    <span class="i-how-tag">Analysis</span>
+                <div class="how-cell">
+                    <span class="how-tag">Analysis</span>
                     <p>Four ONNX models running client-side in a Web Worker &mdash; embeddings, sentiment, summarisation, named-entity extraction &mdash; so heavy inference never leaves the tab.</p>
                 </div>
-                <div class="i-how-card">
-                    <span class="i-how-tag">Access</span>
+                <div class="how-cell">
+                    <span class="how-tag">Access</span>
                     <p>Email-gated portal. No password. Access and activity may be monitored per Levenhall's terms of use.</p>
                 </div>
             </div>
@@ -115,36 +164,39 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </section>
 
     <!-- ── WHERE IT FITS ── -->
-    <section class="i-stack">
-        <div class="i-stack-inner reveal">
-            <span class="i-eyebrow">§ Where it fits</span>
-            <h2>Situational awareness sits above Bridger.<br/>Bridger closes the loop.</h2>
-            <div class="i-stack-grid">
-                <a href="/products/intelligence" class="i-stack-card i-stack-card-current">
-                    <span class="i-stack-tag">This product</span>
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">§ Where it fits</span>
+                <h2>Situational awareness sits above Bridger.<br/>Bridger closes the loop.</h2>
+            </div>
+            <div class="stack-grid">
+                <a href="/products/intelligence" class="stack-cell">
+                    <span class="stack-tag stack-tag-current">This product</span>
                     <h3>Intelligence</h3>
                     <p>Situational awareness. Live signal, on a globe, filtered to what allied defense advisors need to see.</p>
                 </a>
-                <a href="/products/bridger" class="i-stack-card">
-                    <span class="i-stack-tag">Sibling product</span>
+                <a href="/products/bridger" class="stack-cell">
+                    <span class="stack-tag">Sibling product</span>
                     <h3>Bridger</h3>
                     <p>Finished intelligence. Assessed, sourced, and scored against your profile. The next step when situational awareness turns into a pursuit.</p>
+                    <span class="stack-arrow">→</span>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- ── CTA ── -->
-    <section class="i-cta">
-        <div class="i-cta-glow"></div>
-        <div class="i-cta-inner">
-            <span class="i-cta-dot"></span>
-            <p class="i-cta-eyebrow">Live Now</p>
-            <h2>Enter the portal.</h2>
-            <p>Email-gated. No password. Enterprise deployments and bespoke defense-advisory briefings available through Levenhall.</p>
-            <div class="btn-group" style="justify-content: center;">
-                <a href="https://intel.levenhall.com" class="btn btn-gold" target="_blank" rel="noopener noreferrer">intel.levenhall.com</a>
-                <a href="/contact" class="btn btn-outline-white">Contact Levenhall</a>
+    <!-- ── CTA (PANEL) ── -->
+    <section class="section section-panel">
+        <div class="container">
+            <div class="cta-block">
+                <span class="route-line">Live Now <span class="live">●</span></span>
+                <h2>Enter the portal.</h2>
+                <p>Email-gated. No password. Enterprise deployments and bespoke defense-advisory briefings available through Levenhall.</p>
+                <div class="btn-group">
+                    <a href="https://intel.levenhall.com" class="btn btn-primary" target="_blank" rel="noopener noreferrer">intel.levenhall.com</a>
+                    <a href="/contact" class="btn btn-outline-white">Contact Levenhall</a>
+                </div>
             </div>
         </div>
     </section>
@@ -152,540 +204,332 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
-    /* ── HERO ── */
-    .i-hero {
-        background: radial-gradient(ellipse at 50% 0%, #0c2540 0%, #060c18 70%, #03060d 100%);
-        padding: var(--s-16) var(--s-3) var(--s-12);
+    /* ── CONSOLE ── */
+    .console {
+        border-bottom: 1px solid var(--hairline);
         position: relative;
-        overflow: hidden;
     }
 
-    .i-hero-glow {
-        position: absolute;
-        top: 50%; left: 50%;
-        width: 760px; height: 760px;
-        transform: translate(-50%, -50%);
-        background: radial-gradient(circle, rgba(201, 169, 97, 0.14) 0%, transparent 60%);
-        filter: blur(48px);
-        pointer-events: none;
-    }
-
-    .i-hero-grid {
-        position: absolute;
-        inset: 0;
-        background-image:
-            linear-gradient(rgba(201, 169, 97, 0.04) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(201, 169, 97, 0.04) 1px, transparent 1px);
-        background-size: 80px 80px;
-        pointer-events: none;
-        mask-image: radial-gradient(ellipse at center, black 25%, transparent 75%);
-        -webkit-mask-image: radial-gradient(ellipse at center, black 25%, transparent 75%);
-    }
-
-    .i-hero-scan {
-        position: absolute;
-        inset: 0;
-        background-image: linear-gradient(rgba(255, 255, 255, 0.02) 50%, transparent 50%);
-        background-size: 100% 3px;
-        pointer-events: none;
-        mix-blend-mode: overlay;
-        opacity: 0.35;
-    }
-
-    .i-hud {
-        position: absolute;
-        width: 40px; height: 40px;
-        border: 2px solid var(--gold);
-        opacity: 0.55;
-    }
-    .i-hud-tl { top: 28px; left: 28px; border-right: none; border-bottom: none; }
-    .i-hud-tr { top: 28px; right: 28px; border-left: none; border-bottom: none; }
-    .i-hud-bl { bottom: 28px; left: 28px; border-right: none; border-top: none; }
-    .i-hud-br { bottom: 28px; right: 28px; border-left: none; border-top: none; }
-
-    .i-hero::after {
-        content: '';
-        position: absolute;
-        bottom: 0; left: 0; right: 0;
-        height: 1px;
-        background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
-        opacity: 0.55;
-    }
-
-    .i-hero-stage {
-        max-width: 720px;
+    .console-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 52fr) minmax(0, 48fr);
+        max-width: var(--col-wide);
         margin: 0 auto;
-        position: relative;
-        z-index: 1;
-        text-align: center;
     }
 
-    .i-hero-tag {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 600;
-        font-size: 0.66rem;
-        letter-spacing: 3.5px;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: var(--s-5);
-    }
-
-    .i-hero-brand {
-        display: inline-flex;
-        align-items: center;
-        gap: var(--s-3);
-        margin-bottom: var(--s-4);
-    }
-
-    .i-hero-mark {
-        width: 56px;
-        height: 56px;
-        filter: drop-shadow(0 0 22px rgba(201, 169, 97, 0.25));
-    }
-
-    .i-hero-typo {
+    .console-statement {
+        padding: 3.5rem 3rem 3.5rem 2rem;
+        border-right: 1px solid var(--hairline);
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
-    }
-
-    .i-hero-pre {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 700;
-        font-size: 0.72rem;
-        letter-spacing: 5px;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.45);
-        margin-bottom: 0.2rem;
-    }
-
-    .i-wordmark {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 700;
-        font-size: clamp(1.6rem, 3.4vw, 2.2rem);
-        letter-spacing: 6px;
-        color: #fff;
-        line-height: 1;
-        margin: 0;
-        background: linear-gradient(180deg, #fff 30%, rgba(201, 169, 97, 0.75) 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-
-    .i-hero-tagline {
-        font-family: 'Fraunces', serif;
-        font-style: italic;
-        font-weight: 400;
-        font-size: 1.3rem;
-        color: rgba(255, 255, 255, 0.7);
-        line-height: 1.5;
-        margin: 0 0 var(--s-4);
-        letter-spacing: -0.2px;
-    }
-
-    .i-hero-meta {
-        display: inline-flex;
-        align-items: center;
-        gap: var(--s-1);
-        font-family: 'SF Mono', 'Menlo', monospace;
-        font-size: 0.78rem;
-        color: rgba(255, 255, 255, 0.55);
-        margin-bottom: var(--s-5);
-        padding: 0.45rem 0.9rem;
-        background: rgba(56, 217, 201, 0.05);
-        border: 1px solid rgba(56, 217, 201, 0.18);
-    }
-
-    .i-meta-dot {
-        width: 7px; height: 7px;
-        background: rgba(56, 217, 201, 0.9);
-        border-radius: 50%;
-        box-shadow: 0 0 8px rgba(56, 217, 201, 0.6);
-        animation: i-pulse 2s ease-in-out infinite;
-    }
-
-    @keyframes i-pulse {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0.4; }
-    }
-
-    .i-meta-text a { color: var(--gold); text-decoration: none; letter-spacing: 0.5px; }
-    .i-meta-text a:hover { text-decoration: underline; }
-
-    .i-hero-cta {
-        display: flex;
-        gap: var(--s-2);
         justify-content: center;
-        flex-wrap: wrap;
+        gap: 1.8rem;
     }
 
-    /* ── SHARED ── */
-    .i-eyebrow {
-        display: block;
-        font-family: 'Source Sans Pro', sans-serif;
+    .brand-row {
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+    }
+
+    .brand-mark {
+        width: 40px;
+        height: 40px;
+    }
+
+    .brand-word {
+        font-family: var(--serif);
         font-weight: 600;
-        font-size: 0.7rem;
-        letter-spacing: 2.5px;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: var(--s-4);
+        font-size: 1.7rem;
+        letter-spacing: -0.02em;
+        color: var(--bone);
+        line-height: 1.1;
     }
 
-    .i-eyebrow-cyan { color: rgba(56, 217, 201, 0.85); }
-
-    .i-opening h2,
-    .i-coverage h2,
-    .i-how h2,
-    .i-stack h2,
-    .i-cta h2,
-    .i-lede,
-    .i-lede-close,
-    .i-watch h3,
-    .i-stack-card h3 {
-        font-family: 'Fraunces', serif;
-        letter-spacing: -0.5px;
-    }
-
-    /* ── OPENING ── */
-    .i-opening {
-        background: var(--cream);
-        padding: var(--s-16) 0;
-    }
-
-    .i-prose {
-        max-width: 660px;
-        margin: 0 auto;
-        padding: 0 var(--s-3);
-    }
-
-    .i-lede {
-        font-weight: 500;
-        font-size: 1.75rem;
+    .console-tagline {
+        font-size: 1.35rem;
         line-height: 1.4;
-        color: var(--deep-navy);
-        margin: 0 0 var(--s-4);
-        letter-spacing: -0.4px;
     }
 
-    .i-opening p {
+    .console-cta { margin-top: 0.4rem; }
+
+    .console-meta {
+        font-family: var(--mono);
+        font-size: 0.62rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--dim);
+    }
+    .console-meta a { color: var(--gold); text-decoration: none; }
+    .console-meta a:hover { border-bottom: 1px solid var(--gold); }
+
+    .live-dot { color: var(--gold); animation: pulse-live 2.4s ease-in-out infinite; }
+
+    /* ── INSTRUMENT: RADAR ── */
+    .console-instrument {
+        padding: 2.4rem 2rem 1.6rem 2.4rem;
+        font-family: var(--mono);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-image:
+            linear-gradient(var(--hairline-soft) 1px, transparent 1px),
+            linear-gradient(90deg, var(--hairline-soft) 1px, transparent 1px);
+        background-size: 28px 28px;
+    }
+
+    .inst-head, .inst-foot {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        font-size: 0.6rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--dim);
+    }
+
+    .inst-head {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--hairline);
+        margin-bottom: 1.2rem;
+    }
+
+    .inst-foot {
+        padding-top: 1rem;
+        border-top: 1px solid var(--hairline);
+        margin-top: 1.2rem;
+        font-size: 0.56rem;
+    }
+
+    .inst-live { color: var(--gold); animation: pulse-live 2.4s ease-in-out infinite; }
+    .inst-gold { color: var(--gold); }
+
+    .inst-svg {
+        width: min(100%, 420px);
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .rr circle, .rr line {
+        fill: none;
+        stroke: var(--hairline);
+        stroke-width: 1;
+    }
+    .rr .rr-soft { stroke: var(--hairline-soft); }
+
+    .az-note {
+        font-family: var(--mono);
+        font-size: 9px;
+        letter-spacing: 0.14em;
+        fill: var(--dim);
+    }
+
+    .sweep-g {
+        transform-origin: 240px 210px;
+        animation: radar-rotate 8s linear infinite;
+    }
+    .sweep-wedge { fill: rgba(201, 169, 97, 0.1); stroke: none; }
+    .sweep-line { stroke: var(--gold); stroke-width: 0.8; opacity: 0.7; }
+
+    @keyframes radar-rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    .ct-dot { fill: var(--gold); animation: pulse-live 3s ease-in-out infinite; }
+    .ct-2 { animation-delay: -0.8s; }
+    .ct-3 { animation-delay: -1.6s; }
+    .ct-4 { animation-delay: -2.4s; }
+
+    .ct-note {
+        font-family: var(--mono);
+        font-size: 9px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        fill: var(--muted);
+    }
+
+    @keyframes pulse-live {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.35; }
+    }
+
+    /* ── OPENING (PAPER) ── */
+    .opening-prose { max-width: 680px; }
+
+    .opening-route {
+        display: block;
+        margin-bottom: 2rem;
+        color: var(--text-medium);
+    }
+
+    .opening-lede {
+        font-family: var(--serif);
+        font-weight: 600;
+        font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+        line-height: 1.25;
+        letter-spacing: -0.02em;
+        color: var(--deep-navy);
+        margin-bottom: 1.6rem;
+    }
+
+    .opening-prose p:not(.opening-lede) {
+        margin-bottom: 1rem;
         font-size: 1.05rem;
         line-height: 1.85;
-        color: var(--text-medium);
-        margin: 0 0 var(--s-4);
     }
 
-    .i-lede-close {
-        font-style: italic;
-        font-weight: 500;
-        font-size: 1.15rem !important;
-        color: var(--burgundy) !important;
-        border-top: 1px solid var(--border-warm);
-        padding-top: var(--s-4);
-        margin-top: var(--s-4) !important;
+    .opening-close {
+        font-size: 1.15rem;
+        border-top: 1px solid var(--hairline-paper);
+        padding-top: 1.4rem;
+        margin-top: 1.6rem;
+        max-width: 52ch;
     }
-
-    .i-lede-close a {
+    .opening-close a {
         color: inherit;
         text-decoration: underline;
         text-decoration-color: rgba(139, 21, 56, 0.4);
     }
 
     /* ── COVERAGE ── */
-    .i-coverage {
-        background: #0a1628;
-        padding: var(--s-16) 0;
-        position: relative;
-    }
-
-    .i-coverage::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0;
-        height: 1px;
-        background: rgba(201, 169, 97, 0.25);
-    }
-
-    .i-cov-grid {
-        max-width: 1080px;
-        margin: 0 auto;
-        padding: 0 var(--s-3);
+    .cov-grid {
         display: grid;
-        grid-template-columns: 0.85fr 1.4fr;
-        gap: var(--s-10);
+        grid-template-columns: minmax(0, 4fr) minmax(0, 6fr);
+        gap: 4rem;
         align-items: start;
     }
 
-    .i-cov-rail {
-        position: sticky;
-        top: 100px;
-        padding-right: var(--s-3);
-    }
+    .cov-rail { position: sticky; top: 100px; }
+    .cov-rail h2 { margin-bottom: 1.2rem; }
+    .cov-rail p { font-size: 1rem; max-width: 42ch; }
 
-    .i-cov-rail h2 {
-        font-weight: 600;
-        font-size: clamp(1.8rem, 3vw, 2.3rem);
-        color: #fff;
-        line-height: 1.15;
-        margin: 0 0 var(--s-4);
-    }
+    .cov-body { border-top: 1px solid var(--hairline); }
 
-    .i-cov-rail p {
-        font-size: 1rem;
-        line-height: 1.8;
-        color: rgba(255, 255, 255, 0.55);
-    }
-
-    .i-watch {
+    .watch-item {
         display: grid;
-        grid-template-columns: 48px 1fr;
-        gap: var(--s-4);
-        padding-bottom: var(--s-4);
-        margin-bottom: var(--s-4);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        grid-template-columns: 64px 1fr;
+        gap: 1.6rem;
+        padding: 1.7rem 0.5rem;
+        border-bottom: 1px solid var(--hairline);
     }
 
-    .i-watch:last-of-type { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-
-    .i-watch-num {
-        font-family: 'Fraunces', serif;
+    .lg-num {
+        font-family: var(--serif);
         font-style: italic;
-        font-weight: 500;
-        font-size: 1.7rem;
+        font-weight: 400;
+        font-size: 1.6rem;
         color: var(--gold);
-        line-height: 1;
-        padding-top: 0.2rem;
-    }
-
-    .i-watch h3 {
-        font-weight: 600;
-        font-size: 1.3rem;
-        color: #fff;
-        margin: 0 0 0.5rem;
-    }
-
-    .i-watch p {
-        font-size: 0.98rem;
-        line-height: 1.8;
-        color: rgba(255, 255, 255, 0.6);
-        margin: 0;
-    }
-
-    /* ── HOW ── */
-    .i-how {
-        background: var(--stone);
-        padding: var(--s-16) 0;
-    }
-
-    .i-how-inner {
-        max-width: 1080px;
-        margin: 0 auto;
-        padding: 0 var(--s-3);
-    }
-
-    .i-how h2 {
-        font-weight: 600;
-        font-size: clamp(1.8rem, 3.2vw, 2.4rem);
-        color: var(--deep-navy);
-        margin: 0 0 var(--s-8);
-        max-width: 720px;
-        line-height: 1.15;
-    }
-
-    .i-how-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: var(--s-3);
-    }
-
-    .i-how-card {
-        background: #fff;
-        border: 1px solid var(--border-warm);
-        border-left: 3px solid rgba(56, 217, 201, 0.6);
-        padding: var(--s-4);
-    }
-
-    .i-how-tag {
-        display: block;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 700;
-        font-size: 0.65rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: rgba(56, 217, 201, 0.95);
-        margin-bottom: var(--s-2);
-    }
-
-    .i-how-card p {
-        font-size: 0.94rem;
-        line-height: 1.7;
-        color: var(--text-medium);
-        margin: 0;
-    }
-
-    /* ── STACK RELATIONSHIP ── */
-    .i-stack {
-        background: var(--cream);
-        padding: var(--s-16) 0;
-    }
-
-    .i-stack-inner {
-        max-width: 1080px;
-        margin: 0 auto;
-        padding: 0 var(--s-3);
-    }
-
-    .i-stack h2 {
-        font-weight: 600;
-        font-size: clamp(1.8rem, 3vw, 2.3rem);
-        color: var(--deep-navy);
-        margin: 0 0 var(--s-8);
         line-height: 1.2;
     }
 
-    .i-stack-grid {
+    .watch-item h3 { font-size: 1.25rem; margin-bottom: 0.4rem; }
+    .watch-item p { font-size: 0.95rem; line-height: 1.7; color: var(--muted); max-width: 60ch; }
+
+    /* ── HOW ── */
+    .how-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: var(--s-4);
+        grid-template-columns: repeat(4, 1fr);
+        border: 1px solid var(--hairline);
     }
 
-    .i-stack-card {
-        background: #fff;
-        border: 1px solid var(--border-warm);
-        border-left: 3px solid var(--gold);
-        padding: var(--s-5);
+    .how-cell {
+        padding: 1.8rem 1.8rem 2rem;
+        border-right: 1px solid var(--hairline);
+        background: var(--ink);
+        transition: background var(--t-short);
+    }
+    .how-cell:last-child { border-right: none; }
+    .how-cell:hover { background: var(--ink-panel); }
+
+    .how-tag {
+        display: block;
+        font-family: var(--mono);
+        font-size: 0.6rem;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 0.7rem;
+    }
+
+    .how-cell p { font-size: 0.9rem; line-height: 1.68; color: var(--muted); }
+
+    /* ── STACK ── */
+    .stack-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border: 1px solid var(--hairline);
+    }
+
+    .stack-cell {
+        position: relative;
+        padding: 2.2rem 2.4rem 2.4rem;
+        border-right: 1px solid var(--hairline);
         text-decoration: none;
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
-        transition: all 0.3s ease;
+        gap: 0.6rem;
+        background: var(--ink);
+        transition: background var(--t-short);
     }
+    .stack-cell:last-child { border-right: none; }
+    .stack-cell:hover { background: var(--ink-panel); }
 
-    .i-stack-card:hover { transform: translateX(4px); box-shadow: var(--shadow-warm-md); }
-
-    .i-stack-card-current {
-        background: var(--deep-navy);
-        border-left-color: rgba(56, 217, 201, 0.7);
-    }
-
-    .i-stack-card-current .i-stack-tag { color: rgba(56, 217, 201, 0.85); }
-    .i-stack-card-current h3 { color: #fff; }
-    .i-stack-card-current p { color: rgba(255, 255, 255, 0.6); }
-
-    .i-stack-tag {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.62rem;
-        font-weight: 700;
-        letter-spacing: 2px;
+    .stack-tag {
+        font-family: var(--mono);
+        font-size: 0.58rem;
+        font-weight: 500;
+        letter-spacing: 0.2em;
         text-transform: uppercase;
-        color: var(--burgundy);
+        color: var(--dim);
     }
+    .stack-tag-current { color: var(--gold); }
 
-    .i-stack-card h3 {
-        font-weight: 600;
-        font-size: 1.5rem;
-        color: var(--deep-navy);
-        margin: 0.1rem 0 0.3rem;
-    }
+    .stack-cell h3 { font-size: 1.4rem; }
+    .stack-cell p { font-size: 0.93rem; line-height: 1.7; color: var(--muted); max-width: 48ch; }
 
-    .i-stack-card p {
-        font-size: 0.98rem;
-        line-height: 1.75;
-        color: var(--text-medium);
-        margin: 0;
+    .stack-arrow {
+        position: absolute;
+        top: 2.2rem;
+        right: 2rem;
+        font-family: var(--mono);
+        color: var(--dim);
+        transition: color var(--t-short), transform var(--t-short) var(--ease-enter);
     }
+    .stack-cell:hover .stack-arrow { color: var(--gold); transform: translateX(4px); }
 
     /* ── CTA ── */
-    .i-cta {
-        background:
-            radial-gradient(ellipse 80% 60% at 50% 50%, rgba(201, 169, 97, 0.08), transparent 70%),
-            #060c18;
-        padding: var(--s-14) var(--s-3);
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-    }
+    .cta-block { max-width: 680px; }
+    .cta-block .route-line { display: block; margin-bottom: 1.6rem; }
+    .cta-block h2 { margin-bottom: 1.2rem; }
+    .cta-block p { margin-bottom: 2rem; max-width: 58ch; }
 
-    .i-cta-glow {
-        position: absolute;
-        top: 50%; left: 50%;
-        width: 600px; height: 600px;
-        transform: translate(-50%, -50%);
-        background: radial-gradient(circle, rgba(56, 217, 201, 0.06) 0%, transparent 60%);
-        filter: blur(40px);
-        pointer-events: none;
-    }
-
-    .i-cta::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    }
-
-    .i-cta-inner {
-        max-width: 640px;
-        margin: 0 auto;
-        position: relative;
-        z-index: 1;
-    }
-
-    .i-cta-dot {
-        display: inline-block;
-        width: 10px; height: 10px;
-        background: rgba(56, 217, 201, 0.9);
-        border-radius: 50%;
-        box-shadow: 0 0 14px rgba(56, 217, 201, 0.7);
-        animation: i-pulse 2s ease-in-out infinite;
-        margin-bottom: var(--s-3);
-    }
-
-    .i-cta-eyebrow {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 600;
-        font-size: 0.7rem;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        color: rgba(56, 217, 201, 0.85);
-        margin-bottom: var(--s-4);
-    }
-
-    .i-cta h2 {
-        font-weight: 600;
-        font-size: clamp(2rem, 3.4vw, 2.6rem);
-        color: #fff;
-        margin: 0 0 var(--s-3);
-        line-height: 1.15;
-    }
-
-    .i-cta p {
-        color: rgba(255, 255, 255, 0.6);
-        font-size: 1.05rem;
-        line-height: 1.85;
-        margin: 0 0 var(--s-6);
+    /* ── REDUCED MOTION ── */
+    @media (prefers-reduced-motion: reduce) {
+        .sweep-g, .ct-dot, .inst-live, .live-dot { animation: none; }
     }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 980px) {
-        .i-cov-grid { grid-template-columns: 1fr; gap: var(--s-8); }
-        .i-cov-rail { position: static; padding-right: 0; }
-        .i-how-grid { grid-template-columns: repeat(2, 1fr); }
-        .i-stack-grid { grid-template-columns: 1fr; }
+    @media (max-width: 992px) {
+        .console-grid { grid-template-columns: 1fr; }
+        .console-statement { border-right: none; border-bottom: 1px solid var(--hairline); padding: 3rem 2rem; }
+        .console-instrument { padding: 2rem 2rem 1.4rem; }
+        .cov-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+        .cov-rail { position: static; }
+        .how-grid { grid-template-columns: repeat(2, 1fr); }
+        .how-cell:nth-child(2n) { border-right: none; }
+        .how-cell:nth-child(-n+2) { border-bottom: 1px solid var(--hairline); }
+        .stack-grid { grid-template-columns: 1fr; }
+        .stack-cell { border-right: none; }
+        .stack-cell:first-child { border-bottom: 1px solid var(--hairline); }
     }
 
-    @media (max-width: 640px) {
-        .i-hud { width: 28px; height: 28px; }
-        .i-hud-tl, .i-hud-tr { top: 18px; }
-        .i-hud-bl, .i-hud-br { bottom: 18px; }
-        .i-hud-tl, .i-hud-bl { left: 18px; }
-        .i-hud-tr, .i-hud-br { right: 18px; }
-        .i-hero-brand { flex-direction: column; align-items: center; gap: var(--s-2); }
-        .i-hero-typo { align-items: center; text-align: center; }
-        .i-hero-mark { width: 44px; height: 44px; }
-        .i-how-grid { grid-template-columns: 1fr; }
-        .i-watch { grid-template-columns: 1fr; gap: var(--s-2); }
-        .i-watch-num { font-size: 1.4rem; padding-top: 0; }
+    @media (max-width: 700px) {
+        .how-grid { grid-template-columns: 1fr; }
+        .how-cell, .how-cell:nth-child(2n) { border-right: none; border-bottom: 1px solid var(--hairline); }
+        .how-cell:last-child { border-bottom: none; }
+        .watch-item { grid-template-columns: 40px 1fr; gap: 1rem; }
     }
 </style>

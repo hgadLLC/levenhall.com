@@ -9,32 +9,31 @@ import CTASection from '../components/CTASection.astro';
     <PageHeader
         label="About Levenhall"
         title="Who We Are"
+        index="01"
     />
 
-    <!-- ── FIRM OVERVIEW ── -->
-    <section class="section firm-section">
+    <!-- ── THE FIRM (PAPER — long-form editorial passage) ── -->
+    <section class="section section-paper firm-section">
         <div class="container">
-            <div class="firm-grid reveal">
+            <div class="firm-grid">
                 <div class="firm-text">
+                    <span class="section-label">01 / The Firm</span>
                     <h2>The Firm</h2>
-                    <div class="firm-rule"></div>
-                    <p>Levenhall is a Washington, DC-based market intelligence consulting firm. We work in the markets where information asymmetry decides outcomes &mdash; defense procurement, allied government programs, regulated dual-use technology, and the geopolitical environment that shapes all three.</p>
+                    <p class="firm-lede">Levenhall is a Washington, DC-based market intelligence consulting firm. We work in the markets where information asymmetry decides outcomes &mdash; defense procurement, allied government programs, regulated dual-use technology, and the geopolitical environment that shapes all three.</p>
                     <p>Our intelligence practice is the core. From it, we run a connected set of avenues: a US federal market entry practice for allied defense and government technology firms, an investment arm (Levenhall Ventures) that takes equity in five companies a year in exchange for hands-on execution, and proprietary products &mdash; Bridger, AIGIS, and Intelligence &mdash; that operationalize what we know.</p>
                     <p>What unites the work is method. We do not broker introductions or sell off-the-shelf reports. We build a source-grounded picture of the market, identify where a client can act, and architect the structure required to act there. Every engagement is designed to produce a specific outcome, whether that outcome is a contract, an investment thesis, a placed executive, or a decision the client could not have made on their own information.</p>
                 </div>
-                <div class="firm-sidebar">
-                    <div class="sidebar-card">
-                        <span class="sidebar-icon">&#9670;</span>
+                <div class="firm-ledger">
+                    <span class="route-line firm-route">Levenhall / Registry / 2026</span>
+                    <div class="firm-fact">
                         <h4>Washington, DC</h4>
                         <p>Headquartered in the capital, where procurement decisions are made and intelligence flows.</p>
                     </div>
-                    <div class="sidebar-card">
-                        <span class="sidebar-icon">&#9670;</span>
+                    <div class="firm-fact">
                         <h4>Intelligence-Led</h4>
                         <p>Every engagement begins with a source-grounded picture of the market. Advice, structure, and execution flow from there.</p>
                     </div>
-                    <div class="sidebar-card">
-                        <span class="sidebar-icon">&#9670;</span>
+                    <div class="firm-fact">
                         <h4>Allied-Aligned</h4>
                         <p>Serving firms, investors, and program offices in trusted democracies with shared security frameworks and interoperable clearances.</p>
                     </div>
@@ -43,548 +42,410 @@ import CTASection from '../components/CTASection.astro';
         </div>
     </section>
 
-    <!-- ── WHAT WE DO (LIGHT, NEW) ── -->
+    <!-- ── WHAT WE DO (INK — avenues ledger) ── -->
     <section class="section avenues-section">
         <div class="container">
-            <div class="section-header reveal">
-                <span class="avenues-label">What We Do</span>
+            <div class="section-header">
+                <span class="section-label">02 / What We Do</span>
                 <h2>Four Connected Avenues</h2>
                 <p>One firm, one method, four ways we put intelligence to work.</p>
             </div>
-            <div class="avenues-grid reveal">
-                <div class="avenue-detail">
-                    <span class="avenue-num">01</span>
-                    <h3>Market Intelligence</h3>
-                    <p>The core. Decision-grade research, monitoring, and analysis on defense, government, geopolitical, and dual-use markets. One-time assessments and continuous retainers.</p>
-                    <a href="/services#market-intelligence" class="avenue-link">Intelligence Practice &rarr;</a>
+            <div class="avenues-ledger">
+                <div class="avenue-row">
+                    <span class="av-num">I.</span>
+                    <span class="av-body">
+                        <h3>Market Intelligence</h3>
+                        <p>The core. Decision-grade research, monitoring, and analysis on defense, government, geopolitical, and dual-use markets. One-time assessments and continuous retainers.</p>
+                    </span>
+                    <span class="av-links">
+                        <a href="/services#market-intelligence" class="mono-link">Intelligence Practice &rarr;</a>
+                    </span>
                 </div>
-                <div class="avenue-detail">
-                    <span class="avenue-num">02</span>
-                    <h3>US Federal Market Entry</h3>
-                    <p>Strategy, rapid procurement (CSO / OTA), executive placement, and cross-border tax structuring for allied defense and government technology firms entering the US.</p>
-                    <a href="/services" class="avenue-link">Market Entry &rarr;</a>
+                <div class="avenue-row">
+                    <span class="av-num">II.</span>
+                    <span class="av-body">
+                        <h3>US Federal Market Entry</h3>
+                        <p>Strategy, rapid procurement (CSO / OTA), executive placement, and cross-border tax structuring for allied defense and government technology firms entering the US.</p>
+                    </span>
+                    <span class="av-links">
+                        <a href="/services" class="mono-link">Market Entry &rarr;</a>
+                    </span>
                 </div>
-                <div class="avenue-detail">
-                    <span class="avenue-num">03</span>
-                    <h3>Levenhall Ventures</h3>
-                    <p>Our investment arm. Services at cost in exchange for equity. Five allied defense and government technology companies a year. No fund-style fees.</p>
-                    <a href="/ventures" class="avenue-link">Ventures &rarr;</a>
+                <div class="avenue-row">
+                    <span class="av-num">III.</span>
+                    <span class="av-body">
+                        <h3>Levenhall Ventures</h3>
+                        <p>Our investment arm. Services at cost in exchange for equity. Five allied defense and government technology companies a year. No fund-style fees.</p>
+                    </span>
+                    <span class="av-links">
+                        <a href="/ventures" class="mono-link">Ventures &rarr;</a>
+                    </span>
                 </div>
-                <div class="avenue-detail">
-                    <span class="avenue-num">04</span>
-                    <h3>Products: Bridger, AIGIS &amp; Intelligence</h3>
-                    <p>Bridger is our pre-RFP intelligence platform for US federal contracting &mdash; $760B a year indexed, scored, and watched. AIGIS is our system of record for AI governance, mapping every regulated AI system to the frameworks it has to answer to. Intelligence is our defense &amp; alliance advisory dashboard &mdash; live situational awareness for allied defense advisors.</p>
-                    <a href="/products/bridger" class="avenue-link">Bridger</a>
-                    <a href="/products/aigis" class="avenue-link">AIGIS</a>
-                    <a href="/products/intelligence" class="avenue-link">Intelligence</a>
+                <div class="avenue-row">
+                    <span class="av-num">IV.</span>
+                    <span class="av-body">
+                        <h3>Products: Bridger, AIGIS &amp; Intelligence</h3>
+                        <p>Bridger is our pre-RFP intelligence platform for US federal contracting &mdash; $760B a year indexed, scored, and watched. AIGIS is our system of record for AI governance, mapping every regulated AI system to the frameworks it has to answer to. Intelligence is our defense &amp; alliance advisory dashboard &mdash; live situational awareness for allied defense advisors.</p>
+                    </span>
+                    <span class="av-links">
+                        <a href="/products/bridger" class="mono-link">Bridger</a>
+                        <a href="/products/aigis" class="mono-link">AIGIS</a>
+                        <a href="/products/intelligence" class="mono-link">Intelligence</a>
+                    </span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ── APPROACH (DARK) ── -->
-    <section class="section approach-section">
-        <div class="approach-bg"></div>
-        <div class="container approach-inner">
+    <!-- ── APPROACH (PANEL) ── -->
+    <section class="section section-panel approach-section texture-grain">
+        <div class="container">
             <div class="approach-grid">
-                <div class="approach-text reveal">
-                    <span class="approach-label">Our Approach</span>
-                    <h2>Intelligence First. Structure, Not Access.</h2>
-                    <div class="approach-rule"></div>
+                <div class="approach-text">
+                    <span class="section-label">03 / Our Approach</span>
+                    <h2>Intelligence First. <span class="editorial-italic">Structure, Not Access.</span></h2>
                     <p>Most consulting firms sell access or sell reports. Levenhall does neither. We sell a method: build a source-grounded picture of the market, then architect the structure required to act in it.</p>
                     <p>Access is temporary. A meeting, a referral, a conference introduction: these create moments, not positions. Structure is durable. The right intelligence cadence, the right entity formation, the right procurement vehicle, the right consortium membership, the right US-based leadership: these create a foundation that generates opportunities for years.</p>
                     <p>We are selective about the firms we work with. Every engagement undergoes conflict and compliance review. We represent a limited number of clients in any given technology domain, ensuring that our intelligence work and institutional knowledge serve each client without dilution.</p>
                 </div>
-                <div class="approach-pillars reveal">
+                <div class="approach-pillars">
+                    <span class="route-line pillars-route">Operating Principles / Standing</span>
                     <div class="pillar">
-                        <div class="pillar-number">01</div>
-                        <h4>Selectivity</h4>
-                        <p>We take on a limited number of engagements. This is by design. Our effectiveness depends on deep commitment, not broad reach.</p>
+                        <span class="pillar-num">I.</span>
+                        <div>
+                            <h4>Selectivity</h4>
+                            <p>We take on a limited number of engagements. This is by design. Our effectiveness depends on deep commitment, not broad reach.</p>
+                        </div>
                     </div>
                     <div class="pillar">
-                        <div class="pillar-number">02</div>
-                        <h4>Discretion</h4>
-                        <p>Defense market positioning involves sensitive information, classified environments, and consequential relationships. We operate accordingly.</p>
+                        <span class="pillar-num">II.</span>
+                        <div>
+                            <h4>Discretion</h4>
+                            <p>Defense market positioning involves sensitive information, classified environments, and consequential relationships. We operate accordingly.</p>
+                        </div>
                     </div>
                     <div class="pillar">
-                        <div class="pillar-number">03</div>
-                        <h4>Alignment</h4>
-                        <p>Our interests align with yours. We succeed when you win contracts, not when we bill hours. Engagement structures reflect that principle.</p>
+                        <span class="pillar-num">III.</span>
+                        <div>
+                            <h4>Alignment</h4>
+                            <p>Our interests align with yours. We succeed when you win contracts, not when we bill hours. Engagement structures reflect that principle.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ── WHY ALLIED NATIONS (LIGHT) ── -->
+    <!-- ── WHY ALLIED NATIONS (INK) ── -->
     <section class="section allied-section">
         <div class="container">
-            <div class="allied-grid reveal">
-                <div class="allied-visual">
-                    <div class="allied-badge-stack">
-                        <div class="allied-badge-item">
-                            <span class="badge-flag">🇬🇧</span>
-                            <span class="badge-text">United Kingdom</span>
-                        </div>
-                        <div class="allied-badge-item">
-                            <span class="badge-flag">🇦🇺</span>
-                            <span class="badge-text">Australia</span>
-                        </div>
-                        <div class="allied-badge-item">
-                            <span class="badge-flag">🇨🇦</span>
-                            <span class="badge-text">Canada</span>
-                        </div>
-                        <div class="allied-badge-item">
-                            <span class="badge-flag">🇳🇿</span>
-                            <span class="badge-text">New Zealand</span>
-                        </div>
-                        <div class="allied-badge-item">
-                            <span class="badge-flag">🌍</span>
-                            <span class="badge-text">NATO & Allied Partners</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="allied-grid">
                 <div class="allied-text">
-                    <span class="section-label">Allied Nations</span>
+                    <span class="section-label">04 / Allied Nations</span>
                     <h2>A Strategic Choice</h2>
-                    <div class="allied-rule"></div>
                     <p>Our market entry and ventures work is built around trusted allied democracies: the United Kingdom, Australia, Canada, New Zealand, NATO allies, and select partner nations whose technologies address critical US defense and national security requirements.</p>
                     <p>This is not a limitation. It is the foundation of those practice areas. Shared security frameworks, interoperable clearances, and aligned strategic interests make allied-nation firms uniquely suited for US defense integration. The rapid procurement pathways we navigate, the consortia we access, and the relationships we maintain all depend on this trust framework.</p>
                     <p>Our market intelligence practice serves a broader audience &mdash; allied firms, US prime contractors, investors, and program offices that need a clearer picture of the markets they are operating in. If any of that describes you, we should talk.</p>
                 </div>
+                <div class="allied-ledger">
+                    <div class="allied-ledger-head">
+                        <span>Coverage / Allied Partners</span>
+                    </div>
+                    <div class="nation-row">
+                        <span class="nation-flag">🇬🇧</span>
+                        <span class="nation-name">United Kingdom</span>
+                    </div>
+                    <div class="nation-row">
+                        <span class="nation-flag">🇦🇺</span>
+                        <span class="nation-name">Australia</span>
+                    </div>
+                    <div class="nation-row">
+                        <span class="nation-flag">🇨🇦</span>
+                        <span class="nation-name">Canada</span>
+                    </div>
+                    <div class="nation-row">
+                        <span class="nation-flag">🇳🇿</span>
+                        <span class="nation-name">New Zealand</span>
+                    </div>
+                    <div class="nation-row">
+                        <span class="nation-flag">🌍</span>
+                        <span class="nation-name">NATO &amp; Allied Partners</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ── FLOATING STATS (bridge between allied & CTA) ── -->
-    <div class="stats-bridge">
-        <div class="stats-float">
-            <div class="stat-card">
-                <span class="stat-value">$1.5T+</span>
-                <span class="stat-desc">US annual defense budget, the largest procurement market on earth</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-value">60&ndash;120</span>
-                <span class="stat-desc">Days from solicitation to award through CSO and OTA procurement pathways</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-value">$18B+</span>
-                <span class="stat-desc">Annual OTA obligations across the Department of Defense</span>
-            </div>
+    <!-- ── EVIDENCE BAR (replaces floating stat cards) ── -->
+    <section class="stats-bar rule-top">
+        <div class="datum">
+            <span class="d-val">$1.5T+</span>
+            <span class="d-cap">US annual defense budget, the largest procurement market on earth</span>
         </div>
-    </div>
+        <div class="datum">
+            <span class="d-val">60&ndash;120</span>
+            <span class="d-cap">Days from solicitation to award through CSO and OTA procurement pathways</span>
+        </div>
+        <div class="datum">
+            <span class="d-val">$18B+</span>
+            <span class="d-cap">Annual OTA obligations across the Department of Defense</span>
+        </div>
+    </section>
 
     <CTASection />
 
 </BaseLayout>
 
 <style>
-    /* ── FIRM (LIGHT) ── */
-    .firm-section {
-        background: var(--stone);
-    }
-
-    .firm-rule {
-        width: 50px;
-        height: 2px;
-        background: var(--gold);
-        margin-bottom: 1.5rem;
-    }
-
+    /* ── THE FIRM (PAPER) ── */
     .firm-grid {
         display: grid;
-        grid-template-columns: 1.3fr 0.7fr;
-        gap: 3.5rem;
+        grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+        gap: 4.5rem;
         align-items: start;
     }
 
-    .firm-text h2 { margin-bottom: 1rem; }
+    .firm-text h2 { margin-bottom: 1.4rem; }
 
     .firm-text p {
         margin-bottom: 1rem;
-        font-size: 1.02rem;
         line-height: 1.75;
+        max-width: 62ch;
     }
 
-    .firm-sidebar {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
+    .firm-lede {
+        font-size: 1.08rem;
+    }
+    .firm-lede::first-letter {
+        font-family: var(--serif);
+        font-size: 3.2em;
+        float: left;
+        line-height: 0.82;
+        padding-right: 0.14em;
+        color: var(--deep-navy);
     }
 
-    .sidebar-card {
-        padding: 1.4rem 1.5rem;
-        background: #fff;
-        border: 1px solid var(--border-warm);
-        border-left: 3px solid var(--gold);
-        transition: all 0.3s ease;
+    /* Registry ledger — hairline rows, no cards */
+    .firm-ledger {
+        border-top: 1px solid var(--hairline-paper);
     }
 
-    .sidebar-card:hover {
-        box-shadow: var(--shadow-warm-md);
-        transform: translateX(4px);
-    }
-
-    .sidebar-icon {
+    .firm-route {
         display: block;
-        color: var(--gold);
-        font-size: 0.7rem;
-        margin-bottom: 0.6rem;
+        padding: 0.9rem 0.2rem;
+        border-bottom: 1px solid var(--hairline-paper);
+        color: var(--text-medium);
     }
 
-    .sidebar-card h4 {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 600;
-        font-size: 0.75rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: var(--navy);
-        margin-bottom: 0.5rem;
+    .firm-fact {
+        padding: 1.3rem 0.2rem 1.4rem;
+        border-bottom: 1px solid var(--hairline-paper);
     }
 
-    .sidebar-card p {
+    .firm-fact h4 {
+        color: var(--deep-navy);
+        margin-bottom: 0.55rem;
+    }
+
+    .firm-fact p {
         font-size: 0.88rem;
         line-height: 1.6;
-        color: var(--text-medium);
     }
 
-    /* ── AVENUES (LIGHT, NEW) ── */
-    .avenues-section {
-        background: var(--cream);
-        padding: 6rem 0;
+    /* ── AVENUES LEDGER (INK) ── */
+    .avenues-ledger {
+        border-top: 1px solid var(--hairline);
     }
 
-    .avenues-label {
-        display: inline-block;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 600;
-        font-size: 0.72rem;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        color: var(--burgundy);
-        background: var(--burgundy-surface);
-        padding: 0.5rem 1.2rem;
-        margin-bottom: 1.2rem;
-    }
-
-    .avenues-section .section-header {
-        text-align: center;
-        max-width: 700px;
-        margin: 0 auto 3rem;
-    }
-
-    .avenues-section .section-header h2 {
-        color: var(--deep-navy);
-        margin-bottom: 1rem;
-    }
-
-    .avenues-section .section-header p {
-        color: var(--text-medium);
-        font-size: 1.02rem;
-        line-height: 1.75;
-    }
-
-    .avenues-grid {
+    .avenue-row {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-        max-width: 1000px;
-        margin: 0 auto;
+        grid-template-columns: 64px minmax(0, 1fr) 220px;
+        gap: 2rem;
+        align-items: start;
+        padding: 2rem 0.5rem 2.2rem;
+        border-bottom: 1px solid var(--hairline);
+        transition: background var(--t-short);
+    }
+    .avenue-row:hover { background: var(--ink-panel); }
+
+    .av-num {
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: 1.5rem;
+        color: var(--gold);
+        line-height: 1.2;
     }
 
-    .avenue-detail {
-        background: #fff;
-        padding: 2rem;
-        border: 1px solid var(--border-warm);
-        border-top: 3px solid var(--gold);
-        transition: all 0.3s ease;
+    .av-body h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+    .av-body p { font-size: 0.95rem; line-height: 1.7; color: var(--muted); max-width: 68ch; }
+
+    .av-links {
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
+        align-items: flex-start;
+        gap: 0.9rem;
+        padding-top: 0.35rem;
     }
 
-    .avenue-detail:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 16px 40px rgba(30, 58, 95, 0.1);
-    }
-
-    .avenue-num {
-        font-family: 'Fraunces', serif;
-        font-size: 1.6rem;
-        font-weight: 700;
-        color: var(--gold);
-        opacity: 0.3;
-        line-height: 1;
-    }
-
-    .avenue-detail h3 {
-        font-size: 1.25rem;
-        color: var(--deep-navy);
-        margin-bottom: 0.3rem;
-    }
-
-    .avenue-detail p {
-        font-size: 0.95rem;
-        line-height: 1.7;
-        color: var(--text-medium);
-        flex: 1;
-    }
-
-    .avenue-link {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.78rem;
-        font-weight: 600;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        color: var(--burgundy);
-        text-decoration: none;
-        margin-top: 0.6rem;
-        transition: color 0.2s ease;
-    }
-
-    .avenue-link + .avenue-link {
-        margin-top: 0.2rem;
-    }
-
-    .avenue-link:hover {
-        color: var(--gold);
-    }
-
-    /* ── APPROACH (DARK SECTION) ── */
-    .approach-section {
-        background: linear-gradient(180deg, var(--deep-navy) 0%, #162d4a 100%);
-        padding: 6rem 0;
-        overflow: hidden;
-    }
-
-    .approach-bg {
-        position: absolute;
-        inset: 0;
-        background-image:
-            radial-gradient(ellipse at 70% 30%, rgba(201, 169, 97, 0.05) 0%, transparent 50%),
-            radial-gradient(ellipse at 20% 80%, rgba(30, 58, 95, 0.15) 0%, transparent 50%);
-        pointer-events: none;
-    }
-
-    .approach-inner {
-        position: relative;
-        z-index: 1;
-    }
-
-    .approach-label {
-        display: inline-block;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 600;
-        font-size: 0.72rem;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        color: var(--gold);
-        background: rgba(201, 169, 97, 0.08);
-        padding: 0.5rem 1.2rem;
-        margin-bottom: 1.2rem;
-    }
-
-    .approach-rule {
-        width: 50px;
-        height: 2px;
-        background: var(--gold);
-        opacity: 0.5;
-        margin-bottom: 1.5rem;
-    }
-
+    /* ── APPROACH (PANEL) ── */
     .approach-grid {
         display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 3.5rem;
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+        gap: 4.5rem;
         align-items: start;
     }
 
-    .approach-section h2 {
-        color: #fff;
-        margin-bottom: 1rem;
+    .approach-text h2 {
+        margin-bottom: 1.4rem;
+        max-width: 18ch;
+    }
+
+    .approach-text .editorial-italic {
+        font-weight: 400;
     }
 
     .approach-text p {
-        color: rgba(255, 255, 255, 0.55);
-        margin-bottom: 0.8rem;
+        margin-bottom: 1rem;
+        max-width: 60ch;
     }
 
     .approach-pillars {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
+        border-top: 1px solid var(--hairline);
+    }
+
+    .pillars-route {
+        display: block;
+        padding: 0.9rem 0.2rem;
+        border-bottom: 1px solid var(--hairline);
     }
 
     .pillar {
-        padding: 1.4rem 1.5rem;
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        border-left: 3px solid rgba(201, 169, 97, 0.3);
-        position: relative;
-        transition: all 0.3s ease;
+        display: grid;
+        grid-template-columns: 44px minmax(0, 1fr);
+        gap: 1rem;
+        padding: 1.4rem 0.2rem 1.5rem;
+        border-bottom: 1px solid var(--hairline);
+        transition: background var(--t-short);
     }
+    .pillar:hover { background: var(--ink); }
 
-    .pillar:hover {
-        background: rgba(255, 255, 255, 0.07);
-        border-left-color: var(--gold);
-        transform: translateX(4px);
-    }
-
-    .pillar-number {
-        font-family: 'Fraunces', serif;
+    .pillar-num {
+        font-family: var(--serif);
+        font-style: italic;
         font-size: 1.2rem;
-        font-weight: 700;
         color: var(--gold);
-        opacity: 0.5;
-        margin-bottom: 0.4rem;
+        line-height: 1.3;
     }
 
     .pillar h4 {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 600;
-        font-size: 0.75rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: #fff;
-        margin-bottom: 0.6rem;
+        color: var(--bone);
+        margin-bottom: 0.5rem;
     }
 
     .pillar p {
         font-size: 0.9rem;
         line-height: 1.65;
-        color: rgba(255, 255, 255, 0.5);
+        color: var(--muted);
     }
 
-    /* ── ALLIED (LIGHT) ── */
-    .allied-section {
-        background: var(--cream);
-        padding-bottom: 8rem;
-    }
-
-    .allied-rule {
-        width: 50px;
-        height: 2px;
-        background: var(--gold);
-        margin-bottom: 1.5rem;
-    }
-
+    /* ── ALLIED NATIONS (INK) ── */
     .allied-grid {
         display: grid;
-        grid-template-columns: 0.4fr 1fr;
-        gap: 3.5rem;
-        align-items: center;
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+        gap: 4.5rem;
+        align-items: start;
     }
 
-    .allied-badge-stack {
-        display: flex;
-        flex-direction: column;
-        gap: 0.6rem;
-    }
-
-    .allied-badge-item {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        padding: 0.9rem 1.2rem;
-        background: var(--cream);
-        border: 1px solid var(--border-subtle);
-        border-left: 3px solid var(--navy);
-        transition: all 0.3s ease;
-    }
-
-    .allied-badge-item:hover {
-        border-left-color: var(--gold);
-        box-shadow: var(--shadow-md);
-        transform: translateX(4px);
-    }
-
-    .badge-flag {
-        font-size: 1.5rem;
-        flex-shrink: 0;
-    }
-
-    .badge-text {
-        font-weight: 600;
-        font-size: 0.9rem;
-        color: var(--navy);
-    }
-
-    .allied-text h2 { margin-bottom: 1rem; }
+    .allied-text h2 { margin-bottom: 1.4rem; }
 
     .allied-text p {
-        font-size: 1.02rem;
-        line-height: 1.75;
         margin-bottom: 1rem;
+        line-height: 1.75;
+        max-width: 62ch;
     }
 
-    /* ── FLOATING STATS BRIDGE ── */
-    .stats-bridge {
-        position: relative;
-        z-index: 10;
-        padding: 0 2rem;
-        margin-top: -5rem;
-        margin-bottom: -5rem;
+    .allied-ledger {
+        border: 1px solid var(--hairline);
+        padding: 1.4rem 1.6rem 0.4rem;
     }
 
-    .stats-float {
-        max-width: 1100px;
-        margin: 0 auto;
+    .allied-ledger-head {
+        font-family: var(--mono);
+        font-size: 0.58rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--dim);
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--hairline);
+    }
+
+    .nation-row {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 1rem;
+        align-items: center;
+        padding: 0.85rem 0.2rem;
+        border-bottom: 1px solid var(--hairline-soft);
+    }
+    .nation-row:last-child { border-bottom: none; }
+
+    .nation-flag { font-size: 1.15rem; line-height: 1; }
+    .nation-name { font-weight: 600; font-size: 0.9rem; color: var(--bone); }
+
+    /* ── EVIDENCE BAR ── */
+    .stats-bar {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 1.2rem;
     }
 
-    .stat-card {
-        background: #fff;
-        text-align: center;
-        padding: 2rem 1.5rem;
-        border-top: 3px solid var(--gold);
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-        transition: all 0.3s ease;
+    .datum {
+        padding: 1.8rem 2rem 2rem;
+        border-right: 1px solid var(--hairline);
+        font-family: var(--mono);
     }
+    .datum:last-child { border-right: none; }
 
-    .stat-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.16);
-    }
-
-    .stat-value {
+    .d-val {
         display: block;
-        font-family: 'Fraunces', serif;
-        font-size: 2.6rem;
-        font-weight: 700;
-        color: var(--deep-navy);
-        line-height: 1;
-        margin-bottom: 0.6rem;
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: var(--bone);
+        letter-spacing: 0.01em;
+        font-variant-numeric: tabular-nums;
     }
 
-    .stat-desc {
+    .d-cap {
         display: block;
-        font-size: 0.85rem;
-        color: var(--text-medium);
-        line-height: 1.6;
-    }
-
-    /* CTA top padding override for floating stats overlap */
-    .stats-bridge + :global(.cta-section) {
-        padding-top: 8rem;
+        margin-top: 0.5rem;
+        font-size: 0.58rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--dim);
+        line-height: 1.7;
+        max-width: 34ch;
     }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 992px) {
-        .firm-grid { grid-template-columns: 1fr; }
-        .approach-grid { grid-template-columns: 1fr; }
-        .allied-grid { grid-template-columns: 1fr; }
-        .allied-badge-stack { flex-direction: row; flex-wrap: wrap; }
-        .allied-badge-item { flex: 1 1 calc(50% - 0.3rem); }
-        .avenues-grid { grid-template-columns: 1fr; max-width: 540px; }
+        .firm-grid { grid-template-columns: 1fr; gap: 3rem; }
+        .approach-grid { grid-template-columns: 1fr; gap: 3rem; }
+        .allied-grid { grid-template-columns: 1fr; gap: 3rem; }
+    }
+
+    @media (max-width: 900px) {
+        .avenue-row { grid-template-columns: 44px minmax(0, 1fr); }
+        .av-links {
+            grid-column: 2;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 1.4rem;
+            padding-top: 0.9rem;
+        }
     }
 
     @media (max-width: 768px) {
-        .stats-float { grid-template-columns: 1fr; }
-        .stats-bridge { margin-top: -3.5rem; margin-bottom: -3.5rem; }
-        .allied-section { padding-bottom: 6rem; }
-        .stats-bridge + :global(.cta-section) { padding-top: 6rem; }
-        .allied-badge-item { flex: 1 1 100%; }
+        .stats-bar { grid-template-columns: 1fr; }
+        .datum { border-right: none; border-bottom: 1px solid var(--hairline); }
+        .datum:last-child { border-bottom: none; }
     }
 </style>

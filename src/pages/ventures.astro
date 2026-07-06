@@ -4,166 +4,167 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout title="Ventures | Levenhall" description="Levenhall Ventures is the investment arm of Levenhall LLC — services-for-equity partnerships with allied defense and government technology companies, backed by the firm's market intelligence.">
 
-    <!-- ── HERO ── -->
-    <section class="v-hero">
-        <div class="v-hero-bg"></div>
+    <!-- ── HERO: THE TERM SHEET ── -->
+    <section class="v-hero sweep-field texture-grain">
         <div class="v-hero-inner">
-            <div class="v-hero-content">
-                <span class="v-hero-badge">The Investment Arm of Levenhall</span>
-                <h1>Levenhall<br/><span class="gold-text">Ventures</span></h1>
-                <div class="v-hero-rule"></div>
-                <p class="v-hero-sub">Levenhall Ventures is the investment arm of our market intelligence consulting firm. We provide US federal market entry services to allied defense and government technology companies in exchange for equity. No capital. No fees. Services for stake.</p>
-                <a href="#apply" class="btn btn-gold">Apply for Partnership</a>
+            <span class="route-line v-route">LEVENHALL / VENTURES / SERVICES-FOR-EQUITY <span class="live">●</span></span>
+            <span class="section-label">The Investment Arm of Levenhall</span>
+            <h1>Levenhall Ventures</h1>
+            <p class="v-hero-sub">Levenhall Ventures is the investment arm of our market intelligence consulting firm. We provide US federal market entry services to allied defense and government technology companies in exchange for equity. No capital. No fees. Services for stake.</p>
+            <div class="btn-group v-hero-cta">
+                <a href="#apply" class="btn btn-primary">Apply for Partnership</a>
             </div>
-            <div class="v-hero-stats">
-                <div class="v-hero-stat">
-                    <span class="v-hero-stat-val">5</span>
-                    <span class="v-hero-stat-lbl">Companies<br/>Per Year</span>
-                </div>
-                <div class="v-hero-stat">
-                    <span class="v-hero-stat-val">$1.5T+</span>
-                    <span class="v-hero-stat-lbl">US Defense<br/>Market</span>
-                </div>
-                <div class="v-hero-stat">
-                    <span class="v-hero-stat-val">100%</span>
-                    <span class="v-hero-stat-lbl">Aligned<br/>Incentives</span>
-                </div>
+        </div>
+
+        <!-- Evidence bar -->
+        <div class="v-data-bar">
+            <div class="v-datum">
+                <span class="v-d-val">5</span>
+                <span class="v-d-cap">Companies Per Year</span>
+            </div>
+            <div class="v-datum">
+                <span class="v-d-val">$1.5T+</span>
+                <span class="v-d-cap">US Defense Market</span>
+            </div>
+            <div class="v-datum">
+                <span class="v-d-val gold">100%</span>
+                <span class="v-d-cap">Aligned Incentives</span>
             </div>
         </div>
     </section>
 
     <!-- ── MODEL STRIP ── -->
     <section class="v-model-strip">
-        <div class="v-model-strip-inner">
-            <div class="v-strip-item">
-                <span class="v-strip-num">01</span>
-                <span class="v-strip-text">Services at Cost</span>
-            </div>
-            <span class="v-strip-arrow">
-                <svg viewBox="0 0 24 12" fill="none"><path d="M0 6h20m0 0l-5-5m5 5l-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-            <div class="v-strip-item">
-                <span class="v-strip-num">02</span>
-                <span class="v-strip-text">Equity in Return</span>
-            </div>
-            <span class="v-strip-arrow">
-                <svg viewBox="0 0 24 12" fill="none"><path d="M0 6h20m0 0l-5-5m5 5l-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-            <div class="v-strip-item">
-                <span class="v-strip-num">03</span>
-                <span class="v-strip-text">We Win Together</span>
-            </div>
+        <div class="v-strip-item">
+            <span class="v-strip-num">01</span>
+            <span class="v-strip-text">Services at Cost</span>
+        </div>
+        <span class="v-strip-arrow" aria-hidden="true">→</span>
+        <div class="v-strip-item">
+            <span class="v-strip-num">02</span>
+            <span class="v-strip-text">Equity in Return</span>
+        </div>
+        <span class="v-strip-arrow" aria-hidden="true">→</span>
+        <div class="v-strip-item">
+            <span class="v-strip-num">03</span>
+            <span class="v-strip-text">We Win Together</span>
         </div>
     </section>
 
-    <!-- ── ABOUT ── -->
-    <section class="section v-about">
+    <!-- ── ABOUT (PAPER — the one editorial passage) ── -->
+    <section class="section section-paper v-about">
         <div class="container">
-            <div class="v-about-grid reveal">
+            <div class="v-about-grid">
                 <div class="v-about-text">
-                    <span class="v-label">About Levenhall Ventures</span>
-                    <h2>We Don't Write Checks</h2>
-                    <div class="v-rule"></div>
+                    <span class="section-label">About Levenhall Ventures</span>
+                    <h2>We Don&rsquo;t Write Checks</h2>
                     <p>Levenhall Ventures is the investment arm of Levenhall &mdash; the market intelligence consulting firm. We partner with defense and government technology companies from Allied Nations (NATO, Five Eyes, and key strategic allies) who are ready to enter the US federal market.</p>
                     <p>We are not a fund. We provide our full market entry infrastructure at cost: market intelligence, access to contracting vehicles, BRIDGER, and federal relationships. In exchange, we take equity. No fees. No retainers. We only win when they win.</p>
                 </div>
-                <div class="v-about-visual">
-                    <div class="v-about-card v-about-card-highlight">
-                        <div class="v-about-card-label">Our Model</div>
-                        <div class="v-about-card-icon">
-                            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="24" cy="24" r="22" stroke="var(--gold)" stroke-width="1.5" opacity="0.3"/>
-                                <path d="M16 24l5 5 11-11" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <h4>Services for Equity</h4>
-                        <p>No capital. No advisory fees. Full operational partnership.</p>
+                <div class="v-terms">
+                    <div class="v-terms-head">
+                        <span>Our Model</span>
+                        <span>Terms</span>
                     </div>
-                    <div class="v-about-card">
-                        <div class="v-about-card-icon">
-                            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="24" cy="24" r="22" stroke="var(--gold)" stroke-width="1.5" opacity="0.3"/>
-                                <path d="M24 14v20M14 24h20" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                        <h4>Deliberately Selective</h4>
-                        <p>Five companies a year. Full commitment to each.</p>
+                    <div class="v-term-row">
+                        <span class="v-term-clause">§ 1</span>
+                        <span class="v-term-body">
+                            <h4>Services for Equity</h4>
+                            <p>No capital. No advisory fees. Full operational partnership.</p>
+                        </span>
+                    </div>
+                    <div class="v-term-row">
+                        <span class="v-term-clause">§ 2</span>
+                        <span class="v-term-body">
+                            <h4>Deliberately Selective</h4>
+                            <p>Five companies a year. Full commitment to each.</p>
+                        </span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ── WHAT WE OFFER ── -->
+    <!-- ── WHAT WE OFFER (INK LEDGER) ── -->
     <section class="section v-offer">
-        <div class="v-offer-bg"></div>
-        <div class="container" style="position: relative; z-index: 1;">
-            <div class="section-header reveal">
-                <span class="v-offer-label">What We Offer</span>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">What We Offer</span>
                 <h2>Your US Market Entry Partner</h2>
             </div>
-            <div class="v-offer-grid">
-                <div class="v-offer-card v-offer-card-wide reveal">
-                    <div class="v-offer-num">01</div>
-                    <h3>Market Intelligence</h3>
-                    <p>The firm's core practice, applied to your sector. Program, agency, competitor, and geopolitical tracking that feeds every other decision.</p>
+            <div class="v-offer-ledger">
+                <div class="v-offer-row">
+                    <span class="vo-num">01</span>
+                    <span class="vo-body">
+                        <h3>Market Intelligence</h3>
+                        <p>The firm&rsquo;s core practice, applied to your sector. Program, agency, competitor, and geopolitical tracking that feeds every other decision.</p>
+                    </span>
                 </div>
-                <div class="v-offer-card v-offer-card-wide reveal">
-                    <div class="v-offer-num">02</div>
-                    <h3>US Market Entry Strategy</h3>
-                    <p>We map the federal landscape and build your capture plan from day one.</p>
+                <div class="v-offer-row">
+                    <span class="vo-num">02</span>
+                    <span class="vo-body">
+                        <h3>US Market Entry Strategy</h3>
+                        <p>We map the federal landscape and build your capture plan from day one.</p>
+                    </span>
                 </div>
-                <div class="v-offer-card reveal">
-                    <div class="v-offer-num">03</div>
-                    <h3>BRIDGER Access</h3>
-                    <p>Our allied defense dealmaking platform. Curated, high-signal introductions to active buyers and primes.</p>
+                <div class="v-offer-row">
+                    <span class="vo-num">03</span>
+                    <span class="vo-body">
+                        <h3>BRIDGER Access</h3>
+                        <p>Our allied defense dealmaking platform. Curated, high-signal introductions to active buyers and primes.</p>
+                    </span>
                 </div>
-                <div class="v-offer-card reveal">
-                    <div class="v-offer-num">04</div>
-                    <h3>Contracting Vehicle Access</h3>
-                    <p>We open CSO, OTA, and consortium doors that take most companies years to reach.</p>
+                <div class="v-offer-row">
+                    <span class="vo-num">04</span>
+                    <span class="vo-body">
+                        <h3>Contracting Vehicle Access</h3>
+                        <p>We open CSO, OTA, and consortium doors that take most companies years to reach.</p>
+                    </span>
                 </div>
-                <div class="v-offer-card reveal">
-                    <div class="v-offer-num">05</div>
-                    <h3>Federal Relationship Network</h3>
-                    <p>Direct introductions across DoD, IC, and civilian agencies.</p>
+                <div class="v-offer-row">
+                    <span class="vo-num">05</span>
+                    <span class="vo-body">
+                        <h3>Federal Relationship Network</h3>
+                        <p>Direct introductions across DoD, IC, and civilian agencies.</p>
+                    </span>
                 </div>
-                <div class="v-offer-card reveal">
-                    <div class="v-offer-num">06</div>
-                    <h3>Equity-for-Services</h3>
-                    <p>Pay us at cost. Give us equity. Aligned from day one.</p>
+                <div class="v-offer-row">
+                    <span class="vo-num">06</span>
+                    <span class="vo-body">
+                        <h3>Equity-for-Services</h3>
+                        <p>Pay us at cost. Give us equity. Aligned from day one.</p>
+                    </span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ── WHO WE BACK + WHY (combined) ── -->
-    <section class="section v-criteria">
+    <!-- ── WHO WE BACK (PANEL) ── -->
+    <section class="section section-panel v-criteria">
         <div class="container">
-            <div class="v-criteria-header reveal">
-                <span class="v-label">Who We Back</span>
+            <div class="section-header">
+                <span class="section-label">Who We Back</span>
                 <h2>Investment Criteria</h2>
-                <div class="v-rule" style="margin-left:0;"></div>
                 <p>Not ideas. Not decks. Companies with traction, product, and founders who understand the operating environment.</p>
             </div>
-            <div class="v-criteria-cards reveal">
-                <div class="v-crit-card">
-                    <div class="v-crit-num">01</div>
+            <div class="v-criteria-grid">
+                <div class="v-crit-cell">
+                    <span class="v-crit-num">01</span>
                     <h4>Working Product</h4>
                     <p>A product or platform with a credible US federal application.</p>
                 </div>
-                <div class="v-crit-card">
-                    <div class="v-crit-num">02</div>
+                <div class="v-crit-cell">
+                    <span class="v-crit-num">02</span>
                     <h4>Government Traction</h4>
                     <p>A contract, pilot, or customer in your home government.</p>
                 </div>
-                <div class="v-crit-card">
-                    <div class="v-crit-num">03</div>
+                <div class="v-crit-cell">
+                    <span class="v-crit-num">03</span>
                     <h4>Allied Nation Founders</h4>
                     <p>From Five Eyes or Allied nations. You understand the operating environment.</p>
                 </div>
-                <div class="v-crit-card">
-                    <div class="v-crit-num">04</div>
+                <div class="v-crit-cell">
+                    <span class="v-crit-num">04</span>
                     <h4>Target Domains</h4>
                     <p>AI, cybersecurity, dual-use platforms, ISR, logistics, critical infrastructure, interoperability.</p>
                 </div>
@@ -171,39 +172,34 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
     </section>
 
-    <!-- ── WHY LEVENHALL (full-width statement) ── -->
-    <section class="v-why">
-        <div class="v-why-bg"></div>
-        <div class="v-why-inner">
-            <div class="v-why-content reveal">
-                <span class="v-why-label">Why Levenhall</span>
+    <!-- ── WHY LEVENHALL (INK) ── -->
+    <section class="section v-why">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Why Levenhall</span>
                 <h2>Operators, Not Consultants</h2>
-                <div class="v-why-rule"></div>
-                <div class="v-why-columns">
-                    <div class="v-why-col">
-                        <p>We run a working market intelligence practice. We have access to contracting vehicles, the relationships across DoD and IC, and direct experience deploying AI systems inside the federal ecosystem.</p>
-                    </div>
-                    <div class="v-why-col">
-                        <p>Other firms charge fees and hand you a report. We provide services at cost and take equity. Your cap table stays clean. We earn our stake by delivering results.</p>
-                    </div>
-                </div>
-                <p class="v-why-emphasis">Not a fund. A services-for-equity partnership.</p>
             </div>
+            <div class="v-why-columns">
+                <div class="v-why-col">
+                    <p>We run a working market intelligence practice. We have access to contracting vehicles, the relationships across DoD and IC, and direct experience deploying AI systems inside the federal ecosystem.</p>
+                </div>
+                <div class="v-why-col">
+                    <p>Other firms charge fees and hand you a report. We provide services at cost and take equity. Your cap table stays clean. We earn our stake by delivering results.</p>
+                </div>
+            </div>
+            <p class="v-why-emphasis editorial-italic">Not a fund. A services-for-equity partnership.</p>
         </div>
     </section>
 
-    <!-- ── APPLY CTA ── -->
-    <section class="v-apply" id="apply">
-        <div class="v-apply-bg"></div>
-        <div class="v-apply-inner">
-            <div class="v-apply-content reveal">
-                <div class="v-apply-accent"></div>
-                <h2>Apply for Partnership</h2>
-                <p>Rolling applications. Five companies per year. If you're building defense or government technology in an Allied nation and ready for the US federal market, we want to hear from you.</p>
-                <div class="btn-group" style="justify-content: center;">
-                    <a href="mailto:hgad@levenhall.com?subject=Levenhall%20Ventures%20%E2%80%94%20Partnership%20Application" class="btn btn-gold">Apply Now</a>
-                    <a href="/contact" class="btn btn-outline-white">Contact Us</a>
-                </div>
+    <!-- ── APPLY (PANEL) ── -->
+    <section class="section section-panel v-apply" id="apply">
+        <div class="container">
+            <span class="route-line v-apply-route">LEVENHALL / VENTURES / APPLICATIONS <span class="live">● OPEN</span></span>
+            <h2>Apply for Partnership</h2>
+            <p class="v-apply-lede">Rolling applications. Five companies per year. If you&rsquo;re building defense or government technology in an Allied nation and ready for the US federal market, we want to hear from you.</p>
+            <div class="btn-group">
+                <a href="mailto:hgad@levenhall.com?subject=Levenhall%20Ventures%20%E2%80%94%20Partnership%20Application" class="btn btn-gold">Apply Now</a>
+                <a href="/contact" class="btn btn-outline-white">Contact Us</a>
             </div>
         </div>
     </section>
@@ -213,601 +209,292 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <style>
     /* ── HERO ── */
     .v-hero {
-        background: linear-gradient(160deg, #060b16 0%, #0c1628 30%, var(--deep-navy) 60%, #162d4f 100%);
-        padding: 9rem 2rem 0;
         position: relative;
-        overflow: hidden;
-    }
-
-    .v-hero-bg {
-        position: absolute;
-        inset: 0;
-        background-image:
-            radial-gradient(ellipse at 20% 60%, rgba(201, 169, 97, 0.08) 0%, transparent 50%),
-            radial-gradient(ellipse at 80% 20%, rgba(30, 58, 95, 0.2) 0%, transparent 50%);
-        pointer-events: none;
+        background: var(--ink);
+        padding-top: 72px; /* nav clearance */
+        border-bottom: 1px solid var(--hairline);
     }
 
     .v-hero-inner {
-        max-width: 1200px;
+        max-width: var(--col-wide);
         margin: 0 auto;
-        position: relative;
-        z-index: 1;
-        display: grid;
-        grid-template-columns: 1.3fr 0.7fr;
-        gap: 4rem;
-        align-items: center;
-        padding-bottom: 5rem;
+        padding: 6rem 2rem 4.5rem;
     }
 
-    .v-hero-badge {
-        display: inline-block;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 600;
-        font-size: 0.68rem;
-        letter-spacing: 3.5px;
-        text-transform: uppercase;
-        color: var(--gold);
-        background: rgba(201, 169, 97, 0.08);
-        border: 1px solid rgba(201, 169, 97, 0.15);
-        padding: 0.5rem 1.4rem;
-        margin-bottom: 1.8rem;
+    .v-route {
+        display: block;
+        margin-bottom: 2.2rem;
     }
 
     .v-hero h1 {
-        color: #fff;
-        font-size: clamp(2.8rem, 5vw, 4.2rem);
-        line-height: 1.1;
-        margin-bottom: 1.5rem;
-    }
-
-    .v-hero-rule {
-        width: 60px;
-        height: 2px;
-        background: var(--gold);
-        margin-bottom: 1.5rem;
+        font-size: clamp(2.8rem, 5.4vw, 4.6rem);
+        max-width: 12ch;
     }
 
     .v-hero-sub {
-        font-size: 1.05rem;
-        color: rgba(255, 255, 255, 0.5);
-        line-height: 1.85;
-        margin-bottom: 2rem;
-        max-width: 520px;
+        margin-top: 1.8rem;
+        max-width: 56ch;
+        font-size: 1.02rem;
+        color: var(--muted);
     }
 
-    .v-hero-stats {
-        display: flex;
-        flex-direction: column;
-        gap: 0;
+    .v-hero-cta { margin-top: 2.4rem; }
+
+    /* Evidence bar — hairline ledger, not floating stat cards */
+    .v-data-bar {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border-top: 1px solid var(--hairline);
     }
 
-    .v-hero-stat {
-        padding: 1.8rem 2rem;
-        border-left: 2px solid rgba(201, 169, 97, 0.25);
-        display: flex;
-        align-items: baseline;
-        gap: 1.2rem;
-        transition: border-color 0.3s ease;
+    .v-datum {
+        padding: 1.5rem 2rem;
+        border-right: 1px solid var(--hairline);
+        font-family: var(--mono);
     }
+    .v-datum:last-child { border-right: none; }
 
-    .v-hero-stat:hover {
-        border-left-color: var(--gold);
+    .v-d-val {
+        display: block;
+        font-size: 1.35rem;
+        font-weight: 500;
+        color: var(--bone);
+        letter-spacing: 0.01em;
+        font-variant-numeric: tabular-nums;
     }
+    .v-d-val.gold { color: var(--gold); }
 
-    .v-hero-stat + .v-hero-stat {
-        border-top: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .v-hero-stat-val {
-        font-family: 'Fraunces', serif;
-        font-size: 2.8rem;
-        font-weight: 700;
-        color: var(--gold);
-        line-height: 1;
-        min-width: 70px;
-    }
-
-    .v-hero-stat-lbl {
-        font-size: 0.78rem;
-        font-weight: 600;
-        letter-spacing: 1.5px;
+    .v-d-cap {
+        display: block;
+        margin-top: 0.35rem;
+        font-size: 0.58rem;
+        letter-spacing: 0.16em;
         text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.4);
-        line-height: 1.4;
+        color: var(--dim);
     }
 
-    /* ── MODEL STRIP ── */
+    /* ── MODEL STRIP — the deal, in one hairline row ── */
     .v-model-strip {
-        background: var(--deep-navy);
-        border-top: 3px solid var(--gold);
-        padding: 0;
-    }
-
-    .v-model-strip-inner {
-        max-width: 1000px;
-        margin: 0 auto;
         display: flex;
         align-items: center;
-        justify-content: center;
-        padding: 1.6rem 2rem;
         gap: 0;
+        background: var(--ink-panel);
+        border-bottom: 1px solid var(--hairline);
+        max-width: none;
+        padding: 0 2rem;
     }
 
     .v-strip-item {
         flex: 1;
         display: flex;
-        align-items: center;
+        align-items: baseline;
         gap: 1rem;
-        padding: 0.8rem 1.5rem;
-    }
-
-    .v-strip-arrow {
-        color: var(--gold);
-        opacity: 0.35;
-        flex-shrink: 0;
-        width: 24px;
-        height: 12px;
-        display: flex;
-        align-items: center;
-    }
-
-    .v-strip-arrow svg {
-        width: 100%;
-        height: 100%;
+        padding: 1.6rem 1.5rem;
     }
 
     .v-strip-num {
-        font-family: 'Fraunces', serif;
-        font-size: 1.8rem;
-        font-weight: 700;
+        font-family: var(--mono);
+        font-size: 0.62rem;
+        font-weight: 500;
+        letter-spacing: 0.18em;
         color: var(--gold);
-        opacity: 0.3;
-        line-height: 1;
-        flex-shrink: 0;
     }
 
     .v-strip-text {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.92rem;
-        font-weight: 700;
-        color: #fff;
-        letter-spacing: 1.5px;
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        font-weight: 500;
+        letter-spacing: 0.18em;
         text-transform: uppercase;
+        color: var(--bone);
     }
 
-    /* ── ABOUT ── */
-    .v-about {
-        background: var(--stone);
+    .v-strip-arrow {
+        font-family: var(--mono);
+        color: var(--dim);
+        flex-shrink: 0;
     }
 
-    .v-label {
-        display: inline-block;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 600;
-        font-size: 0.72rem;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        color: var(--burgundy);
-        background: var(--burgundy-surface);
-        padding: 0.5rem 1.2rem;
-        margin-bottom: 1.2rem;
-    }
-
-    .v-rule {
-        width: 50px;
-        height: 2px;
-        background: var(--gold);
-        margin-bottom: 1.5rem;
-    }
-
+    /* ── ABOUT (PAPER) ── */
     .v-about-grid {
         display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 3.5rem;
+        grid-template-columns: minmax(0, 6fr) minmax(0, 4fr);
+        gap: 4.5rem;
         align-items: start;
     }
 
-    .v-about-text h2 {
-        color: var(--deep-navy);
-        margin-bottom: 1rem;
+    .v-about-text h2 { margin-bottom: 1.4rem; }
+    .v-about-text p { margin-bottom: 1rem; }
+
+    /* Term-sheet panel — hairline-ruled, paper */
+    .v-terms {
+        border: 1px solid var(--hairline-paper);
+        padding: 1.6rem 1.8rem 0.4rem;
     }
 
-    .v-about-text p {
-        font-size: 1.02rem;
-        line-height: 1.75;
-        margin-bottom: 1rem;
-        color: var(--text-medium);
-    }
-
-    .v-about-visual {
+    .v-terms-head {
         display: flex;
-        flex-direction: column;
-        gap: 1.2rem;
-    }
-
-    .v-about-card {
-        background: #fff;
-        padding: 1.8rem;
-        border: 1px solid var(--border-warm);
-        border-left: 3px solid rgba(201, 169, 97, 0.3);
-        transition: all 0.3s ease;
-    }
-
-    .v-about-card:hover {
-        border-left-color: var(--gold);
-        box-shadow: var(--shadow-warm-md);
-        transform: translateX(4px);
-    }
-
-    .v-about-card-highlight {
-        background: var(--deep-navy);
-        border: 1px solid rgba(201, 169, 97, 0.15);
-        border-left: 3px solid var(--gold);
-    }
-
-    .v-about-card-highlight:hover {
-        transform: translateX(4px);
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-    }
-
-    .v-about-card-highlight h4 { color: #fff; }
-    .v-about-card-highlight p { color: rgba(255, 255, 255, 0.5); }
-
-    .v-about-card-label {
-        font-size: 0.62rem;
-        font-weight: 700;
-        letter-spacing: 2.5px;
+        justify-content: space-between;
+        font-family: var(--mono);
+        font-size: 0.58rem;
+        letter-spacing: 0.2em;
         text-transform: uppercase;
+        color: var(--text-medium);
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--hairline-paper);
+    }
+
+    .v-term-row {
+        display: grid;
+        grid-template-columns: 48px minmax(0, 1fr);
+        gap: 1.2rem;
+        padding: 1.4rem 0;
+        border-bottom: 1px solid var(--hairline-paper);
+    }
+    .v-term-row:last-child { border-bottom: none; }
+
+    .v-term-clause {
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: 1.1rem;
         color: var(--gold);
-        margin-bottom: 1rem;
+        line-height: 1.3;
     }
 
-    .v-about-card-icon {
-        width: 42px;
-        height: 42px;
-        margin-bottom: 1rem;
-    }
-
-    .v-about-card-icon svg {
-        width: 100%;
-        height: 100%;
-    }
-
-    .v-about-card h4 {
-        font-size: 1rem;
+    .v-term-body h4 {
         color: var(--deep-navy);
         margin-bottom: 0.4rem;
     }
 
-    .v-about-card p {
-        font-size: 0.88rem;
-        color: var(--text-medium);
+    .v-term-body p {
+        font-size: 0.9rem;
         line-height: 1.6;
     }
 
-    /* ── WHAT WE OFFER (DARK) ── */
-    .v-offer {
-        background: linear-gradient(135deg, #0a1628 0%, var(--navy) 50%, #162d4f 100%);
-        overflow: hidden;
+    /* ── OFFER LEDGER (INK) ── */
+    .v-offer { background: var(--ink); }
+
+    .v-offer-ledger {
+        border-top: 1px solid var(--hairline);
     }
 
-    .v-offer-bg {
-        position: absolute;
-        inset: 0;
-        background-image:
-            radial-gradient(ellipse at 50% 80%, rgba(201, 169, 97, 0.05) 0%, transparent 50%);
-        pointer-events: none;
+    .v-offer-row {
+        display: grid;
+        grid-template-columns: 72px minmax(0, 1fr);
+        gap: 2rem;
+        align-items: baseline;
+        padding: 1.9rem 0.5rem;
+        border-bottom: 1px solid var(--hairline);
+        transition: background var(--t-short);
     }
+    .v-offer-row:hover { background: var(--ink-panel); }
 
-    .v-offer::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0;
-        height: 3px;
-        background: linear-gradient(90deg, transparent, var(--gold), transparent);
-        opacity: 0.4;
-    }
-
-    .v-offer-label {
-        display: inline-block;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 600;
-        font-size: 0.72rem;
-        letter-spacing: 3px;
-        text-transform: uppercase;
+    .vo-num {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        font-weight: 500;
+        letter-spacing: 0.18em;
         color: var(--gold);
-        background: rgba(201, 169, 97, 0.08);
-        padding: 0.5rem 1.2rem;
-        margin-bottom: 1.2rem;
+        font-variant-numeric: tabular-nums;
     }
 
-    .v-offer .section-header h2 { color: #fff; }
+    .vo-body h3 { font-size: 1.2rem; margin-bottom: 0.4rem; }
+    .vo-body p { font-size: 0.92rem; line-height: 1.65; color: var(--muted); max-width: 66ch; }
 
-    .v-offer-grid {
+    /* ── CRITERIA GRID (PANEL) ── */
+    .v-criteria-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 1.2rem;
-        max-width: 1100px;
-        margin: 0 auto;
+        border: 1px solid var(--hairline);
     }
 
-    .v-offer-card-wide {
-        grid-column: span 2;
+    .v-crit-cell {
+        padding: 2rem 1.8rem 2.2rem;
+        border-right: 1px solid var(--hairline);
+        background: var(--ink);
+        transition: background var(--t-short);
     }
-
-    .v-offer-card {
-        padding: 2rem 1.6rem;
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        position: relative;
-        transition: all 0.4s ease;
-    }
-
-    .v-offer-card::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0;
-        height: 2px;
-        background: var(--gold);
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.4s ease;
-    }
-
-    .v-offer-card:hover::before { transform: scaleX(1); }
-
-    .v-offer-card:hover {
-        background: rgba(255, 255, 255, 0.06);
-        transform: translateY(-3px);
-        box-shadow: 0 16px 50px rgba(0, 0, 0, 0.3);
-    }
-
-    .v-offer-num {
-        font-family: 'Fraunces', serif;
-        font-size: 1.6rem;
-        font-weight: 700;
-        color: var(--gold);
-        opacity: 0.25;
-        line-height: 1;
-        margin-bottom: 0.8rem;
-    }
-
-    .v-offer-card h3 {
-        font-size: 1.05rem;
-        color: #fff;
-        margin-bottom: 0.5rem;
-    }
-
-    .v-offer-card p {
-        font-size: 0.88rem;
-        color: rgba(255, 255, 255, 0.45);
-        line-height: 1.6;
-    }
-
-    /* ── CRITERIA ── */
-    .v-criteria {
-        background: var(--cream);
-    }
-
-    .v-criteria-header {
-        max-width: 550px;
-        margin-bottom: 2.5rem;
-    }
-
-    .v-criteria-header h2 {
-        color: var(--deep-navy);
-        margin-bottom: 1rem;
-    }
-
-    .v-criteria-header p {
-        font-size: 1.02rem;
-        line-height: 1.75;
-        color: var(--text-medium);
-    }
-
-    .v-criteria-cards {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1.2rem;
-    }
-
-    .v-crit-card {
-        background: #fff;
-        padding: 1.8rem 1.5rem;
-        border: 1px solid var(--border-subtle);
-        border-top: 3px solid var(--navy);
-        transition: all 0.3s ease;
-    }
-
-    .v-crit-card:hover {
-        border-top-color: var(--gold);
-        box-shadow: var(--shadow-md);
-        transform: translateY(-3px);
-    }
+    .v-crit-cell:last-child { border-right: none; }
+    .v-crit-cell:hover { background: var(--ink-panel); }
 
     .v-crit-num {
-        font-family: 'Fraunces', serif;
-        font-size: 1.4rem;
-        font-weight: 700;
+        display: block;
+        font-family: var(--mono);
+        font-size: 0.62rem;
+        font-weight: 500;
+        letter-spacing: 0.18em;
         color: var(--gold);
-        opacity: 0.3;
-        margin-bottom: 0.8rem;
-    }
-
-    .v-crit-card h4 {
-        font-size: 1rem;
-        color: var(--deep-navy);
-        margin-bottom: 0.5rem;
-    }
-
-    .v-crit-card p {
-        font-size: 0.88rem;
-        color: var(--text-medium);
-        line-height: 1.6;
-    }
-
-    /* ── WHY (full-bleed dark) ── */
-    .v-why {
-        background: linear-gradient(180deg, var(--deep-navy) 0%, #0a1628 100%);
-        padding: 5rem 2rem;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .v-why-bg {
-        position: absolute;
-        inset: 0;
-        background-image:
-            radial-gradient(ellipse at 50% 50%, rgba(201, 169, 97, 0.06) 0%, transparent 50%);
-        pointer-events: none;
-    }
-
-    .v-why::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0;
-        height: 3px;
-        background: linear-gradient(90deg, transparent, var(--gold), transparent);
-        opacity: 0.4;
-    }
-
-    .v-why-inner {
-        max-width: 1000px;
-        margin: 0 auto;
-        position: relative;
-        z-index: 1;
-    }
-
-    .v-why-content {
-        text-align: center;
-    }
-
-    .v-why-label {
-        display: inline-block;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 600;
-        font-size: 0.72rem;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        color: var(--gold);
-        background: rgba(201, 169, 97, 0.08);
-        padding: 0.5rem 1.2rem;
-        margin-bottom: 1.2rem;
-    }
-
-    .v-why h2 {
-        color: #fff;
         margin-bottom: 1rem;
     }
 
-    .v-why-rule {
-        width: 50px;
-        height: 2px;
-        background: var(--gold);
-        margin: 0 auto 2.5rem;
+    .v-crit-cell h4 {
+        color: var(--bone);
+        margin-bottom: 0.6rem;
     }
+
+    .v-crit-cell p {
+        font-size: 0.88rem;
+        line-height: 1.6;
+        color: var(--muted);
+    }
+
+    /* ── WHY (INK) ── */
+    .v-why { background: var(--ink); }
 
     .v-why-columns {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 3rem;
-        text-align: left;
-        margin-bottom: 2rem;
+        max-width: 960px;
+        border-top: 1px solid var(--hairline);
+        padding-top: 2.4rem;
     }
 
     .v-why-col p {
         font-size: 1rem;
-        line-height: 1.8;
-        color: rgba(255, 255, 255, 0.5);
+        line-height: 1.75;
+        color: var(--muted);
     }
 
     .v-why-emphasis {
-        font-family: 'Fraunces', serif;
-        font-size: 1.5rem;
-        font-weight: 700;
-        font-style: italic;
-        color: var(--gold);
-        text-align: center;
+        margin-top: 2.4rem;
+        font-size: 1.4rem;
     }
 
-    /* ── APPLY CTA ── */
-    .v-apply {
-        background: linear-gradient(135deg, var(--burgundy-deep, #5a0f28) 0%, var(--burgundy) 50%, #9e1a3e 100%);
-        padding: 5rem 2rem;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .v-apply-bg {
-        position: absolute;
-        inset: 0;
-        background-image:
-            radial-gradient(ellipse at 50% 50%, rgba(201, 169, 97, 0.08) 0%, transparent 50%);
-        pointer-events: none;
-    }
-
-    .v-apply::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0;
-        height: 3px;
-        background: linear-gradient(90deg, transparent, var(--gold), transparent);
-        opacity: 0.4;
-    }
-
-    .v-apply-inner {
-        max-width: 680px;
-        margin: 0 auto;
-        position: relative;
-        z-index: 1;
-    }
-
-    .v-apply-accent {
-        width: 40px;
-        height: 2px;
-        background: var(--gold);
-        margin: 0 auto 2rem;
-    }
-
-    .v-apply h2 {
-        font-size: clamp(1.6rem, 3vw, 2.2rem);
-        color: #fff;
-        margin-bottom: 1.2rem;
-    }
-
-    .v-apply p {
-        color: rgba(255, 255, 255, 0.65);
-        font-size: 1.05rem;
-        line-height: 1.75;
+    /* ── APPLY (PANEL) ── */
+    .v-apply-route {
+        display: block;
         margin-bottom: 2rem;
+    }
+
+    .v-apply h2 { margin-bottom: 1.2rem; }
+
+    .v-apply-lede {
+        max-width: 58ch;
+        margin-bottom: 2.2rem;
     }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 992px) {
-        .v-hero-inner { grid-template-columns: 1fr; text-align: center; }
-        .v-hero-sub { margin-left: auto; margin-right: auto; }
-        .v-hero-rule { margin: 0 auto 1.5rem; }
-        .v-hero-stats { flex-direction: row; justify-content: center; }
-        .v-hero-stat { border-left: none; border-bottom: 2px solid rgba(201, 169, 97, 0.25); padding: 1.2rem 1.5rem; flex-direction: column; align-items: center; text-align: center; gap: 0.4rem; }
-        .v-hero-stat + .v-hero-stat { border-top: none; }
-        .v-model-strip-inner { flex-direction: column; gap: 0.5rem; }
-        .v-strip-arrow { transform: rotate(90deg); }
-        .v-about-grid { grid-template-columns: 1fr; }
-        .v-about-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
-        .v-offer-grid { grid-template-columns: repeat(2, 1fr); }
-        .v-offer-card-wide { grid-column: span 1; }
-        .v-criteria-cards { grid-template-columns: repeat(2, 1fr); }
+        .v-about-grid { grid-template-columns: 1fr; gap: 3rem; }
+        .v-criteria-grid { grid-template-columns: repeat(2, 1fr); }
+        .v-crit-cell:nth-child(2) { border-right: none; }
+        .v-crit-cell:nth-child(-n+2) { border-bottom: 1px solid var(--hairline); }
         .v-why-columns { grid-template-columns: 1fr; gap: 1.5rem; }
     }
 
     @media (max-width: 768px) {
-        .v-hero { padding: 8rem 2rem 0; }
-        .v-hero-stats { flex-direction: column; }
-        .v-hero-stat { flex-direction: row; text-align: left; border-bottom: none; border-left: 2px solid rgba(201, 169, 97, 0.25); }
-        .v-about-visual { grid-template-columns: 1fr; }
-        .v-offer-grid { grid-template-columns: 1fr; max-width: 450px; margin: 0 auto; }
-        .v-criteria-cards { grid-template-columns: 1fr; }
+        .v-hero-inner { padding: 4.5rem 2rem 3.5rem; }
+        .v-data-bar { grid-template-columns: 1fr; }
+        .v-datum { border-right: none; border-bottom: 1px solid var(--hairline); }
+        .v-datum:last-child { border-bottom: none; }
+        .v-model-strip { flex-direction: column; align-items: stretch; padding: 0; }
+        .v-strip-item { padding: 1.2rem 2rem; border-bottom: 1px solid var(--hairline); }
+        .v-strip-item:last-child { border-bottom: none; }
+        .v-strip-arrow { display: none; }
+        .v-offer-row { grid-template-columns: 48px minmax(0, 1fr); gap: 1.2rem; }
+        .v-criteria-grid { grid-template-columns: 1fr; }
+        .v-crit-cell { border-right: none; border-bottom: 1px solid var(--hairline); }
+        .v-crit-cell:last-child { border-bottom: none; }
     }
 </style>
