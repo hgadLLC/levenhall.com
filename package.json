@@ -12,6 +12,7 @@
     "astro": "^5.17.1"
   },
   "devDependencies": {
+    "@astrojs/sitemap": "^3.7.3",
     "d3-geo": "^3.1.1",
     "topojson-client": "^3.1.0",
     "world-atlas": "^2.0.2"
