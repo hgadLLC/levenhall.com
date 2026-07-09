@@ -16,6 +16,13 @@ const romans = ['I', 'II', 'III', 'IV', 'V'];
 
 <BaseLayout title="Levenhall | Market Intelligence Consulting" description="Levenhall is a market intelligence consulting firm serving defense, government, and dual-use markets. Intelligence, market entry, ventures, and proprietary products.">
 
+    <!-- ── PARTNERSHIP ANNOUNCEMENT ── -->
+    <a href="/news/agenticscale-partnership" class="announce-band">
+        <span class="announce-tag"><span class="live">●</span> Joint Release · 07.08.2026</span>
+        <span class="announce-text"><strong>AgenticScale AI</strong> picks Levenhall to lead its US defense &amp; national security expansion</span>
+        <span class="announce-link">Read the announcement →</span>
+    </a>
+
     <!-- ── HERO: POSTER + INSTRUMENT ── -->
     <section class="hero sweep-field texture-grain">
         <div class="rail" aria-hidden="true">
@@ -326,10 +333,60 @@ const romans = ['I', 'II', 'III', 'IV', 'V'];
 </script>
 
 <style>
+    /* ── ANNOUNCEMENT BAND ── */
+    .announce-band {
+        display: flex;
+        align-items: baseline;
+        gap: 1.6rem;
+        padding: 0.85rem 2.2rem;
+        margin-top: 72px; /* clear fixed nav; hero adjusts below */
+        background: var(--ink-panel);
+        border-bottom: 1px solid var(--hairline);
+        text-decoration: none;
+        transition: background 0.3s ease;
+    }
+
+    .announce-band:hover { background: rgba(201, 169, 97, 0.07); }
+
+    .announce-tag {
+        font-family: var(--mono);
+        font-size: 0.58rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        flex-shrink: 0;
+    }
+
+    .announce-text {
+        font-size: 0.9rem;
+        color: var(--muted);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .announce-text strong { color: var(--bone); font-weight: 600; }
+
+    .announce-link {
+        font-family: var(--mono);
+        font-size: 0.6rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-left: auto;
+        flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+        .announce-band { flex-wrap: wrap; gap: 0.5rem; padding: 0.85rem 1.4rem; }
+        .announce-text { white-space: normal; }
+        .announce-link { margin-left: 0; }
+    }
+
     /* ── HERO ── */
     .hero {
         position: relative;
-        padding-top: 72px; /* nav clearance */
+        /* nav clearance now provided by the announce band above */
         border-bottom: 1px solid var(--hairline);
     }
 
