@@ -1,0 +1,370 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+---
+
+<BaseLayout title="Griffin by Levenhall — The Digital Case Officer" description="Griffin is a Chief of Investigations for regulated financial institutions. Disclosed AI interviews by chat, voice, or video avatar across KYC, EDD, and fraud — producing decision-ready case files where every conclusion traces to an exhibit on an immutable record.">
+
+    <PageHeader
+        label="Systems / Griffin / A Levenhall Product"
+        index="04"
+        title="The Digital Case Officer."
+    />
+
+    <!-- ── CONSOLE: STATEMENT + CASE-FILE INSTRUMENT ── -->
+    <section class="console sweep-field texture-grain">
+        <div class="console-grid">
+            <div class="console-statement">
+                <div class="brand-row">
+                    <img src="/images/products/griffin-mark.png" alt="" class="brand-mark" aria-hidden="true" />
+                    <span class="brand-word">Griffin</span>
+                </div>
+                <p class="console-tagline editorial-italic">An investigation you can defend.</p>
+                <p class="console-lede">Griffin is a Chief of Investigations. It assigns the right investigator profile to build rapport with the person being interviewed, conducts a disclosed interview by chat, voice, or video avatar, and hands your team a decision-ready file where every conclusion traces to an exhibit on an immutable record.</p>
+                <div class="btn-group console-cta">
+                    <a href="https://calendly.com/hgad-levenhall/30min" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Request a Briefing</a>
+                    <a href="/contact" class="mono-link">Talk to Levenhall →</a>
+                </div>
+                <p class="console-meta">Built for the CSO, the MLRO, and the Head of Financial Crime</p>
+            </div>
+
+            <div class="console-instrument" aria-hidden="true">
+                <div class="inst-head">
+                    <span>Case File / Exhibit Chain</span>
+                    <span class="inst-live">● Immutable Record</span>
+                </div>
+                <svg class="inst-svg" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg">
+                    <!-- conclusions (left) -->
+                    <text class="ann" x="24" y="34">CONCLUSIONS</text>
+                    <g class="concl">
+                        <rect x="24" y="52"  width="150" height="34" />
+                        <rect x="24" y="118" width="150" height="34" />
+                        <rect x="24" y="184" width="150" height="34" />
+                    </g>
+                    <text class="c-id" x="36" y="74">C-01 · IDENTITY</text>
+                    <text class="c-id" x="36" y="140">C-02 · SOURCE OF FUNDS</text>
+                    <text class="c-id" x="36" y="206">C-03 · ADVERSE MEDIA</text>
+                    <!-- exhibits (right) -->
+                    <text class="ann" x="352" y="34">EXHIBITS</text>
+                    <g class="exhibits">
+                        {Array.from({ length: 9 }, (_, i) => {
+                            const col = i % 3, row = Math.floor(i / 3);
+                            return <rect x={352 + col * 64} y={52 + row * 62} width="48" height="40" />;
+                        })}
+                    </g>
+                    {Array.from({ length: 9 }, (_, i) => {
+                        const col = i % 3, row = Math.floor(i / 3);
+                        return <text class="e-id" x={358 + col * 64} y={78 + row * 62}>E-0{i + 1}</text>;
+                    })}
+                    <!-- trace lines: each conclusion → its exhibits -->
+                    <g class="trace">
+                        <path d="M174 69 C 260 69, 290 72, 352 72" />
+                        <path d="M174 69 C 250 69, 300 134, 352 134" />
+                        <path d="M174 135 C 250 135, 290 78, 416 74" />
+                        <path d="M174 135 C 260 135, 300 138, 352 196" />
+                        <path d="M174 135 C 280 135, 320 136, 480 134" />
+                        <path d="M174 201 C 250 201, 300 200, 416 196" />
+                        <path d="M174 201 C 270 201, 320 140, 480 196" />
+                    </g>
+                    <!-- immutable record strip -->
+                    <line class="rec-line" x1="24" y1="252" x2="536" y2="252" />
+                    {Array.from({ length: 22 }, (_, i) => (
+                        <rect class="rec-block" x={24 + i * 24} y="258" width="14" height="10" />
+                    ))}
+                    <text class="rec-hash" x="24" y="292">RECORD ⌗ 4A7F·D210·88EC·9C21 · APPEND-ONLY · NOTHING REWRITTEN</text>
+                </svg>
+                <div class="inst-foot">
+                    <span>Representative case file</span>
+                    <span class="inst-verdict">Every conclusion → an exhibit</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- evidence bar -->
+        <div class="data-bar">
+            <div class="datum datum-label"><span class="d-cap d-cap-gold">By design</span></div>
+            <div class="datum"><span class="d-val">3</span><span class="d-cap">Interview modes · chat, voice, video avatar</span></div>
+            <div class="datum"><span class="d-val">KYC·EDD·FRAUD</span><span class="d-cap">Case types covered</span></div>
+            <div class="datum"><span class="d-val">100%</span><span class="d-cap">Conclusions traced to exhibits</span></div>
+            <div class="datum"><span class="d-val gold">Append-only</span><span class="d-cap">Case record, immutable by design</span></div>
+        </div>
+    </section>
+
+    <!-- ── DOCTRINE (PAPER — the one light passage) ── -->
+    <section class="section section-paper">
+        <div class="container">
+            <div class="opening-prose">
+                <span class="route-line opening-route">Griffin / Doctrine</span>
+                <p class="opening-lede">Most investigations fail at the file, not the finding. A conclusion nobody can trace is a conclusion nobody can defend.</p>
+                <p>Griffin runs the interview the way a defensible case demands: disclosed &mdash; the person being interviewed knows they are speaking with an AI investigator; recorded &mdash; every exchange lands on an append-only record; and traced &mdash; every conclusion in the final file points at the exhibit that supports it.</p>
+                <p>The decision stays with your team. Griffin builds the file; a human reviews it and signs it. <strong class="mono-strong">Disclosed · Auditable · Human-signed.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── HOW IT WORKS (LEDGER) ── -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">§ How Griffin works</span>
+                <h2>Three moves. One defensible file.</h2>
+            </div>
+            <div class="ledger">
+                <div class="ledger-row">
+                    <span class="lg-num">01</span>
+                    <span class="lg-body">
+                        <h3>Assigns the investigator</h3>
+                        <p>Griffin selects the investigator profile suited to the person being interviewed &mdash; language, register, and approach chosen to build rapport, not to trick. Rapport produces better evidence.</p>
+                    </span>
+                </div>
+                <div class="ledger-row">
+                    <span class="lg-num">02</span>
+                    <span class="lg-body">
+                        <h3>Conducts the disclosed interview</h3>
+                        <p>By chat, voice, or video avatar &mdash; the subject&rsquo;s choice, on their schedule. Always disclosed as an AI investigator. Every question and answer is an exhibit on the record.</p>
+                    </span>
+                </div>
+                <div class="ledger-row">
+                    <span class="lg-num">03</span>
+                    <span class="lg-body">
+                        <h3>Hands over the file</h3>
+                        <p>A decision-ready case file where every conclusion traces to an exhibit on an immutable record. Your team reviews, decides, and signs. The audit trail is already written.</p>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── WHO IT'S FOR ── -->
+    <section class="section section-panel texture-grain">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">§ Who Griffin is for</span>
+                <h2>The people who sign the decision.</h2>
+            </div>
+            <div class="buyer-grid">
+                <div class="buyer-cell">
+                    <span class="b-role">CSO</span>
+                    <p>A defensible record of every investigative decision &mdash; built into the process, not reconstructed after the fact.</p>
+                </div>
+                <div class="buyer-cell">
+                    <span class="b-role">MLRO</span>
+                    <p>KYC and EDD interviews that scale without losing the audit trail the regulator will ask for.</p>
+                </div>
+                <div class="buyer-cell">
+                    <span class="b-role">Head of Financial Crime</span>
+                    <p>Fraud interviews conducted consistently, on the subject&rsquo;s schedule, with every exchange preserved as evidence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="section griffin-cta">
+        <div class="container">
+            <span class="route-line">Levenhall / Griffin / Briefings <span class="live">● Open</span></span>
+            <h2>See a disclosed investigation run end to end.</h2>
+            <div class="btn-group" style="margin-top: 2rem;">
+                <a href="https://calendly.com/hgad-levenhall/30min" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Request a Briefing</a>
+                <a href="mailto:adam@levenhall.com?subject=Griffin%20Briefing" class="mono-link">adam@levenhall.com →</a>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    /* ── console ── */
+    .console {
+        background: var(--ink);
+        border-bottom: 1px solid var(--hairline);
+        position: relative;
+    }
+
+    .console-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 46fr) minmax(0, 54fr);
+        max-width: var(--col-wide);
+        margin: 0 auto;
+    }
+
+    .console-statement {
+        padding: 4rem 3rem 3rem 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .brand-row { display: flex; align-items: center; gap: 1rem; }
+    .brand-mark { height: 56px; width: auto; }
+    .brand-word {
+        font-family: var(--serif);
+        font-weight: 600;
+        font-size: 2.4rem;
+        letter-spacing: -0.02em;
+        color: var(--bone);
+    }
+
+    .console-tagline { font-size: 1.3rem; margin-top: 1.2rem; }
+
+    .console-lede {
+        color: var(--muted);
+        font-size: 1.02rem;
+        line-height: 1.7;
+        margin-top: 1.4rem;
+        max-width: 46ch;
+    }
+
+    .console-cta { margin-top: 2.2rem; }
+
+    .console-meta {
+        font-family: var(--mono);
+        font-size: 0.6rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--dim);
+        margin-top: 2rem;
+    }
+
+    /* instrument */
+    .console-instrument {
+        border-left: 1px solid var(--hairline);
+        padding: 1.6rem 2rem 1.2rem;
+        display: flex;
+        flex-direction: column;
+        background-image:
+            linear-gradient(var(--hairline-soft) 1px, transparent 1px),
+            linear-gradient(90deg, var(--hairline-soft) 1px, transparent 1px);
+        background-size: 28px 28px;
+    }
+
+    .inst-head, .inst-foot {
+        display: flex;
+        justify-content: space-between;
+        font-family: var(--mono);
+        font-size: 0.58rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--dim);
+    }
+
+    .inst-head { padding-bottom: 1rem; border-bottom: 1px solid var(--hairline); }
+    .inst-foot { padding-top: 1rem; border-top: 1px solid var(--hairline); }
+    .inst-live { color: var(--gold); animation: pulse-live 2.4s ease-in-out infinite; }
+    .inst-verdict { color: var(--gold); }
+
+    .inst-svg { width: 100%; height: auto; margin: 1rem 0; }
+
+    .ann { font-family: var(--mono); font-size: 9px; letter-spacing: 0.18em; fill: var(--dim); }
+    .concl rect { fill: rgba(201, 169, 97, 0.1); stroke: var(--gold); stroke-width: 0.8; }
+    .c-id, .e-id { font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.08em; fill: var(--muted); }
+    .exhibits rect { fill: none; stroke: var(--hairline); stroke-width: 1; }
+    .trace path { fill: none; stroke: var(--gold); stroke-width: 0.7; stroke-opacity: 0.55; stroke-dasharray: 3 4; }
+    .rec-line { stroke: var(--hairline); stroke-width: 1; }
+    .rec-block { fill: rgba(201, 169, 97, 0.4); }
+    .rec-block:nth-of-type(even) { fill: rgba(201, 169, 97, 0.18); }
+    .rec-hash { font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.14em; fill: var(--dim); }
+
+    /* evidence bar */
+    .data-bar {
+        display: grid;
+        grid-template-columns: auto repeat(4, 1fr);
+        border-top: 1px solid var(--hairline);
+        max-width: var(--col-wide);
+        margin: 0 auto;
+    }
+
+    .datum { padding: 1.4rem 1.6rem; border-left: 1px solid var(--hairline); }
+    .datum:first-child { border-left: none; display: flex; align-items: center; }
+
+    .d-val {
+        display: block;
+        font-family: var(--mono);
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--bone);
+        font-variant-numeric: tabular-nums;
+    }
+    .d-val.gold { color: var(--gold); }
+
+    .d-cap {
+        display: block;
+        font-family: var(--mono);
+        font-size: 0.55rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--dim);
+        margin-top: 0.4rem;
+        line-height: 1.5;
+    }
+
+    .d-cap-gold { color: var(--gold); font-size: 0.6rem; letter-spacing: 0.2em; margin-top: 0; }
+
+    /* doctrine */
+    .opening-prose { max-width: 62ch; }
+    .opening-route { display: block; margin-bottom: 1.6rem; }
+    .opening-lede {
+        font-family: var(--serif);
+        font-size: 1.45rem;
+        line-height: 1.5;
+        color: var(--deep-navy);
+        margin-bottom: 1.2rem;
+    }
+    .opening-prose p:not(.opening-lede) {
+        color: var(--text-medium);
+        line-height: 1.75;
+        margin-bottom: 1rem;
+    }
+    .mono-strong { font-family: var(--mono); font-size: 0.85em; letter-spacing: 0.08em; }
+
+    /* ledger */
+    .section-header { margin-bottom: 2.4rem; }
+    .section-header h2 { color: var(--bone); margin-top: 0.8rem; }
+    .ledger { border-top: 1px solid var(--hairline); }
+    .ledger-row {
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        gap: 2rem;
+        padding: 1.8rem 0;
+        border-bottom: 1px solid var(--hairline);
+    }
+    .lg-num {
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: 1.6rem;
+        color: var(--gold);
+    }
+    .lg-body h3 { color: var(--bone); margin-bottom: 0.5rem; }
+    .lg-body p { color: var(--muted); line-height: 1.65; max-width: 68ch; }
+
+    /* buyers */
+    .buyer-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border: 1px solid var(--hairline);
+    }
+    .buyer-cell { padding: 1.8rem 2rem; border-right: 1px solid var(--hairline); }
+    .buyer-cell:last-child { border-right: none; }
+    .b-role {
+        font-family: var(--mono);
+        font-size: 0.66rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        display: block;
+        margin-bottom: 0.8rem;
+    }
+    .buyer-cell p { color: var(--muted); font-size: 0.92rem; line-height: 1.65; }
+
+    /* cta */
+    .griffin-cta { background: var(--ink-panel); border-top: 1px solid var(--hairline); }
+    .griffin-cta h2 { color: var(--bone); margin-top: 1.4rem; max-width: 18ch; }
+
+    @media (max-width: 992px) {
+        .console-grid { grid-template-columns: 1fr; }
+        .console-instrument { border-left: none; border-top: 1px solid var(--hairline); }
+        .data-bar { grid-template-columns: 1fr 1fr; }
+        .buyer-grid { grid-template-columns: 1fr; }
+        .buyer-cell { border-right: none; border-bottom: 1px solid var(--hairline); }
+        .buyer-cell:last-child { border-bottom: none; }
+    }
+</style>

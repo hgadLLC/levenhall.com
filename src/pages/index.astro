@@ -104,7 +104,7 @@ const romans = ['I', 'II', 'III', 'IV', 'V'];
         <a href="/ventures" class="practice-cell">
             <span class="p-num">III.</span>
             <h3>Ventures &amp; Systems</h3>
-            <p>Services-for-equity in five allied companies a year. Bridger, AIGIS, and Intelligence &mdash; proof the practice works.</p>
+            <p>Services-for-equity in five allied companies a year. Bridger, AIGIS, Griffin, and Intelligence &mdash; proof the practice works.</p>
             <span class="p-arrow">→</span>
         </a>
     </section>
@@ -233,8 +233,32 @@ const romans = ['I', 'II', 'III', 'IV', 'V'];
                     <p>Defense &amp; alliance advisory dashboard. Live procurement, alliance dynamics, Indo-Pacific strategy, and government contracting intel.</p>
                     <span class="sys-link">Explore Intelligence →</span>
                 </a>
-                <a href="/ventures" class="system-cell">
+                <a href="/products/griffin" class="system-cell">
                     <svg class="sys-instrument" viewBox="0 0 220 64" aria-hidden="true">
+                        <rect class="ins-concl" x="2" y="10" width="56" height="14"/>
+                        <rect class="ins-concl" x="2" y="40" width="56" height="14"/>
+                        {Array.from({ length: 6 }, (_, i) => (
+                            <rect class="ins-cell" x={126 + (i % 3) * 32} y={10 + Math.floor(i / 3) * 30} width="22" height="16"/>
+                        ))}
+                        <path class="ins-trace" d="M58 17 C 90 17, 100 18, 126 18"/>
+                        <path class="ins-trace" d="M58 17 C 92 17, 104 48, 126 48"/>
+                        <path class="ins-trace" d="M58 47 C 90 47, 104 20, 158 18"/>
+                        <path class="ins-trace" d="M58 47 C 96 47, 110 48, 190 48"/>
+                        <text class="ins-note" x="2" y="6">EVERY CONCLUSION → EXHIBIT</text>
+                    </svg>
+                    <span class="sys-tag">Platform</span>
+                    <span class="sys-brand"><img src="/images/products/griffin-mark.png" alt="" class="sys-mark" loading="lazy"><h3>Griffin</h3></span>
+                    <p>The Digital Case Officer. Disclosed AI investigations for regulated financial institutions &mdash; KYC, EDD, and fraud &mdash; every conclusion traced to an exhibit on an immutable record.</p>
+                    <span class="sys-link">Explore Griffin →</span>
+                </a>
+                <a href="/ventures" class="system-cell sys-wide">
+                    <div class="sys-wide-text">
+                        <span class="sys-tag">Ventures</span>
+                        <span class="sys-brand"><h3>Levenhall Ventures</h3></span>
+                        <p>Our investment arm. Services-for-equity partnerships with five allied defense and government technology companies per year.</p>
+                        <span class="sys-link">Explore Ventures →</span>
+                    </div>
+                    <svg class="sys-instrument sys-wide-inst" viewBox="0 0 220 64" aria-hidden="true">
                         {[46, 30, 38, 18, 26].map((h, i) => (
                             <g>
                                 <rect class="ins-bar" x={i * 44 + 2} y={62 - h} width="30" height={h}/>
@@ -244,10 +268,6 @@ const romans = ['I', 'II', 'III', 'IV', 'V'];
                         <line class="ins-baseline" x1="0" y1="63" x2="220" y2="63"/>
                         <text class="ins-note" x="0" y="8">5 / YR · SERVICES-FOR-EQUITY</text>
                     </svg>
-                    <span class="sys-tag">Ventures</span>
-                    <h3>Levenhall Ventures</h3>
-                    <p>Our investment arm. Services-for-equity partnerships with five allied defense and government technology companies per year.</p>
-                    <span class="sys-link">Explore Ventures →</span>
                 </a>
             </div>
         </div>
@@ -811,6 +831,20 @@ const romans = ['I', 'II', 'III', 'IV', 'V'];
     .ins-bar { fill: rgba(201, 169, 97, 0.12); }
     .ins-bar-cap { fill: var(--gold); }
     .ins-baseline { stroke: var(--hairline); stroke-width: 1; }
+
+    .ins-concl { fill: rgba(201, 169, 97, 0.1); stroke: var(--gold); stroke-width: 0.8; }
+    .ins-trace { fill: none; stroke: var(--gold); stroke-width: 0.7; stroke-opacity: 0.55; stroke-dasharray: 3 4; }
+
+    /* Ventures — full-width band beneath the four platforms */
+    .sys-wide {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 220px;
+        gap: 3rem;
+        align-items: center;
+    }
+    .sys-wide .sys-instrument { margin-bottom: 0; }
+    .sys-wide-text { display: flex; flex-direction: column; gap: 0.6rem; }
 
     @media (prefers-reduced-motion: reduce) {
         .ins-sweep-g, .ins-dot { animation: none; }
