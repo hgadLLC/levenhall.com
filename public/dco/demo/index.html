@@ -788,33 +788,7 @@ body{margin:0;background:
 
     var cta=document.getElementById('cvrcta'); if(cta) cta.onclick=function(){ stopPlay(); go(1); };
 
-    var dk=q1('.view[data-v="1"] .dk');
-    if(dk){
-      var fils=qa(dk,'.fil'), rows=qa(dk,'tbody tr.row'), tb=dk.querySelector('tbody');
-      var er=document.createElement('tr'); er.className='dkempty'; er.style.display='none';
-      er.innerHTML='<td colspan="6" style="padding:22px 20px;text-align:center;color:var(--ink-forensic);font:400 10px/1.6 var(--mono);text-transform:uppercase;letter-spacing:.12em">No sealed cases in the open queue &middot; 1,900 archived this quarter</td>';
-      tb.appendChild(er);
-      function filt(name){ var vis=0;
-        rows.forEach(function(r){ var st=(r.querySelector('.state')||{}).textContent||'', show=true;
-          if(name==='Awaiting decision') show=/memo ready/i.test(st);
-          else if(name==='Escalated') show=!!r.querySelector('.risk.adverse');
-          else if(name==='Sealed') show=false;
-          r.style.display=show?'':'none'; if(show)vis++; });
-        er.style.display=vis?'none':''; }
-      fils.forEach(function(f){ f.onclick=function(){ stopPlay(); fils.forEach(function(x){x.classList.remove('on');}); f.classList.add('on'); filt(f.textContent.trim()); }; });
-      rows.forEach(function(r){ r.onclick=function(){ stopPlay();
-        if(r.classList.contains('hot')){ go(2); }
-        else { rows.forEach(function(x){x.classList.remove('sel');}); r.classList.add('sel'); flash('Sample case \u2014 this walkthrough follows the highlighted case, M. Owner'); } }; });
-    }
 
-    var call=q1('.view[data-v="6"] .call');
-    if(call){
-      var chans=qa(call,'.chans b');
-      var cmsg={Chat:'Secure chat \u2014 the same disclosed interview, typed.',Voice:'Voice call \u2014 recorded and disclosed, transcribed live.',Video:'Video avatar \u2014 an embodied officer, matched to the person.'};
-      chans.forEach(function(b){ b.onclick=function(){ stopPlay(); chans.forEach(function(x){x.classList.remove('on');}); b.classList.add('on'); flash(cmsg[b.textContent.trim()]); }; });
-      qa(call,'.cbtn').forEach(function(b){ b.onclick=function(){ stopPlay(); var t=b.textContent.trim();
-        flash(/human/i.test(t)?'Human requested \u2014 a named officer is paged; the AI stands down on request.':/end/i.test(t)?'Call ended \u2014 the full transcript is sealed to the record.':'Muted.'); }; });
-    }
 
     var iv=q1('.view[data-v="2"] .iv');
     if(iv){
@@ -838,12 +812,6 @@ body{margin:0;background:
         if(hit){ hit.classList.add('lift'); flash('Exhibit '+m+' lifted \u2014 the memo cites its source, verbatim'); } }; });
     }
 
-    var mkt=q1('.view[data-v="7"] .mkt');
-    if(mkt){
-      qa(mkt,'.bar').forEach(function(b){ b.onclick=function(){ stopPlay();
-        var nm=(b.querySelector('.nm')||{}).textContent||'', amt=((b.querySelector('.amt')||{}).textContent||'').replace(/\$[0-9.]+B.*/,'').trim();
-        flash(nm+' \u2014 '+amt+' raised. Screens and monitors; does not conduct the interview.'); }; });
-    }
 
     var rst=document.getElementById('closerestart'); if(rst) rst.onclick=function(){ stopPlay(); go(0); };
     var req=document.getElementById('closereq'); if(req) req.onclick=function(){ flash('Request noted \u2014 the Levenhall team will follow up. (demo)'); };
