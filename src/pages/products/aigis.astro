@@ -16,6 +16,8 @@ const frameworks = [
 /* Matrix instrument: rows = the eight frameworks, cols = obligation cells.
    Coverage pattern is illustrative linework, drawn from the product's own concept. */
 const matrixRows = frameworks.map(f => f.region + ' — ' + f.name);
+const rowCovered = (r: number, coveredSet: Set<number>) =>
+    Array.from({ length: 12 }, (_, c) => r * 12 + c).filter(i => coveredSet.has(i)).length;
 const covered = new Set([
     0,1,2,3,4,5,6,8,9,11,
     12,13,14,15,17,18,20,22,
@@ -50,15 +52,16 @@ const pulsing = new Set([5, 17, 29, 42, 56, 68, 90]);
                 <p class="console-meta">Live at <a href="https://aigis.levenhall.com" target="_blank" rel="noopener noreferrer">aigis.levenhall.com</a></p>
             </div>
 
-            <div class="console-instrument" aria-hidden="true">
+            <div class="console-instrument">
                 <div class="inst-head">
                     <span>Framework Coverage Matrix</span>
                     <span class="inst-live">● Regulatory Graph</span>
                 </div>
-                <svg class="inst-svg" viewBox="0 0 484 262" xmlns="http://www.w3.org/2000/svg">
+                <svg class="inst-svg" id="mxSvg" viewBox="0 0 484 262" xmlns="http://www.w3.org/2000/svg">
                     <text class="mx-col-note" x="168" y="12">OBLIGATIONS · ARTICLE BY ARTICLE, CONTROL BY CONTROL</text>
                     {matrixRows.map((label, r) => (
-                        <g>
+                        <g class="mx-rowgrp" data-r={r} data-label={label} data-n={rowCovered(r, covered)} tabindex="0" role="button" aria-label={`Highlight coverage for ${label}`}>
+                            <rect class="mx-hit" x="0" y={24 + r * 28} width="484" height="24" />
                             <text class="mx-row" x="158" y={38 + r * 28} text-anchor="end">{label.toUpperCase()}</text>
                             {Array.from({ length: 12 }, (_, c) => {
                                 const i = r * 12 + c;
@@ -69,7 +72,7 @@ const pulsing = new Set([5, 17, 29, 42, 56, 68, 90]);
                     ))}
                 </svg>
                 <div class="inst-foot">
-                    <span>Representative mapping</span>
+                    <span id="mxCaption">Representative mapping — touch a framework</span>
                     <span class="inst-cyan">Classified once · mapping travels</span>
                 </div>
             </div>
@@ -226,7 +229,7 @@ const pulsing = new Set([5, 17, 29, 42, 56, 68, 90]);
                 </div>
                 <aside class="spec-panel">
                     <div class="spec-head">
-                        <span class="ins-score">72<span class="ins-of">/100</span></span>
+                        <span class="ins-score"><span id="scoreNum">0</span><span class="ins-of">/100</span></span>
                         <span class="ins-verdict">Insurable</span>
                     </div>
                     <svg class="ins-gauge" viewBox="0 0 320 34" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -234,8 +237,8 @@ const pulsing = new Set([5, 17, 29, 42, 56, 68, 90]);
                         {Array.from({ length: 11 }, (_, i) => (
                             <line class="g-tick" x1={4 + i * 31.2} y1="12" x2={4 + i * 31.2} y2="20" />
                         ))}
-                        <line class="g-fill" x1="4" y1="16" x2="228.6" y2="16" />
-                        <circle class="g-marker" cx="228.6" cy="16" r="3" />
+                        <line class="g-fill" id="gFill" x1="4" y1="16" x2="4" y2="16" />
+                        <circle class="g-marker" id="gMarker" cx="4" cy="16" r="3" />
                         <text class="g-note" x="4" y="32">0</text>
                         <text class="g-note g-note-end" x="316" y="32">100</text>
                     </svg>
@@ -278,6 +281,67 @@ const pulsing = new Set([5, 17, 29, 42, 56, 68, 90]);
     </section>
 
 </BaseLayout>
+
+<script>
+    // ── Coverage matrix: touch a framework ──
+    const mxSvg = document.getElementById('mxSvg');
+    const mxCaption = document.getElementById('mxCaption');
+    const mxDefault = 'Representative mapping — touch a framework';
+    if (mxSvg && mxCaption) {
+        let activeRow: string | null = null;
+        const apply = () => {
+            mxSvg.classList.toggle('focused', activeRow !== null);
+            mxSvg.querySelectorAll('.mx-rowgrp').forEach(g => {
+                g.classList.toggle('lit', (g as HTMLElement).dataset.r === activeRow);
+            });
+            if (activeRow !== null) {
+                const g = mxSvg.querySelector(`.mx-rowgrp[data-r="${activeRow}"]`) as HTMLElement;
+                mxCaption.textContent = `${g.dataset.label} — ${g.dataset.n} of 12 obligation groups mapped`;
+            } else {
+                mxCaption.textContent = mxDefault;
+            }
+        };
+        mxSvg.querySelectorAll('.mx-rowgrp').forEach(g => {
+            const el = g as HTMLElement;
+            const set = () => { activeRow = el.dataset.r ?? null; apply(); };
+            el.addEventListener('mouseenter', set);
+            el.addEventListener('focus', set);
+            el.addEventListener('click', () => { activeRow = activeRow === el.dataset.r ? null : (el.dataset.r ?? null); apply(); });
+        });
+        mxSvg.addEventListener('mouseleave', () => { activeRow = null; apply(); });
+    }
+
+    // ── Insurability gauge: sweep to 72 on reveal ──
+    const scoreNum = document.getElementById('scoreNum');
+    const gFill = document.getElementById('gFill');
+    const gMarker = document.getElementById('gMarker');
+    const reduceG = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (scoreNum && gFill && gMarker) {
+        const target = 72, xEnd = 4 + (312 * target) / 100;
+        const setTo = (v: number) => {
+            const x = 4 + (312 * v) / 100;
+            scoreNum.textContent = String(Math.round(v));
+            gFill.setAttribute('x2', String(x));
+            gMarker.setAttribute('cx', String(x));
+        };
+        if (reduceG) { setTo(target); }
+        else {
+            const io = new IntersectionObserver((entries) => {
+                if (!entries[0].isIntersecting) return;
+                io.disconnect();
+                const t0 = performance.now(), dur = 1400;
+                const ease = (t: number) => 1 - Math.pow(1 - t, 3);
+                const step = (now: number) => {
+                    const p = Math.min(1, (now - t0) / dur);
+                    setTo(target * ease(p));
+                    if (p < 1) requestAnimationFrame(step);
+                };
+                requestAnimationFrame(step);
+            }, { threshold: 0.4 });
+            io.observe(gFill.closest('.spec-panel') ?? gFill);
+        }
+    }
+</script>
 
 <style>
     /* AIGIS brand exception (DESIGN.md): cyan #38D9C9 is reserved for the AIGIS
@@ -717,4 +781,12 @@ const pulsing = new Set([5, 17, 29, 42, 56, 68, 90]);
         .spec-panel { padding: 1.4rem 1.4rem 1.6rem; }
         .brand-lockup { width: 180px; }
     }
+
+    /* matrix interactivity */
+    .inst-svg#mxSvg .mx-rowgrp { cursor: pointer; outline: none; }
+    .mx-hit { fill: transparent; }
+    .mx-rowgrp .mx-row, .mx-rowgrp rect:not(.mx-hit) { transition: opacity 0.25s ease, fill 0.25s ease; }
+    .inst-svg#mxSvg.focused .mx-rowgrp:not(.lit) .mx-row { opacity: 0.3; }
+    .inst-svg#mxSvg.focused .mx-rowgrp:not(.lit) rect:not(.mx-hit) { opacity: 0.18; }
+    .mx-rowgrp.lit .mx-row { fill: var(--cyan, #38d9c9); }
 </style>

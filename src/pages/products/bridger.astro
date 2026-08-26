@@ -27,12 +27,12 @@ import PageHeader from '../../components/PageHeader.astro';
                 <p class="console-meta">Live at <a href="https://bridger.levenhall.com" target="_blank" rel="noopener noreferrer">bridger.levenhall.com</a></p>
             </div>
 
-            <div class="console-instrument" aria-hidden="true">
+            <div class="console-instrument">
                 <div class="inst-head">
                     <span>Procurement Signal / Bridger Index</span>
                     <span class="inst-live">● 40+ Live Sources</span>
                 </div>
-                <svg class="inst-svg" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg">
+                <svg class="inst-svg" id="idxSvg" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg">
                     <!-- axis frame -->
                     <g class="ax">
                         <line x1="52" y1="40" x2="536" y2="40" />
@@ -61,12 +61,16 @@ import PageHeader from '../../components/PageHeader.astro';
                     <path class="idx-area" d="M52 236 L88 228 L124 232 L160 214 L196 220 L232 198 L268 204 L304 178 L340 186 L376 156 L412 164 L448 122 L484 132 L520 84 L536 76 L536 280 L52 280 Z" />
                     <path class="idx-line" d="M52 236 L88 228 L124 232 L160 214 L196 220 L232 198 L268 204 L304 178 L340 186 L376 156 L412 164 L448 122 L484 132 L520 84 L536 76" />
                     <circle class="idx-dot" cx="536" cy="76" r="3" />
+                    <g id="scrub" class="scrub" aria-hidden="true">
+                        <line class="scrub-line" x1="294" y1="40" x2="294" y2="280" />
+                        <circle class="scrub-dot" cx="294" cy="191" r="3.5" />
+                    </g>
                     <!-- annotations -->
                     <text class="ann" x="52" y="28">$760B/YR INDEXED</text>
                     <text class="ann ann-dim" x="232" y="150">SIGNAL · 6–12 MO AHEAD OF THE RFP</text>
                 </svg>
                 <div class="inst-foot">
-                    <span>Representative signal</span>
+                    <span id="idxCaption">Representative signal — run your cursor along the timeline</span>
                     <span class="inst-verdict">Scored: GO / MONITOR / NO-GO</span>
                 </div>
             </div>
@@ -196,32 +200,39 @@ import PageHeader from '../../components/PageHeader.astro';
                 <h2>Six officers on the cycle.</h2>
                 <p class="staff-lede">On <strong class="mono-strong mono-strong-gold">Pathfinder Agentic ($1,499/mo)</strong> Bridger runs a six-officer staff against your pipeline &mdash; briefing, capture, entry, profile, marketplace, and briefing officers, drafting the work you would draft. Nothing submits, sends, or files without your click.</p>
             </div>
-            <div class="officer-grid">
-                <div class="officer">
-                    <span class="officer-role">Intelligence Officer</span>
+            <div class="officer-grid" id="watchFloor">
+                <div class="officer" data-log="parsing committee markup · FY27 approps|cross-checking OFAC delta against watchlist|assembling the 6 AM briefing">
+                    <span class="officer-role">Intelligence Officer <span class="officer-state"></span></span>
                     <p>Assembles the 6 AM briefing.</p>
+                    <span class="officer-log"></span>
                 </div>
-                <div class="officer">
-                    <span class="officer-role">Capture Officer</span>
+                <div class="officer" data-log="scoring new AFRL CSO against profile|drafting bid / no-bid memo|reconstructing incumbent posture">
+                    <span class="officer-role">Capture Officer <span class="officer-state"></span></span>
                     <p>Drafts bid / no-bid analysis.</p>
+                    <span class="officer-log"></span>
                 </div>
-                <div class="officer">
-                    <span class="officer-role">Allied-Entry Officer</span>
+                <div class="officer" data-log="mapping CSO pathway for allied entrant|checking FOCI posture on target vehicle|drafting entity-entry sequence">
+                    <span class="officer-role">Allied-Entry Officer <span class="officer-state"></span></span>
                     <p>Maps US-entry pathways for allied firms.</p>
+                    <span class="officer-log"></span>
                 </div>
-                <div class="officer">
-                    <span class="officer-role">Profile Officer</span>
+                <div class="officer" data-log="watching SAM registration delta|reconciling FPDS awards feed|checking CMMC posture drift">
+                    <span class="officer-role">Profile Officer <span class="officer-state"></span></span>
                     <p>Watches SAM, FPDS, CMMC posture.</p>
+                    <span class="officer-log"></span>
                 </div>
-                <div class="officer">
-                    <span class="officer-role">Marketplace Officer</span>
+                <div class="officer" data-log="triaging inbound teaming request|drafting capability-statement reply|matching demand to pipeline">
+                    <span class="officer-role">Marketplace Officer <span class="officer-state"></span></span>
                     <p>Drafts replies to inbound demand.</p>
+                    <span class="officer-log"></span>
                 </div>
-                <div class="officer">
-                    <span class="officer-role">Briefing Officer</span>
+                <div class="officer" data-log="summarising NDAA markup movement|drafting program-office briefing|tracking policy signal for the brief">
+                    <span class="officer-role">Briefing Officer <span class="officer-state"></span></span>
                     <p>Drafts policy and program briefings.</p>
+                    <span class="officer-log"></span>
                 </div>
             </div>
+            <p class="watch-note">Representative watch cycle. Nothing submits, sends, or files without your click.</p>
         </div>
     </section>
 
@@ -241,6 +252,73 @@ import PageHeader from '../../components/PageHeader.astro';
     </section>
 
 </BaseLayout>
+
+<script>
+    // ── Signal scrubber: what lives in each time band ──
+    const idxSvg = document.getElementById('idxSvg');
+    const idxCaption = document.getElementById('idxCaption');
+    const scrub = document.getElementById('scrub');
+    // index line points for y-interpolation
+    const pts = [[52,236],[88,228],[124,232],[160,214],[196,220],[232,198],[268,204],[304,178],[340,186],[376,156],[412,164],[448,122],[484,132],[520,84],[536,76]];
+    const bands: Array<[number, string]> = [
+        [173, 'T-12 → T-9 · appropriations bills, committee markups — the money moves first'],
+        [294, 'T-9 → T-6 · agency forecasts, industry days — the requirement takes shape'],
+        [415, 'T-6 → T-3 · draft RFPs, GAO protests, incumbent posture — the field narrows'],
+        [537, 'T-3 → RFP · final solicitation signal — most competitors start here'],
+    ];
+    if (idxSvg && idxCaption && scrub) {
+        const line = scrub.querySelector('.scrub-line') as SVGLineElement;
+        const dot = scrub.querySelector('.scrub-dot') as SVGCircleElement;
+        const yAt = (x: number) => {
+            for (let i = 1; i < pts.length; i++) {
+                if (x <= pts[i][0]) {
+                    const [x0, y0] = pts[i - 1], [x1, y1] = pts[i];
+                    return y0 + (y1 - y0) * ((x - x0) / (x1 - x0));
+                }
+            }
+            return pts[pts.length - 1][1];
+        };
+        const move = (clientX: number) => {
+            const r = idxSvg.getBoundingClientRect();
+            const x = Math.max(52, Math.min(536, ((clientX - r.left) / r.width) * 560));
+            line.setAttribute('x1', String(x)); line.setAttribute('x2', String(x));
+            dot.setAttribute('cx', String(x)); dot.setAttribute('cy', String(yAt(x)));
+            scrub.classList.add('on');
+            idxCaption.textContent = (bands.find(b => x <= b[0]) ?? bands[bands.length - 1])[1];
+        };
+        idxSvg.addEventListener('mousemove', e => move(e.clientX));
+        idxSvg.addEventListener('touchmove', e => { move(e.touches[0].clientX); }, { passive: true });
+        idxSvg.addEventListener('mouseleave', () => {
+            scrub.classList.remove('on');
+            idxCaption.textContent = 'Representative signal — run your cursor along the timeline';
+        });
+    }
+
+    // ── The watch floor: one officer working at a time ──
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const officers = Array.from(document.querySelectorAll('#watchFloor .officer')) as HTMLElement[];
+    if (officers.length && !reduce) {
+        let turn = 0;
+        const logIdx = officers.map(() => 0);
+        const tick = () => {
+            officers.forEach(o => o.classList.remove('working'));
+            turn = (turn + 1) % officers.length;
+            const o = officers[turn];
+            const logs = (o.dataset.log || '').split('|');
+            logIdx[turn] = (logIdx[turn] + 1) % logs.length;
+            const logEl = o.querySelector('.officer-log');
+            if (logEl) logEl.textContent = '▸ ' + logs[logIdx[turn]];
+            o.classList.add('working');
+        };
+        officers.forEach((o, i) => {
+            const logs = (o.dataset.log || '').split('|');
+            const el = o.querySelector('.officer-log');
+            if (el) el.textContent = '▸ ' + logs[0];
+        });
+        tick();
+        setInterval(tick, 3200);
+    }
+</script>
 
 <style>
     /* ── CONSOLE ── */
@@ -591,5 +669,46 @@ import PageHeader from '../../components/PageHeader.astro';
         .officer, .officer:nth-child(3n), .officer:nth-child(2n) { border-right: none; border-bottom: 1px solid var(--hairline); }
         .officer:last-child { border-bottom: none; }
         .watch-item { grid-template-columns: 40px 1fr; gap: 1rem; }
+    }
+
+    /* scrubber */
+    .inst-svg#idxSvg { cursor: crosshair; }
+    .scrub { opacity: 0; transition: opacity 0.2s ease; }
+    .scrub.on { opacity: 1; }
+    .scrub-line { stroke: var(--gold); stroke-width: 0.8; stroke-dasharray: 2 4; }
+    .scrub-dot { fill: var(--gold); }
+
+    /* watch floor */
+    .officer { position: relative; transition: border-color 0.4s ease, background 0.4s ease; }
+    .officer.working { border-color: var(--gold); background: rgba(201, 169, 97, 0.06); }
+    .officer-state::after { content: ''; }
+    .officer.working .officer-state::after {
+        content: '● working';
+        font-family: var(--mono);
+        font-size: 0.52rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-left: 0.5rem;
+        animation: pulse-live 1.6s ease-in-out infinite;
+    }
+    .officer-log {
+        display: block;
+        font-family: var(--mono);
+        font-size: 0.6rem;
+        letter-spacing: 0.06em;
+        color: var(--dim);
+        margin-top: 0.7rem;
+        min-height: 1.6em;
+        transition: color 0.4s ease;
+    }
+    .officer.working .officer-log { color: var(--gold-deep); }
+    .watch-note {
+        font-family: var(--mono);
+        font-size: 0.58rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--dim);
+        margin-top: 1.4rem;
     }
 </style>
