@@ -1,6 +1,41 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHeader from '../../components/PageHeader.astro';
+
+const conclusions = [
+    { id: 1, label: 'C-01 · IDENTITY', exhibits: [1, 2] },
+    { id: 2, label: 'C-02 · SOURCE OF FUNDS', exhibits: [2, 4, 5] },
+    { id: 3, label: 'C-03 · ADVERSE MEDIA', exhibits: [7, 8] },
+];
+const traces = [
+    { c: 1, d: 'M174 69 C 250 69, 270 71, 340 71' },
+    { c: 1, d: 'M174 69 C 245 69, 285 129, 340 129' },
+    { c: 2, d: 'M174 135 C 245 135, 275 75, 404 71' },
+    { c: 2, d: 'M174 135 C 255 135, 285 190, 340 193' },
+    { c: 2, d: 'M174 135 C 275 135, 315 132, 468 129' },
+    { c: 3, d: 'M174 201 C 245 201, 275 197, 404 195' },
+    { c: 3, d: 'M174 201 C 265 201, 305 133, 468 193' },
+];
+// exhibit id -> conclusions that cite it (for reverse lookup, exhibits 1..9 grid)
+const exhibitOwners: Record<number, number[]> = { 1: [1], 2: [1, 2], 4: [2], 5: [2], 7: [3], 8: [3] };
+
+const ladder = [
+    { t: 6, name: 'Case Officer Operations', note: 'Leads and directs HUMINT. The apex — and it stays human-led.', apex: true },
+    { t: 5, name: 'Interrogation', note: 'Adversarial truth extraction under stress or resistance.' },
+    { t: 4, name: 'Strategic Debriefing', note: 'Turns conversations into analysed lessons and decision support.' },
+    { t: 3, name: 'Investigative Interviewing', note: 'Seeks and verifies facts. Builds rapport, files defensible reports.', today: true },
+    { t: 2, name: 'Security Debriefing', note: 'Insider-risk check-ins and containment. Already measured on the benchmark.' },
+    { t: 1, name: 'Operational Foundation', note: 'Tradecraft, process, compliance, character.' },
+];
+
+const scorecard = [
+    { m: 'Escalation discrimination', s: 'Measured every release', why: 'Escalate what should escalate — and clear what should clear.' },
+    { m: 'Risk-band accuracy', s: 'Measured every release', why: 'Is the number in the right neighbourhood.' },
+    { m: 'Finding recall', s: 'Measured every release', why: 'Did the memo surface what a human needs.' },
+    { m: 'Fact-conflict recall', s: 'Measured every release', why: 'Did it catch answers that contradict ground truth.' },
+    { m: 'Guardrail breaches', s: '0 — every run', why: 'Prohibited techniques are enforced in code, not tone guidance.', zero: true },
+    { m: 'Interview craft', s: 'Scored turn by turn', why: 'Pressure subtracts. Current numbers shared in a briefing.' },
+];
 ---
 
 <BaseLayout title="Griffin by Levenhall — The Digital Investigator" description="Griffin is a Chief of Investigations for regulated financial institutions. Disclosed AI interviews by chat, voice, or video avatar across KYC, EDD, and fraud — producing decision-ready case files where every conclusion traces to an exhibit on an immutable record.">
@@ -11,7 +46,7 @@ import PageHeader from '../../components/PageHeader.astro';
         title="The Digital Investigator."
     />
 
-    <!-- ── CONSOLE: STATEMENT + CASE-FILE INSTRUMENT ── -->
+    <!-- ── CONSOLE: STATEMENT + LIVE CASE-FILE INSTRUMENT ── -->
     <section class="console sweep-field texture-grain">
         <div class="console-grid">
             <div class="console-statement">
@@ -20,7 +55,7 @@ import PageHeader from '../../components/PageHeader.astro';
                     <span class="brand-word">Griffin</span>
                 </div>
                 <p class="console-tagline editorial-italic">An investigation you can defend.</p>
-                <p class="console-lede">Griffin is a Chief of Investigations. It assigns the right investigator profile to build rapport with the person being interviewed, conducts a disclosed interview by chat, voice, or video avatar, and hands your team a decision-ready file where every conclusion traces to an exhibit on an immutable record.</p>
+                <p class="console-lede">A Chief of Investigations. Griffin assigns the right investigator, conducts a disclosed interview by chat, voice, or video avatar, and hands your team a decision-ready file &mdash; every conclusion traced to an exhibit on an immutable record.</p>
                 <div class="btn-group console-cta">
                     <a href="https://calendly.com/hgad-levenhall/30min" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Request a Briefing</a>
                     <a href="/dco/demo/" class="mono-link">Walk the demo →</a>
@@ -28,53 +63,42 @@ import PageHeader from '../../components/PageHeader.astro';
                 <p class="console-meta">Built for the CSO, the MLRO, and the Head of Financial Crime</p>
             </div>
 
-            <div class="console-instrument" aria-hidden="true">
+            <div class="console-instrument">
                 <div class="inst-head">
                     <span>Case File / Exhibit Chain</span>
                     <span class="inst-live">● Immutable Record</span>
                 </div>
-                <svg class="inst-svg" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg">
-                    <!-- conclusions (left) -->
-                    <text class="ann" x="24" y="34">CONCLUSIONS</text>
-                    <g class="concl">
-                        <rect x="24" y="52"  width="150" height="34" />
-                        <rect x="24" y="118" width="150" height="34" />
-                        <rect x="24" y="184" width="150" height="34" />
-                    </g>
-                    <text class="c-id" x="36" y="74">C-01 · IDENTITY</text>
-                    <text class="c-id" x="36" y="140">C-02 · SOURCE OF FUNDS</text>
-                    <text class="c-id" x="36" y="206">C-03 · ADVERSE MEDIA</text>
-                    <!-- exhibits (right) -->
-                    <text class="ann" x="352" y="34">EXHIBITS</text>
-                    <g class="exhibits">
-                        {Array.from({ length: 9 }, (_, i) => {
-                            const col = i % 3, row = Math.floor(i / 3);
-                            return <rect x={352 + col * 64} y={52 + row * 62} width="48" height="40" />;
-                        })}
-                    </g>
-                    {Array.from({ length: 9 }, (_, i) => {
-                        const col = i % 3, row = Math.floor(i / 3);
-                        return <text class="e-id" x={358 + col * 64} y={78 + row * 62}>E-0{i + 1}</text>;
-                    })}
-                    <!-- trace lines: each conclusion → its exhibits -->
-                    <g class="trace">
-                        <path d="M174 69 C 260 69, 290 72, 352 72" />
-                        <path d="M174 69 C 250 69, 300 134, 352 134" />
-                        <path d="M174 135 C 250 135, 290 78, 416 74" />
-                        <path d="M174 135 C 260 135, 300 138, 352 196" />
-                        <path d="M174 135 C 280 135, 320 136, 480 134" />
-                        <path d="M174 201 C 250 201, 300 200, 416 196" />
-                        <path d="M174 201 C 270 201, 320 140, 480 196" />
-                    </g>
-                    <!-- immutable record strip -->
-                    <line class="rec-line" x1="24" y1="252" x2="536" y2="252" />
-                    {Array.from({ length: 22 }, (_, i) => (
-                        <rect class="rec-block" x={24 + i * 24} y="258" width="14" height="10" />
+                <svg class="inst-svg" id="chainSvg" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg">
+                    <text class="ann" x="24" y="34">CONCLUSIONS — TOUCH ONE</text>
+                    {conclusions.map((c, i) => (
+                        <g class="cgrp" data-c={c.id} tabindex="0" role="button" aria-label={`Highlight exhibits for ${c.label}`}>
+                            <rect class="c-box" x="24" y={52 + i * 66} width="150" height="34" />
+                            <text class="c-id" x="36" y={74 + i * 66}>{c.label}</text>
+                        </g>
                     ))}
-                    <text class="rec-hash" x="24" y="292">RECORD ⌗ 4A7F·D210·88EC·9C21 · APPEND-ONLY · NOTHING REWRITTEN</text>
+                    <text class="ann" x="352" y="34">EXHIBITS</text>
+                    {Array.from({ length: 9 }, (_, i) => {
+                        const id = i + 1, col = i % 3, row = Math.floor(i / 3);
+                        return (
+                            <g class="egrp" data-e={id} data-owners={(exhibitOwners[id] ?? []).join(',')}>
+                                <rect class="e-box" x={352 + col * 64} y={52 + row * 62} width="48" height="40" />
+                                <text class="e-id" x={358 + col * 64} y={78 + row * 62}>E-0{id}</text>
+                            </g>
+                        );
+                    })}
+                    <g class="trace">
+                        {traces.map(t => <path data-c={t.c} d={t.d} />)}
+                    </g>
+                    <line class="rec-line" x1="24" y1="252" x2="536" y2="252" />
+                    <g id="recBlocks">
+                        {Array.from({ length: 22 }, (_, i) => (
+                            <rect class="rec-block" data-i={i} x={24 + i * 24} y="258" width="14" height="10" />
+                        ))}
+                    </g>
+                    <text class="rec-hash" id="recHash" x="24" y="292">RECORD ⌗ 4A7F·D210·88EC·9C21 · APPEND-ONLY · NOTHING REWRITTEN</text>
                 </svg>
                 <div class="inst-foot">
-                    <span>Representative case file</span>
+                    <span id="chainCaption">Representative case file — touch a conclusion to trace its evidence</span>
                     <span class="inst-verdict">Every conclusion → an exhibit</span>
                 </div>
             </div>
@@ -84,25 +108,25 @@ import PageHeader from '../../components/PageHeader.astro';
         <div class="data-bar">
             <div class="datum datum-label"><span class="d-cap d-cap-gold">By design</span></div>
             <div class="datum"><span class="d-val">3</span><span class="d-cap">Interview modes · chat, voice, video avatar</span></div>
-            <div class="datum"><span class="d-val">KYC·EDD·FRAUD</span><span class="d-cap">Case types · plus security debriefing</span></div>
+            <div class="datum"><span class="d-val">KYC·EDD·FRAUD</span><span class="d-cap">Case types covered</span></div>
             <div class="datum"><span class="d-val">100%</span><span class="d-cap">Conclusions traced to exhibits</span></div>
             <div class="datum"><span class="d-val gold">Append-only</span><span class="d-cap">Case record, immutable by design</span></div>
         </div>
     </section>
 
-    <!-- ── DOCTRINE (PAPER — the one light passage) ── -->
+    <!-- ── DOCTRINE (PAPER) ── -->
     <section class="section section-paper">
         <div class="container">
             <div class="opening-prose">
                 <span class="route-line opening-route">Griffin / Doctrine</span>
                 <p class="opening-lede">Most investigations fail at the file, not the finding. A conclusion nobody can trace is a conclusion nobody can defend.</p>
-                <p>Griffin runs the interview the way a defensible case demands: disclosed &mdash; the person being interviewed knows they are speaking with an AI investigator; recorded &mdash; every exchange lands on an append-only record; and traced &mdash; every conclusion in the final file points at the exhibit that supports it.</p>
-                <p>The decision stays with your team. Griffin builds the file; a human reviews it and signs it. <strong class="mono-strong">Disclosed · Auditable · Human-signed.</strong></p>
+                <p><strong>Disclosed</strong> &mdash; the subject knows they are speaking with an AI investigator. <strong>Recorded</strong> &mdash; every exchange lands on an append-only record. <strong>Traced</strong> &mdash; every conclusion points at its exhibit.</p>
+                <p>Griffin recommends. A named human decides, and signs. <strong class="mono-strong">Disclosed · Auditable · Human-signed.</strong></p>
             </div>
         </div>
     </section>
 
-    <!-- ── HOW IT WORKS (LEDGER) ── -->
+    <!-- ── HOW IT WORKS ── -->
     <section class="section">
         <div class="container">
             <div class="section-header">
@@ -114,74 +138,100 @@ import PageHeader from '../../components/PageHeader.astro';
                     <span class="lg-num">01</span>
                     <span class="lg-body">
                         <h3>Assigns the investigator</h3>
-                        <p>Griffin selects the investigator profile suited to the person being interviewed &mdash; language, register, and approach chosen to build rapport, not to trick. Rapport produces better evidence.</p>
+                        <p>The profile suited to the subject &mdash; chosen to build rapport, not to trick. Rapport produces better evidence.</p>
                     </span>
                 </div>
                 <div class="ledger-row">
                     <span class="lg-num">02</span>
                     <span class="lg-body">
                         <h3>Conducts the disclosed interview</h3>
-                        <p>By chat, voice, or video avatar &mdash; the subject&rsquo;s choice, on their schedule. Always disclosed as an AI investigator. Every question and answer is an exhibit on the record.</p>
+                        <p>Chat, voice, or video avatar &mdash; the subject&rsquo;s choice, on their schedule. Every exchange becomes an exhibit.</p>
                     </span>
                 </div>
                 <div class="ledger-row">
                     <span class="lg-num">03</span>
                     <span class="lg-body">
                         <h3>Hands over the file</h3>
-                        <p>A decision-ready case file where every conclusion traces to an exhibit on an immutable record. Your team reviews, decides, and signs. The audit trail is already written.</p>
+                        <p>Decision-ready, every conclusion traced. Your team reviews, decides, signs. The audit trail is already written.</p>
                     </span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ── PROOF: THE SEALED BENCHMARK ── -->
+    <!-- ── PROOF: THE SEALED BENCHMARK (SCORECARD INSTRUMENT) ── -->
     <section class="section">
         <div class="container">
             <div class="section-header">
                 <span class="section-label">§ Proof, not promises</span>
                 <h2>The only interview in the category with a scorecard.</h2>
             </div>
-            <div class="opening-prose" style="margin-bottom: 2.5rem;">
-                <p>Griffin runs against a sealed benchmark: fifteen scenarios with locked answer keys &mdash; structuring, shell ownership, undisclosed PEPs, prompt-injection adversaries, and deliberately clean cases that must be cleared, across two investigative disciplines. Every release is scored on whether it escalates what should escalate <em>and clears what should clear</em> &mdash; over-escalation counts as failure, because a tool that cries wolf buries the real signal.</p>
-                <p>The conduct of the interview is scored too, turn by turn, against a rubric where prohibited techniques &mdash; pressure, minimisation, false evidence, leading &mdash; subtract. An interview that &ldquo;works&rdquo; through coercion fails. And the benchmark has teeth: it has caught real design gaps and forced the fix before release, with the finding, the fix, and the proof kept on the record.</p>
-            </div>
-            <div class="ledger">
-                <div class="ledger-row">
-                    <span class="lg-num">15</span>
-                    <span class="lg-body"><h3>Sealed scenarios, two disciplines</h3>
-                    <p>KYC/EDD and insider-risk security debriefing &mdash; one engine, measured the same way on both.</p></span>
+            <div class="bench-grid">
+                <div class="bench-text">
+                    <p>Fifteen sealed scenarios with locked answer keys, across two disciplines &mdash; KYC/EDD and insider-risk security debriefing. Clean cases must clear: <strong>over-escalation counts as failure.</strong></p>
+                    <p>The benchmark has teeth. It has caught real design gaps and forced the fix before release &mdash; finding, fix, and proof kept on the record. A model-validation pack travels with every release.</p>
+                    <div class="ffp" aria-label="Finding, fix, proof — on the record">
+                        <span>Finding</span><span class="ffp-arrow">→</span><span>Fix</span><span class="ffp-arrow">→</span><span>Proof</span><span class="ffp-note">on the record, before release</span>
+                    </div>
                 </div>
-                <div class="ledger-row">
-                    <span class="lg-num">0</span>
-                    <span class="lg-body"><h3>Guardrail breaches, every run</h3>
-                    <p>Coercive and deceptive techniques are prohibited patterns enforced in code &mdash; not tone guidance.</p></span>
-                </div>
-                <div class="ledger-row">
-                    <span class="lg-num">§</span>
-                    <span class="lg-body"><h3>A model-validation pack per release</h3>
-                    <p>The scorecard, its history, and the documentation a model-risk team asks for. Current numbers shared in a briefing.</p></span>
+                <div class="scorecard">
+                    <div class="sc-head">
+                        <span>Benchmark / Scorecard</span>
+                        <span class="sc-live">● Every Release</span>
+                    </div>
+                    {scorecard.map(r => (
+                        <div class={`sc-row${r.zero ? ' sc-zero' : ''}`}>
+                            <span class="sc-metric">{r.m}</span>
+                            <span class="sc-status">{r.s}</span>
+                            <span class="sc-why">{r.why}</span>
+                        </div>
+                    ))}
+                    <div class="sc-foot">Sealed keys · never visible to the model · current numbers in a briefing</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ── TRAJECTORY: THE CAPABILITY LADDER ── -->
+    <!-- ── TRAJECTORY: THE CAPABILITY LADDER (INSTRUMENT) ── -->
     <section class="section section-panel texture-grain">
         <div class="container">
             <div class="section-header">
                 <span class="section-label">§ Where Griffin is going</span>
                 <h2>One engine, climbing a ladder of disciplines.</h2>
             </div>
-            <div class="opening-prose">
-                <p>Interviewing is a craft that generalises. The same core &mdash; rapport-based elicitation, hypothesis testing, an immutable record, a human on every decision &mdash; runs today&rsquo;s KYC and EDD reviews, already runs insider-risk security debriefings on the benchmark, and extends to the harder disciplines above them: fraud examination, intelligence debriefing, and the investigative work regulated institutions and government partners cannot staff at scale.</p>
-                <p>The method is deliberate: <strong class="mono-strong">train to the apex, apply at the base.</strong> Skills built for the hardest rung &mdash; trust, empathy, conversational craft under pressure &mdash; make every rung below better.</p>
+            <div class="ladder-grid">
+                <div class="ladder-text">
+                    <p>Interviewing is a craft that generalises. Six disciplines of human intelligence work, each assuming everything beneath it &mdash; and one supervisory layer spanning the stack.</p>
+                    <p>The method: <strong class="mono-strong">train to the apex, apply at the base.</strong> Skills built for the hardest rung make every rung below better.</p>
+                    <p class="ladder-caption" id="ladderCaption" aria-live="polite"><span class="lc-name">Investigative Interviewing</span> — Seeks and verifies facts. Builds rapport, files defensible reports.</p>
+                </div>
+                <div class="ladder" role="list">
+                    <div class="ladder-band">
+                        <span class="lb-name">Griffin</span>
+                        <span class="lb-note">supervises &amp; orchestrates across the stack</span>
+                    </div>
+                    {ladder.map(l => (
+                        <button
+                            class={`rung${l.today ? ' rung-today' : ''}${l.apex ? ' rung-apex' : ''}`}
+                            style={`--w:${52 + (6 - l.t) * 9.6}%`}
+                            data-name={l.name}
+                            data-note={l.note}
+                            role="listitem"
+                            type="button"
+                        >
+                            <span class="rung-t">{l.t}</span>
+                            <span class="rung-name">{l.name}</span>
+                            {l.today && <span class="rung-flag">● Griffin today</span>}
+                            {l.apex && <span class="rung-flag rung-flag-h">human-led</span>}
+                        </button>
+                    ))}
+                </div>
             </div>
         </div>
     </section>
 
     <!-- ── WHO IT'S FOR ── -->
-    <section class="section section-panel texture-grain">
+    <section class="section section-panel">
         <div class="container">
             <div class="section-header">
                 <span class="section-label">§ Who Griffin is for</span>
@@ -217,6 +267,70 @@ import PageHeader from '../../components/PageHeader.astro';
         </div>
     </section>
 </BaseLayout>
+
+<script>
+    // ── Exhibit chain: touch a conclusion, trace its evidence ──
+    const svg = document.getElementById('chainSvg');
+    const caption = document.getElementById('chainCaption');
+    const captions: Record<string, string> = {
+        '1': 'C-01 · Identity — two exhibits carry it: the disclosed interview and the document check',
+        '2': 'C-02 · Source of funds — three exhibits, including answers given in the interview itself',
+        '3': 'C-03 · Adverse media — two exhibits; the subject’s response is on the record beside them',
+    };
+    const defaultCaption = 'Representative case file — touch a conclusion to trace its evidence';
+
+    if (svg && caption) {
+        let active: string | null = null;
+        const apply = () => {
+            svg.classList.toggle('focused', active !== null);
+            svg.querySelectorAll('.cgrp').forEach(g => g.classList.toggle('lit', (g as HTMLElement).dataset.c === active));
+            svg.querySelectorAll('.trace path').forEach(p => p.classList.toggle('lit', (p as HTMLElement).dataset.c === active));
+            svg.querySelectorAll('.egrp').forEach(g => {
+                const owners = ((g as HTMLElement).dataset.owners || '').split(',');
+                g.classList.toggle('lit', active !== null && owners.includes(active));
+            });
+            caption.textContent = active ? captions[active] : defaultCaption;
+        };
+        svg.querySelectorAll('.cgrp').forEach(g => {
+            const el = g as HTMLElement;
+            const set = () => { active = el.dataset.c ?? null; apply(); };
+            const toggle = () => { active = active === el.dataset.c ? null : (el.dataset.c ?? null); apply(); };
+            el.addEventListener('mouseenter', set);
+            el.addEventListener('focus', set);
+            el.addEventListener('click', toggle);
+            el.addEventListener('keydown', (e) => { if ((e as KeyboardEvent).key === 'Enter') toggle(); });
+        });
+        svg.addEventListener('mouseleave', () => { active = null; apply(); });
+
+        // ── The record appends. Nothing rewrites. ──
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!reduce) {
+            const blocks = Array.from(svg.querySelectorAll('.rec-block')) as SVGRectElement[];
+            const hashEl = document.getElementById('recHash');
+            const hex = () => Math.floor(Math.random() * 0xffff).toString(16).toUpperCase().padStart(4, '0');
+            let head = blocks.length - 1;
+            setInterval(() => {
+                blocks.forEach(b => b.classList.remove('rec-new'));
+                head = (head + 1) % blocks.length;
+                blocks[head].classList.add('rec-new');
+                if (hashEl) hashEl.textContent = `RECORD ⌗ ${hex()}·${hex()}·${hex()}·${hex()} · APPEND-ONLY · NOTHING REWRITTEN`;
+            }, 2800);
+        }
+    }
+
+    // ── Capability ladder: touch a rung ──
+    const lc = document.getElementById('ladderCaption');
+    document.querySelectorAll('.rung').forEach(r => {
+        const el = r as HTMLElement;
+        const show = () => {
+            if (lc) lc.innerHTML = `<span class="lc-name">${el.dataset.name}</span> — ${el.dataset.note}`;
+            document.querySelectorAll('.rung').forEach(x => x.classList.toggle('rung-lit', x === el));
+        };
+        el.addEventListener('mouseenter', show);
+        el.addEventListener('focus', show);
+        el.addEventListener('click', show);
+    });
+</script>
 
 <style>
     /* ── console ── */
@@ -286,6 +400,7 @@ import PageHeader from '../../components/PageHeader.astro';
     .inst-head, .inst-foot {
         display: flex;
         justify-content: space-between;
+        gap: 1rem;
         font-family: var(--mono);
         font-size: 0.58rem;
         letter-spacing: 0.18em;
@@ -296,18 +411,32 @@ import PageHeader from '../../components/PageHeader.astro';
     .inst-head { padding-bottom: 1rem; border-bottom: 1px solid var(--hairline); }
     .inst-foot { padding-top: 1rem; border-top: 1px solid var(--hairline); }
     .inst-live { color: var(--gold); animation: pulse-live 2.4s ease-in-out infinite; }
-    .inst-verdict { color: var(--gold); }
+    .inst-verdict { color: var(--gold); flex-shrink: 0; }
 
     .inst-svg { width: 100%; height: auto; margin: 1rem 0; }
 
     .ann { font-family: var(--mono); font-size: 9px; letter-spacing: 0.18em; fill: var(--dim); }
-    .concl rect { fill: rgba(201, 169, 97, 0.1); stroke: var(--gold); stroke-width: 0.8; }
+
+    .cgrp { cursor: pointer; outline: none; }
+    .c-box { fill: rgba(201, 169, 97, 0.1); stroke: var(--gold); stroke-width: 0.8; transition: fill 0.25s ease; }
+    .cgrp:hover .c-box, .cgrp:focus .c-box, .cgrp.lit .c-box { fill: rgba(201, 169, 97, 0.28); }
     .c-id, .e-id { font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.08em; fill: var(--muted); }
-    .exhibits rect { fill: none; stroke: var(--hairline); stroke-width: 1; }
-    .trace path { fill: none; stroke: var(--gold); stroke-width: 0.7; stroke-opacity: 0.55; stroke-dasharray: 3 4; }
+
+    .e-box { fill: none; stroke: var(--hairline); stroke-width: 1; transition: stroke 0.25s ease, fill 0.25s ease; }
+    .egrp.lit .e-box { stroke: var(--gold); fill: rgba(201, 169, 97, 0.14); }
+    .egrp.lit .e-id { fill: var(--gold); }
+
+    .trace path { fill: none; stroke: var(--gold); stroke-width: 0.7; stroke-opacity: 0.5; stroke-dasharray: 3 4; transition: stroke-opacity 0.25s ease, stroke-width 0.25s ease; }
+    .inst-svg.focused .trace path { stroke-opacity: 0.1; }
+    .inst-svg.focused .trace path.lit { stroke-opacity: 0.95; stroke-width: 1.2; }
+    .inst-svg.focused .cgrp:not(.lit) .c-box { fill: rgba(201, 169, 97, 0.04); stroke: var(--hairline); }
+    .inst-svg.focused .cgrp:not(.lit) .c-id { fill: var(--dim); }
+    .inst-svg.focused .egrp:not(.lit) .e-id { fill: var(--dim); }
+
     .rec-line { stroke: var(--hairline); stroke-width: 1; }
-    .rec-block { fill: rgba(201, 169, 97, 0.4); }
-    .rec-block:nth-of-type(even) { fill: rgba(201, 169, 97, 0.18); }
+    .rec-block { fill: rgba(201, 169, 97, 0.35); transition: fill 0.4s ease; }
+    .rec-block:nth-of-type(even) { fill: rgba(201, 169, 97, 0.16); }
+    .rec-block.rec-new { fill: var(--gold); }
     .rec-hash { font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.14em; fill: var(--dim); }
 
     /* evidence bar */
@@ -360,6 +489,7 @@ import PageHeader from '../../components/PageHeader.astro';
         line-height: 1.75;
         margin-bottom: 1rem;
     }
+    .opening-prose strong { color: var(--deep-navy); }
     .mono-strong { font-family: var(--mono); font-size: 0.85em; letter-spacing: 0.08em; }
 
     /* ledger */
@@ -381,6 +511,143 @@ import PageHeader from '../../components/PageHeader.astro';
     }
     .lg-body h3 { color: var(--bone); margin-bottom: 0.5rem; }
     .lg-body p { color: var(--muted); line-height: 1.65; max-width: 68ch; }
+
+    /* ── benchmark scorecard ── */
+    .bench-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+        gap: 3.5rem;
+        align-items: start;
+    }
+
+    .bench-text p { color: var(--muted); line-height: 1.7; margin-bottom: 1.1rem; max-width: 48ch; }
+    .bench-text strong { color: var(--bone); }
+
+    .ffp {
+        display: flex;
+        align-items: baseline;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+        border: 1px solid var(--hairline);
+        padding: 1rem 1.3rem;
+        margin-top: 1.6rem;
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--bone);
+    }
+    .ffp-arrow { color: var(--gold); }
+    .ffp-note { color: var(--dim); font-size: 0.58rem; margin-left: auto; }
+
+    .scorecard { border: 1px solid var(--hairline); background: var(--ink-panel); }
+    .sc-head {
+        display: flex;
+        justify-content: space-between;
+        font-family: var(--mono);
+        font-size: 0.58rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--dim);
+        padding: 0.9rem 1.4rem;
+        border-bottom: 1px solid var(--hairline);
+    }
+    .sc-live { color: var(--gold); animation: pulse-live 2.4s ease-in-out infinite; }
+
+    .sc-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 0.2rem 1.5rem;
+        padding: 0.85rem 1.4rem;
+        border-bottom: 1px solid var(--hairline-soft);
+        transition: background 0.25s ease;
+    }
+    .sc-row:hover { background: rgba(201, 169, 97, 0.05); }
+    .sc-metric { font-family: var(--serif); font-weight: 600; font-size: 1rem; color: var(--bone); }
+    .sc-status {
+        font-family: var(--mono);
+        font-size: 0.58rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--gold-deep);
+        align-self: center;
+        text-align: right;
+    }
+    .sc-zero .sc-status { color: var(--gold); font-weight: 700; }
+    .sc-why { grid-column: 1 / -1; font-size: 0.82rem; color: var(--dim); line-height: 1.5; }
+    .sc-foot {
+        font-family: var(--mono);
+        font-size: 0.56rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--dim);
+        padding: 0.9rem 1.4rem;
+    }
+
+    /* ── capability ladder ── */
+    .ladder-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+        gap: 3.5rem;
+        align-items: start;
+    }
+
+    .ladder-text p { color: var(--muted); line-height: 1.7; margin-bottom: 1.1rem; max-width: 46ch; }
+    .ladder-text strong { color: var(--bone); }
+
+    .ladder-caption {
+        border-left: 1px solid var(--gold);
+        padding: 0.6rem 0 0.6rem 1.2rem;
+        min-height: 4.4rem;
+        font-size: 0.92rem !important;
+    }
+    .lc-name { font-family: var(--serif); font-weight: 600; color: var(--bone); }
+
+    .ladder { display: flex; flex-direction: column; align-items: center; gap: 0.45rem; }
+
+    .ladder-band {
+        width: 100%;
+        border: 1px solid var(--gold);
+        background: rgba(201, 169, 97, 0.08);
+        padding: 0.7rem 1.2rem;
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        gap: 0.8rem;
+        margin-bottom: 0.6rem;
+        clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
+    }
+    .lb-name { font-family: var(--serif); font-weight: 600; font-size: 1.05rem; color: var(--gold); }
+    .lb-note { font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+
+    .rung {
+        width: var(--w);
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+        border: 1px solid var(--hairline);
+        background: var(--ink-panel);
+        color: inherit;
+        font: inherit;
+        text-align: left;
+        padding: 0.6rem 1.1rem;
+        cursor: pointer;
+        transition: border-color 0.25s ease, background 0.25s ease;
+    }
+    .rung:hover, .rung:focus-visible, .rung.rung-lit { border-color: var(--gold-deep); background: var(--panel2, #122040); }
+    .rung-today { border-color: var(--gold); background: rgba(201, 169, 97, 0.1); }
+    .rung-t { font-family: var(--serif); font-style: italic; font-size: 0.95rem; color: var(--gold); }
+    .rung-name { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bone); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .rung-flag {
+        margin-left: auto;
+        font-family: var(--mono);
+        font-size: 0.54rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--gold);
+        flex-shrink: 0;
+    }
+    .rung-flag-h { color: var(--muted); }
 
     /* buyers */
     .buyer-grid {
@@ -409,6 +676,8 @@ import PageHeader from '../../components/PageHeader.astro';
         .console-grid { grid-template-columns: 1fr; }
         .console-instrument { border-left: none; border-top: 1px solid var(--hairline); }
         .data-bar { grid-template-columns: 1fr 1fr; }
+        .bench-grid, .ladder-grid { grid-template-columns: 1fr; gap: 2rem; }
+        .rung { width: 100% !important; }
         .buyer-grid { grid-template-columns: 1fr; }
         .buyer-cell { border-right: none; border-bottom: 1px solid var(--hairline); }
         .buyer-cell:last-child { border-bottom: none; }
